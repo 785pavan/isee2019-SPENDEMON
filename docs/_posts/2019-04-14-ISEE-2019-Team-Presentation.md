@@ -21,6 +21,6 @@ Our team consists of a mix bag of an Electrical, Mechanical and an Electronics E
 
   ** Roles: **
 
-2. **SeyedBehnam Beladi :** In a world full of innovative ideas, app development is a wonderful tool to implement them. As person who always has new ideas, I believe learning how to make phone applications can be really useful. It also opens up a door to new opportunities in my future career.
+2. **SeyedBehnam Beladi :** In a world full of innovative ideas, app development is a wonderful tool to implement them. As person who always has new ideas, I believe learning how to make phone applications is a perfect way to developing them. It also opens up a door to new opportunities in my future career.
 
 3. **Pavan Kumar Kandapagari :** A guy with an insatiable thirst for knowledge and a soft spot for technology. My motivation behind this project is to produce an usable product along with testing the skills I have learnt in the previous semester.
