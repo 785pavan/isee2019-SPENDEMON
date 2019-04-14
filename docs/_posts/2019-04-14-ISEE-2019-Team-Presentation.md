@@ -9,6 +9,10 @@ During the initial months of us coming to a foreign land for studies, we realize
 
 As, for our app name, we being 90's kids, this is a pun on our beloved anime *"Pokemon"* as well as a ledger to check where did our user actually *"Spend Them On?"*
 
+<span align="center">
+![Pokemon card image]({{site.baseurl}}/images/PokeCard.jpg "PokeCard")
+</span>
+
 ## Our Team:
 
 Our team consists of a mix bag of an Electrical, Mechanical and an Electronics Engineer, who have now dived headfirst into the sea of Computer Science and are  really excited to develop an app and show it off to their friends and peers back home. Without further ado, here we introduce our team members:
