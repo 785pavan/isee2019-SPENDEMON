@@ -19,10 +19,9 @@ As, for our app name, we being 90's kids, this is a pun on our beloved anime *"P
 ![Pokemon Card image]({{site.baseurl}}/images/PokeCard.jpg "Display Poke card")
 </span>
 ## Our Team:
-
+<img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="200"/>
 <span align="center">
-![Pokemon team image]({{site.baseurl}}/images/team_pokemon.jpg=250x "Display Poke card")
-</span>
+
 
 Our team consists of a mix bag of an Electrical, Mechanical and an Electronics Engineer, who have now dived headfirst into the sea of Computer Science and are  really excited to develop an app and show it off to their friends and peers back home. Without further ado, here we introduce our team members:
 
