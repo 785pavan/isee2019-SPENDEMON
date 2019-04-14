@@ -63,3 +63,12 @@ As of now each of the team members have been given a temporary role which is sub
 </tr>
 
 </table>
+
+| Steps       | Members Responsible           |
+| -------|------ |:-------------:|
+| User Interface     | Pavan |
+| System Implementation    | Behnam      |
+| Content Designer | Atrayee     |
+| Quality Control and Testing     | Pavan |
+| Scrum Master    | Behnam      |
+| Blog and Presentation | Atrayee     |
