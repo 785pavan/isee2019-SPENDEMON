@@ -22,11 +22,11 @@ As, for our app name, we being 90's kids, this is a pun on our beloved anime *"P
 
 Our team consists of a mix bag of an Electrical, Mechanical and an Electronics Engineer, who have now dived headfirst into the sea of Computer Science and are  really excited to develop an app and show it off to their friends and peers back home. Without further ado, here we introduce our team members:
 
-1. **Atrayee Neog :** A struggling Electronic Engineer who found passion and comfort behind the programming logics and algorithms of Computer Science. My motivation behind doing this project is to testify my theoretical knowledge into an implementation in real life and to channelize my ideas into building something worthwhile.
+**1. Atrayee Neog :** A struggling Electronic Engineer who found passion and comfort behind the programming logics and algorithms of Computer Science. My motivation behind doing this project is to testify my theoretical knowledge into an implementation in real life and to channelize my ideas into building something worthwhile.
 
-2. **Behnam Beladi :** In a world full of innovative ideas, app development is a wonderful tool to implement them. As person who always has new ideas, I believe learning how to make phone applications is a perfect way to developing them. It also opens up a door to new opportunities in my future career.
+**2. Behnam Beladi :** In a world full of innovative ideas, app development is a wonderful tool to implement them. As person who always has new ideas, I believe learning how to make phone applications is a perfect way to developing them. It also opens up a door to new opportunities in my future career.
 
-3. **Pavan Kumar Kandapagari :** A guy with an insatiable thirst for knowledge and a soft spot for technology. My motivation behind this project is to produce an usable product along with testing the skills I have learnt in the previous semester.
+**3. Pavan Kumar Kandapagari :** A guy with an insatiable thirst for knowledge and a soft spot for technology. My motivation behind this project is to produce an usable product along with testing the skills I have learnt in the previous semester.
 
 ## Project Breakdown and Roles:
 
