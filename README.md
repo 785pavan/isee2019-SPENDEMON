@@ -1,4 +1,5 @@
-# Software Engineers Blog https://dbse-teaching.github.io/isee2019-SPENDEMON/
+# Software Engineers Blog 
+## URL for the blog: https://dbse-teaching.github.io/isee2019-SPENDEMON/
 
 This is the main page of your repository for the course project that is a center piece of the lecture "Introduction to Software Engineering for Engineers" in summer term 2019.
 
