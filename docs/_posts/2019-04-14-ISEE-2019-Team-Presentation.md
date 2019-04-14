@@ -21,7 +21,7 @@ As, for our app name, we being 90's kids, this is a pun on our beloved anime *"P
 ## Our Team:
 
 <span align="center">
-![Pokemon team image]({{site.baseurl}}/images/team_pokemon.jpg "Display Poke card")
+![Pokemon team image]({{site.baseurl}}/images/team_pokemon.jpg=250x "Display Poke card")
 </span>
 
 Our team consists of a mix bag of an Electrical, Mechanical and an Electronics Engineer, who have now dived headfirst into the sea of Computer Science and are  really excited to develop an app and show it off to their friends and peers back home. Without further ado, here we introduce our team members:
@@ -54,10 +54,11 @@ Our team is, as mentioned earlier, an amalgamation of engineers from different c
 ## **Communication Mediums:**
 
 Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Slack and manage our team goals via apps like Trello.
+
 <span align="center">
-![github]({{site.baseurl}}/images/GitHub-Mark-120px-plus.png "Display Poke card")
-![Whatsapp]({{site.baseurl}}/images/WhatsApp_Logo_1.png "Display Poke card")
-![GoogleDrive]({{site.baseurl}}/images/Google_Drive_logo.png "Display Poke card")
-![Slack]({{site.baseurl}}/images/slack_logo.jpg "Display Poke card")
-![Trello]({{site.baseurl}}/images/trello_logo.png "Display Poke card")
+![github]({{site.baseurl}}/images/GitHub-Mark-120px-plus.png=250x "Display Poke card")
+![Whatsapp]({{site.baseurl}}/images/WhatsApp_Logo_1.png=250x "Display Poke card")
+![GoogleDrive]({{site.baseurl}}/images/Google_Drive_logo.png=250x "Display Poke card")
+![Slack]({{site.baseurl}}/images/slack_logo.jpg=250x "Display Poke card")
+![Trello]({{site.baseurl}}/images/trello_logo.png=250x "Display Poke card")
 </span>
