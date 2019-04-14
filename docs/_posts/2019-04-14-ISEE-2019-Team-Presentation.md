@@ -54,3 +54,10 @@ Our team is, as mentioned earlier, an amalgamation of engineers from different c
 ## **Communication Mediums:**
 
 Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Slack and manage our team goals via apps like Trello.
+<span align="center">
+![github]({{site.baseurl}}/images/GitHub-Mark-120px-plus.png "Display Poke card")
+![Whatsapp]({{site.baseurl}}/images/WhatsApp_Logo_1.png "Display Poke card")
+![GoogleDrive]({{site.baseurl}}/images/Google_Drive_logo.png "Display Poke card")
+![Slack]({{site.baseurl}}/images/slack_logo.jpg "Display Poke card")
+![Trello]({{site.baseurl}}/images/trello_logo.png "Display Poke card")
+</span>
