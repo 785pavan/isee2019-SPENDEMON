@@ -57,5 +57,5 @@ Apart from the most popular mediums like Whatsapp and Google drive, we intend to
 <img src="{{site.baseurl}}/images/GitHub-Mark-120px-plus.png" alt="github" width="100"/>
 <img src="{{site.baseurl}}/images/WhatsApp_Logo_1.png" alt="Whatsapp" width="100"/>
 <img src="{{site.baseurl}}/images/Google_Drive_logo.png" alt="GoogleDrive" width="100"/>
-<img src="{{site.baseurl}}/images/images/slack_logo.jpg" alt="Slack" width="100"/>
+<img src="{{site.baseurl}}/images/images/slack-logo-icon.png" alt="Slack" width="100"/>
 <img src="{{site.baseurl}}/images/trello_logo.png" alt="Trello" width="100"/>
