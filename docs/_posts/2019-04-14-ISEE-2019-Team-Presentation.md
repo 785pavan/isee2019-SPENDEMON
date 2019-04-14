@@ -72,3 +72,11 @@ As of now each of the team members have been given a temporary role which is sub
 | Quality Control and Testing     | Pavan |
 | Scrum Master    | Behnam      |
 | Blog and Presentation | Atrayee     |
+
+## ** Complimetary Skills: **
+
+Our team is, as mentioned earlier, an amalgamation of engineers from different cultures and backgrounds and as such, each of us possesses some specific set of soft and hard skills like which we intend on applying as we march forward in the project.
+
+## **Communication Mediums: **
+
+Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Slack and manage our team goals via apps like Trello.
