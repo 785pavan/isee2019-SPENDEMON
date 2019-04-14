@@ -21,6 +21,6 @@ Our team consists of a mix bag of an Electrical, Mechanical and an Electronics E
 
   ** Roles: **
 
-2. **Behnam Beladi :**
+2. **SeyedBehnam Beladi :** 
 
 3. **Pavan Kumar Kandapagari :** A guy with an insatiable thirst for knowledge and a soft spot for technology. My motivation behind this project is to produce an usable product along with testing the skills I have learnt in the previous semester.
