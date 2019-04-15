@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "Team Presentation"
+title: "Blog#1:Team Presentation"
 date: 2019-04-16
 ---
 
-# **<span style="color:#008080; font-family:Bebas Neue">Blog#1: Team Presentation</span>**
 > *"Money, like emotions, is something you must control to keep your life on the right track"
   -Natasha Munson*
 
@@ -56,6 +55,8 @@ As of now each of the team members have been given a temporary role which is sub
 Our team is, as mentioned earlier, an amalgamation of engineers from different cultures and backgrounds and as such, each of us possesses some specific set of soft and hard skills like which we intend on applying as we march forward in the project.
 
 ## **<span style= "color:#008080;font-family:Cursive">Communication Mediums:</span>**
+
+
 
 Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Slack and manage our team goals via apps like Trello.
 <img src="{{site.baseurl}}/images/GitHub-Mark-120px-plus.png" alt="github" width="100"/>
