@@ -1,15 +1,11 @@
 ---
 layout: default
 ---
-<h1 style="font-family:Bebas Neue; color:#008080; align:centre">{{ page.title }}
-<style>
-  body{
-    background-image=url("{{site.baseurl}}//images/Background.png")
-  }
-  </style>
-</h1>
+<body background="{{site.baseurl}}//images/Background.png">
+<h1 style="font-family:Bebas Neue; color:#008080; align:centre">{{ page.title }}</h1>
 <p class="meta">{{ page.date | date_to_string }}</p>
 
 <div class="post">
   {{ content }}
 </div
+</body>
