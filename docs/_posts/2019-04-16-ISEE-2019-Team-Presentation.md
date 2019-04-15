@@ -4,9 +4,9 @@ title: "Blog#1:Team Presentation"
 date: 2019-04-16
 ---
 
-> *"Money, like emotions, is something you must control to keep your life on the right track"
+> *"Money, like emotions, is something you must control to keep your life on the right track"*
 
-                                         -Natasha Munson*
+                                                   *-Natasha Munson*
 
 
 ## **<span style="color:#C2185B; font-family:Cursive">Project Motivation:</span>**
@@ -16,7 +16,7 @@ During the initial months of us coming to a foreign land for studies, we realize
 As, for our app name, we being 90's kids, this is a pun on our beloved anime *"Pokemon"* as well as a ledger to check where did our user actually *"Spend Them On?"*
 
 
-<img src="{{site.baseurl}}/images/PokeCard.jpg" alt="Pokemon Card image" width="250" align = "middle" />
+<img src="{{site.baseurl}}/images/PokeCard.jpg" alt="Pokemon Card image" width="400" align = "middle" />
 
 
 ***
