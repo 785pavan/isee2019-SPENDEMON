@@ -4,12 +4,12 @@ title: "Team Presentation"
 date: 2019-04-16
 ---
 
-# **<span style="color:Blue; font-family:Bebas Neue">Blog#1: Team Presentation</span>**
+# **<span style="color:Aqua; font-family:Bebas Neue">Blog#1: Team Presentation</span>**
 > *"Money, like emotions, is something you must control to keep your life on the right track"
   -Natasha Munson*
 
 
-## **<span style="color:Green">Project Motivation:</span>**
+## **<span style="color:#008080; font-family:Cursive">Project Motivation:</span>**
 
 During the initial months of us coming to a foreign land for studies, we realized only too late that money can seep through your hands like sand through a closed fist if you do not keep a track on it. Through this project we shall try our level best to tailor make an app which is easy to use and would require just one look to keep a track and plan a budget according to the needs and expenses of an individual.
 
@@ -20,7 +20,7 @@ As, for our app name, we being 90's kids, this is a pun on our beloved anime *"P
 
 
 ***
-## Our Team:
+## **<span style="color:#008080; font-family:Cursive">Our Team:</span>**
 <img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="250" align = "middle" />
 
 
@@ -37,7 +37,7 @@ Our team consists of a mix bag of an Electrical, Mechanical and an Electronics E
 
 
 ***
-## Project Breakdown and Roles:
+## **<span style="color:#008080; font-family:Cursive"> Project Breakdown and Roles:</span>**
 
 As of now each of the team members have been given a temporary role which is subjected to change with the course of the project as more responsibilities build up.
 
@@ -51,11 +51,11 @@ As of now each of the team members have been given a temporary role which is sub
 | Scrum Master    | Behnam      |
 | Blog and Presentation | Atrayee     |
 
-## **Complimetary Skills:**
+## **<span style="color:#008080;font-family:Cursive">Complimetary Skills:</span>**
 
 Our team is, as mentioned earlier, an amalgamation of engineers from different cultures and backgrounds and as such, each of us possesses some specific set of soft and hard skills like which we intend on applying as we march forward in the project.
 
-## **Communication Mediums:**
+## **<span style= "color:#008080;font-family:Cursive">Communication Mediums:</span>**
 
 Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Slack and manage our team goals via apps like Trello.
 <img src="{{site.baseurl}}/images/GitHub-Mark-120px-plus.png" alt="github" width="100"/>
