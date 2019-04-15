@@ -9,7 +9,7 @@ date: 2019-04-16
   -Natasha Munson*
 
 
-## Project Motivation:
+## **<span style="color:Green">Project Motivation:</span>**
 
 During the initial months of us coming to a foreign land for studies, we realized only too late that money can seep through your hands like sand through a closed fist if you do not keep a track on it. Through this project we shall try our level best to tailor make an app which is easy to use and would require just one look to keep a track and plan a budget according to the needs and expenses of an individual.
 
