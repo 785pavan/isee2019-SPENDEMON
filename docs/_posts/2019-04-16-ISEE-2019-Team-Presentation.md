@@ -5,7 +5,8 @@ date: 2019-04-16
 ---
 
 > *"Money, like emotions, is something you must control to keep your life on the right track"
-  -Natasha Munson*
+
+                                         -Natasha Munson*
 
 
 ## **<span style="color:#C2185B; font-family:Cursive">Project Motivation:</span>**
@@ -41,14 +42,14 @@ Our team consists of a mix bag of an Electrical, Mechanical and an Electronics E
 As of now each of the team members have been given a temporary role which is subjected to change with the course of the project as more responsibilities build up.
 
 
-| Steps       | Members Responsible           |
-| ------------- |:-------------:|
-| User Interface     | Pavan |
-| System Implementation    | Behnam      |
-| Content Designer | Atrayee     |
-| Quality Control and Testing     | Pavan |
-| Scrum Master    | Behnam      |
-| Blog and Presentation | Atrayee     |
+#### |: Steps       |: Members Responsible          : |
+#### |: ------------- |:-------------:|
+#### |: User Interface     |: Pavan :|
+#### |: System Implementation    |: Behnam     : |
+#### |: Content Designer |: Atrayee     :|
+#### |: Quality Control and Testing     |: Pavan |
+#### |: Scrum Master    |: Behnam     : |
+#### |: Blog and Presentation |: Atrayee     :|
 
 ## **<span style="color:#C2185B;font-family:Cursive">Complimetary Skills:</span>**
 
