@@ -4,9 +4,7 @@ title: "Blog#1:Team Presentation"
 date: 2019-04-16
 ---
 
-> *"Money, like emotions, is something you must control to keep your life on the right track"*
-
-                                                   *-Natasha Munson*
+> *"Money, like emotions, is something you must control to keep your life on the right track"  - Natasha Munson*
 
 
 ## **<span style="color:#C2185B; font-family:Cursive">Project Motivation:</span>**
