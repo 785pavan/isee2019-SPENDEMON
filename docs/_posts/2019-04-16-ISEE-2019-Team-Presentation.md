@@ -1,17 +1,16 @@
 ---
 layout: post
-title: "Team Presentation"
+title: "Blog#1:Team Presentation"
 date: 2019-04-16
 ---
 
-# **<span style="color:Aqua; font-family:Bebas Neue">Blog#1: Team Presentation</span>**
 > *"Money, like emotions, is something you must control to keep your life on the right track"
   -Natasha Munson*
 
 
 ## **<span style="color:#008080; font-family:Cursive">Project Motivation:</span>**
 
-During the initial months of us coming to a foreign land for studies, we realized only too late that money can seep through your hands like sand through a closed fist if you do not keep a track on it. Through this project we shall try our level best to tailor make an app which is easy to use and would require just one look to keep a track and plan a budget according to the needs and expenses of an individual.
+During the initial months of us coming to a foreign land for studies, we realized only too late that money can seep through your hands like sand through a closed fist if you do not keep a track on it. Being Android users ourselves, through this project we shall try our level best to tailor make an app according to the customer demand, which is easy to use and would require just one look to keep a track and plan a budget according to the needs and expenses of an individual and something we can use ourselves.
 
 As, for our app name, we being 90's kids, this is a pun on our beloved anime *"Pokemon"* as well as a ledger to check where did our user actually *"Spend Them On?"*
 
@@ -56,6 +55,8 @@ As of now each of the team members have been given a temporary role which is sub
 Our team is, as mentioned earlier, an amalgamation of engineers from different cultures and backgrounds and as such, each of us possesses some specific set of soft and hard skills like which we intend on applying as we march forward in the project.
 
 ## **<span style= "color:#008080;font-family:Cursive">Communication Mediums:</span>**
+
+
 
 Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Slack and manage our team goals via apps like Trello.
 <img src="{{site.baseurl}}/images/GitHub-Mark-120px-plus.png" alt="github" width="100"/>
