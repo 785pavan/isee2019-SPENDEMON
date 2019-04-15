@@ -4,7 +4,7 @@ title: "Team Presentation"
 date: 2019-04-16
 ---
 
-# **Blog#1: Team Presentation**
+# **<span style="color:Blue; font-family:Bebas Neue">Blog#1: Team Presentation</span>**
 > *"Money, like emotions, is something you must control to keep your life on the right track"
   -Natasha Munson*
 
@@ -21,8 +21,8 @@ As, for our app name, we being 90's kids, this is a pun on our beloved anime *"P
 
 ***
 ## Our Team:
-<img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="250" align = "left" />
-<img src="{{site.baseurl}}/images/Team_logo.jpg" alt="Team logo image" width="250" />
+<img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="250" align = "middle" />
+
 
 
 
