@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Team Presentation"
-date: 2019-04-14
+date: 2019-04-16
 ---
 
 # **Blog#1: Team Presentation**
@@ -15,26 +15,27 @@ During the initial months of us coming to a foreign land for studies, we realize
 
 As, for our app name, we being 90's kids, this is a pun on our beloved anime *"Pokemon"* as well as a ledger to check where did our user actually *"Spend Them On?"*
 
-<span align="center">
-![Pokemon Card image]({{site.baseurl}}/images/PokeCard.jpg "Display Poke card")
-</span>
+
+<img src="{{site.baseurl}}/images/PokeCard.jpg" alt="Pokemon Card image" width="250" align = "center" />
+
+
+***
 ## Our Team:
-<img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="250"/>
-<span align="center">
+<img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="250" align = "center" />
+
 
 
 Our team consists of a mix bag of an Electrical, Mechanical and an Electronics Engineer, who have now dived headfirst into the sea of Computer Science and are  really excited to develop an app and show it off to their friends and peers back home. Without further ado, here we introduce our team members:
 
 **1. Atrayee Neog :** A struggling Electronic Engineer who found passion and comfort behind the programming logics and algorithms of Computer Science. My motivation behind doing this project is to testify my theoretical knowledge into an implementation in real life and to channelize my ideas into building something worthwhile.
 
-**2. SeyedBehnam Beladi :** In a world full of innovative ideas, app development is a wonderful tool to implement them. As person who always has new ideas, I believe learning how to make phone applications is a perfect way to developing them. It also opens up a door to new opportunities in my future career.
+**2. Seyed Behnam Beladi :** In a world full of innovative ideas, app development is a wonderful tool to implement them. As person who always has new ideas, I believe learning how to make phone applications is a perfect way to developing them. It also opens up a door to new opportunities in my future career.
 
 **3. Pavan Kumar Kandapagari :** A guy with an insatiable thirst for knowledge and a soft spot for technology. My motivation behind this project is to produce an usable product along with testing the skills I have learnt in the previous semester.
-
+***
 ## Project Breakdown and Roles:
 
 As of now each of the team members have been given a temporary role which is subjected to change with the course of the project as more responsibilities build up.
-
 
 
 | Steps       | Members Responsible           |
@@ -53,9 +54,8 @@ Our team is, as mentioned earlier, an amalgamation of engineers from different c
 ## **Communication Mediums:**
 
 Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Slack and manage our team goals via apps like Trello.
-
 <img src="{{site.baseurl}}/images/GitHub-Mark-120px-plus.png" alt="github" width="100"/>
-<img src="{{site.baseurl}}/images/WhatsApp_Logo_1.png" alt="Whatsapp" width="100"/>
-<img src="{{site.baseurl}}/images/Google_Drive_logo.png" alt="GoogleDrive" width="100"/>
-<img src="{{site.baseurl}}/images/images/slack-logo-icon.png" alt="Slack" width="100"/>
-<img src="{{site.baseurl}}/images/trello_logo.png" alt="Trello" width="100"/>
+<img src="{{site.baseurl}}/images/WhatsApp_Logo_1.png" alt="Whatsapp" width="25"/>
+<img src="{{site.baseurl}}/images/Google_Drive_logo.png" alt="GoogleDrive" width="25"/>
+<img src="{{site.baseurl}}/images/trello_logo.png" alt="Trello" width="25"/>
+<img src="{{site.baseurl}}/images/slack-logo-icon.png" alt="Trello" width="25"/>
