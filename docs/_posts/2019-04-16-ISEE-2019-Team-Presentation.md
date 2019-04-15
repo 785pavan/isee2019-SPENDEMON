@@ -4,7 +4,7 @@ title: "Team Presentation"
 date: 2019-04-16
 ---
 
-# **<span style="color:Aqua; font-family:Bebas Neue">Blog#1: Team Presentation</span>**
+# **<span style="color:#008080; font-family:Bebas Neue">Blog#1: Team Presentation</span>**
 > *"Money, like emotions, is something you must control to keep your life on the right track"
   -Natasha Munson*
 
