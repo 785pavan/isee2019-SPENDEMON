@@ -41,28 +41,33 @@ Our team consists of a mix bag of an Electrical, Mechanical and an Electronics E
 
 As of now each of the team members have been given a temporary role which is subjected to change with the course of the project as more responsibilities build up.
 
+ | Steps       | Members Responsible           |
+ |------------- |:-------------:|
+ | User Interface     | Pavan |
+ | System Implementation    | Behnam      |
+ | Content Designer | Atrayee     |
+ | Quality Control and Testing     | Pavan |
+ | Scrum Master    | Behnam      |
+ | Blog and Presentation | Atrayee     |
 
-#### | Steps       | Members Responsible           |
-#### |:------------- |:-------------:|
-#### | User Interface     | Pavan |
-#### | System Implementation    | Behnam      |
-#### | Content Designer | Atrayee     |
-#### | Quality Control and Testing     | Pavan |
-#### | Scrum Master    | Behnam      |
-#### | Blog and Presentation | Atrayee     |
 
 ## **<span style="color:#C2185B;font-family:Cursive">Complimetary Skills:</span>**
 
 Our team is, as mentioned earlier, an amalgamation of engineers from different cultures and backgrounds and as such, each of us possesses some specific set of soft and hard skills like which we intend on applying as we march forward in the project.
 
+**Atrayee:**   Java, Basic HTML, Design Skills, Creative Writing, Managerial qualities, Intuitive Reasoning, Time Management.
+
+**Behnam:** Android Knowledge from online courses, Java, Leadership, Assertiveness, Problem solving.
+
+**Pavan:** Java, Preliminary XML knowledge, Software Testing and Quality Control, Team Player, Critical Thinking and Work ethic.
 ## **<span style= "color:#C2185B;font-family:Cursive">Communication Mediums:</span>**
 
 
 
-Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Slack and manage our team goals via apps like Trello.
+Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Github and Slack. We shall manage our team goals via apps like Trello.
 
 <img src="{{site.baseurl}}/images/GitHub-Mark-120px-plus.png" alt="github" width="50"/>
 <img src="{{site.baseurl}}/images/WhatsApp_Logo_1.png" alt="Whatsapp" width="50"/>
 <img src="{{site.baseurl}}/images/Google_Drive_logo.png" alt="GoogleDrive" width="50"/>
 <img src="{{site.baseurl}}/images/trello_logo.png" alt="Trello" width="50"/>
-<img src="{{site.baseurl}}/images/slack-logo-icon.png" alt="Trello" width="50"/>
+<img src="{{site.baseurl}}/images/slack-logo-icon.png" alt="Slack" width="50"/>
