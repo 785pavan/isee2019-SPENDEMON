@@ -21,7 +21,9 @@ As, for our app name, we being 90's kids, this is a pun on our beloved anime *"P
 
 ***
 ## Our Team:
-<img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="250" align = "middle" />
+<img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="250" align = "left" />
+<img src="{{site.baseurl}}/images/Team_logo.jpg" alt="Team logo image" width="250" />
+
 
 
 
@@ -56,8 +58,8 @@ Our team is, as mentioned earlier, an amalgamation of engineers from different c
 ## **Communication Mediums:**
 
 Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Slack and manage our team goals via apps like Trello.
-<img src="{{site.baseurl}}/images/GitHub-Mark-120px-plus.png" alt="github" width="30"/>
-<img src="{{site.baseurl}}/images/WhatsApp_Logo_1.png" alt="Whatsapp" width="30"/>
-<img src="{{site.baseurl}}/images/Google_Drive_logo.png" alt="GoogleDrive" width="30"/>
-<img src="{{site.baseurl}}/images/trello_logo.png" alt="Trello" width="30"/>
-<img src="{{site.baseurl}}/images/slack-logo-icon.png" alt="Trello" width="30"/>
+<img src="{{site.baseurl}}/images/GitHub-Mark-120px-plus.png" alt="github" width="100"/>
+<img src="{{site.baseurl}}/images/WhatsApp_Logo_1.png" alt="Whatsapp" width="100"/>
+<img src="{{site.baseurl}}/images/Google_Drive_logo.png" alt="GoogleDrive" width="100"/>
+<img src="{{site.baseurl}}/images/trello_logo.png" alt="Trello" width="100"/>
+<img src="{{site.baseurl}}/images/slack-logo-icon.png" alt="Trello" width="100"/>
