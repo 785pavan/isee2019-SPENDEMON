@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Spendemon</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="gotta_track_em_all">...gotta track \'em all</string>
+    <string name="enter">Enter</string>
+</resources>
