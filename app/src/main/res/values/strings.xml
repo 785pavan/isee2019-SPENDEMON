@@ -12,6 +12,7 @@
     <string name="repeat_password">Repeat Password</string>
     <string name="password">Password</string>
     <string name="button">Button</string>
+    <string name="name_">Name:</string>
     <string-array name="currency">
         <item>Euro</item>
         <item>Rupees</item>
