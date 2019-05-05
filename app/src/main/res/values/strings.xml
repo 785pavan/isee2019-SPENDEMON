@@ -5,4 +5,20 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="gotta_track_em_all">...gotta track \'em all</string>
     <string name="enter">Enter</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="name">Name</string>
+    <string name="enter_recovery_number">Enter recovery number</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="password">Password</string>
+    <string name="button">Button</string>
+    <string-array name="currency">
+        <item>Euro</item>
+        <item>Rupees</item>
+        <item>Dollars</item>
+    </string-array>
+    <string-array name="language">
+        <item>English</item>
+        <item>Deutsch</item>
+    </string-array>
 </resources>
