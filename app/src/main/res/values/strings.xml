@@ -44,5 +44,7 @@
     <string name="_minus">-</string>
     <string name="_plus">+</string>
     <string name="_c">C</string>
-    <string name="category">Category:</string>
+    <string name="category">Category</string>
+    <string name="amount">Amount</string>
+    <string name="date">Date</string>
 </resources>
