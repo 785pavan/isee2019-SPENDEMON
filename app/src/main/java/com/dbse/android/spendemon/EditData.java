@@ -24,6 +24,12 @@ public class EditData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_data);
 
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
         sCategory = findViewById(R.id.sCategory);
         etAmount = findViewById(R.id.etAmount);
         etdate = findViewById(R.id.etDate);
