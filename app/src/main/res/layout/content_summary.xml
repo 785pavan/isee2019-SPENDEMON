@@ -18,8 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TabWidget
-            android:id="@+id/tabWidget">
+        <TabWidget android:id="@+id/tabWidget">
 
             <TextView
                 android:layout_width="wrap_content"

@@ -115,7 +115,7 @@ public class FullscreenActivity extends AppCompatActivity {
         // while interacting with the UI.
         findViewById(R.id.enter_button).setOnTouchListener(mDelayHideTouchListener);
 
-        button = (Button) findViewById(R.id.enter_button);
+        button = findViewById(R.id.enter_button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,14 +123,14 @@ public class FullscreenActivity extends AppCompatActivity {
                 openNextActivity();
             }
         });
-        try {
+        /*try {
             TimeUnit.SECONDS.sleep(5);
             openNextActivity();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-
+*/
 
     }
 

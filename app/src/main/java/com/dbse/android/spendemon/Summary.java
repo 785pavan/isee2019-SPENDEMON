@@ -10,10 +10,13 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.TabWidget;
+import android.widget.TableLayout;
+import android.widget.TextView;
 
 public class Summary extends AppCompatActivity {
 
-    TabWidget tabWidget ;
+    /*//TabWidget tabWidget ;
+    TableLayout tableLayout;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,13 @@ public class Summary extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        tabWidget = findViewById(R.id.tabWidget);
+        /*tableLayout = findViewById(R.id.tableLayout);
+        //tabWidget = findViewById(R.id.tabWidget);
+        TabWidget row1 = new TabWidget(this);
+        TextView textView1 = new TextView(this);
+        row1.addView(textView1);
+        tableLayout.addView(row1);*/
+
         FloatingActionButton fabPlus = findViewById(R.id.fabPlus);
         fabPlus.setOnClickListener(new View.OnClickListener() {
             @Override
