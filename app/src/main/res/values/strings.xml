@@ -23,8 +23,12 @@
         <item>Deutsch</item>
     </string-array>
     <string-array name="categories">
-        <item>Food</item>
+        <item>---</item>
+        <item>Rent</item>
+        <item>Insurance</item>
+        <item>Groceries</item>
         <item>Travel</item>
+        <item>Restaurant</item>
     </string-array>
     <string name="title_activity_summary">Summary</string>
     <string name="_7">7</string>
