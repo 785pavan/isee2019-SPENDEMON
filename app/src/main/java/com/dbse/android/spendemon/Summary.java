@@ -1,7 +1,9 @@
 package com.dbse.android.spendemon;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.dbse.android.spendemon.model.entry;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -9,15 +11,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.Spinner;
 import android.widget.TabWidget;
 import android.widget.TableLayout;
 import android.widget.TextView;
+
+import java.util.List;
 
 public class Summary extends AppCompatActivity {
 
     /*//TabWidget tabWidget ;
     TableLayout tableLayout;*/
 
+    private List<entry> entries;
+    private final String INCOME = "income";
+    private final String EXPENSE = "expense";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,16 +44,20 @@ public class Summary extends AppCompatActivity {
         fabPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(getApplicationContext(), EditData.class);
+                intent.putExtra(INCOME, "income");
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
             }
         });
         FloatingActionButton fabMinus = findViewById(R.id.fabMinus);
         fabMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(getApplicationContext(),EditData.class);
+                intent.putExtra(EXPENSE,"expense");
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
             }
         });
     }
