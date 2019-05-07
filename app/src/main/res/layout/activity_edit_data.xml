@@ -41,6 +41,7 @@
                 app:layout_constraintVertical_bias="0.247" />
 
             <Spinner
+                android:id="@+id/sCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/categories">
@@ -60,6 +61,7 @@
                 android:text="@string/amount" />
 
             <EditText
+                android:id="@+id/etAmount"
                 android:layout_width="128dp"
                 android:layout_height="wrap_content"
                 android:hint="Total Amount "

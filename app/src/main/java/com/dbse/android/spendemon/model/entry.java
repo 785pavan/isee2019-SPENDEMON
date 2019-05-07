@@ -37,4 +37,11 @@ public class entry {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    public entry() {
+        this.category = null;
+        this.Amount = 0;
+        this.date = null;
+
+    }
 }
