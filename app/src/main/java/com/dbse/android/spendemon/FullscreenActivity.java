@@ -123,14 +123,13 @@ public class FullscreenActivity extends AppCompatActivity {
                 openNextActivity();
             }
         });
-        /*try {
+        try {
             TimeUnit.SECONDS.sleep(5);
             openNextActivity();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-*/
 
     }
 
