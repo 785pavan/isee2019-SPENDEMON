@@ -22,6 +22,10 @@
         <item>English</item>
         <item>Deutsch</item>
     </string-array>
+    <string-array name="categories">
+        <item>Food</item>
+        <item>Travel</item>
+    </string-array>
     <string name="title_activity_summary">Summary</string>
     <string name="_7">7</string>
     <string name="_8">8</string>
