@@ -49,10 +49,18 @@ public class SignUp extends AppCompatActivity {
             }
         });
         Button toEdit = findViewById(R.id.toedit);
+        Button toSummary = findViewById(R.id.tosum);
         toEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), EditData.class);
+                startActivity(intent);
+            }
+        });
+        toSummary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Summary.class);
                 startActivity(intent);
             }
         });
