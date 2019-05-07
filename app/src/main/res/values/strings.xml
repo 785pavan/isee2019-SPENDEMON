@@ -22,4 +22,5 @@
         <item>English</item>
         <item>Deutsch</item>
     </string-array>
+    <string name="title_activity_summary">Summary</string>
 </resources>
