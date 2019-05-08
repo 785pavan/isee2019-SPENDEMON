@@ -23,6 +23,7 @@ public class Summary extends AppCompatActivity {
     /*//TabWidget tabWidget ;
     TableLayout tableLayout;*/
 
+
     private List<entry> entries;
     private final String INCOME = "income";
     private final String EXPENSE = "expense";
