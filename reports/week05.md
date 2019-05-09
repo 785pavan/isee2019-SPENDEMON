@@ -17,12 +17,12 @@
     * Designing and implementing in the tool Lucidchart (https://lucidchart.com)
     * Explaining the requirements in the above diagrams results in a better comprehension of what needs to be done.
     * Getting familiar and also practice the Use Case Diagrams and Class Diagrams.
-    * #### **Section 3:**
-     * **To-do list:**
-      * Find necessary libraries
-      * Decide on the basic structure
-      * Assigning tasks
-      * Start the implementation
-    * #### **Section 4:**
-    * **Agendas:**
-     * Issues must be made in GitHub and sent to the T.A.
+* #### **Section 3:**
+  * **To-do list:**
+    * Find necessary libraries
+    * Decide on the basic structure
+    * Assigning tasks
+    * Start the implementation
+* #### **Section 4:**
+  * **Agendas:**
+    * Issues must be made in GitHub and sent to the T.A.
