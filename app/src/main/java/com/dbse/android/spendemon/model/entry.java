@@ -45,12 +45,14 @@ public class entry {
         this.date = null;
 
     }
+
     private static int AmountId = 0;
-    private static Date dateID = new Date ( "2009/12/31" );
-    public static ArrayList<entry> createEntryArrayList(int numEntries){
+    private static Date dateID = new Date("2009/12/31");
+
+    public static ArrayList<entry> createEntryArrayList(int numEntries) {
         ArrayList<entry> entries = new ArrayList<>();
-        for (int i=0; i<numEntries;i++){
-            entries.add(new entry("dummy", ++AmountId, dateID));
+        for (int i = 0; i < numEntries; i++) {
+            entries.add(new entry("dummy " + i, ++AmountId, dateID));
         }
         return entries;
     }
