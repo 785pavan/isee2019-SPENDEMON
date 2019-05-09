@@ -11,23 +11,18 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.View;
 
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class Summary extends AppCompatActivity {
@@ -36,7 +31,7 @@ public class Summary extends AppCompatActivity {
     TableLayout tableLayout;*/
 
 
-    private ArrayList<entry> entries;
+    private ArrayList<entry> entries = new ArrayList<>();
     private final String INCOME = "income";
     private final String EXPENSE = "expense";
 
@@ -48,7 +43,8 @@ public class Summary extends AppCompatActivity {
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
 
-        entries = entry.createEntryArrayList(20);
+        readJson();
+        //entries = entry.createEntryArrayList(20);
 
         entryAdaptor adaptor = new entryAdaptor(entries);
         rvEntries.setAdapter(adaptor);
@@ -81,11 +77,19 @@ public class Summary extends AppCompatActivity {
         try {
             JSONArray jArray = new JSONArray(readJSONFromAsset());
             for (int i = 0; i < jArray.length(); ++i) {
-                String name = jArray.getJSONObject(i).getString("name");// name of the country
-                String dial_code = jArray.getJSONObject(i).getString("dial_code"); // dial code of the country
-                String code = jArray.getJSONObject(i).getString("code"); // code of the country
-                ArrayList<String> countryListArray = null;
-                countryListArray.add(dial_code + "  (" + name + ")");
+                entry en = new entry();
+                String Category = jArray.getJSONObject(i).getString("Category");
+                Log.d("myTag",Category);
+                double Amount = jArray.getJSONObject(i).getDouble("Amount");
+                Log.d("myTag",String.valueOf(Amount));
+                Date date = new Date(jArray.getJSONObject(i).getString("Date"));
+                Log.d("myTag",date.toString());
+                en.setCategory(Category);
+                en.setAmount(Amount);
+                en.setDate(date);
+                Log.d("myTag",en.toString());
+                entries.add(en);
+                Log.d("myTag",entries.toString());
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -97,7 +101,7 @@ public class Summary extends AppCompatActivity {
     private String readJSONFromAsset() {
         String json;
         try {
-            InputStream is = getAssets().open("country_list.json");
+            InputStream is = getAssets().open("ExpenseIncomeData.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

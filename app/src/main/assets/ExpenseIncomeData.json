@@ -1,0 +1,26 @@
+[
+  {
+    "Category": "Food",
+    "Amount": 250,
+    "Date": "2009/12/31"
+  },
+  {
+    "Category": "Rent",
+    "Amount": 358,
+    "Date": "2009/12/31"
+  },
+  {
+    "Category": "Insurance",
+    "Amount": 355,
+    "Date": "2009/12/31"
+  },
+  {
+    "Category": "Groceries",
+    "Amount": 213,
+    "Date": "2009/12/31"
+  },
+  {
+    "Category": "Travel",
+    "Amount": 1684,
+    "Date": "2009/12/31"
+  }]

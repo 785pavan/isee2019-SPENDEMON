@@ -6,10 +6,10 @@ import java.util.Date;
 public class entry {
 
     private String category;
-    private float Amount;
+    private double Amount;
     private Date date;
 
-    public entry(String category, float amount, Date date) {
+    public entry(String category, double amount, Date date) {
         this.category = category;
         this.Amount = amount;
         this.date = date;
@@ -23,11 +23,11 @@ public class entry {
         this.category = category;
     }
 
-    public float getAmount() {
+    public double getAmount() {
         return Amount;
     }
 
-    public void setAmount(float amount) {
+    public void setAmount(double amount) {
         Amount = amount;
     }
 
@@ -39,11 +39,19 @@ public class entry {
         this.date = date;
     }
 
+    @Override
+    public String toString() {
+        return "entry{" +
+                "category='" + category + '\'' +
+                ", Amount=" + Amount +
+                ", date=" + date +
+                '}';
+    }
+
     public entry() {
         this.category = null;
         this.Amount = 0;
         this.date = null;
-
     }
 
     private static int AmountId = 0;
