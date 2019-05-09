@@ -9,6 +9,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.widget.Spinner;
@@ -16,7 +18,9 @@ import android.widget.TabWidget;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
+
 
 public class Summary extends AppCompatActivity {
 
@@ -24,7 +28,8 @@ public class Summary extends AppCompatActivity {
     TableLayout tableLayout;*/
 
 
-    private List<entry> entries;
+
+    private ArrayList<entry> entries;
     private final String INCOME = "income";
     private final String EXPENSE = "expense";
     @Override
@@ -33,6 +38,13 @@ public class Summary extends AppCompatActivity {
         setContentView(R.layout.activity_summary);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        RecyclerView rvEntries = findViewById(R.id.rvEntries);
+
+        entries = entry.createEntryArrayList(20);
+
+        entryAdaptor adaptor = new entryAdaptor(entries);
+        rvEntries.setAdapter(adaptor);
+        rvEntries.setLayoutManager(new LinearLayoutManager(this));
 
         /*tableLayout = findViewById(R.id.tableLayout);
         //tabWidget = findViewById(R.id.tabWidget);
