@@ -29,7 +29,7 @@ public class EditData extends AppCompatActivity {
     private Spinner sCategory;
     private EditText etAmount;
     private EditText etdate;
-    private static final String FILE_NAME = "data";
+    private static final String FILE_NAME = "ExpenseIncomeData";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
