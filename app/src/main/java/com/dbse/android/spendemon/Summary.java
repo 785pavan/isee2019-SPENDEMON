@@ -45,17 +45,18 @@ public class Summary extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
-        //readJson();
-        entries = entry.createEntryArrayList(20);
+        ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries");
 
-        ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries", ArrayList.class);
-        //entries = (ArrayList<entry>) Temp.clone();
+        //readJson();
+        entries.clear();
+
+        assert Temp != null;
+        entries.addAll(Temp);
         entryAdaptor adaptor = new entryAdaptor(entries);
         rvEntries.setAdapter(adaptor);
         rvEntries.setLayoutManager(new LinearLayoutManager(this));
 
-        entries = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries", ArrayList.class);
-        Log.d(TAG, "onClick: "+entries.toString());
+        Log.d(TAG, "onClick: "+Temp.get(0).toString());
         FloatingActionButton fabPlus = findViewById(R.id.fabPlus);
         fabPlus.setOnClickListener(new View.OnClickListener() {
             @Override

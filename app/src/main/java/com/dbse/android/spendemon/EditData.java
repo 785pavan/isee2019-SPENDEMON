@@ -33,6 +33,7 @@ import java.util.List;
 
 import com.dbse.android.spendemon.model.entry;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -90,7 +91,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 entry entry = new entry(cat, amount, date);
                 entries.add(entry);
-                ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries", ArrayList.class);
+                ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries");
                 if (Temp == null) Temp = new ArrayList<entry>();
                 else Temp.addAll(entries);
                 saveObjectToSharedPreference(getApplicationContext(), "summary", "entries", Temp);
@@ -146,8 +147,9 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         sharedPreferencesEditor.apply();
     }
 
-    public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context, String preferenceFileName, String preferenceKey, Type classType) {
+    public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context, String preferenceFileName, String preferenceKey) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+        Type classType = new TypeToken<ArrayList<entry>>() {}.getType();
         if (sharedPreferences.contains(preferenceKey)) {
             final Gson gson = new Gson();
             return gson.fromJson(sharedPreferences.getString(preferenceKey, ""), classType);
