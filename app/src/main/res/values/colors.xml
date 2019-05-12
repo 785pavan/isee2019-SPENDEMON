@@ -5,4 +5,7 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="black_overlay">#66000000</color>
+    <color name="background1">#E2F0F5</color>
+    <color name="changeSignUpMode1">#FF3F51B5</color>
+
 </resources>
