@@ -35,7 +35,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
     private Integer[] passwordArray;
     TextView  changeSignUpModeTextView;
     Boolean signUpModeActive;
-    Button signUpbutton;
+    Button signUpButton;
     RelativeLayout relativeLayout;
     ConstraintLayout constraintLayout;
     ImageView teamLogo;
@@ -50,6 +50,10 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
             } else if (String.valueOf(usernameField.getText()).equals("")) {
                 Log.i("Error2", "The Username field should not be empty");
                 Toast.makeText(getApplicationContext(), "The Username field should not be empty", Toast.LENGTH_LONG).show();
+            }
+            else if (String.valueOf(passwordField.getText()).equals("")) {
+                Log.i("Error2", "The Password field should not be empty");
+                Toast.makeText(getApplicationContext(), "The Password field should not be empty", Toast.LENGTH_LONG).show();
             }
             //        else if (!usernameA1.equals(null)){
             //            Log.i("Error3","You have already Created a username");
@@ -87,7 +91,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
         signUpModeActive = true;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signuplogin);
-        signUpbutton = (Button) findViewById(R.id.buttonSignUp);
+        signUpButton = (Button) findViewById(R.id.buttonSignUp);
         teamLogo = (ImageView) findViewById(R.id.teamLogo);
 //        relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout1);
         constraintLayout = (ConstraintLayout) findViewById(R.id.relativeLayout1);
@@ -116,12 +120,12 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
 
                 signUpModeActive = false;
                 changeSignUpModeTextView.setText(getString(R.string.signUp1));
-                signUpbutton.setText(getString(R.string.LogIn1));
+                signUpButton.setText(getString(R.string.LogIn1));
             }else{
 
                 signUpModeActive = true;
                 changeSignUpModeTextView.setText(getString(R.string.LogIn1));
-                signUpbutton.setText(getString(R.string.signUp1));
+                signUpButton.setText(getString(R.string.signUp1));
             }
             Log.i("AppInfo", "Change the mode");
         } else if (v.getId() == R.id.teamLogo || v.getId() == R.id.relativeLayout1){
@@ -138,6 +142,9 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
 //        return false;
 
         if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_UP){
+//            if (usernameField.getText() == null){
+//                Log.i("Error4", " One of the fields are empty!");
+//            }
             signUpOrLogIn(v);
         }
 
