@@ -58,17 +58,17 @@ public class EditData extends AppCompatActivity {
         etAmount = findViewById(R.id.etAmount);
         etdate = findViewById(R.id.etDate);
 
-        entry.setAmount(Integer.parseInt(etAmount.getText().toString()));
+        entry.setAmount(etAmount.getText().toString().equals("") ? 0 : Integer.parseInt(etAmount.getText().toString()));
         entry.setCategory(sCategory.getSelectedItem().toString());
         try {
             entry.setDate(new SimpleDateFormat("dd/mm/yyyy").parse(etdate.getText().toString()));
         } catch (ParseException e) {
-            Toast.makeText(getApplicationContext(),"Date format wrong",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Date format wrong", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }
 
-    private void writeToJson(){
+    private void writeToJson() {
         File file = new File(this.getFilesDir(), FILE_NAME);
         FileReader fileReader = null;
         FileWriter fileWriter = null;
