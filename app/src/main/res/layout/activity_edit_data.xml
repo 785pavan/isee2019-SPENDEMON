@@ -21,7 +21,7 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -79,8 +79,9 @@
 
             <Spinner
                 android:id="@+id/sCategory"
-                android:layout_width="106dp"
-                android:layout_height="match_parent">
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
             </Spinner>
         </LinearLayout>
@@ -88,7 +89,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp">
 
             <TextView
                 android:id="@+id/tvAmount"
