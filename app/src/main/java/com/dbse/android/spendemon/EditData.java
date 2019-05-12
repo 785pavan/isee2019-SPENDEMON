@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -33,6 +34,7 @@ import org.json.JSONObject;
 
 public class EditData extends AppCompatActivity implements android.widget.AdapterView.OnItemSelectedListener {
 
+    private static final String TAG = "myTag";
     private entry entry;
     private Spinner sCategory;
     private Spinner sType;
@@ -43,8 +45,6 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     private Object AdapterView;
 
 
-
-
     private static final String FILE_NAME = "NewFile";
 
 
@@ -52,7 +52,11 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_data);
+        sType = findViewById(R.id.sType);
+        sCategory = findViewById(R.id.sCategory);
+        sType.setOnItemSelectedListener(this);
         bSave = findViewById(R.id.bSave);
+
 
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,28 +65,28 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
                 startActivity(intent);
             }
         });
-        sType = findViewById(R.id.sType);
-        sCategory = findViewById(R.id.sCategory);
-        sType.setOnItemSelectedListener(this);
+
     }
 
     @Override
     public void onItemSelected(android.widget.AdapterView<?> arg0, View arg1, int arg2,
                                long arg3) {
         // TODO Auto-generated method stub
-        String sp1= String.valueOf(sType.getSelectedItem());
+        String sp1 = String.valueOf(sType.getSelectedItem());
         Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
-        if(sp1.contentEquals("Incomes")) {
+        if (sp1.contentEquals("Incomes")) {
             String[] incomes = getApplicationContext().getResources().getStringArray(R.array.Incomes);
-
+            Log.d(TAG, "onCreate: "+ incomes.toString());
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_dropdown_item, incomes);
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             dataAdapter.notifyDataSetChanged();
             sCategory.setAdapter(dataAdapter);
         }
-        if(sp1.contentEquals("Expenses")) {
+        if (sp1.contentEquals("Expenses")) {
             String[] expenses = getApplicationContext().getResources().getStringArray(R.array.Expenses);
+            Log.d(TAG, "onCreate: "+ expenses.toString());
+
             ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_item, expenses);
             dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -90,6 +94,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
             sCategory.setAdapter(dataAdapter2);
         }
     }
+
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
         Toast.makeText(getApplicationContext(), "No type selected", Toast.LENGTH_LONG).show();

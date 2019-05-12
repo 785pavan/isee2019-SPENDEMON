@@ -40,8 +40,8 @@
     </string-array>
     <string-array name="type">
         <item>---</item>
-        <item>Income</item>
-        <item>Expense</item>
+        <item>Incomes</item>
+        <item>Expenses</item>
     </string-array>
 
     <string name="title_activity_summary">Summary</string>
