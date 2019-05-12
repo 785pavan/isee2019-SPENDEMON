@@ -71,5 +71,7 @@
     <string name="passwordText1">Password</string>
     <string name="LogIn1">Log In</string>
     <string name="signUp1">Sign Up</string>
+    <string name="add_date">Add Date</string>
+    <string name="total_amount">Total Amount</string>
     <!--<string name="signUp1">Sign Up</string>-->
 </resources>
