@@ -11,7 +11,7 @@
     <string name="enter_recovery_number">Enter recovery number</string>
     <string name="repeat_password">Repeat Password</string>
     <string name="password">Password</string>
-    <string name="button">Button</string>
+    <string name="button">Save</string>
     <string name="name_">Name:</string>
     <string-array name="currency">
         <item>Euro</item>
