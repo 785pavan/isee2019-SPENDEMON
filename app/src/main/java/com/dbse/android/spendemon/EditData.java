@@ -41,11 +41,10 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     private EditText etAmount;
     private EditText etdate;
     private Button bSave;
-
-    private Object AdapterView;
-
-
     private static final String FILE_NAME = "NewFile";
+
+    private Intent intent = getIntent();
+    private String type = intent.getStringExtra("type");
 
 
     @Override
@@ -56,8 +55,9 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         sCategory = findViewById(R.id.sCategory);
         sType.setOnItemSelectedListener(this);
         bSave = findViewById(R.id.bSave);
-
-
+        ArrayAdapter arrayAdapter = (ArrayAdapter) sType.getAdapter();
+        int spinnerPos = arrayAdapter.getPosition(type);
+        sType.setSelection(spinnerPos);
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
