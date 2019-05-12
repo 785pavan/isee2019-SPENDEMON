@@ -114,6 +114,7 @@ public class Summary extends AppCompatActivity {
             ex.printStackTrace();
             return null;
         }
+
         return json;
     }
 }
