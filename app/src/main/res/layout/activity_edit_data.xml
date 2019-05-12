@@ -120,6 +120,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:hint="dd/mm/yyyy"
                 android:text="@string/date"
                 android:layout_weight="1"/>
 
