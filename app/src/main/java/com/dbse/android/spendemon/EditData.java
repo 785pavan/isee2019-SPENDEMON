@@ -23,6 +23,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,12 +32,14 @@ import java.util.Date;
 import java.util.List;
 
 import com.dbse.android.spendemon.model.entry;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import static android.widget.Toast.LENGTH_LONG;
+import static com.dbse.android.spendemon.Summary.entries;
 
 public class EditData extends AppCompatActivity implements android.widget.AdapterView.OnItemSelectedListener {
 
@@ -72,21 +75,25 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
             @Override
             public void onClick(View v) {
                 final String cat = sCategory.getSelectedItem().toString();
-                final double amount ;
-                if (etAmount.getText().toString().equals("")){
+                final double amount;
+                if (etAmount.getText().toString().equals("")) {
                     amount = 0;
-                }else amount = Double.parseDouble(etAmount.getText().toString());
-                Date date = new Date(2019,11,10);
+                } else amount = Double.parseDouble(etAmount.getText().toString());
+                Date date = new Date(2019, 11, 10);
                 try {
                     date = new SimpleDateFormat("dd/mm/yyyy").parse(etdate.getText().toString());
                 } catch (ParseException e) {
-                    Toast.makeText(getApplicationContext(),"Enter valid date",LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Enter valid date", LENGTH_LONG).show();
                     e.printStackTrace();
                 }
 
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 entry entry = new entry(cat, amount, date);
-                Summary.entries.add(entry);
+                entries.add(entry);
+                ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries", ArrayList.class);
+                if (Temp == null) Temp = new ArrayList<entry>();
+                else Temp.addAll(entries);
+                saveObjectToSharedPreference(getApplicationContext(), "summary", "entries", Temp);
                 startActivity(intent);
             }
         });
@@ -128,10 +135,23 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     @Override
     protected void onStop() {
         super.onStop();
-        SharedPreferences sharedPreferences = this.getSharedPreferences("Storage", Context.MODE_PRIVATE);
-        sharedPreferences.edit().putString("catogory", sCategory.getSelectedItem().toString()).apply();
-        Log.d(TAG, "onCreate: " + sharedPreferences.getString("catogory", ""));
     }
 
+    public static void saveObjectToSharedPreference(Context context, String preferenceFileName, String serializedObjectKey, Object object) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+        final Gson gson = new Gson();
+        String serializedObject = gson.toJson(object);
+        sharedPreferencesEditor.putString(serializedObjectKey, serializedObject);
+        sharedPreferencesEditor.apply();
+    }
 
+    public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context, String preferenceFileName, String preferenceKey, Type classType) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+        if (sharedPreferences.contains(preferenceKey)) {
+            final Gson gson = new Gson();
+            return gson.fromJson(sharedPreferences.getString(preferenceKey, ""), classType);
+        }
+        return null;
+    }
 }

@@ -25,8 +25,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 
+import static com.dbse.android.spendemon.EditData.getSavedObjectFromPreference;
+
 
 public class Summary extends AppCompatActivity {
+    private static final String TAG = "myTag";
 
     /*//TabWidget tabWidget ;
     TableLayout tableLayout;*/
@@ -43,13 +46,15 @@ public class Summary extends AppCompatActivity {
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
         //readJson();
-        //entries = entry.createEntryArrayList(20);
+        entries = entry.createEntryArrayList(20);
 
+        ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries", ArrayList.class);
         entryAdaptor adaptor = new entryAdaptor(entries);
         rvEntries.setAdapter(adaptor);
         rvEntries.setLayoutManager(new LinearLayoutManager(this));
 
-
+        entries = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries", ArrayList.class);
+        Log.d(TAG, "onClick: "+entries.toString());
         FloatingActionButton fabPlus = findViewById(R.id.fabPlus);
         fabPlus.setOnClickListener(new View.OnClickListener() {
             @Override
