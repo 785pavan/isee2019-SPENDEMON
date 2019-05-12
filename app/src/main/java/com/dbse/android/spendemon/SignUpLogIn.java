@@ -7,6 +7,7 @@ package com.dbse.android.spendemon;
 
 //import android.support.constraint.ConstraintLayout;
 //import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -65,6 +66,8 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
             if (String.valueOf(usernameField.getText()).equals(usernameA1)) {
                 if (Integer.valueOf(String.valueOf(passwordField.getText())).equals(passwordA1)){
                     Toast.makeText(getApplicationContext(), "You are Logged in as: ".concat(usernameA1), Toast.LENGTH_LONG).show();
+                    Intent intent1 = new Intent(this, Summary.class);
+                    startActivity(intent1);
                 }else{
                     Toast.makeText(getApplicationContext(), "Wrong password!", Toast.LENGTH_LONG).show();
                 }
