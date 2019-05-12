@@ -63,6 +63,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         });
         sType = findViewById(R.id.sType);
         sCategory = findViewById(R.id.sCategory);
+        sType.setOnItemSelectedListener(this);
     }
 
     @Override
