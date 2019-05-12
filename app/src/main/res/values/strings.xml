@@ -22,7 +22,7 @@
         <item>English</item>
         <item>Deutsch</item>
     </string-array>
-    <string-array name="categories">
+    <string-array name="Expenses">
         <item>---</item>
         <item>Rent</item>
         <item>Insurance</item>
@@ -30,6 +30,20 @@
         <item>Travel</item>
         <item>Restaurant</item>
     </string-array>
+    <string-array name="Incomes">
+        <item>---</item>
+        <item>Allowance</item>
+        <item>Salary</item>
+        <item>Bonds</item>
+        <item>Bonus</item>
+        <item>Gift</item>
+    </string-array>
+    <string-array name="type">
+        <item>---</item>
+        <item>Income</item>
+        <item>Expense</item>
+    </string-array>
+
     <string name="title_activity_summary">Summary</string>
     <string name="_7">7</string>
     <string name="_8">8</string>
@@ -51,4 +65,5 @@
     <string name="category">Category</string>
     <string name="amount">Amount</string>
     <string name="date">Date</string>
+    <string name="Type">Type</string>
 </resources>
