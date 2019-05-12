@@ -32,8 +32,7 @@ public class Summary extends AppCompatActivity {
 
 
     private ArrayList<entry> entries = new ArrayList<>();
-    private final String INCOME = "income";
-    private final String EXPENSE = "expense";
+    private final String TYPE = "type";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +55,7 @@ public class Summary extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), EditData.class);
-                intent.putExtra(INCOME, "income");
+                intent.putExtra(TYPE, "income");
                 startActivity(intent);
             }
         });
@@ -65,7 +64,7 @@ public class Summary extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), EditData.class);
-                intent.putExtra(EXPENSE, "expense");
+                intent.putExtra(TYPE, "expense");
                 startActivity(intent);
 
             }
