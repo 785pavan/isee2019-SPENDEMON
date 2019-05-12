@@ -35,7 +35,7 @@ public class entryAdaptor extends
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewholder, int position) {
-        entry entry = entries.get(position);
+        entry entry = (entry) entries.get(position);
 
         TextView tvCategoryItem = viewholder.tvCategoryItem;
         tvCategoryItem.setText(entry.getCategory());

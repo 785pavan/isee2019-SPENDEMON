@@ -49,6 +49,7 @@ public class Summary extends AppCompatActivity {
         entries = entry.createEntryArrayList(20);
 
         ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries", ArrayList.class);
+        //entries = (ArrayList<entry>) Temp.clone();
         entryAdaptor adaptor = new entryAdaptor(entries);
         rvEntries.setAdapter(adaptor);
         rvEntries.setLayoutManager(new LinearLayoutManager(this));
