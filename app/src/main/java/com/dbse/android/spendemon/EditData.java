@@ -2,7 +2,10 @@ package com.dbse.android.spendemon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -29,13 +32,22 @@ public class EditData extends AppCompatActivity {
     private Spinner sCategory;
     private EditText etAmount;
     private EditText etdate;
+    private Button bSave;
     private static final String FILE_NAME = "ExpenseIncomeData";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_data);
+        bSave = findViewById(R.id.bSave);
 
+        bSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Summary.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -55,6 +67,7 @@ public class EditData extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     private void writeToJson(){
         File file = new File(this.getFilesDir(), FILE_NAME);
         FileReader fileReader = null;
