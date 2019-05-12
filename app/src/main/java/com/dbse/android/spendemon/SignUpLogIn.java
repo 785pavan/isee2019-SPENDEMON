@@ -52,7 +52,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
                 Toast.makeText(getApplicationContext(), "The Username field should not be empty", Toast.LENGTH_LONG).show();
             }
             else if (String.valueOf(passwordField.getText()).equals("")) {
-                Log.i("Error2", "The Password field should not be empty");
+                Log.i("Error4", "The Password field should not be empty");
                 Toast.makeText(getApplicationContext(), "The Password field should not be empty", Toast.LENGTH_LONG).show();
             }
             //        else if (!usernameA1.equals(null)){
