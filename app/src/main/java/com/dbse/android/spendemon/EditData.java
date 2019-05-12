@@ -43,8 +43,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     private Button bSave;
     private static final String FILE_NAME = "NewFile";
 
-    private Intent intent = getIntent();
-    private String type = intent.getStringExtra("type");
+
 
 
     @Override
@@ -55,9 +54,12 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         sCategory = findViewById(R.id.sCategory);
         sType.setOnItemSelectedListener(this);
         bSave = findViewById(R.id.bSave);
+        Intent intent = getIntent();
+        String type = intent.getStringExtra("type");
         ArrayAdapter arrayAdapter = (ArrayAdapter) sType.getAdapter();
         int spinnerPos = arrayAdapter.getPosition(type);
         sType.setSelection(spinnerPos);
+        Log.d(TAG, "onCreate: " + type);
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +78,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
         if (sp1.contentEquals("Incomes")) {
             String[] incomes = getApplicationContext().getResources().getStringArray(R.array.Incomes);
-            Log.d(TAG, "onCreate: "+ incomes.toString());
+            Log.d(TAG, "onCreate: " + incomes.toString());
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_dropdown_item, incomes);
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -85,7 +87,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         }
         if (sp1.contentEquals("Expenses")) {
             String[] expenses = getApplicationContext().getResources().getStringArray(R.array.Expenses);
-            Log.d(TAG, "onCreate: "+ expenses.toString());
+            Log.d(TAG, "onCreate: " + expenses.toString());
 
             ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_item, expenses);
