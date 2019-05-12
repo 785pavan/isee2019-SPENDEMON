@@ -2,4 +2,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="header1">40sp</dimen>
+    <dimen name="logIn1">20sp</dimen>
+    <dimen name="signUp1">20sp</dimen>
 </resources>
