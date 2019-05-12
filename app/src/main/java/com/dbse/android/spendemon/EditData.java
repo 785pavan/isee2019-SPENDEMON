@@ -156,4 +156,8 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         }
         return null;
     }
+    public static void deleteSharedPreferences(Context context, String preferenceFileName){
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,0);
+        sharedPreferences.edit().clear().apply();
+    }
 }

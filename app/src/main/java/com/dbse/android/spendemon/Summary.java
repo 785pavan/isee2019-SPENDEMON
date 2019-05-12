@@ -1,6 +1,7 @@
 package com.dbse.android.spendemon;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.dbse.android.spendemon.model.entry;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 
 
 import org.json.JSONArray;
@@ -37,6 +39,7 @@ public class Summary extends AppCompatActivity {
 
     static ArrayList<entry> entries = new ArrayList<>();
     private final String TYPE = "type";
+    private Button bDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,18 +48,18 @@ public class Summary extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
+        bDelete = findViewById(R.id.bDelete);
         ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries");
-
         //readJson();
         entries.clear();
 
-        assert Temp != null;
-        entries.addAll(Temp);
+        if (Temp != null) {
+            entries.addAll(Temp);
+        }
         entryAdaptor adaptor = new entryAdaptor(entries);
         rvEntries.setAdapter(adaptor);
         rvEntries.setLayoutManager(new LinearLayoutManager(this));
 
-        Log.d(TAG, "onClick: "+Temp.get(0).toString());
         FloatingActionButton fabPlus = findViewById(R.id.fabPlus);
         fabPlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +79,13 @@ public class Summary extends AppCompatActivity {
 
             }
         });
+        bDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditData.deleteSharedPreferences(getApplicationContext(),"summary");
+            }
+        });
+
     }
 
     private void readJson() {

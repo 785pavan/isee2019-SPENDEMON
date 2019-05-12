@@ -73,5 +73,6 @@
     <string name="signUp1">Sign Up</string>
     <string name="add_date">Add Date</string>
     <string name="total_amount">Total Amount</string>
+    <string name="delete">Delete</string>
     <!--<string name="signUp1">Sign Up</string>-->
 </resources>
