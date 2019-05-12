@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 
 
 import org.json.JSONArray;
@@ -31,7 +32,7 @@ public class Summary extends AppCompatActivity {
     TableLayout tableLayout;*/
 
 
-    private ArrayList<entry> entries = new ArrayList<>();
+    static ArrayList<entry> entries = new ArrayList<>();
     private final String TYPE = "type";
 
     @Override
@@ -41,8 +42,7 @@ public class Summary extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
-
-        readJson();
+        //readJson();
         //entries = entry.createEntryArrayList(20);
 
         entryAdaptor adaptor = new entryAdaptor(entries);
