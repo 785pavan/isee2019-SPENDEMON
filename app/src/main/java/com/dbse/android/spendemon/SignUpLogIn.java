@@ -22,6 +22,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import java.util.Objects;
+
 public class SignUpLogIn extends AppCompatActivity implements View.OnClickListener, View.OnKeyListener{
 
     EditText usernameField;
@@ -110,18 +112,18 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
             if (signUpModeActive){
 
                 signUpModeActive = false;
-                changeSignUpModeTextView.setText("Sign Up");
-                signUpbutton.setText("Log In");
+                changeSignUpModeTextView.setText(getString(R.string.signUp1));
+                signUpbutton.setText(getString(R.string.LogIn1));
             }else{
 
                 signUpModeActive = true;
-                changeSignUpModeTextView.setText("Log In");
-                signUpbutton.setText("Sign Up");
+                changeSignUpModeTextView.setText(getString(R.string.LogIn1));
+                signUpbutton.setText(getString(R.string.signUp1));
             }
             Log.i("AppInfo", "Change the mode");
         } else if (v.getId() == R.id.teamLogo || v.getId() == R.id.relativeLayout1){
             InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+            imm.hideSoftInputFromWindow(Objects.requireNonNull(getCurrentFocus()).getWindowToken(),0);
             Log.i("AppInfo", "Clicked on");
         }
 
