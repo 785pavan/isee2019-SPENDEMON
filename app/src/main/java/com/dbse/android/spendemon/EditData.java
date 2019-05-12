@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,12 +19,14 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.dbse.android.spendemon.model.entry;
@@ -44,8 +47,6 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     private static final String FILE_NAME = "NewFile";
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,9 +61,12 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         int spinnerPos = arrayAdapter.getPosition(type);
         sType.setSelection(spinnerPos);
         Log.d(TAG, "onCreate: " + type);
+
+
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //writeToJson();
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 startActivity(intent);
             }
@@ -78,7 +82,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
         if (sp1.contentEquals("Incomes")) {
             String[] incomes = getApplicationContext().getResources().getStringArray(R.array.Incomes);
-            Log.d(TAG, "onCreate: " + incomes.toString());
+            Log.d(TAG, "onCreate: " + Arrays.toString(incomes));
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_dropdown_item, incomes);
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -87,7 +91,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         }
         if (sp1.contentEquals("Expenses")) {
             String[] expenses = getApplicationContext().getResources().getStringArray(R.array.Expenses);
-            Log.d(TAG, "onCreate: " + expenses.toString());
+            Log.d(TAG, "onCreate: " + Arrays.toString(expenses));
 
             ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_item, expenses);
@@ -105,68 +109,11 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     @Override
     protected void onStop() {
         super.onStop();
-        sCategory = findViewById(R.id.sCategory);
-        etAmount = findViewById(R.id.etAmount);
-        etdate = findViewById(R.id.etDate);
-
-        entry.setAmount(etAmount.getText().toString().equals("") ? 0.0 : Integer.parseInt(etAmount.getText().toString()));
-        entry.setCategory(sCategory.getSelectedItem().toString());
-        try {
-            entry.setDate(new SimpleDateFormat("dd/mm/yyyy").parse(etdate.getText().toString()));
-        } catch (ParseException e) {
-            Toast.makeText(getApplicationContext(), "Date format wrong", Toast.LENGTH_LONG).show();
-            e.printStackTrace();
-        }
+        SharedPreferences sharedPreferences = this.getSharedPreferences("Storage", Context.MODE_PRIVATE);
+        sharedPreferences.edit().putString("catogory", sCategory.getSelectedItem().toString()).apply();
+        Log.d(TAG, "onCreate: " + sharedPreferences.getString("catogory", ""));
     }
 
-    private void writeToJson() {
-        File file = new File(this.getFilesDir(), FILE_NAME);
-        FileReader fileReader = null;
-        FileWriter fileWriter = null;
-        BufferedReader bufferedReader = null;
-        BufferedWriter bufferedWriter = null;
 
-        String response = null;
 
-        if (!file.exists()) {
-            try {
-                file.createNewFile();
-                fileWriter = new FileWriter(file.getAbsoluteFile());
-                bufferedWriter = new BufferedWriter(fileWriter);
-                bufferedWriter.write("{}");
-                bufferedWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }
-        StringBuilder output = new StringBuilder();
-        try {
-            fileReader = new FileReader(file.getAbsoluteFile());
-            bufferedReader = new BufferedReader(fileReader);
-            String line = "";
-            while ((line = bufferedReader.readLine()) != null) {
-                output.append(line).append("\n");
-            }
-            response = output.toString();
-            bufferedReader.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            JSONObject messageDetails = new JSONObject(response);
-            boolean isUserExisting = messageDetails.has("Username");
-            if (!isUserExisting) {
-                JSONArray newUserMessage = new JSONArray();
-                int id = (int) (Math.random() * 100);
-                newUserMessage.put(id);
-                messageDetails.put("Username", newUserMessage);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
 }
