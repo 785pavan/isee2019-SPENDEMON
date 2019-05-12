@@ -55,7 +55,7 @@ public class Summary extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), EditData.class);
-                intent.putExtra(TYPE, "income");
+                intent.putExtra(TYPE, "Incomes");
                 startActivity(intent);
             }
         });
@@ -64,7 +64,7 @@ public class Summary extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), EditData.class);
-                intent.putExtra(TYPE, "expense");
+                intent.putExtra(TYPE, "Expenses");
                 startActivity(intent);
 
             }
