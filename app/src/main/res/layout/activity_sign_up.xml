@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp"
-    android:padding="@dimen/fab_margin">
+    android:background="@color/background"
+    android:padding="@dimen/fab_margin"
+    tools:context=".SignUp">
 
     <EditText
         android:id="@+id/etName"
