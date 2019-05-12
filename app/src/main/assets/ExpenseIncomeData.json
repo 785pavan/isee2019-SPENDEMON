@@ -1,25 +1,30 @@
 [
   {
+    "Type": "Expense",
     "Category": "Restaurant ",
     "Amount": 250,
     "Date": "2009/12/31"
   },
   {
+    "Type": "Expense",
     "Category": "Rent",
     "Amount": 358,
     "Date": "2018/12/01"
   },
   {
+    "Type": "Expense",
     "Category": "Insurance",
     "Amount": 355,
     "Date": "2015/03/10"
   },
   {
+    "Type": "Expense",
     "Category": "Groceries",
     "Amount": 213,
     "Date": "2019/08/31"
   },
   {
+    "Type": "Expense",
     "Category": "Travel",
     "Amount": 1684,
     "Date": "2019/05/10"

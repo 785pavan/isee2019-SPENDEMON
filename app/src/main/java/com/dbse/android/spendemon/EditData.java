@@ -33,7 +33,7 @@ public class EditData extends AppCompatActivity {
     private EditText etAmount;
     private EditText etdate;
     private Button bSave;
-    private static final String FILE_NAME = "ExpenseIncomeData";
+    private static final String FILE_NAME = "NewFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class EditData extends AppCompatActivity {
         etAmount = findViewById(R.id.etAmount);
         etdate = findViewById(R.id.etDate);
 
-        entry.setAmount(etAmount.getText().toString().equals("") ? 0 : Integer.parseInt(etAmount.getText().toString()));
+        entry.setAmount(etAmount.getText().toString().equals("") ? 0.0 : Integer.parseInt(etAmount.getText().toString()));
         entry.setCategory(sCategory.getSelectedItem().toString());
         try {
             entry.setDate(new SimpleDateFormat("dd/mm/yyyy").parse(etdate.getText().toString()));

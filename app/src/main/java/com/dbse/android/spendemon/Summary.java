@@ -79,17 +79,20 @@ public class Summary extends AppCompatActivity {
             for (int i = 0; i < jArray.length(); ++i) {
                 entry en = new entry();
                 String Category = jArray.getJSONObject(i).getString("Category");
-                Log.d("myTag",Category);
+                Log.d("myTag", Category);
                 double Amount = jArray.getJSONObject(i).getDouble("Amount");
-                Log.d("myTag",String.valueOf(Amount));
+                if (jArray.getJSONObject(i).getString("Type").equals("Expense")) {
+                    Amount = -Amount;
+                }
+                Log.d("myTag", String.valueOf(Amount));
                 Date date = new Date(jArray.getJSONObject(i).getString("Date"));
-                Log.d("myTag",date.toString());
+                Log.d("myTag", date.toString());
                 en.setCategory(Category);
                 en.setAmount(Amount);
                 en.setDate(date);
-                Log.d("myTag",en.toString());
+                Log.d("myTag", en.toString());
                 entries.add(en);
-                Log.d("myTag",entries.toString());
+                Log.d("myTag", entries.toString());
             }
         } catch (JSONException e) {
             e.printStackTrace();
