@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Blog#1:Team Presentation"
+title: "Blog#1: Team Presentation"
 date: 2019-04-16
 ---
 

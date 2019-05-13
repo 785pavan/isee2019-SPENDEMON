@@ -1,24 +1,28 @@
 ---
 layout: post
-title: "Blog#2:Requirements Analysis"
+title: "Blog#2: Requirements Analysis"
 date: 2019-05-15
 ---
 **<span style="color:#C2185B; font-family:Cursive">Introduction:</span>**
+
 Welcome to the second stage of our development for the app SPENDEMON. In this particular blog, we intend to present the requirements which our customer wanted implemented in our app and how we analyzed the requirements into tangible formats so as to implement it in our App.
 
 **<span style="color:#C2185B; font-family:Cursive">Overview:</span>**
 
 The main stages for the Requirement Analysis includes:
-1. Drafting the initial Requirements questionnaire.
+* Drafting the initial Requirements questionnaire.
+
 2. Gathering and Analyzing the requirements from the customer.
+
 3. Creation of User stories.
+
 4. Mapping the user stories into various diagrams.
 
 
 **<span style="color:#C2185B; font-family:Cursive">1. Drafting the initial Requirements questionnaire:</span>**
 We did a thorough research on the available apps in the market and brain stormed new ideas which were doable for us as well as which would give the App an X-factor. With this information we came up with the questionnaire below for our team meetings with the customer:
 
-1. Do you need the option for automated expenses and incomes/Salaries?
+* Do you need the option for automated expenses and incomes/Salaries?
 
 2. Should be a collaboration between any other app and this app? Also connection to email or phone number?
 
@@ -86,7 +90,7 @@ We did a thorough research on the available apps in the market and brain stormed
 The meeting for our requirement analysis took place on the 20/04/2019, where we decided on the questions and requirements that we want to suggest to the customer for the next meeting.
 Based on the meetings with our customer, we could now finalize on our User stories and decided to divide the requirements based on the stages of the App development as follows:
 
-1. Prototype Model Requirements:
+* Prototype Model Requirements:
 
   * Login page.
 
@@ -97,7 +101,7 @@ Based on the meetings with our customer, we could now finalize on our User stori
   * Save option.
 
 
-2. Advanced Prototype Model Requirements:
+* Advanced Prototype Model Requirements:
 
   * Categorical Display of Expenses and Incomes.
 
@@ -136,7 +140,7 @@ Based on the meetings with our customer, we could now finalize on our User stori
 
 Based on the requirement analysis we were able to design the following User-stories which we validated in the next team meeting with the customer:
 
-1. As a user, I want to add my expenses and incomes quickly and assign it to a category (sub category)
+* As a user, I want to add my expenses and incomes quickly and assign it to a category (sub category)
 
 2. As a user, I want to see my expenses and incomes sorted by date, category, amount, source and etc.
 
