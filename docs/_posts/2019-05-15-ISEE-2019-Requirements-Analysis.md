@@ -25,8 +25,6 @@ We did a thorough research on the available apps in the market and brain stormed
 
 -   Do you need the option for automated expenses and incomes/Salaries?
 
--   Should be a collaboration between any other app and this app? Also connection to email or phone number?
-
 -   Should we consider loan and instalment in the app? And interest rate.
 
 -   Should we have a coin counting page?
@@ -37,11 +35,27 @@ We did a thorough research on the available apps in the market and brain stormed
 
 -   Do you need to show different time durations for the first page: daily weekly monthly yearly?
 
--   Do you need to have fiscal date end? (calendar, monthly, yearly)
-
 -   Should it be offline or online? Or both?
 
 -   Should it have a password? Whole thing or just some parts?
+
+-   Do you want add categories for your expenses (predefined categories and an option to add extra categories)?
+
+-   Do you think it is a good idea to have color coded expenses? Or just two colors for income and expense?
+
+-   What do you want to see in your first page? (Short summary of your balance, The fake page for security concerns and also tricking others, Options menu or customized)
+
+-   Do you need money suggestions (you need to spend less this month or you can relax this week)?
+
+-   Do you want to be able to change the font, add and remove options?
+
+-   Do you need to have different currencies? Conversion?
+
+-   Do you need the carry over option?
+
+-   Should be a collaboration between any other app and this app? Also connection to email or phone number?
+
+-   Do you need to have fiscal date end? (calendar, monthly, yearly)
 
 -   Do you need to share your data through internet? Or share specific thing?
 
@@ -49,19 +63,11 @@ We did a thorough research on the available apps in the market and brain stormed
 
 -   Do you need to connect it to your credit card, Bank card or etc.? //
 
--   Do you want add categories for your expenses (predefined categories and an option to add extra categories)?
-
 -   Do you need a schedule with deadlines added to the app?
-
--   Do you think it is a good idea to have color coded expenses? Or just two colors for income and expense?
-
--   What do you want to see in your first page? (Short summary of your balance, The fake page for security concerns and also tricking others, Options menu or customized)
 
 -   Do you want everything related to one person to be in a separate account meaning that if you have an account or few money accounts and repositories you will make an account in the app and add all there? So multiple accounts for multiple purposes. Or you need to be able to add as many money sources in on account in separately?
 
 -   Do you need options for people depending on you? Family members, shared expenses and so on. This will be a constant part of your account and different from category?
-
--   Do you need money suggestions (you need to spend less this month or you can relax this week)?
 
 -   Do you need subscription for news outlets related to business?
 
@@ -69,13 +75,7 @@ We did a thorough research on the available apps in the market and brain stormed
 
 -   Are you interested in the night mode day mode or more customized color and font changes?
 
--   Do you want to be able to change the font, add and remove options?
-
--   Do you need to have different currencies? Conversion?
-
 -   Do you need different currencies to be adjusted based their current value?
-
--   Do you need the carry over option?
 
 -   Do you want to rate your or connected accounts based on their performance?
 
