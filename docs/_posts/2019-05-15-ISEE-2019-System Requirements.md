@@ -133,3 +133,12 @@ This class is used for displaying a built-in calculator for quick calculations.
   * tip(): calculates tips based on bills in Restaurants.
 
   * tax(): calculates taxes based on Incomes.
+
+
+**<span style="color:#C2185B; font-family:Cursive">Final Thoughts:</span>**
+
+The usage of the Class Diagrams and Activity Diagrams were immensely helpful during the implementation process and eased our struggles with Android and Java. It gave us a template and  structure to follow, such that we could keep track on the progress of our development phase and would not deviate.
+
+The next task will be to illustrate before our users the Implementation procedures and also design a GUI for interactive usage of our application. Hope to make an interesting read for you again..
+
+See you soon!! Tschuss!!
