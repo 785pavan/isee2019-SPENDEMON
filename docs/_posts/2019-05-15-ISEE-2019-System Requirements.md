@@ -20,7 +20,7 @@ We present here two Activity Diagrams for our App, namely:
 
 **<span style="color:#C2185B; font-family:Cursive">Login Activity:</span>**
 
-<img src="{{site.baseurl}}/images/LoginActivity.png" alt="Login Activity" width="400" align = "middle" />
+<img src="{{site.baseurl}}/images/LoginActivity.png" alt="Login Activity" width="800" align = "middle" />
 
 
 This activity diagram, depicts the entry point of the user into the App. We shall look at each activity one at a time.
@@ -33,7 +33,7 @@ This activity diagram, depicts the entry point of the user into the App. We shal
 
 **<span style="color:#C2185B; font-family:Cursive">Add Entries Activity:</span>**
 
-<img src="{{site.baseurl}}/images/AddEntryActivity.png" alt="Add Entries Activity" width="400" align = "middle" />
+<img src="{{site.baseurl}}/images/AddEntryActivity.png" alt="Add Entries Activity" width="800" align = "middle" />
 
 This is the basic editorial page of our App where the user can add and edit incomes and expenses to the Summary page.
 
@@ -53,7 +53,7 @@ The date for the specific Income and Expenditure is added here.
 
 **<span style="color:#C2185B; font-family:Cursive">Class Diagram:</span>**
 
-<img src="{{site.baseurl}}/images/UMLClassDiagram.png" alt="Class Diagram" width="400" align = "middle" />
+<img src="{{site.baseurl}}/images/UMLClassDiagram.png" alt="Class Diagram" width="800" align = "middle" />
 
 <span style="color:#C2185B; font-family:Cursive">*User Class:*</span>
 This class is used to store all User information plus helps in interaction of the User with the App.
@@ -99,6 +99,7 @@ This class is used for defining the pre-existing categories.
 
 
 * **Attributes:** type
+
 
 <span style="color:#C2185B; font-family:Cursive">*Display Class:*</span> This is a class used for displaying a summary of the expenses and incomes in a sorted manner.
 
