@@ -22,7 +22,8 @@ The main stages for the Requirement Analysis includes:
 **<span style="color:#C2185B; font-family:Cursive">1. Drafting the initial Requirements questionnaire:</span>**
 We did a thorough research on the available apps in the market and brain stormed new ideas which were doable for us as well as which would give the App an X-factor. With this information we came up with the questionnaire below for our team meetings with the customer:
 
-* Do you need the option for automated expenses and incomes/Salaries?
+
+<span style="color:#00C853"> 1. Do you need the option for automated expenses and incomes/Salaries?</span>
 
 * Should be a collaboration between any other app and this app? Also connection to email or phone number?
 
