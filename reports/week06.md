@@ -11,7 +11,7 @@
     * layouts for edit data page, summary page completed.
     * recycle View added summary page
   * **Difficulties:**
-    * being new to all android layout design was a challenge and too very long time to optimize
+    * being new to all android layout design was a challenge and took very long time to optimize
     * dataBinding was not working with newer version of gradle had to find a different solution around it
     * research for implementation took longer than expected.
 * #### **Section 3:**
