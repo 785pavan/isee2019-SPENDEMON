@@ -59,12 +59,17 @@ The date for the specific Income and Expenditure is added here.
 This class is used to store all User information plus helps in interaction of the User with the App.
 
 * **Attributes:** username, password and name
+
 * **Methods:** Along with the usual getters and setters methods we also have the below mentioned methods,
 
   * login(): for authentication.
+
   * add(): to add entries.
+
   * remove(): to remove entries.
+
   * calculate(): to do various calculations.
+
   * carryOver(): to get the balance.
 
 <span style="color:#C2185B; font-family:Cursive">*Entry Class:*</span>
@@ -74,11 +79,15 @@ This class is the model on which our App is built on.
 
 <span style="color:#C2185B; font-family:Cursive">*Category Class:*</span>
 This class is used for defining the pre-existing categories.
+
 * **Attributes:** name, entry, count
+
 * **Methods:**
 
   * add(): for adding entries into categories.
+
   * edit(): for editing entries in categories.
+
   * remove(): for deleting entries from categories.
 
 <span style="color:#C2185B; font-family:Cursive">*Expense Class:*</span> This is a class generalised from entry to store expenses.
@@ -92,19 +101,32 @@ This class is used for defining the pre-existing categories.
 <span style="color:#C2185B; font-family:Cursive">*Display Class:*</span> This is a class used for displaying a summary of the expenses and incomes in a sorted manner.
 
 * **Methods:**
+
   * daily(): for displaying everyday summary.
+
   * weekly(): for displaying weekly summary.
+
   * monthly(): for displaying monthly summary.
+
   * yearly(): for displaying yearly summary.
 
 <span style="color:#C2185B; font-family:Cursive">*Calculator Class:*</span>
 This class is used for displaying a built-in calculator for quick calculations.
+
 * **Attributes:** inputs, outputs
+
 * **Methods:**
+
   * add(): adds two doubles.
+
   * subtract(): subtracts two doubles
+
   * multiply(): multiplies two doubles
+
   * divide(): divides two doubles
+
   * interest(): calculates the interest rates for loans etc.
+
   * tip(): calculates tips based on bills in Restaurants.
+
   * tax(): calculates taxes based on Incomes.
