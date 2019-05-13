@@ -92,9 +92,11 @@ This class is used for defining the pre-existing categories.
 
 <span style="color:#C2185B; font-family:Cursive">*Expense Class:*</span> This is a class generalised from entry to store expenses.
 
+
 * **Attributes:** type
 
 <span style="color:#C2185B; font-family:Cursive">*Income Class:*</span> This is a class generalised from entry to store incomes.
+
 
 * **Attributes:** type
 
