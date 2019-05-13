@@ -131,7 +131,7 @@
                 android:ems="10"
                 android:hint="@string/add_date"
                 android:inputType="date"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
         </LinearLayout>
 

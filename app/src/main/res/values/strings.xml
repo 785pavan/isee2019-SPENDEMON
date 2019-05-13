@@ -74,5 +74,9 @@
     <string name="add_date">Add Date</string>
     <string name="total_amount">Total Amount</string>
     <string name="delete">Delete</string>
+    <string name="confirm_dialog_message">User Account exits. Do you want to make new user</string>
+    <string name="confirm_dialog_title">Are you sure</string>
+    <string name="confirm">confirm</string>
+    <string name="cancel">cancel</string>
     <!--<string name="signUp1">Sign Up</string>-->
 </resources>

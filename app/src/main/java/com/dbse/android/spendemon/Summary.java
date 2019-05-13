@@ -1,22 +1,18 @@
 package com.dbse.android.spendemon;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import com.dbse.android.spendemon.model.entry;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-
+import com.dbse.android.spendemon.model.entry;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -78,7 +74,7 @@ public class Summary extends AppCompatActivity {
         bDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditData.deleteSharedPreferences(getApplicationContext(),"summary");
+                EditData.deleteSharedPreferences(getApplicationContext(), "summary");
             }
         });
 

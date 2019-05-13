@@ -8,6 +8,7 @@ package com.dbse.android.spendemon;
 //import android.support.constraint.ConstraintLayout;
 //import android.support.v7.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -57,12 +59,31 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
             } else if (String.valueOf(passwordField.getText()).equals("")) {
                 Log.i("Error4", "The Password field should not be empty");
                 Toast.makeText(getApplicationContext(), "The Password field should not be empty", Toast.LENGTH_LONG).show();
-            }
-            //        else if (!usernameA1.equals(null)){
-            //            Log.i("Error3","You have already Created a username");
-            //
-            //        }
-            else {
+            } else if (usernameA1 != null) {
+                Log.i("Error3", "You have already Created a username");
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage(R.string.confirm_dialog_message)
+                        .setTitle(R.string.confirm_dialog_title)
+                        .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Log.i("Successful1", "Successfully created new sign Up!");
+                                sharedPreferences.edit().putString("UserName", usernameField.getText().toString()).apply();
+                                sharedPreferences.edit().putInt("Password", Integer.parseInt(passwordField.getText().toString())).apply();
+                                usernameA1 = sharedPreferences.getString("UserName", null);
+                                passwordA1 = sharedPreferences.getInt("Password", 0);
+                                Toast.makeText(getApplicationContext(), "You are signed up as: ".concat(usernameA1), Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // CANCEL
+                             }
+                        });
+                // Create the AlertDialog object and return it
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+            } else {
                 Log.i("Successful1", "Successful sign Up!");
                 sharedPreferences.edit().putString("UserName", usernameField.getText().toString()).apply();
                 sharedPreferences.edit().putInt("Password", Integer.parseInt(passwordField.getText().toString())).apply();
@@ -95,7 +116,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signuplogin);
-        sharedPreferences  = this.getSharedPreferences("SignUp", 0);
+        sharedPreferences = this.getSharedPreferences("SignUp", 0);
         usernameA1 = sharedPreferences.getString("UserName", null);
         passwordA1 = sharedPreferences.getInt("Password", 0);
         signUpModeActive = sharedPreferences.getBoolean("SignUpMode", true);
@@ -116,7 +137,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
 
         usernameField.setOnKeyListener(this);
         passwordField.setOnKeyListener(this);
-        Log.d(TAG, "onCreate: "+ sharedPreferences.getBoolean("SignUpMode",true));
+        Log.d(TAG, "onCreate: " + sharedPreferences.getBoolean("SignUpMode", true));
         Log.d(TAG, "signUpOrLogIn: " + usernameA1);
         Log.d(TAG, "signUpOrLogIn: " + passwordA1);
 

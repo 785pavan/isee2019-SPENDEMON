@@ -1,7 +1,5 @@
 package com.dbse.android.spendemon;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,29 +13,18 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.dbse.android.spendemon.model.entry;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
-
-import com.dbse.android.spendemon.model.entry;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import static android.widget.Toast.LENGTH_LONG;
 import static com.dbse.android.spendemon.Summary.entries;
@@ -149,15 +136,17 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
 
     public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context, String preferenceFileName, String preferenceKey) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
-        Type classType = new TypeToken<ArrayList<entry>>() {}.getType();
+        Type classType = new TypeToken<ArrayList<entry>>() {
+        }.getType();
         if (sharedPreferences.contains(preferenceKey)) {
             final Gson gson = new Gson();
             return gson.fromJson(sharedPreferences.getString(preferenceKey, ""), classType);
         }
         return null;
     }
-    public static void deleteSharedPreferences(Context context, String preferenceFileName){
-        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,0);
+
+    public static void deleteSharedPreferences(Context context, String preferenceFileName) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
         sharedPreferences.edit().clear().apply();
     }
 }
