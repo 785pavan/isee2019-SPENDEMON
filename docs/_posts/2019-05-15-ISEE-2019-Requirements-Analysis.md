@@ -12,11 +12,11 @@ Welcome to the second stage of our development for the app SPENDEMON. In this pa
 The main stages for the Requirement Analysis includes:
 * Drafting the initial Requirements questionnaire.
 
-2. Gathering and Analyzing the requirements from the customer.
+* Gathering and Analyzing the requirements from the customer.
 
-3. Creation of User stories.
+* Creation of User stories.
 
-4. Mapping the user stories into various diagrams.
+* Mapping the user stories into various diagrams.
 
 
 **<span style="color:#C2185B; font-family:Cursive">1. Drafting the initial Requirements questionnaire:</span>**
