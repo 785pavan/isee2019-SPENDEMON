@@ -33,13 +33,9 @@ import static com.dbse.android.spendemon.EditData.getSavedObjectFromPreference;
 public class Summary extends AppCompatActivity {
     private static final String TAG = "myTag";
 
-    /*//TabWidget tabWidget ;
-    TableLayout tableLayout;*/
-
 
     static ArrayList<entry> entries = new ArrayList<>();
     private final String TYPE = "type";
-    private Button bDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +44,7 @@ public class Summary extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
-        bDelete = findViewById(R.id.bDelete);
+        Button bDelete = findViewById(R.id.bDelete);
         ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries");
         //readJson();
         entries.clear();
