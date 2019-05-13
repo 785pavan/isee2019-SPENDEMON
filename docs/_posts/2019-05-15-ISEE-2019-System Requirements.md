@@ -141,4 +141,4 @@ The usage of the Class Diagrams and Activity Diagrams were immensely helpful dur
 
 The next task will be to illustrate before our users the Implementation procedures and also design a GUI for interactive usage of our application. Hope to make an interesting read for you again..
 
-See you soon!! Tschuss!!
+See you soon!! Tschüss!!
