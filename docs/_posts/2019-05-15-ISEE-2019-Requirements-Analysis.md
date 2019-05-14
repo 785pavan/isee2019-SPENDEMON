@@ -168,7 +168,7 @@ Based on the requirement analysis we were able to design the following User-stor
 
 After validation of the User stories, we needed to map the requirements into the Use-Case Diagrams with the valid interactions and activities. A snapshot of our design is given below:
 
-<img src="{{site.baseurl}}/images/Use-Case-Diagram.png" alt="Use Case Diagram image" width="800" align = "middle" />
+<img src="{{site.baseurl}}/images/Use-Case-Diagram.png" alt="Use Case Diagram image" width="400" align = "middle" />
 
 **<span style="color:#C2185B; font-family:Cursive">Final Thoughts:</span>**
 
