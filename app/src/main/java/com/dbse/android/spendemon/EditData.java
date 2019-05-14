@@ -77,6 +77,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
 
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 entry entry = new entry(cat, amount, date);
+                entries.clear();
                 entries.add(entry);
                 ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries");
                 if (Temp == null) Temp = new ArrayList<entry>();
