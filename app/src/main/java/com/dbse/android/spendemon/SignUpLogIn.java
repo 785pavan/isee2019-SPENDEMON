@@ -119,7 +119,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
         sharedPreferences = this.getSharedPreferences("SignUp", 0);
         usernameA1 = sharedPreferences.getString("UserName", null);
         passwordA1 = sharedPreferences.getInt("Password", 0);
-        signUpModeActive = sharedPreferences.getBoolean("SignUpMode", true);
+        signUpModeActive = sharedPreferences.getBoolean("SignUpMode", false);
         signUpButton = (Button) findViewById(R.id.buttonSignUp);
         teamLogo = (ImageView) findViewById(R.id.teamLogo);
 //        relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout1);
@@ -137,7 +137,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
 
         usernameField.setOnKeyListener(this);
         passwordField.setOnKeyListener(this);
-        Log.d(TAG, "onCreate: " + sharedPreferences.getBoolean("SignUpMode", true));
+        Log.d(TAG, "onCreate: " + sharedPreferences.getBoolean("SignUpMode", false));
         Log.d(TAG, "signUpOrLogIn: " + usernameA1);
         Log.d(TAG, "signUpOrLogIn: " + passwordA1);
 
@@ -153,11 +153,14 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
                 signUpModeActive = false;
                 changeSignUpModeTextView.setText(getString(R.string.signUp1));
                 signUpButton.setText(getString(R.string.LogIn1));
+                
+
             } else {
 
                 signUpModeActive = true;
                 changeSignUpModeTextView.setText(getString(R.string.LogIn1));
                 signUpButton.setText(getString(R.string.signUp1));
+
             }
             sharedPreferences.edit().putBoolean("SignUpMode", signUpModeActive).apply();
             Log.i("AppInfo", "Change the mode");

@@ -54,7 +54,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:onClick="signUpOrLogIn"
-        android:text="@string/signUp1"
+        android:text="@string/LogIn1"
         android:textSize="@dimen/signUp1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/LogIn1"
+        android:text="@string/signUp1"
         android:textColor="@color/changeSignUpMode1"
         android:textSize="@dimen/logIn1"
 
