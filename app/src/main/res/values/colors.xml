@@ -7,5 +7,7 @@
     <color name="black_overlay">#66000000</color>
     <color name="background">#E2F0F5</color>
     <color name="changeSignUpMode1">#FF3F51B5</color>
+    <color name="fabMinusColor">#E00909</color>
+    <color name="fabPlusColor">#4CAF50</color>
 
 </resources>
