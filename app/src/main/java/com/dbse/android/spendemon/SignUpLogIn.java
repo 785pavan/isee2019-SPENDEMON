@@ -135,7 +135,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
 
         changeSignUpModeTextView.setOnClickListener(this);
 
-        usernameField.setOnKeyListener(this);
+//        usernameField.setOnKeyListener(this);
         passwordField.setOnKeyListener(this);
         Log.d(TAG, "onCreate: " + sharedPreferences.getBoolean("SignUpMode", false));
         Log.d(TAG, "signUpOrLogIn: " + usernameA1);
@@ -153,7 +153,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
                 signUpModeActive = false;
                 changeSignUpModeTextView.setText(getString(R.string.signUp1));
                 signUpButton.setText(getString(R.string.LogIn1));
-                
+
 
             } else {
 
