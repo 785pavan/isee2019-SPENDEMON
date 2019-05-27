@@ -41,7 +41,8 @@ public class Summary extends AppCompatActivity {
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
         Button bDelete = findViewById(R.id.bDelete);
-        ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries");
+        ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
+                "summary", "entries");
         //readJson();
         entries.clear();
 
