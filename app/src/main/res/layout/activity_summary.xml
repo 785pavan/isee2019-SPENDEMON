@@ -29,27 +29,33 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="bottom|center">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabPlus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_vertical|end"
-            android:layout_margin="@dimen/fab_margin"
-            android:clickable="true"
-            android:focusable="true"
-            app:srcCompat="@drawable/plus" />
+        android:layout_gravity="bottom|center"
+        android:orientation="horizontal">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabMinus"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|start"
             android:layout_margin="@dimen/fab_margin"
+            android:layout_weight="1"
             android:clickable="true"
             android:focusable="true"
+            android:padding="8dp"
             app:srcCompat="@drawable/minus" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabPlus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_vertical|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            app:srcCompat="@drawable/plus" />
+
+
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
