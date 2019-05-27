@@ -8,11 +8,19 @@ public class entry {
     private String category;
     private double Amount;
     private Date date;
+    private String payMethod;
 
     public entry(String category, double amount, Date date) {
         this.category = category;
         this.Amount = amount;
         this.date = date;
+    }
+
+    public entry() {
+       this.category = null;
+       this.Amount = 0;
+       this.date = null;
+       this.payMethod = null;
     }
 
     public String getCategory() {
@@ -45,13 +53,23 @@ public class entry {
                 "category='" + category + '\'' +
                 ", Amount=" + Amount +
                 ", date=" + date +
+                ", payMethod=" + payMethod +
                 '}';
     }
 
-    public entry() {
-        this.category = null;
-        this.Amount = 0;
-        this.date = null;
+    public entry(String cat, double amount, Date date, String payMeth) {
+        this.category = cat;
+        this.Amount = amount;
+        this.date = date;
+        this.payMethod = payMeth;
+    }
+
+    public String getPayMethod() {
+        return payMethod;
+    }
+
+    public void setPayMethod(String payMethod) {
+        this.payMethod = payMethod;
     }
 
     private static int AmountId = 0;

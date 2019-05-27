@@ -43,6 +43,8 @@ public class entryAdaptor extends
         tvAmountItem.setText(String.valueOf(entry.getAmount()));
         TextView tvDateItem = viewholder.tvDateItem;
         tvDateItem.setText(String.valueOf(entry.getDate()));
+        TextView tvPayment = viewholder.tvPaymentMethodItem;
+        tvPayment.setText(entry.getPayMethod());
 
     }
 
@@ -56,6 +58,7 @@ public class entryAdaptor extends
         public TextView tvCategoryItem;
         public TextView tvAmountItem;
         public TextView tvDateItem;
+        public TextView tvPaymentMethodItem;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -63,6 +66,7 @@ public class entryAdaptor extends
             tvCategoryItem = itemView.findViewById(R.id.tvCategoryItem);
             tvAmountItem = itemView.findViewById(R.id.tvAmountItem);
             tvDateItem = itemView.findViewById(R.id.tvDateItem);
+            tvPaymentMethodItem = itemView.findViewById(R.id.tvPaymentMethodItem);
         }
     }
 

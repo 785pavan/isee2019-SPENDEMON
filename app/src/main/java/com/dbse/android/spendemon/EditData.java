@@ -34,6 +34,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     private static final String TAG = "myTag";
     private entry entry;
     private Spinner sCategory;
+    private Spinner sPaymentMethod;
     private Spinner sType;
     private EditText etAmount;
     private EditText etdate;
@@ -47,6 +48,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         setContentView(R.layout.activity_edit_data);
         sType = findViewById(R.id.sType);
         sCategory = findViewById(R.id.sCategory);
+        sPaymentMethod = findViewById(R.id.sPaymentMethod);
         sType.setOnItemSelectedListener(this);
         etAmount = findViewById(R.id.etAmount);
         etdate = findViewById(R.id.etDate);
@@ -63,6 +65,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
             @Override
             public void onClick(View v) {
                 final String cat = sCategory.getSelectedItem().toString();
+                String paymeth = sPaymentMethod.getSelectedItem().toString();
                 final double amount;
                 if (etAmount.getText().toString().equals("")) {
                     amount = 0;
@@ -74,9 +77,12 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
                     Toast.makeText(getApplicationContext(), "Enter valid date", LENGTH_LONG).show();
                     e.printStackTrace();
                 }
+                if (paymeth == null){
+                    paymeth = "Not Defined";
+                }
 
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
-                entry entry = new entry(cat, amount, date);
+                entry entry = new entry(cat, amount, date, paymeth);
                 entries.clear();
                 entries.add(entry);
                 ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries");
@@ -95,6 +101,10 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         // TODO Auto-generated method stub
         String sp1 = String.valueOf(sType.getSelectedItem());
         Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
+        String[] paymentMethodsArray = getApplicationContext().getResources().getStringArray(R.array.PaymentMethods);
+        ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_dropdown_item, paymentMethodsArray);
+        sPaymentMethod.setAdapter(dataAdapter3);
         if (sp1.contentEquals("Incomes")) {
             String[] incomes = getApplicationContext().getResources().getStringArray(R.array.Incomes);
             Log.d(TAG, "onCreate: " + Arrays.toString(incomes));

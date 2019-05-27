@@ -38,6 +38,14 @@
         <item>Bonus</item>
         <item>Gift</item>
     </string-array>
+    <string-array name="PaymentMethods">
+        <item>---</item>
+        <item>Cash</item>
+        <item>Card</item>
+        <item>PayPal</item>
+        <item>GooglePay</item>
+        <item>ApplePay</item>
+    </string-array>
     <string-array name="type">
         <item>---</item>
         <item>Incomes</item>
@@ -63,8 +71,10 @@
     <string name="_plus">+</string>
     <string name="_c">C</string>
     <string name="category">Category</string>
+    <string name="paymentMethod">Payment Method</string>
     <string name="amount">Amount</string>
     <string name="date">Date</string>
+    <!--<string name=""-->
     <string name="Type">Type</string>
     <string name="app_name">SPENDEMON</string>
     <string name="usernameText1">Username</string>
