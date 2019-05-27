@@ -67,7 +67,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
                 if (etAmount.getText().toString().equals("")) {
                     amount = 0;
                 } else amount = Double.parseDouble(etAmount.getText().toString());
-                Date date = new Date(2019, 11, 10);
+                Date date = new Date();
                 try {
                     date = new SimpleDateFormat("dd/mm/yyyy").parse(etdate.getText().toString());
                 } catch (ParseException e) {
