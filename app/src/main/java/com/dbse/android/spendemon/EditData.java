@@ -100,7 +100,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     @Override
     public void onItemSelected(android.widget.AdapterView<?> arg0, View arg1, int arg2,
                                long arg3) {
-        // TODO Auto-generated method stub
+
         String sp1 = String.valueOf(sType.getSelectedItem());
         Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
         String[] paymentMethodsArray = getApplicationContext().getResources().getStringArray(R.array.PaymentMethods);

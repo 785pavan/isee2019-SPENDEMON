@@ -33,10 +33,12 @@ allprojects {
             configFile new File(rootDir, "config/checkstyle/rules.xml")
             source 'src'
             include '**/*.java'
-            exclude '**/out/**'
+            exclude '**/gen/**'
             exclude '**/R.java'
             exclude '**/BuildConfig.java'
             classpath = files()
+            configProperties.checkstyleSuppressionPath =
+                    new File(rootDir, "config/checkstyle/suppressions.xml").absolutePath
         }
         
     }

@@ -75,7 +75,8 @@ public class Summary extends AppCompatActivity {
         bDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditData.deleteSharedPreferences(getApplicationContext(), "summary");
+                EditData.deleteSharedPreferences(getApplicationContext(),
+                        "summary");
             }
         });
 

@@ -29,7 +29,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Objects;
 
-public class SignUpLogIn extends AppCompatActivity implements View.OnClickListener, View.OnKeyListener {
+/**
+ *
+ */
+public class SignUpLogIn extends AppCompatActivity implements View.OnClickListener,
+        View.OnKeyListener {
 
     private static final String TAG = "myTag";
     EditText usernameField;
@@ -52,13 +56,16 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
             Log.i("AppInfo", String.valueOf(passwordField.getText()));
             if (String.valueOf(usernameField.getText()).equals(usernameA1)) {
                 Log.i("Error1", "This user is already Registered");
-                Toast.makeText(getApplicationContext(), "This username is already taken: ".concat(usernameA1), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "This username is already taken: "
+                        .concat(usernameA1), Toast.LENGTH_LONG).show();
             } else if (String.valueOf(usernameField.getText()).equals("")) {
                 Log.i("Error2", "The Username field should not be empty");
-                Toast.makeText(getApplicationContext(), "The Username field should not be empty", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "The Username field should not be " +
+                        "empty", Toast.LENGTH_LONG).show();
             } else if (String.valueOf(passwordField.getText()).equals("")) {
                 Log.i("Error4", "The Password field should not be empty");
-                Toast.makeText(getApplicationContext(), "The Password field should not be empty", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "The Password field should not be" +
+                        " empty", Toast.LENGTH_LONG).show();
             } else if (usernameA1 != null) {
                 Log.i("Error3", "You have already Created a username");
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -67,17 +74,22 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
                         .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 Log.i("Successful1", "Successfully created new sign Up!");
-                                sharedPreferences.edit().putString("UserName", usernameField.getText().toString()).apply();
-                                sharedPreferences.edit().putInt("Password", Integer.parseInt(passwordField.getText().toString())).apply();
-                                usernameA1 = sharedPreferences.getString("UserName", null);
+                                sharedPreferences.edit().putString("UserName", usernameField
+                                        .getText().toString()).apply();
+                                sharedPreferences.edit().putInt("Password",
+                                        Integer.parseInt(passwordField.getText().toString()))
+                                        .apply();
+                                usernameA1 = sharedPreferences.getString("UserName",
+                                        null);
                                 passwordA1 = sharedPreferences.getInt("Password", 0);
-                                Toast.makeText(getApplicationContext(), "You are signed up as: ".concat(usernameA1), Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "You are signed up as: "
+                                        .concat(usernameA1), Toast.LENGTH_LONG).show();
                             }
                         })
                         .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 // CANCEL
-                             }
+                            }
                         });
                 // Create the AlertDialog object and return it
                 AlertDialog dialog = builder.create();
@@ -85,26 +97,32 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
 
             } else {
                 Log.i("Successful1", "Successful sign Up!");
-                sharedPreferences.edit().putString("UserName", usernameField.getText().toString()).apply();
-                sharedPreferences.edit().putInt("Password", Integer.parseInt(passwordField.getText().toString())).apply();
+                sharedPreferences.edit().putString("UserName", usernameField.getText().toString())
+                        .apply();
+                sharedPreferences.edit().putInt("Password", Integer.parseInt(passwordField.getText()
+                        .toString())).apply();
 
 
                 /*usernameA1 = String.valueOf(usernameField.getText());
                 passwordA1 = Integer.valueOf(String.valueOf(passwordField.getText()));*/
-                Toast.makeText(getApplicationContext(), "You are signed up as: ".concat(usernameA1), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "You are signed up as: ".concat(usernameA1)
+                        , Toast.LENGTH_LONG).show();
             }
         } else {
 
             if (String.valueOf(usernameField.getText()).equals(usernameA1)) {
                 if (Integer.valueOf(String.valueOf(passwordField.getText())).equals(passwordA1)) {
-                    Toast.makeText(getApplicationContext(), "You are Logged in as: ".concat(usernameA1), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "You are Logged in as: "
+                            .concat(usernameA1), Toast.LENGTH_LONG).show();
                     Intent intent1 = new Intent(this, Summary.class);
                     startActivity(intent1);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Wrong password!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Wrong password!",
+                            Toast.LENGTH_LONG).show();
                 }
             } else {
-                Toast.makeText(getApplicationContext(), "Username was not found", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Username was not found",
+                        Toast.LENGTH_LONG).show();
             }
 
         }
@@ -126,7 +144,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
         constraintLayout = (ConstraintLayout) findViewById(R.id.relativeLayout1);
 
         teamLogo.setOnClickListener(this);
-//        relativeLayout.setOnClickListener(this);
+        //relativeLayout.setOnClickListener(this);
         constraintLayout.setOnClickListener(this);
 
         usernameField = (EditText) findViewById(R.id.username1);
@@ -137,7 +155,8 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
 
 //        usernameField.setOnKeyListener(this);
         passwordField.setOnKeyListener(this);
-        Log.d(TAG, "onCreate: " + sharedPreferences.getBoolean("SignUpMode", false));
+        Log.d(TAG, "onCreate: " + sharedPreferences.getBoolean("SignUpMode"
+                , false));
         Log.d(TAG, "signUpOrLogIn: " + usernameA1);
         Log.d(TAG, "signUpOrLogIn: " + passwordA1);
 
@@ -166,7 +185,8 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
             Log.i("AppInfo", "Change the mode");
         } else if (v.getId() == R.id.teamLogo || v.getId() == R.id.relativeLayout1) {
             InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(Objects.requireNonNull(getCurrentFocus()).getWindowToken(), 0);
+            imm.hideSoftInputFromWindow(Objects.requireNonNull(getCurrentFocus()).getWindowToken(),
+                    0);
             Log.i("AppInfo", "Clicked on");
         }
 
