@@ -77,7 +77,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
                     Toast.makeText(getApplicationContext(), "Enter valid date", LENGTH_LONG).show();
                     e.printStackTrace();
                 }
-                if (paymeth == null){
+                if (paymeth.equals("---")) {
                     paymeth = "Not Defined";
                 }
 
@@ -85,10 +85,12 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
                 entry entry = new entry(cat, amount, date, paymeth);
                 entries.clear();
                 entries.add(entry);
-                ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(), "summary", "entries");
+                ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
+                        "summary", "entries");
                 if (Temp == null) Temp = new ArrayList<entry>();
                 else Temp.addAll(entries);
-                saveObjectToSharedPreference(getApplicationContext(), "summary", "entries", Temp);
+                saveObjectToSharedPreference(getApplicationContext(),
+                        "summary", "entries", Temp);
                 startActivity(intent);
             }
         });
