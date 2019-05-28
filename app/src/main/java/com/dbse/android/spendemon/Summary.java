@@ -33,6 +33,8 @@ public class Summary extends AppCompatActivity {
     static ArrayList<entry> entries = new ArrayList<>();
     private final String TYPE = "type";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
