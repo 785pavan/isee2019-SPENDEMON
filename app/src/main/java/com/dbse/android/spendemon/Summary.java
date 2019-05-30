@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,13 +24,14 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static com.dbse.android.spendemon.EditData.getSavedObjectFromPreference;
 
 
 public class Summary extends AppCompatActivity {
     private static final String TAG = "myTag";
-
+    private SummaryViewModel summaryViewModel; // object of View Model created.
 
     static ArrayList<entry> entries = new ArrayList<>();
     private final String TYPE = "type";
@@ -37,6 +40,17 @@ public class Summary extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class); //reference to current
+        // activity given to view model object.
+        summaryViewModel.getTable().observe(this, new Observer<List<Table>>() {
+            @Override
+            public void onChanged(List<Table> tables) {
+
+
+            }
+        });
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
         Toolbar toolbar = findViewById(R.id.toolbar);

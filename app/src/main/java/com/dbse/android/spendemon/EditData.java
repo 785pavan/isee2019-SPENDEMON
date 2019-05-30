@@ -14,6 +14,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.dbse.android.spendemon.model.entry;
 import com.google.gson.Gson;
@@ -25,11 +27,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import static android.widget.Toast.LENGTH_LONG;
 import static com.dbse.android.spendemon.Summary.entries;
 
 public class EditData extends AppCompatActivity implements android.widget.AdapterView.OnItemSelectedListener {
+
 
     private static final String TAG = "myTag";
     private entry entry;
@@ -45,6 +49,8 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_edit_data);
         sType = findViewById(R.id.sType);
         sCategory = findViewById(R.id.sCategory);
