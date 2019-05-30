@@ -10,8 +10,10 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
 
@@ -19,7 +21,8 @@ public class TrendLineActivity extends AppCompatActivity {
 
     private static String TAG = "TrendLine";
 
-    private float[] yData = {25.4f, 10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f};
+    private float[] yExpense = {25.4f, 10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f};
+    private float[] yIncome = {10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f, 25.4f};
 
     LineChart lineChart;
 
@@ -40,42 +43,39 @@ public class TrendLineActivity extends AppCompatActivity {
 
     private void addDataSet() {
         Log.d(TAG, "addDataSet called");
-        ArrayList<Entry> yAxes = new ArrayList<>();
+        ArrayList<Entry> yAxesEx = new ArrayList<>();
         ArrayList<String> xAxes = new ArrayList<>();
+        ArrayList<Entry> yAxesIn = new ArrayList<>();
 
-        int i = 0;
-        for (float data : yData) {
-            yAxes.add(new Entry(data, i));
+        int i = 0, j = 0;
+        for (float data : yExpense) {
+            yAxesEx.add(new Entry(data, i));
             xAxes.add(i, String.valueOf(data));
             i++;
         }
+        for (float data : yIncome) {
+            yAxesIn.add(new Entry(data, j++));
+        }
+        String[] xaxes = new String[xAxes.size()];
+        for (int k = 0; k < xAxes.size(); k++) {
+            xaxes[k] = xAxes.get(k).toString();
+        }
 
+        ArrayList<ILineDataSet> lineDataSets = new ArrayList<>();
+        LineDataSet lineDataSet1 =new LineDataSet(yAxesEx,"Expenses");
+        lineDataSet1.setDrawCircles(false);
+        lineDataSet1.setColor(Color.BLUE);
 
-        LineDataSet lineDataSet = new LineDataSet(yAxes, "Cost");
-        lineDataSet.
-                lineDataSet.setValueTextSize(12);
+        LineDataSet lineDataSet2 =new LineDataSet(yAxesIn,"Incomes");
+        lineDataSet2.setDrawCircles(false);
+        lineDataSet2.setColor(Color.RED);
 
-        //Colors
+        lineDataSets.add(lineDataSet1);
+        lineDataSets.add(lineDataSet2);
 
-        ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.GRAY);
-        colors.add(Color.BLUE);
-        colors.add(Color.RED);
-        colors.add(Color.GREEN);
-        colors.add(Color.MAGENTA);
-        colors.add(Color.CYAN);
-        colors.add(Color.YELLOW);
+        lineChart.setData(new LineData(lineDataSets));
 
-        lineDataSet.setColors(colors);
+        lineChart.setVisibleXRangeMaximum(65f);
 
-        //add legend
-        Legend legend = pieChart.getLegend();
-        legend.setForm(Legend.LegendForm.CIRCLE);
-
-        //Pie data create
-
-        PieData pieData = new PieData(lineDataSet);
-        pieChart.setData(pieData);
-        pieChart.invalidate();
     }
 }

@@ -91,7 +91,7 @@ public class Summary extends AppCompatActivity {
         bDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PieChartActivity.class);
+                Intent intent = new Intent(getApplicationContext(), TrendLineActivity.class);
                 startActivity(intent);
                 /*EditData.deleteSharedPreferences(getApplicationContext(),
                         "summary");*/
