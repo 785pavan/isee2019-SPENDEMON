@@ -26,6 +26,6 @@ public interface TableDAO {
     @Query("DELETE FROM summary_table")
     void deleteAllData();
 
-    @Query("SELECT * FROM summary_table ORDER BY priority DESC")
+    @Query("SELECT * FROM summary_table ORDER BY id DESC")
     LiveData<List<Table>> getAllData();
 }

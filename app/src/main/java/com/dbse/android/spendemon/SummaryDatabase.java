@@ -43,7 +43,7 @@ public abstract class SummaryDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            tableDAO.insert(new Table("Title_1", "Description_1", 1));
+            tableDAO.insert(new Table("Income", "Salary", 500, "30-05-2019", "Cash"));
             return null;
         }
     }

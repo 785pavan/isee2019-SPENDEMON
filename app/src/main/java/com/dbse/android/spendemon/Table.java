@@ -9,14 +9,18 @@ public class Table {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    private String title;
-    private String description;
-    private int priority;
+    private String Type;
+    private String Category;
+    private int Amount;
+    private String Date;
+    private String Paymethod;
 
-    public Table(String title, String description, int priority) {
-        this.title = title;
-        this.description = description;
-        this.priority = priority;
+    public Table(String Type, String Category, int Amount, String Date, String Paymethod ) {
+        this.Type = Type;
+        this.Category = Category;
+        this.Amount = Amount;
+        this.Date = Date;
+        this. Paymethod = Paymethod;
     }
 
     public void setId(int id) {
@@ -27,15 +31,25 @@ public class Table {
         return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getType() {
+        return Type;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCategory() {
+        return Category;
     }
 
-    public int getPriority() {
-        return priority;
+    public int getAmount() {
+        return Amount;
     }
+
+    public String getDate() {
+        return Date;
+    }
+
+    public String getPaymethod() {
+        return Paymethod;
+    }
+
+
 }
