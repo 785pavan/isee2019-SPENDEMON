@@ -16,7 +16,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dbse.android.spendemon.model.Entry;
-import com.dbse.android.spendemon.model.entry;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -34,7 +33,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
 
 
     private static final String TAG = "myTag";
-    private entry entry;
+    private Entry entry;
     private Spinner sCategory;
     private Spinner sPaymentMethod;
     private Spinner sType;
