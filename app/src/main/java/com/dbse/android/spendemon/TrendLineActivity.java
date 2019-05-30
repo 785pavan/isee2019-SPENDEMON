@@ -21,7 +21,7 @@ public class TrendLineActivity extends AppCompatActivity {
 
     private static String TAG = "TrendLine";
 
-    private float[] yExpense = {25.4f, 10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f};
+    private float[] yExpense = {10f, 20.6f, 30.76f, 44.32f, 46.0f, 50.8f, 66.6f};
     private float[] yIncome = {10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f, 25.4f};
 
     LineChart lineChart;
@@ -44,22 +44,22 @@ public class TrendLineActivity extends AppCompatActivity {
     private void addDataSet() {
         Log.d(TAG, "addDataSet called");
         ArrayList<Entry> yAxesEx = new ArrayList<>();
-        ArrayList<String> xAxes = new ArrayList<>();
+        ArrayList<Integer> xAxes = new ArrayList<>();
         ArrayList<Entry> yAxesIn = new ArrayList<>();
 
         int i = 0, j = 0;
         for (float data : yExpense) {
             yAxesEx.add(new Entry(data, i));
-            xAxes.add(i, String.valueOf(data));
+            xAxes.add(i);
             i++;
         }
         for (float data : yIncome) {
             yAxesIn.add(new Entry(data, j++));
         }
-        String[] xaxes = new String[xAxes.size()];
+        /*String[] xaxes = new String[xAxes.size()];
         for (int k = 0; k < xAxes.size(); k++) {
             xaxes[k] = xAxes.get(k).toString();
-        }
+        }*/
 
         ArrayList<ILineDataSet> lineDataSets = new ArrayList<>();
         LineDataSet lineDataSet1 =new LineDataSet(yAxesEx,"Expenses");
@@ -73,7 +73,7 @@ public class TrendLineActivity extends AppCompatActivity {
         lineDataSets.add(lineDataSet1);
         lineDataSets.add(lineDataSet2);
 
-        lineChart.setData(new LineData(lineDataSets));
+        lineChart.setData(new LineData(lineDataSet1));
 
         lineChart.setVisibleXRangeMaximum(65f);
 
