@@ -14,9 +14,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
+import com.dbse.android.spendemon.model.Entry;
 import com.dbse.android.spendemon.model.entry;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -27,7 +26,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 import static android.widget.Toast.LENGTH_LONG;
 import static com.dbse.android.spendemon.Summary.entries;
@@ -88,12 +86,12 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
                 }
 
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
-                entry entry = new entry(cat, amount, date, paymeth);
+                Entry entry = new Entry(cat, amount, date, paymeth);
                 entries.clear();
                 entries.add(entry);
-                ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
+                ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
                         "summary", "entries");
-                if (Temp == null) Temp = new ArrayList<entry>();
+                if (Temp == null) Temp = new ArrayList<Entry>();
                 else Temp.addAll(entries);
                 saveObjectToSharedPreference(getApplicationContext(),
                         "summary", "entries", Temp);
@@ -155,7 +153,7 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
 
     public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context, String preferenceFileName, String preferenceKey) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
-        Type classType = new TypeToken<ArrayList<entry>>() {
+        Type classType = new TypeToken<ArrayList<Entry>>() {
         }.getType();
         if (sharedPreferences.contains(preferenceKey)) {
             final Gson gson = new Gson();

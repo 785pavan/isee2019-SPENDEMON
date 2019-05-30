@@ -3,20 +3,20 @@ package com.dbse.android.spendemon.model;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class entry {
+public class Entry {
 
     private String category;
     private double Amount;
     private Date date;
     private String payMethod;
 
-    public entry(String category, double amount, Date date) {
+    public Entry(String category, double amount, Date date) {
         this.category = category;
         this.Amount = amount;
         this.date = date;
     }
 
-    public entry() {
+    public Entry() {
        this.category = null;
        this.Amount = 0;
        this.date = null;
@@ -49,7 +49,7 @@ public class entry {
 
     @Override
     public String toString() {
-        return "entry{" +
+        return "Entry{" +
                 "category='" + category + '\'' +
                 ", Amount=" + Amount +
                 ", date=" + date +
@@ -57,7 +57,7 @@ public class entry {
                 '}';
     }
 
-    public entry(String cat, double amount, Date date, String payMeth) {
+    public Entry(String cat, double amount, Date date, String payMeth) {
         this.category = cat;
         this.Amount = amount;
         this.date = date;
@@ -75,10 +75,10 @@ public class entry {
     private static int AmountId = 0;
     private static Date dateID = new Date("2009/12/31");
 
-    public static ArrayList<entry> createEntryArrayList(int numEntries) {
-        ArrayList<entry> entries = new ArrayList<>();
+    public static ArrayList<Entry> createEntryArrayList(int numEntries) {
+        ArrayList<Entry> entries = new ArrayList<>();
         for (int i = 0; i < numEntries; i++) {
-            entries.add(new entry("dummy " + i, ++AmountId, dateID));
+            entries.add(new Entry("dummy " + i, ++AmountId, dateID));
         }
         return entries;
     }

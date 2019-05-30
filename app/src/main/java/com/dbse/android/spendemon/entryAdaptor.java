@@ -9,16 +9,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dbse.android.spendemon.model.entry;
+import com.dbse.android.spendemon.model.Entry;
 
 import java.util.List;
 
 public class entryAdaptor extends
         RecyclerView.Adapter<entryAdaptor.ViewHolder> {
 
-    private List<entry> entries;
+    private List<Entry> entries;
 
-    public entryAdaptor(List<entry> entries) {
+    public entryAdaptor(List<Entry> entries) {
         this.entries = entries;
     }
 
@@ -35,7 +35,7 @@ public class entryAdaptor extends
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewholder, int position) {
-        entry entry = (entry) entries.get(position);
+        Entry entry = (Entry) entries.get(position);
 
         TextView tvCategoryItem = viewholder.tvCategoryItem;
         tvCategoryItem.setText(entry.getCategory());

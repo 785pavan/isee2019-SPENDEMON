@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dbse.android.spendemon.model.entry;
+import com.dbse.android.spendemon.model.Entry;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
@@ -33,7 +33,7 @@ public class Summary extends AppCompatActivity {
     private static final String TAG = "myTag";
     private SummaryViewModel summaryViewModel; // object of View Model created.
 
-    static ArrayList<entry> entries = new ArrayList<>();
+    static ArrayList<Entry> entries = new ArrayList<>();
     private final String TYPE = "type";
 
 
@@ -57,7 +57,7 @@ public class Summary extends AppCompatActivity {
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
         Button bDelete = findViewById(R.id.bDelete);
-        ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
+        ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
                 "summary", "entries");
         //readJson();
         entries.clear();
@@ -105,7 +105,7 @@ public class Summary extends AppCompatActivity {
         try {
             JSONArray jArray = new JSONArray(readJSONFromAsset());
             for (int i = 0; i < jArray.length(); ++i) {
-                entry en = new entry();
+                Entry en = new Entry();
                 String Category = jArray.getJSONObject(i).getString("Category");
                 Log.d("myTag", Category);
                 String PaymentMethod = jArray.getJSONObject(i).getString("PaymentMethod");
