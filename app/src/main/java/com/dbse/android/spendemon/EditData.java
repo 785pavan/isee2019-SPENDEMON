@@ -88,7 +88,7 @@ public class EditData extends AppCompatActivity
                 }
 
                 final Intent intent = new Intent(getApplicationContext(), Summary.class);
-                Entry entry = new Entry(cat, amount, date, paymeth);
+                Entry entry = new Entry(sType.getSelectedItem().toString(), cat, amount, date, paymeth);
                 entries.clear();
                 entries.add(entry);
                 ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),

@@ -11,11 +11,11 @@ public class Table {
 
     private String Type;
     private String Category;
-    private int Amount;
+    private double Amount;
     private String Date;
     private String Paymethod;
 
-    public Table(String Type, String Category, int Amount, String Date, String Paymethod ) {
+    public Table(String Type, String Category, double Amount, String Date, String Paymethod ) {
         this.Type = Type;
         this.Category = Category;
         this.Amount = Amount;
@@ -39,7 +39,7 @@ public class Table {
         return Category;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return Amount;
     }
 

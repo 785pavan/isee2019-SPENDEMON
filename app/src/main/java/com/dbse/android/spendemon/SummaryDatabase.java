@@ -9,7 +9,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {Table.class}, version = 1)
+
+@Database(entities = {Table.class}, version = 3)
 public abstract class SummaryDatabase extends RoomDatabase {
 
     private static SummaryDatabase instance;
@@ -20,21 +21,21 @@ public abstract class SummaryDatabase extends RoomDatabase {
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     SummaryDatabase.class, "table_database")
-                    .fallbackToDestructiveMigration()
-                    .addCallback(roomCallback).build();
+                    .fallbackToDestructiveMigration().build();
+
         }
         return instance;
     }
 
-    private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback(){
+    /*private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback(){
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
             new PopulateDbAsyncTask(instance).execute();
         }
-    };
+    };*/
 
-    private static class PopulateDbAsyncTask extends AsyncTask<Void,Void,Void>{
+    /*private static class PopulateDbAsyncTask extends AsyncTask<Void,Void,Void>{
         private TableDAO tableDAO;
 
         private PopulateDbAsyncTask(SummaryDatabase db){
@@ -46,5 +47,5 @@ public abstract class SummaryDatabase extends RoomDatabase {
             tableDAO.insert(new Table("Income", "Salary", 500, "30-05-2019", "Cash"));
             return null;
         }
-    }
+    }*/
 }

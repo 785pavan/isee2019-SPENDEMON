@@ -15,117 +15,93 @@ public class Entry {
         this.category = category;
         this.Amount = amount;
         this.date = date;
-        setCatResource();
+        /*setCatResource();
         setPaymentResource();
-        setTypeResource();
+        setTypeResource();*/
     }
 
-    public void setCatResource() {
+   /* public void setCatResource() {
         switch (category) {
-            case "Rent": {
+            case "Rent":
                 this.catResource = 1;
                 break;
-            }
-            case "Insurance": {
+            case "Insurance":
                 this.catResource = 2;
                 break;
-            }
-            case "Groceries": {
+            case "Groceries":
                 this.catResource = 3;
                 break;
-            }
-            case "Travel": {
+            case "Travel":
                 this.catResource = 4;
                 break;
-            }
-            case "Restaurant": {
+            case "Restaurant":
                 this.catResource = 5;
                 break;
-            }
-            case "Allowance": {
+            case "Allowance":
                 this.catResource = 5;
                 break;
-            }
-            case "Salary": {
+            case "Salary":
                 this.catResource = 7;
                 break;
-            }
-            case "Bonds": {
+            case "Bonds":
                 this.catResource = 8;
                 break;
-            }
-            case "Bonus": {
+            case "Bonus":
                 this.catResource = 9;
                 break;
-            }
-            case "Gift": {
+            case "Gift":
                 this.catResource = 10;
                 break;
-            }
-            default: {
+            default:
                 this.catResource = 0;
-                break;
-            }
         }
-    }
+    }*/
 
-    public void setTypeResource() {
+ /*   public void setTypeResource() {
         switch (type) {
-            case "Incomes": {
+            case "Incomes":
                 this.catResource = 1;
                 break;
-            }
-            case "Expenses": {
+            case "Expenses":
                 this.catResource = 1;
                 break;
-            }
-            default: {
+            default:
                 this.catResource = 0;
                 break;
-            }
 
         }
-    }
+    }*/
 
-    public void setPaymentResource() {
+   /* public void setPaymentResource() {
         switch (payMethod) {
-            case "Cash": {
+            case "Cash":
                 this.catResource = 1;
                 break;
-            }
-            case "Card": {
+            case "Card":
                 this.catResource = 2;
                 break;
-            }
-            case "PayPal": {
+            case "PayPal":
                 this.catResource = 3;
                 break;
-            }
-            case "GooglePay": {
+            case "GooglePay":
                 this.catResource = 4;
                 break;
-            }
-            case "ApplePay": {
+            case "ApplePay":
                 this.catResource = 5;
                 break;
-            }
 
-            default: {
+            default:
                 this.catResource = 0;
-                break;
-            }
 
         }
-    }
+    }*/
 
     public Entry() {
         this.category = null;
         this.Amount = 0;
         this.date = null;
         this.payMethod = null;
-        setCatResource();
-        setPaymentResource();
-        setTypeResource();
+
     }
 
     public String getCategory() {
@@ -168,9 +144,7 @@ public class Entry {
         this.Amount = amount;
         this.date = date;
         this.payMethod = payMeth;
-        setCatResource();
-        setPaymentResource();
-        setTypeResource();
+
     }
 
     public String getPayMethod() {
