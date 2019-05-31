@@ -27,31 +27,33 @@
         android:background="@color/background" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="317dp"
+        android:layout_height="165dp"
         android:layout_gravity="bottom|center"
+        android:layout_marginBottom="40dp"
         android:orientation="horizontal"
         android:scrollbarSize="4dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabMinus"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="133dp"
+            android:layout_height="177dp"
             android:layout_gravity="bottom|start"
             android:layout_margin="@dimen/fab_margin"
             android:layout_weight="1"
+            android:backgroundTint="@color/background"
             android:clickable="true"
             android:focusable="true"
             android:padding="8dp"
-            android:backgroundTint="@color/background"
             app:backgroundTint="@color/fabMinusColor"
+            app:borderWidth="4dp"
             app:srcCompat="@drawable/minus"
-            app:borderWidth="4dp"/>
+            app:fabCustomSize="123dp"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabPlus"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="133dp"
+            android:layout_height="177dp"
             android:layout_gravity="bottom|center_vertical|end"
             android:layout_margin="@dimen/fab_margin"
             android:layout_weight="1"
@@ -64,7 +66,8 @@
             app:borderWidth="4dp"
             app:fabSize="auto"
             app:maxImageSize="24dp"
-            app:srcCompat="@drawable/plus" />
+            app:srcCompat="@drawable/plus"
+            app:fabCustomSize="123dp"/>
 
 
     </LinearLayout>
