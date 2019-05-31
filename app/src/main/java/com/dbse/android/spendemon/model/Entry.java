@@ -180,8 +180,4 @@ public class Entry {
     public void setPayMethod(String payMethod) {
         this.payMethod = payMethod;
     }
-
-    private static int AmountId = 0;
-
-
 }
