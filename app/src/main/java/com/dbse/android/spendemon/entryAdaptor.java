@@ -38,13 +38,13 @@ public class entryAdaptor extends
         Entry entry = (Entry) entries.get(position);
 
         TextView tvCategoryItem = viewholder.tvCategoryItem;
-        tvCategoryItem.setText(entry.getCategory());
+        //tvCategoryItem.setText(entry.getCategory());
         TextView tvAmountItem = viewholder.tvAmountItem;
         tvAmountItem.setText(String.valueOf(entry.getAmount()));
         TextView tvDateItem = viewholder.tvDateItem;
         tvDateItem.setText(String.valueOf(entry.getDate()));
         TextView tvPayment = viewholder.tvPaymentMethodItem;
-        tvPayment.setText(entry.getPayMethod());
+        //tvPayment.setText(entry.getPayMethod());
 
     }
 
@@ -63,10 +63,10 @@ public class entryAdaptor extends
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvCategoryItem = itemView.findViewById(R.id.tvCategoryItem);
+           // tvCategoryItem = itemView.findViewById(R.id.tvCategoryItem);
             tvAmountItem = itemView.findViewById(R.id.tvAmountItem);
             tvDateItem = itemView.findViewById(R.id.tvDateItem);
-            tvPaymentMethodItem = itemView.findViewById(R.id.tvPaymentMethodItem);
+            //tvPaymentMethodItem = itemView.findViewById(R.id.tvPaymentMethodItem);
         }
     }
 

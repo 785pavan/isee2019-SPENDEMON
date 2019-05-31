@@ -81,7 +81,7 @@
     <string name="passwordText1">Password</string>
     <string name="LogIn1">Log In</string>
     <string name="signUp1">Sign Up</string>
-    <string name="add_date">Add Date</string>
+    <string name="add_date">Select Date</string>
     <string name="total_amount">Total Amount</string>
     <string name="delete">Delete</string>
     <string name="confirm_dialog_message">User Account exits. Do you want to make new user</string>
@@ -105,5 +105,8 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="chart">Chart</string>
+    <string name="categoryImageDesc">Image of the Category selected</string>
+    <string name="typeImageDesc">Image of type of transaction</string>
+    <string name="paymentImageDesc">Image for payment method</string>
     <!--<string name="signUp1">Sign Up</string>-->
 </resources>

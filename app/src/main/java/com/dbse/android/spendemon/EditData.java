@@ -1,16 +1,21 @@
 package com.dbse.android.spendemon;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +29,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 
 import static android.widget.Toast.LENGTH_LONG;
@@ -33,15 +39,16 @@ public class EditData extends AppCompatActivity
         implements android.widget.AdapterView.OnItemSelectedListener {
 
 
-    private static final String TAG = "myTag";
+    private static final String TAG = "editData";
     private Entry entry;
     private Spinner sCategory;
     private Spinner sPaymentMethod;
     private Spinner sType;
     private EditText etAmount;
-    private EditText etdate;
+    private TextView etdate;
     private Button bSave;
     private static final String FILE_NAME = "NewFile";
+    private DatePickerDialog.OnDateSetListener onDateSetListener;
 
 
     @Override
@@ -103,6 +110,31 @@ public class EditData extends AppCompatActivity
                 startActivity(intent);
             }
         });
+        etdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                         EditData.this, android.R.style.Widget_Material_Light, onDateSetListener,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                dialog.show();
+
+            }
+        });
+        onDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: dd/mm/yyyy: " + dayOfMonth + "/ " + month + "/ " + year);
+                String date = dayOfMonth + "/" + month + "/" + year;
+                etdate.setText(date);
+            }
+        };
 
     }
 
