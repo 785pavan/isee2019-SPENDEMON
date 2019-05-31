@@ -42,9 +42,6 @@ public class Summary extends AppCompatActivity {
 
             }
         });
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
         Toolbar toolbar = findViewById(R.id.toolbar);
