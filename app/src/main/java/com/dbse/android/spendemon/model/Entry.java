@@ -20,7 +20,40 @@ public class Entry {
         setTypeResource();*/
     }
 
-   /* public void setCatResource() {
+    public Entry() {
+        this.category = null;
+        this.Amount = 0;
+        this.date = null;
+        this.payMethod = null;
+
+    }
+
+    public Entry(String type, String cat, double amount, String date, String payMeth) {
+        this.type = type;
+        this.category = cat;
+        this.Amount = amount;
+        this.date = date;
+        this.payMethod = payMeth;
+
+    }
+
+    public int getCatResource() {
+        return catResource;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getTypeResource() {
+        return typeResource;
+    }
+
+    public int getPaymentResource() {
+        return paymentResource;
+    }
+
+    public void setCatResource() {
         switch (category) {
             case "Rent":
                 this.catResource = 1;
@@ -55,24 +88,24 @@ public class Entry {
             default:
                 this.catResource = 0;
         }
-    }*/
+    }
 
- /*   public void setTypeResource() {
+    public void setTypeResource() {
         switch (type) {
             case "Incomes":
-                this.catResource = 1;
+                this.catResource = 0;
                 break;
             case "Expenses":
                 this.catResource = 1;
                 break;
             default:
-                this.catResource = 0;
+                this.catResource = 3;
                 break;
 
         }
-    }*/
+    }
 
-   /* public void setPaymentResource() {
+    public void setPaymentResource() {
         switch (payMethod) {
             case "Cash":
                 this.catResource = 1;
@@ -94,14 +127,6 @@ public class Entry {
                 this.catResource = 0;
 
         }
-    }*/
-
-    public Entry() {
-        this.category = null;
-        this.Amount = 0;
-        this.date = null;
-        this.payMethod = null;
-
     }
 
     public String getCategory() {
@@ -136,15 +161,6 @@ public class Entry {
                 ", date=" + date +
                 ", payMethod=" + payMethod +
                 '}';
-    }
-
-    public Entry(String type, String cat, double amount, String date, String payMeth) {
-        this.type = type;
-        this.category = cat;
-        this.Amount = amount;
-        this.date = date;
-        this.payMethod = payMeth;
-
     }
 
     public String getPayMethod() {

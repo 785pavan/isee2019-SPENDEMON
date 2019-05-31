@@ -52,6 +52,5 @@ dependencies {
     //tests
     // https://mvnrepository.com/artifact/org.mockito/mockito-core
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.28.2'
-    testImplementation 'junit:junit:4.12'
 
 }
