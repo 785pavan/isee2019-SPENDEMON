@@ -162,7 +162,8 @@ public class Entry {
                 '}';
     }
 
-    public Entry(String cat, double amount, String date, String payMeth) {
+    public Entry(String type, String cat, double amount, String date, String payMeth) {
+        this.type = type;
         this.category = cat;
         this.Amount = amount;
         this.date = date;
