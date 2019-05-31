@@ -34,6 +34,7 @@ public class Summary extends AppCompatActivity {
         summaryViewModel.getTable().observe(this, new Observer<List<Table>>() {
             @Override
             public void onChanged(List<Table> tables) {
+                entries.clear();
                 for (Table table : tables) {
                     Entry e = new Entry(table.getType(), table.getCategory(), table.getAmount(), table.getDate(), table.getPaymethod());
                     entries.add(e);
