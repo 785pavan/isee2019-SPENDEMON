@@ -17,8 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.dbse.android.spendemon.model.Entry;
+import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -29,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import static android.widget.Toast.LENGTH_LONG;
 import static com.dbse.android.spendemon.Summary.entries;
@@ -47,6 +51,7 @@ public class EditData extends AppCompatActivity
     private Button bSave;
     private static final String FILE_NAME = "NewFile";
     private DatePickerDialog.OnDateSetListener onDateSetListener;
+    private SummaryViewModel summaryViewModel;
 
 
     @Override
@@ -68,6 +73,9 @@ public class EditData extends AppCompatActivity
         int spinnerPos = arrayAdapter.getPosition(type);
         sType.setSelection(spinnerPos);
         Log.d(TAG, "onCreate: " + type);
+        summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class); //reference to current
+        // activity given to view model object.
+
 
 
         bSave.setOnClickListener(new View.OnClickListener() {
@@ -87,11 +95,13 @@ public class EditData extends AppCompatActivity
                     paymeth = "Not Defined";
                 }
 
+                Table table = new Table(sType.getSelectedItem().toString(), cat, amount, date, paymeth);
+                summaryViewModel.insert(table);
                 final Intent intent = new Intent(getApplicationContext(), Summary.class);
-                Entry entry = new Entry(sType.getSelectedItem().toString(), cat, amount, date, paymeth);
+               /* Entry entry = new Entry(sType.getSelectedItem().toString(), cat, amount, date, paymeth);
                 entries.clear();
-                entries.add(entry);
-                ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
+                entries.add(entry);*/
+              /*  ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
                         "summary", "entries");
                 if (Temp == null) {
                     Temp = new ArrayList<Entry>();
@@ -99,7 +109,7 @@ public class EditData extends AppCompatActivity
                     Temp.addAll(entries);
                 }
                 saveObjectToSharedPreference(getApplicationContext(),
-                        "summary", "entries", Temp);
+                        "summary", "entries", Temp);*/
                 startActivity(intent);
             }
         });
@@ -175,7 +185,7 @@ public class EditData extends AppCompatActivity
         super.onStop();
     }
 
-    public static void saveObjectToSharedPreference(Context context, String preferenceFileName,
+    /*public static void saveObjectToSharedPreference(Context context, String preferenceFileName,
                                                     String serializedObjectKey, Object object) {
         SharedPreferences sharedPreferences = context
                 .getSharedPreferences(preferenceFileName, 0);
@@ -204,5 +214,5 @@ public class EditData extends AppCompatActivity
         SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,
                 0);
         sharedPreferences.edit().clear().apply();
-    }
+    }*/
 }

@@ -18,7 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.dbse.android.spendemon.EditData.getSavedObjectFromPreference;
+//import static com.dbse.android.spendemon.EditData.getSavedObjectFromPreference;
 
 
 public class Summary extends AppCompatActivity {
@@ -34,12 +34,14 @@ public class Summary extends AppCompatActivity {
         summaryViewModel.getTable().observe(this, new Observer<List<Table>>() {
             @Override
             public void onChanged(List<Table> tables) {
-                Entry e = new Entry(tables.get(0).getType(),tables.get(0).getCategory(), tables.get(0).getAmount(),tables.get(0).getDate(),
-                        tables.get(0).getPaymethod());
-
+                for (Table table : tables) {
+                    Entry e = new Entry(table.getType(), table.getCategory(), table.getAmount(), table.getDate(), table.getPaymethod());
+                    entries.add(e);
+                }
 
             }
         });
+
 
 
         super.onCreate(savedInstanceState);
@@ -48,14 +50,14 @@ public class Summary extends AppCompatActivity {
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
         Button bDelete = findViewById(R.id.bDelete);
-        ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
+       /* ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
                 "summary", "entries");
         //readJson();
         entries.clear();
 
         if (Temp != null) {
             entries.addAll(Temp);
-        }
+        }*/
         entryAdaptor adaptor = new entryAdaptor(entries);
         rvEntries.setAdapter(adaptor);
         rvEntries.setLayoutManager(new LinearLayoutManager(this));
