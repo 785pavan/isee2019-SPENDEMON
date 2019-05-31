@@ -2,7 +2,6 @@ package com.dbse.android.spendemon;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,14 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dbse.android.spendemon.model.Entry;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static com.dbse.android.spendemon.EditData.getSavedObjectFromPreference;
@@ -31,11 +23,9 @@ import static com.dbse.android.spendemon.EditData.getSavedObjectFromPreference;
 
 public class Summary extends AppCompatActivity {
     private static final String TAG = "myTag";
-    private SummaryViewModel summaryViewModel; // object of View Model created.
-
     static ArrayList<Entry> entries = new ArrayList<>();
     private final String TYPE = "type";
-
+    private SummaryViewModel summaryViewModel; // object of View Model created.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
