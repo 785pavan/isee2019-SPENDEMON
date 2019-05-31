@@ -4,8 +4,6 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -83,13 +81,8 @@ public class EditData extends AppCompatActivity
                 } else {
                     amount = Double.parseDouble(etAmount.getText().toString());
                 }
-                Date date = new Date();
-                try {
-                    date = new SimpleDateFormat("dd/mm/yyyy").parse(etdate.getText().toString());
-                } catch (ParseException e) {
-                    Toast.makeText(getApplicationContext(), "Enter valid date", LENGTH_LONG).show();
-                    e.printStackTrace();
-                }
+                String date = etdate.getText().toString();
+
                 if (paymeth.equals("---")) {
                     paymeth = "Not Defined";
                 }
@@ -119,9 +112,8 @@ public class EditData extends AppCompatActivity
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
                 DatePickerDialog dialog = new DatePickerDialog(
-                         EditData.this, android.R.style.Widget_Material_Light, onDateSetListener,
+                        EditData.this, onDateSetListener,
                         year, month, day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
                 dialog.show();
 
             }
@@ -133,6 +125,7 @@ public class EditData extends AppCompatActivity
                 Log.d(TAG, "onDateSet: dd/mm/yyyy: " + dayOfMonth + "/ " + month + "/ " + year);
                 String date = dayOfMonth + "/" + month + "/" + year;
                 etdate.setText(date);
+                Log.d(TAG, "onDateSet: date " + etdate.getText().toString());
             }
         };
 

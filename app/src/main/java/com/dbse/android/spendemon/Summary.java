@@ -99,52 +99,5 @@ public class Summary extends AppCompatActivity {
 
     }
 
-    private void readJson() {
 
-        try {
-            JSONArray jArray = new JSONArray(readJSONFromAsset());
-            for (int i = 0; i < jArray.length(); ++i) {
-                Entry en = new Entry();
-                String Category = jArray.getJSONObject(i).getString("Category");
-                Log.d("myTag", Category);
-                String PaymentMethod = jArray.getJSONObject(i).getString("PaymentMethod");
-                Log.d("myTag", PaymentMethod);
-                double Amount = jArray.getJSONObject(i).getDouble("Amount");
-                if (jArray.getJSONObject(i).getString("Type").equals("Expense")) {
-                    Amount = -Amount;
-                }
-                Log.d("myTag", String.valueOf(Amount));
-                Date date = new Date(jArray.getJSONObject(i).getString("Date"));
-                Log.d("myTag", date.toString());
-                en.setCategory(Category);
-                en.setAmount(Amount);
-                en.setPayMethod(PaymentMethod);
-                en.setDate(date);
-                Log.d("myTag", en.toString());
-                entries.add(en);
-                Log.d("myTag", entries.toString());
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
-    private String readJSONFromAsset() {
-        String json;
-        try {
-            InputStream is = getAssets().open("ExpenseIncomeData.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, StandardCharsets.UTF_8);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-
-        return json;
-    }
 }
