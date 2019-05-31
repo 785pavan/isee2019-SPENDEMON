@@ -37,7 +37,6 @@ public class Summary extends AppCompatActivity {
     private final String TYPE = "type";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class); //reference to current

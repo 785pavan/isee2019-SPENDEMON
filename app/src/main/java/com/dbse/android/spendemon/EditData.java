@@ -29,7 +29,8 @@ import java.util.Date;
 import static android.widget.Toast.LENGTH_LONG;
 import static com.dbse.android.spendemon.Summary.entries;
 
-public class EditData extends AppCompatActivity implements android.widget.AdapterView.OnItemSelectedListener {
+public class EditData extends AppCompatActivity
+        implements android.widget.AdapterView.OnItemSelectedListener {
 
 
     private static final String TAG = "myTag";
@@ -72,7 +73,9 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
                 final double amount;
                 if (etAmount.getText().toString().equals("")) {
                     amount = 0;
-                } else amount = Double.parseDouble(etAmount.getText().toString());
+                } else {
+                    amount = Double.parseDouble(etAmount.getText().toString());
+                }
                 Date date = new Date();
                 try {
                     date = new SimpleDateFormat("dd/mm/yyyy").parse(etdate.getText().toString());
@@ -84,14 +87,17 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
                     paymeth = "Not Defined";
                 }
 
-                Intent intent = new Intent(getApplicationContext(), Summary.class);
+                final Intent intent = new Intent(getApplicationContext(), Summary.class);
                 Entry entry = new Entry(cat, amount, date, paymeth);
                 entries.clear();
                 entries.add(entry);
                 ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
                         "summary", "entries");
-                if (Temp == null) Temp = new ArrayList<Entry>();
-                else Temp.addAll(entries);
+                if (Temp == null) {
+                    Temp = new ArrayList<Entry>();
+                } else {
+                    Temp.addAll(entries);
+                }
                 saveObjectToSharedPreference(getApplicationContext(),
                         "summary", "entries", Temp);
                 startActivity(intent);
@@ -106,12 +112,14 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
 
         String sp1 = String.valueOf(sType.getSelectedItem());
         Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
-        String[] paymentMethodsArray = getApplicationContext().getResources().getStringArray(R.array.PaymentMethods);
+        String[] paymentMethodsArray = getApplicationContext().getResources()
+                .getStringArray(R.array.PaymentMethods);
         ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, paymentMethodsArray);
         sPaymentMethod.setAdapter(dataAdapter3);
         if (sp1.contentEquals("Incomes")) {
-            String[] incomes = getApplicationContext().getResources().getStringArray(R.array.Incomes);
+            String[] incomes = getApplicationContext().getResources()
+                    .getStringArray(R.array.Incomes);
             Log.d(TAG, "onCreate: " + Arrays.toString(incomes));
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_dropdown_item, incomes);
@@ -120,7 +128,8 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
             sCategory.setAdapter(dataAdapter);
         }
         if (sp1.contentEquals("Expenses")) {
-            String[] expenses = getApplicationContext().getResources().getStringArray(R.array.Expenses);
+            String[] expenses = getApplicationContext().getResources()
+                    .getStringArray(R.array.Expenses);
             Log.d(TAG, "onCreate: " + Arrays.toString(expenses));
 
             ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this,
@@ -141,8 +150,10 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         super.onStop();
     }
 
-    public static void saveObjectToSharedPreference(Context context, String preferenceFileName, String serializedObjectKey, Object object) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+    public static void saveObjectToSharedPreference(Context context, String preferenceFileName,
+                                                    String serializedObjectKey, Object object) {
+        SharedPreferences sharedPreferences = context
+                .getSharedPreferences(preferenceFileName, 0);
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
         final Gson gson = new Gson();
         String serializedObject = gson.toJson(object);
@@ -150,8 +161,11 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         sharedPreferencesEditor.apply();
     }
 
-    public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context, String preferenceFileName, String preferenceKey) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+    public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context,
+                                                                           String preferenceFileName,
+                                                                           String preferenceKey) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,
+                0);
         Type classType = new TypeToken<ArrayList<Entry>>() {
         }.getType();
         if (sharedPreferences.contains(preferenceKey)) {
@@ -162,7 +176,8 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     }
 
     public static void deleteSharedPreferences(Context context, String preferenceFileName) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,
+                0);
         sharedPreferences.edit().clear().apply();
     }
 }
