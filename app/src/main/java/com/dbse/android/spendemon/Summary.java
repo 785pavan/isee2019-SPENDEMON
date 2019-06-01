@@ -51,9 +51,9 @@ public class Summary extends AppCompatActivity  {
         });
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_summary);
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_summary);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
         Button bDelete = findViewById(R.id.bDelete);
 

@@ -7,20 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".Summary">
 
-    <!--<com.google.android.material.appbar.AppBarLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:theme="@style/AppTheme.AppBarOverlay">-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <!--<androidx.appcompat.widget.Toolbar-->
-            <!--android:id="@+id/toolbar"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?attr/actionBarSize"-->
-            <!--android:background="?attr/colorPrimary"-->
-            <!--app:logoDescription="@string/app_name"-->
-            <!--app:popupTheme="@style/AppTheme.PopupOverlay" />-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:logoDescription="@string/app_name"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <!--</com.google.android.material.appbar.AppBarLayout>-->
+    </com.google.android.material.appbar.AppBarLayout>
 
     <include
         layout="@layout/content_summary"
@@ -67,8 +67,7 @@
             app:fabSize="auto"
             app:maxImageSize="24dp"
             app:srcCompat="@drawable/plus"
-            app:fabCustomSize="123dp"
-            android:onClick="floatBtnClicked"/>
+            app:fabCustomSize="123dp"/>
 
 
     </LinearLayout>
