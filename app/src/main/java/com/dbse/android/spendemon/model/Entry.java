@@ -6,10 +6,7 @@ public class Entry {
     private double Amount;
     private String date;
     private String payMethod;
-    private int catResource;
     private String type;
-    private int typeResource;
-    private int paymentResource;
 
     public Entry(String category, double amount, String date) {
         this.category = category;
@@ -37,97 +34,10 @@ public class Entry {
 
     }
 
-    public int getCatResource() {
-        return catResource;
-    }
-
     public String getType() {
         return type;
     }
 
-    public int getTypeResource() {
-        return typeResource;
-    }
-
-    public int getPaymentResource() {
-        return paymentResource;
-    }
-
-    public void setCatResource() {
-        switch (category) {
-            case "Rent":
-                this.catResource = 1;
-                break;
-            case "Insurance":
-                this.catResource = 2;
-                break;
-            case "Groceries":
-                this.catResource = 3;
-                break;
-            case "Travel":
-                this.catResource = 4;
-                break;
-            case "Restaurant":
-                this.catResource = 5;
-                break;
-            case "Allowance":
-                this.catResource = 5;
-                break;
-            case "Salary":
-                this.catResource = 7;
-                break;
-            case "Bonds":
-                this.catResource = 8;
-                break;
-            case "Bonus":
-                this.catResource = 9;
-                break;
-            case "Gift":
-                this.catResource = 10;
-                break;
-            default:
-                this.catResource = 0;
-        }
-    }
-
-    public void setTypeResource() {
-        switch (type) {
-            case "Incomes":
-                this.catResource = 0;
-                break;
-            case "Expenses":
-                this.catResource = 1;
-                break;
-            default:
-                this.catResource = 3;
-                break;
-
-        }
-    }
-
-    public void setPaymentResource() {
-        switch (payMethod) {
-            case "Cash":
-                this.catResource = 1;
-                break;
-            case "Card":
-                this.catResource = 2;
-                break;
-            case "PayPal":
-                this.catResource = 3;
-                break;
-            case "GooglePay":
-                this.catResource = 4;
-                break;
-            case "ApplePay":
-                this.catResource = 5;
-                break;
-
-            default:
-                this.catResource = 0;
-
-        }
-    }
 
     public String getCategory() {
         return category;

@@ -1,7 +1,6 @@
 package com.dbse.android.spendemon;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,30 +19,6 @@ public class entryAdaptor extends
 
     private List<Entry> entries;
 
-    private String[] catImages = {
-            "@drawable/default_cat.xml",
-            "@drawable/rent.png",
-            "@drawable/insurance.png",
-            "@drawable/groceries.png",
-            "@drawable/travel.xml",
-            "@drawable/restaurant.xml",
-            "@drawable/allowance.png",
-            "@drawable/salary.png",
-            "@drawable/bonds.png"
-    };
-    private String[] paymentImage = {
-            "@drawable/default_pay.png",
-            "@drawable/cash.png",
-            "@drawable/card.xml",
-            "@drawable/payPal.xml",
-            "@drawable/google_pay.png",
-            "@drawable/apple_pay.png"
-    };
-
-    private String[] typeImages = {
-            "@drawable/plus.xml",
-            "@drawable/minus.xml"
-    };
 
     public entryAdaptor(List<Entry> entries) {
         this.entries = entries;
@@ -64,18 +39,84 @@ public class entryAdaptor extends
     public void onBindViewHolder(@NonNull ViewHolder viewholder, int position) {
         Entry entry = (Entry) entries.get(position);
 
-        entry.setCatResource();
-        entry.setTypeResource();
-        entry.setPaymentResource();
-
 
         ImageView ivCat = viewholder.ivCat;
-        ivCat.setImageDrawable(Drawable.createFromPath(catImages[entry.getCatResource()]));
+        switch (entry.getCategory()) {
+            case "Rent":
+                ivCat.setImageResource(R.drawable.rent);
+                break;
+            case "Insurance":
+                ivCat.setImageResource(R.drawable.insurance);
+                break;
+            case "Groceries":
+                ivCat.setImageResource(R.drawable.groceries);
+                break;
+            case "Travel":
+                ivCat.setImageResource(R.drawable.travel);
+                ;
+                break;
+            case "Restaurant":
+                ivCat.setImageResource(R.drawable.restaurant);
+                break;
+            case "Allowance":
+                ivCat.setImageResource(R.drawable.allowance);
+                break;
+            case "Salary":
+                ivCat.setImageResource(R.drawable.salary);
+                break;
+            case "Bonds":
+                ivCat.setImageResource(R.drawable.bonds);
+                break;
+            case "Bonus":
+                ivCat.setImageResource(R.drawable.bonus);
+                break;
+            case "Gift":
+                ivCat.setImageResource(R.drawable.wallet_giftcard);
+                break;
+            default:
+                ivCat.setImageResource(R.drawable.default_cat);
+                ;
+        }
+
+        //ivCat.setImageDrawable(Drawable.createFromPath(catImages[entry.getCatResource()]));
 
         ImageView ivPayment = viewholder.ivPayment;
-        ivPayment.setImageDrawable(Drawable.createFromPath(paymentImage[entry.getPaymentResource()]));
+        switch (entry.getPayMethod()) {
+            case "Cash":
+                ivPayment.setImageResource(R.drawable.cash_100);
+                break;
+            case "Card":
+                ivPayment.setImageResource(R.drawable.creditcard);
+                break;
+            case "PayPal":
+                ivPayment.setImageResource(R.drawable.paypal);
+                break;
+            case "GooglePay":
+                ivPayment.setImageResource(R.drawable.googlpay);
+                break;
+            case "ApplePay":
+                ivPayment.setImageResource(R.drawable.apple);
+                break;
+
+            default:
+                ivPayment.setImageResource(R.drawable.default_pay);
+
+        }
+        //ivPayment.setImageDrawable(Drawable.createFromPath(paymentImage[entry.getPaymentResource()]));
         ImageView ivType = viewholder.ivType;
-        ivType.setImageDrawable(Drawable.createFromPath(typeImages[entry.getTypeResource()]));
+        switch (entry.getType()) {
+            case "Incomes":
+                ivType.setImageResource(R.drawable.plus_black);
+                break;
+            case "Expenses":
+                ivType.setImageResource(R.drawable.minus_black);
+                break;
+            default:
+                ivType.setImageResource(R.drawable.default_pay);
+                break;
+
+        }
+        //ivType.setImageDrawable(Drawable.createFromPath(typeImages[entry.getTypeResource()]));
         TextView tvCategoryItem = viewholder.tvCategoryItem;
         //tvCategoryItem.setText(entry.getCategory());
         TextView tvAmountItem = viewholder.tvAmountItem;
