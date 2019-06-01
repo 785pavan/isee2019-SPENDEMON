@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_main">
+
+
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_daily"
+            android:icon="@drawable/ic_view_day"
+            android:title="@string/item_daily"
+            />
+        <item
+            android:id="@+id/nav_weekly"
+            android:icon="@drawable/ic_view_day"
+            android:title="@string/item_weekly" />
+        <item
+            android:id="@+id/nav_monthly"
+            android:icon="@drawable/ic_view_day"
+            android:title="@string/item_monthly" />
+        <item
+            android:id="@+id/nav_total"
+            android:icon="@drawable/ic_view_day"
+            android:title="@string/item_total"/>
+
+
+    </group>
+
+    <item android:title="@string/item_contactUs">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="@string/item_share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_email"
+                android:title="@string/item_share" />
+        </menu>
+    </item>
+
+
+
+</menu>

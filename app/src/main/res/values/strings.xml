@@ -109,4 +109,27 @@
     <string name="typeImageDesc">Image of type of transaction</string>
     <string name="paymentImageDesc">Image for payment method</string>
     <!--<string name="signUp1">Sign Up</string>-->
+
+    <!--drawable menu-->
+    <string name="item_daily">Daily</string>
+    <string name="item_weekly">Weekly</string>
+    <string name="item_monthly">Monthly</string>
+    <string name="item_total">All</string>
+    <string name="item_share">Share</string>
+    <string name="item_contactUs">Contact Us</string>
+
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="fragment_daily">Daily Fragment</string>
+    <string name="fragment_weekly">Weekly Fragment</string>
+    <string name="fragment_monthly">Monthly Fragment</string>
+    <string name="fragment_total">All Fragment</string>
+
+    <string name="item_right_setting">Settings</string>
+    <string name="item_right_calculator">Calculator</string>
+    <string name="item_right_currency">Currency</string>
+    <string name="item_right_aboutUs">About Us</string>
+    <string name="item_right_header2">App setting</string>
+    <string name="item_right_header1">Tools</string>
+
 </resources>
