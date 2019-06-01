@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
@@ -18,19 +19,49 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PieChartActivity extends AppCompatActivity {
 
     private static String TAG = "PieChart";
+    private SummaryViewModel summaryViewModel;
 
-    private float[] yData = {25.4f, 10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f};
-    private String[] xData = {"Mitch", "Jessica", "Md", "Kelsey", "Sam", "Robert", "Ashley"};
+
+   /* private float[] yData = {25.4f, 10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f};
+    private String[] xData = {"Mitch", "Jessica", "Md", "Kelsey", "Sam", "Robert", "Ashley"};*/
+
+    private List<Table> ldata = summaryViewModel.getTable().getValue();
+
+    ArrayList<Float> AmountValues = new ArrayList<>();
+    ArrayList<String> Categories = new ArrayList<>();
+    float[] yData = new float[AmountValues.size()];
+    String[] xData = new String[Categories.size()];
+
+    public void getData() {
+
+        for (int i = 0; i < ldata.size(); i++) {
+            if (ldata.get(i).getCategory().equals(ldata.get(i + 1).getCategory())) {
+                AmountValues.add((float) ldata.get(i).getAmount());
+            }
+            Categories.add(ldata.get(i).getCategory());
+        }
+
+        for (int i = 0; i < AmountValues.size(); i++) {
+            yData[i] = AmountValues.get(i);
+        }
+
+        for (int i = 0; i < AmountValues.size(); i++) {
+            xData[i] = Categories.get(i);
+        }
+    }
+
 
     PieChart pieChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class);
         setContentView(R.layout.activity_pie_chart);
         Log.d(TAG, "onCreate: Start of creation of chart");
         pieChart = findViewById(R.id.idPieChart);
@@ -62,7 +93,7 @@ public class PieChartActivity extends AppCompatActivity {
                         break;
                     }
                 }
-                String cat = xData[pos1 ];
+                String cat = xData[pos1];
                 Toast.makeText(PieChartActivity.this, "Category" + cat + "\n" +
                         "spent: " + cost, Toast.LENGTH_LONG).show();
 
