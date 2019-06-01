@@ -27,6 +27,7 @@ public class Summary extends AppCompatActivity {
     private final String TYPE = "type";
     private SummaryViewModel summaryViewModel; // object of View Model created.
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class); //reference to current
@@ -40,23 +41,21 @@ public class Summary extends AppCompatActivity {
                             table.getNote());
                     entries.add(e);
                 }
+                RecyclerView rvEntries = findViewById(R.id.rvEntries);
+                entryAdaptor adaptor = new entryAdaptor(entries);
+                rvEntries.setAdapter(adaptor);
+                rvEntries.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
             }
         });
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
         Button bDelete = findViewById(R.id.bDelete);
-       /* ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
-                "summary", "entries");
-        //readJson();
-        entries.clear();
 
-        if (Temp != null) {
-            entries.addAll(Temp);
-        }*/
         entryAdaptor adaptor = new entryAdaptor(entries);
         rvEntries.setAdapter(adaptor);
         rvEntries.setLayoutManager(new LinearLayoutManager(this));
