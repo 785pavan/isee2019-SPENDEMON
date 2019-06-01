@@ -7,6 +7,7 @@ public class Entry {
     private String date;
     private String payMethod;
     private String type;
+    private String note;
 
     public Entry(String category, double amount, String date) {
         this.category = category;
@@ -25,12 +26,13 @@ public class Entry {
 
     }
 
-    public Entry(String type, String cat, double amount, String date, String payMeth) {
+    public Entry(String type, String cat, double amount, String date, String payMeth, String note) {
         this.type = type;
         this.category = cat;
         this.Amount = amount;
         this.date = date;
         this.payMethod = payMeth;
+        this.note = note;
 
     }
 
@@ -43,24 +45,21 @@ public class Entry {
         return category;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
 
     public double getAmount() {
         return Amount;
     }
 
-    public void setAmount(double amount) {
-        Amount = amount;
-    }
 
     public String getDate() {
         return date;
     }
+    public String getPayMethod() {
+        return payMethod;
+    }
 
-    public void setDate(String date) {
-        this.date = date;
+    public String getNote() {
+        return note;
     }
 
     @Override
@@ -70,14 +69,11 @@ public class Entry {
                 ", Amount=" + Amount +
                 ", date=" + date +
                 ", payMethod=" + payMethod +
+                ", note=" + note +
                 '}';
     }
 
-    public String getPayMethod() {
-        return payMethod;
-    }
 
-    public void setPayMethod(String payMethod) {
-        this.payMethod = payMethod;
-    }
+
+
 }
