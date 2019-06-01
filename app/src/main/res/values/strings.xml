@@ -134,5 +134,7 @@
     <string name="item_right_header1">Tools</string>
     <string name="enter_month">Enter Month</string>
     <string name="month">Month: </string>
+    <string name="date001">DATE</string>
+    <string name="enter_date">Enter date</string>
 
 </resources>
