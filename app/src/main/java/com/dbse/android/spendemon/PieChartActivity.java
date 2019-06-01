@@ -32,6 +32,7 @@ public class PieChartActivity extends AppCompatActivity {
 
     private List<Table> ldata = summaryViewModel.getTable().getValue();
 
+
     ArrayList<Float> AmountValues = new ArrayList<>();
     ArrayList<String> Categories = new ArrayList<>();
     float[] yData = new float[AmountValues.size()];
