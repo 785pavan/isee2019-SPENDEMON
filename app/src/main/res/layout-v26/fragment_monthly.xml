@@ -4,21 +4,18 @@
     android:background="@color/background">
 
     <LinearLayout
-        android:padding="4dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/month"
-            />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <EditText
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/enter_month"
-            android:layout_weight="1"
+            android:importantForAutofill="no"
+            android:autofillHints="string/enter_month"
             android:inputType="number" />
     </LinearLayout>
     <com.github.mikephil.charting.charts.PieChart
