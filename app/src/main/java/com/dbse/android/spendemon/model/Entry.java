@@ -1,27 +1,43 @@
 package com.dbse.android.spendemon.model;
 
-import java.util.ArrayList;
-import java.util.Date;
-
-public class entry {
+public class Entry {
 
     private String category;
     private double Amount;
-    private Date date;
+    private String date;
     private String payMethod;
+    private String type;
 
-    public entry(String category, double amount, Date date) {
+    public Entry(String category, double amount, String date) {
         this.category = category;
         this.Amount = amount;
         this.date = date;
+        /*setCatResource();
+        setPaymentResource();
+        setTypeResource();*/
     }
 
-    public entry() {
-       this.category = null;
-       this.Amount = 0;
-       this.date = null;
-       this.payMethod = null;
+    public Entry() {
+        this.category = null;
+        this.Amount = 0;
+        this.date = null;
+        this.payMethod = null;
+
     }
+
+    public Entry(String type, String cat, double amount, String date, String payMeth) {
+        this.type = type;
+        this.category = cat;
+        this.Amount = amount;
+        this.date = date;
+        this.payMethod = payMeth;
+
+    }
+
+    public String getType() {
+        return type;
+    }
+
 
     public String getCategory() {
         return category;
@@ -39,29 +55,22 @@ public class entry {
         Amount = amount;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
     @Override
     public String toString() {
-        return "entry{" +
+        return "Entry{" +
                 "category='" + category + '\'' +
                 ", Amount=" + Amount +
                 ", date=" + date +
                 ", payMethod=" + payMethod +
                 '}';
-    }
-
-    public entry(String cat, double amount, Date date, String payMeth) {
-        this.category = cat;
-        this.Amount = amount;
-        this.date = date;
-        this.payMethod = payMeth;
     }
 
     public String getPayMethod() {
@@ -70,16 +79,5 @@ public class entry {
 
     public void setPayMethod(String payMethod) {
         this.payMethod = payMethod;
-    }
-
-    private static int AmountId = 0;
-    private static Date dateID = new Date("2009/12/31");
-
-    public static ArrayList<entry> createEntryArrayList(int numEntries) {
-        ArrayList<entry> entries = new ArrayList<>();
-        for (int i = 0; i < numEntries; i++) {
-            entries.add(new entry("dummy " + i, ++AmountId, dateID));
-        }
-        return entries;
     }
 }

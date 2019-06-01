@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChartActivity"></activity>
+        <activity android:name=".TrendLineActivity"></activity>
+        <activity android:name=".PieChartActivity" />
+        <activity android:name=".ChartActivity" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />

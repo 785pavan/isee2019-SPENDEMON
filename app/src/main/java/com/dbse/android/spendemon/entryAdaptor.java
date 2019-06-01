@@ -4,21 +4,23 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dbse.android.spendemon.model.entry;
+import com.dbse.android.spendemon.model.Entry;
 
 import java.util.List;
 
 public class entryAdaptor extends
         RecyclerView.Adapter<entryAdaptor.ViewHolder> {
 
-    private List<entry> entries;
+    private List<Entry> entries;
 
-    public entryAdaptor(List<entry> entries) {
+
+    public entryAdaptor(List<Entry> entries) {
         this.entries = entries;
     }
 
@@ -35,16 +37,94 @@ public class entryAdaptor extends
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewholder, int position) {
-        entry entry = (entry) entries.get(position);
+        Entry entry = (Entry) entries.get(position);
 
+
+        ImageView ivCat = viewholder.ivCat;
+        switch (entry.getCategory()) {
+            case "Rent":
+                ivCat.setImageResource(R.drawable.rent);
+                break;
+            case "Insurance":
+                ivCat.setImageResource(R.drawable.insurance);
+                break;
+            case "Groceries":
+                ivCat.setImageResource(R.drawable.groceries);
+                break;
+            case "Travel":
+                ivCat.setImageResource(R.drawable.travel);
+                ;
+                break;
+            case "Restaurant":
+                ivCat.setImageResource(R.drawable.restaurant);
+                break;
+            case "Allowance":
+                ivCat.setImageResource(R.drawable.allowance);
+                break;
+            case "Salary":
+                ivCat.setImageResource(R.drawable.salary);
+                break;
+            case "Bonds":
+                ivCat.setImageResource(R.drawable.bonds);
+                break;
+            case "Bonus":
+                ivCat.setImageResource(R.drawable.bonus);
+                break;
+            case "Gift":
+                ivCat.setImageResource(R.drawable.wallet_giftcard);
+                break;
+            default:
+                ivCat.setImageResource(R.drawable.default_cat);
+                ;
+        }
+
+        //ivCat.setImageDrawable(Drawable.createFromPath(catImages[entry.getCatResource()]));
+
+        ImageView ivPayment = viewholder.ivPayment;
+        switch (entry.getPayMethod()) {
+            case "Cash":
+                ivPayment.setImageResource(R.drawable.cash_100);
+                break;
+            case "Card":
+                ivPayment.setImageResource(R.drawable.creditcard);
+                break;
+            case "PayPal":
+                ivPayment.setImageResource(R.drawable.paypal);
+                break;
+            case "GooglePay":
+                ivPayment.setImageResource(R.drawable.googlpay);
+                break;
+            case "ApplePay":
+                ivPayment.setImageResource(R.drawable.apple);
+                break;
+
+            default:
+                ivPayment.setImageResource(R.drawable.default_pay);
+
+        }
+        //ivPayment.setImageDrawable(Drawable.createFromPath(paymentImage[entry.getPaymentResource()]));
+        ImageView ivType = viewholder.ivType;
+        switch (entry.getType()) {
+            case "Incomes":
+                ivType.setImageResource(R.drawable.plus_black);
+                break;
+            case "Expenses":
+                ivType.setImageResource(R.drawable.minus_black);
+                break;
+            default:
+                ivType.setImageResource(R.drawable.default_pay);
+                break;
+
+        }
+        //ivType.setImageDrawable(Drawable.createFromPath(typeImages[entry.getTypeResource()]));
         TextView tvCategoryItem = viewholder.tvCategoryItem;
-        tvCategoryItem.setText(entry.getCategory());
+        //tvCategoryItem.setText(entry.getCategory());
         TextView tvAmountItem = viewholder.tvAmountItem;
         tvAmountItem.setText(String.valueOf(entry.getAmount()));
         TextView tvDateItem = viewholder.tvDateItem;
-        tvDateItem.setText(String.valueOf(entry.getDate()));
+        tvDateItem.setText(entry.getDate());
         TextView tvPayment = viewholder.tvPaymentMethodItem;
-        tvPayment.setText(entry.getPayMethod());
+        //tvPayment.setText(entry.getPayMethod());
 
     }
 
@@ -59,14 +139,20 @@ public class entryAdaptor extends
         public TextView tvAmountItem;
         public TextView tvDateItem;
         public TextView tvPaymentMethodItem;
+        public ImageView ivCat;
+        public ImageView ivPayment;
+        public ImageView ivType;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvCategoryItem = itemView.findViewById(R.id.tvCategoryItem);
+            // tvCategoryItem = itemView.findViewById(R.id.tvCategoryItem);
+            ivCat = itemView.findViewById(R.id.categoryImage);
+            ivPayment = itemView.findViewById(R.id.paymentImage);
+            ivType = itemView.findViewById(R.id.typeImage);
             tvAmountItem = itemView.findViewById(R.id.tvAmountItem);
             tvDateItem = itemView.findViewById(R.id.tvDateItem);
-            tvPaymentMethodItem = itemView.findViewById(R.id.tvPaymentMethodItem);
+            //tvPaymentMethodItem = itemView.findViewById(R.id.tvPaymentMethodItem);
         }
     }
 

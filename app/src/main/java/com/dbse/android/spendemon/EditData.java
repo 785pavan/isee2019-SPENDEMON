@@ -1,5 +1,6 @@
 package com.dbse.android.spendemon;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,13 +10,18 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
-import com.dbse.android.spendemon.model.entry;
+import com.dbse.android.spendemon.model.Entry;
+import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -24,27 +30,35 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import static android.widget.Toast.LENGTH_LONG;
 import static com.dbse.android.spendemon.Summary.entries;
 
-public class EditData extends AppCompatActivity implements android.widget.AdapterView.OnItemSelectedListener {
+public class EditData extends AppCompatActivity
+        implements android.widget.AdapterView.OnItemSelectedListener {
 
-    private static final String TAG = "myTag";
-    private entry entry;
+
+    private static final String TAG = "editData";
+    private Entry entry;
     private Spinner sCategory;
     private Spinner sPaymentMethod;
     private Spinner sType;
     private EditText etAmount;
-    private EditText etdate;
+    private TextView etdate;
     private Button bSave;
     private static final String FILE_NAME = "NewFile";
+    private DatePickerDialog.OnDateSetListener onDateSetListener;
+    private SummaryViewModel summaryViewModel;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_edit_data);
         sType = findViewById(R.id.sType);
         sCategory = findViewById(R.id.sCategory);
@@ -59,6 +73,9 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         int spinnerPos = arrayAdapter.getPosition(type);
         sType.setSelection(spinnerPos);
         Log.d(TAG, "onCreate: " + type);
+        summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class); //reference to current
+        // activity given to view model object.
+
 
 
         bSave.setOnClickListener(new View.OnClickListener() {
@@ -69,31 +86,58 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
                 final double amount;
                 if (etAmount.getText().toString().equals("")) {
                     amount = 0;
-                } else amount = Double.parseDouble(etAmount.getText().toString());
-                Date date = new Date();
-                try {
-                    date = new SimpleDateFormat("dd/mm/yyyy").parse(etdate.getText().toString());
-                } catch (ParseException e) {
-                    Toast.makeText(getApplicationContext(), "Enter valid date", LENGTH_LONG).show();
-                    e.printStackTrace();
+                } else {
+                    amount = Double.parseDouble(etAmount.getText().toString());
                 }
+                String date = etdate.getText().toString();
+
                 if (paymeth.equals("---")) {
                     paymeth = "Not Defined";
                 }
 
-                Intent intent = new Intent(getApplicationContext(), Summary.class);
-                entry entry = new entry(cat, amount, date, paymeth);
+                Table table = new Table(sType.getSelectedItem().toString(), cat, amount, date, paymeth);
+                summaryViewModel.insert(table);
+                final Intent intent = new Intent(getApplicationContext(), Summary.class);
+               /* Entry entry = new Entry(sType.getSelectedItem().toString(), cat, amount, date, paymeth);
                 entries.clear();
-                entries.add(entry);
-                ArrayList<entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
+                entries.add(entry);*/
+              /*  ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
                         "summary", "entries");
-                if (Temp == null) Temp = new ArrayList<entry>();
-                else Temp.addAll(entries);
+                if (Temp == null) {
+                    Temp = new ArrayList<Entry>();
+                } else {
+                    Temp.addAll(entries);
+                }
                 saveObjectToSharedPreference(getApplicationContext(),
-                        "summary", "entries", Temp);
+                        "summary", "entries", Temp);*/
                 startActivity(intent);
             }
         });
+        etdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        EditData.this, onDateSetListener,
+                        year, month, day);
+                dialog.show();
+
+            }
+        });
+        onDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: dd/mm/yyyy: " + dayOfMonth + "/ " + month + "/ " + year);
+                String date = dayOfMonth + "/" + month + "/" + year;
+                etdate.setText(date);
+                Log.d(TAG, "onDateSet: date " + etdate.getText().toString());
+            }
+        };
 
     }
 
@@ -103,12 +147,14 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
 
         String sp1 = String.valueOf(sType.getSelectedItem());
         Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
-        String[] paymentMethodsArray = getApplicationContext().getResources().getStringArray(R.array.PaymentMethods);
+        String[] paymentMethodsArray = getApplicationContext().getResources()
+                .getStringArray(R.array.PaymentMethods);
         ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, paymentMethodsArray);
         sPaymentMethod.setAdapter(dataAdapter3);
         if (sp1.contentEquals("Incomes")) {
-            String[] incomes = getApplicationContext().getResources().getStringArray(R.array.Incomes);
+            String[] incomes = getApplicationContext().getResources()
+                    .getStringArray(R.array.Incomes);
             Log.d(TAG, "onCreate: " + Arrays.toString(incomes));
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_dropdown_item, incomes);
@@ -117,7 +163,8 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
             sCategory.setAdapter(dataAdapter);
         }
         if (sp1.contentEquals("Expenses")) {
-            String[] expenses = getApplicationContext().getResources().getStringArray(R.array.Expenses);
+            String[] expenses = getApplicationContext().getResources()
+                    .getStringArray(R.array.Expenses);
             Log.d(TAG, "onCreate: " + Arrays.toString(expenses));
 
             ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this,
@@ -138,8 +185,10 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         super.onStop();
     }
 
-    public static void saveObjectToSharedPreference(Context context, String preferenceFileName, String serializedObjectKey, Object object) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+    /*public static void saveObjectToSharedPreference(Context context, String preferenceFileName,
+                                                    String serializedObjectKey, Object object) {
+        SharedPreferences sharedPreferences = context
+                .getSharedPreferences(preferenceFileName, 0);
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
         final Gson gson = new Gson();
         String serializedObject = gson.toJson(object);
@@ -147,9 +196,12 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
         sharedPreferencesEditor.apply();
     }
 
-    public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context, String preferenceFileName, String preferenceKey) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
-        Type classType = new TypeToken<ArrayList<entry>>() {
+    public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context,
+                                                                           String preferenceFileName,
+                                                                           String preferenceKey) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,
+                0);
+        Type classType = new TypeToken<ArrayList<Entry>>() {
         }.getType();
         if (sharedPreferences.contains(preferenceKey)) {
             final Gson gson = new Gson();
@@ -159,7 +211,8 @@ public class EditData extends AppCompatActivity implements android.widget.Adapte
     }
 
     public static void deleteSharedPreferences(Context context, String preferenceFileName) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,
+                0);
         sharedPreferences.edit().clear().apply();
-    }
+    }*/
 }
