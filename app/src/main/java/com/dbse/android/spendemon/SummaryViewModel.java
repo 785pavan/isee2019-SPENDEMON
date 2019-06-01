@@ -39,4 +39,7 @@ public class SummaryViewModel extends AndroidViewModel {
     public LiveData<List<Table>> getTable() {
         return table;
     }
+    public List<Table> getTable2(){
+        return table.getValue();
+    }
 }
