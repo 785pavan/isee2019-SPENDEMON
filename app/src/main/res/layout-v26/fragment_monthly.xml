@@ -2,29 +2,31 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@color/background">
+
     <LinearLayout
         android:padding="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/date001"
-        />
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_date"
-        android:layout_weight="1"
-        android:inputType="number" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/month"
+            />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/enter_month"
+            android:importantForAutofill="no"
+            android:autofillHints="string/enter_month"
+            android:inputType="number" />
     </LinearLayout>
-
     <com.github.mikephil.charting.charts.PieChart
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/idPieChartDaily"
+        android:id="@+id/idPieChartMonthly"
         android:layout_centerInParent="true">
     </com.github.mikephil.charting.charts.PieChart>
 
