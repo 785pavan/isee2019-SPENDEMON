@@ -8,6 +8,11 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_summary"
+            android:icon="@drawable/ic_report"
+            android:title="@string/title_activity_summary"
+            />
+        <item
             android:id="@+id/nav_daily"
             android:icon="@drawable/ic_view_day"
             android:title="@string/item_daily"

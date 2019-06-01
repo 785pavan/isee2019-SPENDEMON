@@ -104,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_send:
                 Toast.makeText(this, "Contact Us E-mail", Toast.LENGTH_LONG).show();
                 break;
+            case R.id.nav_summary:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SummaryFragment()).commit();
 //                right drawer
             case R.id.nav_currency:
                 Toast.makeText(this, "Currency", Toast.LENGTH_LONG).show();

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -21,7 +22,7 @@ import java.util.List;
 //import static com.dbse.android.spendemon.EditData.getSavedObjectFromPreference;
 
 
-public class Summary extends AppCompatActivity {
+public class Summary extends AppCompatActivity  {
     private static final String TAG = "myTag";
     static ArrayList<Entry> entries = new ArrayList<>();
     private final String TYPE = "type";
@@ -50,9 +51,9 @@ public class Summary extends AppCompatActivity {
         });
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_summary);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.fragment_summary);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
         Button bDelete = findViewById(R.id.bDelete);
 
@@ -73,6 +74,7 @@ public class Summary extends AppCompatActivity {
         fabMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "minus",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(), EditData.class);
                 intent.putExtra(TYPE, "Expenses");
                 startActivity(intent);
@@ -90,6 +92,7 @@ public class Summary extends AppCompatActivity {
         });
 
     }
+
 
 
 }
