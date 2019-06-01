@@ -49,6 +49,7 @@ public class EditData extends AppCompatActivity
     private EditText etAmount;
     private TextView etdate;
     private Button bSave;
+    private  EditText etDescription;
     private static final String FILE_NAME = "NewFile";
     private DatePickerDialog.OnDateSetListener onDateSetListener;
     private SummaryViewModel summaryViewModel;
@@ -66,6 +67,7 @@ public class EditData extends AppCompatActivity
         sType.setOnItemSelectedListener(this);
         etAmount = findViewById(R.id.etAmount);
         etdate = findViewById(R.id.etDate);
+        etDescription = findViewById(R.id.etDescription);
         bSave = findViewById(R.id.bSave);
         Intent intent = getIntent();
         String type = intent.getStringExtra("type");
@@ -82,6 +84,7 @@ public class EditData extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 final String cat = sCategory.getSelectedItem().toString();
+                final String note = etDescription.getText().toString();
                 String paymeth = sPaymentMethod.getSelectedItem().toString();
                 final double amount;
                 if (etAmount.getText().toString().equals("")) {
@@ -95,7 +98,7 @@ public class EditData extends AppCompatActivity
                     paymeth = "Not Defined";
                 }
 
-                Table table = new Table(sType.getSelectedItem().toString(), cat, amount, date, paymeth);
+                Table table = new Table(sType.getSelectedItem().toString(), cat, amount, date, paymeth, note);
                 summaryViewModel.insert(table);
                 final Intent intent = new Intent(getApplicationContext(), Summary.class);
                /* Entry entry = new Entry(sType.getSelectedItem().toString(), cat, amount, date, paymeth);

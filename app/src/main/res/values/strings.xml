@@ -108,6 +108,7 @@
     <string name="categoryImageDesc">Image of the Category selected</string>
     <string name="typeImageDesc">Image of type of transaction</string>
     <string name="paymentImageDesc">Image for payment method</string>
+    <string name="notes">Notes:</string>
     <!--<string name="signUp1">Sign Up</string>-->
 
     <!--drawable menu-->

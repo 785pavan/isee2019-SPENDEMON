@@ -36,7 +36,8 @@ public class Summary extends AppCompatActivity {
             public void onChanged(List<Table> tables) {
                 entries.clear();
                 for (Table table : tables) {
-                    Entry e = new Entry(table.getType(), table.getCategory(), table.getAmount(), table.getDate(), table.getPaymethod());
+                    Entry e = new Entry(table.getType(), table.getCategory(), table.getAmount(), table.getDate(), table.getPaymethod(),
+                            table.getNote());
                     entries.add(e);
                 }
 

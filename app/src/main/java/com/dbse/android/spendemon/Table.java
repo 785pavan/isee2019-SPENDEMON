@@ -14,13 +14,15 @@ public class Table {
     private double Amount;
     private String Date;
     private String Paymethod;
+    private String note;
 
-    public Table(String Type, String Category, double Amount, String Date, String Paymethod ) {
+    public Table(String Type, String Category, double Amount, String Date, String Paymethod, String note ) {
         this.Type = Type;
         this.Category = Category;
         this.Amount = Amount;
         this.Date = Date;
         this. Paymethod = Paymethod;
+        this.note = note;
     }
 
     public void setId(int id) {
@@ -51,5 +53,7 @@ public class Table {
         return Paymethod;
     }
 
-
+    public String getNote() {
+        return note;
+    }
 }
