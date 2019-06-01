@@ -12,9 +12,6 @@
         <activity android:name=".TrendLineActivity"></activity>
         <activity android:name=".PieChartActivity" />
         <activity android:name=".ChartActivity" />
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings" />
         <activity android:name=".itemEntry" />
         <activity android:name=".EditData" />
         <activity android:name=".Calculator" />
