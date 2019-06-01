@@ -124,6 +124,8 @@ public class entryAdaptor extends
         TextView tvDateItem = viewholder.tvDateItem;
         tvDateItem.setText(entry.getDate());
         TextView tvPayment = viewholder.tvPaymentMethodItem;
+        TextView tvNotes = viewholder.tvNotes;
+        tvNotes.setText(entry.getNote());
         //tvPayment.setText(entry.getPayMethod());
 
     }
@@ -139,6 +141,7 @@ public class entryAdaptor extends
         public TextView tvAmountItem;
         public TextView tvDateItem;
         public TextView tvPaymentMethodItem;
+        public TextView tvNotes;
         public ImageView ivCat;
         public ImageView ivPayment;
         public ImageView ivType;
@@ -152,6 +155,7 @@ public class entryAdaptor extends
             ivType = itemView.findViewById(R.id.typeImage);
             tvAmountItem = itemView.findViewById(R.id.tvAmountItem);
             tvDateItem = itemView.findViewById(R.id.tvDateItem);
+            tvNotes = itemView.findViewById(R.id.tvNotes);
             //tvPaymentMethodItem = itemView.findViewById(R.id.tvPaymentMethodItem);
         }
     }

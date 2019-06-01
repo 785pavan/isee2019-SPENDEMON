@@ -13,9 +13,6 @@ public class Entry {
         this.category = category;
         this.Amount = amount;
         this.date = date;
-        /*setCatResource();
-        setPaymentResource();
-        setTypeResource();*/
     }
 
     public Entry() {
@@ -54,6 +51,7 @@ public class Entry {
     public String getDate() {
         return date;
     }
+
     public String getPayMethod() {
         return payMethod;
     }
@@ -72,8 +70,6 @@ public class Entry {
                 ", note=" + note +
                 '}';
     }
-
-
 
 
 }
