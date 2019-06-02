@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DetailsActivity"
+    tools:showIn="@layout/activity_details"
+    android:layout_margin="16dp">
+
+    <ImageView
+        android:id="@+id/ivCatDetails"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:contentDescription="@string/categoryImageDesc"
+        android:padding="4dp" />
+
+    <TextView
+        android:id="@+id/tvAmountDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp" />
+
+    <TextView
+        android:id="@+id/tvDateDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp" />
+
+    <ImageView
+        android:id="@+id/ivTypeDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/typeImageDesc"
+        android:padding="4dp" />
+
+    <ImageView
+        android:id="@+id/ivPaymentDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/paymentImageDesc" />
+
+    <TextView
+        android:id="@+id/tvNotesDetails"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="4dp"
+        tools:text="Notes to be added"
+        android:textAlignment="center"/>
+
+
+</LinearLayout>

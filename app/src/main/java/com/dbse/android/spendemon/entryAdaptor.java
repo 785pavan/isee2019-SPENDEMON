@@ -1,11 +1,14 @@
 package com.dbse.android.spendemon;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,7 +40,7 @@ public class entryAdaptor extends
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewholder, int position) {
-        Entry entry = (Entry) entries.get(position);
+        final Entry entry = (Entry) entries.get(position);
 
 
         ImageView ivCat = viewholder.ivCat;
@@ -78,6 +81,13 @@ public class entryAdaptor extends
                 ;
         }
 
+        ivCat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "Category: " +  entry.getCategory(), Toast.LENGTH_LONG).show();
+            }
+        });
+
         //ivCat.setImageDrawable(Drawable.createFromPath(catImages[entry.getCatResource()]));
 
         ImageView ivPayment = viewholder.ivPayment;
@@ -102,6 +112,12 @@ public class entryAdaptor extends
                 ivPayment.setImageResource(R.drawable.default_pay);
 
         }
+        ivPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),"Payment Method: " + entry.getPayMethod(), Toast.LENGTH_LONG).show();
+            }
+        });
         //ivPayment.setImageDrawable(Drawable.createFromPath(paymentImage[entry.getPaymentResource()]));
         ImageView ivType = viewholder.ivType;
         switch (entry.getType()) {
@@ -116,6 +132,12 @@ public class entryAdaptor extends
                 break;
 
         }
+        ivType.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),"Type: " + entry.getType(),Toast.LENGTH_LONG).show();
+            }
+        });
         //ivType.setImageDrawable(Drawable.createFromPath(typeImages[entry.getTypeResource()]));
         TextView tvCategoryItem = viewholder.tvCategoryItem;
         //tvCategoryItem.setText(entry.getCategory());
@@ -127,6 +149,20 @@ public class entryAdaptor extends
         TextView tvNotes = viewholder.tvNotes;
         tvNotes.setText(entry.getNote());
         //tvPayment.setText(entry.getPayMethod());
+        RelativeLayout rvItem = viewholder.rvItem;
+        rvItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),DetailsActivity.class);
+                intent.putExtra("Category",entry.getCategory());
+                intent.putExtra("Amount",entry.getAmount());
+                intent.putExtra("Type",entry.getType());
+                intent.putExtra("Notes",entry.getNote());
+                intent.putExtra("PaymentMethod",entry.getPayMethod());
+                intent.putExtra("Date",entry.getDate());
+                v.getContext().startActivity(intent);
+            }
+        });
 
     }
 
@@ -145,6 +181,7 @@ public class entryAdaptor extends
         public ImageView ivCat;
         public ImageView ivPayment;
         public ImageView ivType;
+        public RelativeLayout rvItem;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -156,6 +193,7 @@ public class entryAdaptor extends
             tvAmountItem = itemView.findViewById(R.id.tvAmountItem);
             tvDateItem = itemView.findViewById(R.id.tvDateItem);
             tvNotes = itemView.findViewById(R.id.tvNotes);
+            rvItem = itemView.findViewById(R.id.rootItem);
             //tvPaymentMethodItem = itemView.findViewById(R.id.tvPaymentMethodItem);
         }
     }
