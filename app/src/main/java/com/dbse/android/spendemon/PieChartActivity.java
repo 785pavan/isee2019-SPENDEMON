@@ -141,7 +141,7 @@ public class PieChartActivity extends AppCompatActivity {
                 }
             } else if (intent.getStringExtra("Duration").equals("Month")) {
                 String monthIntent = intent.getStringExtra("Month");
-                String monthEntry = entry.getDate().substring(1, 3);
+                String monthEntry = entry.getDate().substring(2, 3);
                 if (monthEntry.equals(monthIntent)) {
                     AmountValues.add((float) entry.getAmount());
                     Categories.add(entry.getCategory());
