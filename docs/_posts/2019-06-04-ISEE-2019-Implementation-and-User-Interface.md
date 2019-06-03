@@ -46,7 +46,7 @@ Room Database is an abstraction layer over the SQLite database which manages bot
 
 When working together in an Agile manner and following SCRUM methods one needs to follow certain conventions such that all team members work effectively and can communicate well. For us, we decided to implement the Google Java Style Guide coding conventions for Android. Here is a list of the coding conventions we applied:
 
-1. **Naming Conventions:**
+* **Naming Conventions:**
 
 
   * Java Classes/Interfaces: UpperCamelCase.java
@@ -65,7 +65,7 @@ When working together in an Agile manner and following SCRUM methods one needs t
 
   * Variables: lowercase_name
 
-2. **Source File Structure:**
+* **Source File Structure:**
 
   * Package name
 
@@ -78,7 +78,7 @@ When working together in an Agile manner and following SCRUM methods one needs t
   * JavaDoc: All Source files and sections should have params, functionalities to be written before.
 
 
-3. **Line and Spacing Indentations:**
+* **Line and Spacing Indentations:**
 
   * basicOffset: 4
 
