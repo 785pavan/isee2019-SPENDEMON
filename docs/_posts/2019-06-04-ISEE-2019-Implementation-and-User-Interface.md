@@ -139,9 +139,17 @@ Based on the user stories that we had, we tried to make the App as easily usable
 **<span style="color:#C2185B; font-family:Cursive">Summary of Changes:</span>**
 As mentioned in the previous Blog, we started with a pretty simple App design which had a Login page, a Summary Page and an Edit Data page. Along with that we had implemented the Database as a simple JSON file which was pretty basic in it's functionality.
 
-However, with the Advanced Prototype version we have tried to refine our App with the implementation of Room Database and features like Chart Visualizations for various time intervals, a Navigation Layout, Date Picker feature to ensure correct input of data etc. A summary of the added changes has been shown below.
+However, with the Advanced Prototype version we have tried to refine our App with the implementation of certain features to make our App more, well, App like. A summary of the added changes has been given below.
 
-<img src="{{site.baseurl}}/images/Features.png" alt="Features" width="800" align = "middle" />
+* Room Database implemented.
+
+* Navigation Bar added.
+
+* Charts feature added.
+
+* Icons added for each category.
+
+* Date Picker feature added.
 
 The added features also were reflected the in the user stories as new additions an well as in the Class Diagrams which have been shown below:
 
