@@ -75,6 +75,7 @@ When working together in an Agile manner and following SCRUM methods one needs t
 
 * **Source File Structure:**
 
+
 * **Package name**
 
 
@@ -86,14 +87,14 @@ When working together in an Agile manner and following SCRUM methods one needs t
 
 * **Overrides of methods**
 
+
 * **JavaDoc:** All Source files and sections should have params, functionalities to be written before.
 
 
 * **Line and Spacing Indentations:**
 
+
 * **basicOffset:** 4
-
-
 
 
 * **braceAdjustment:** 0
