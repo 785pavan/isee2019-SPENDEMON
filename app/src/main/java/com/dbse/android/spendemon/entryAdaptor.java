@@ -77,7 +77,7 @@ public class entryAdaptor extends
                 ivCat.setImageResource(R.drawable.wallet_giftcard);
                 break;
             default:
-                ivCat.setImageResource(R.drawable.default_cat);
+                ivCat.setImageResource(R.drawable.defaultcat);
                 ;
         }
 

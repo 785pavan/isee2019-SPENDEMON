@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -25,7 +26,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -70,9 +71,15 @@ public class DetailsActivity extends AppCompatActivity {
                 ivCat.setImageResource(R.drawable.wallet_giftcard);
                 break;
             default:
-                ivCat.setImageResource(R.drawable.default_cat);
+                ivCat.setImageResource(R.drawable.defaultcat);
                 ;
         }
+        ivCat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), intent.getStringExtra("Category"), Toast.LENGTH_LONG).show();
+            }
+        });
 
         switch (intent.getStringExtra("PaymentMethod")) {
             case "Cash":
@@ -95,6 +102,12 @@ public class DetailsActivity extends AppCompatActivity {
                 ivPay.setImageResource(R.drawable.default_pay);
 
         }
+        ivPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), intent.getStringExtra("PaymentMethod"), Toast.LENGTH_LONG).show();
+            }
+        });
 
         switch (intent.getStringExtra("Type")) {
             case "Incomes":
@@ -108,6 +121,12 @@ public class DetailsActivity extends AppCompatActivity {
                 break;
 
         }
+        ivType.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), intent.getStringExtra("Type"), Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         tvAmount.setText(String.valueOf(intent.getDoubleExtra("Amount", 0.0)));

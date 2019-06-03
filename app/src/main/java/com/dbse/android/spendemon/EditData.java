@@ -1,9 +1,7 @@
 package com.dbse.android.spendemon;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,31 +15,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.dbse.android.spendemon.model.Entry;
-import com.google.android.material.tabs.TabLayout;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 import static android.widget.Toast.LENGTH_LONG;
-import static com.dbse.android.spendemon.Summary.entries;
 
 public class EditData extends AppCompatActivity
         implements android.widget.AdapterView.OnItemSelectedListener {
 
 
     private static final String TAG = "editData";
+    private static final String FILE_NAME = "NewFile";
     private Entry entry;
     private Spinner sCategory;
     private Spinner sPaymentMethod;
@@ -49,8 +37,7 @@ public class EditData extends AppCompatActivity
     private EditText etAmount;
     private TextView etdate;
     private Button bSave;
-    private  EditText etDescription;
-    private static final String FILE_NAME = "NewFile";
+    private EditText etDescription;
     private DatePickerDialog.OnDateSetListener onDateSetListener;
     private SummaryViewModel summaryViewModel;
 
@@ -79,7 +66,6 @@ public class EditData extends AppCompatActivity
         // activity given to view model object.
 
 
-
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +79,10 @@ public class EditData extends AppCompatActivity
                     amount = Double.parseDouble(etAmount.getText().toString());
                 }
                 String date = etdate.getText().toString();
+                if (date.equals("")) {
+                    Calendar cal = Calendar.getInstance();
+                    date = cal.get(Calendar.DAY_OF_MONTH) + "/" + (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.YEAR);
+                }
 
                 if (paymeth.equals("---")) {
                     paymeth = "Not Defined";
