@@ -36,8 +36,6 @@ public class PieChartActivity extends AppCompatActivity {
 
     ArrayList<Float> yData = new ArrayList<>();
     ArrayList<String> xData = new ArrayList<>();
-    // yData = new float[AmountValues.size()];
-    //String[] xData = new String[Categories.size()];
 
 
     PieChart pieChart;
@@ -78,7 +76,7 @@ public class PieChartActivity extends AppCompatActivity {
                     }
                 }
                 String cat = xData.get(pos1);
-                Toast.makeText(PieChartActivity.this, "Category" + cat + "\n" +
+                Toast.makeText(PieChartActivity.this, "Category: " + cat + "\n" +
                         "spent: " + cost, Toast.LENGTH_LONG).show();
 
             }
@@ -115,13 +113,14 @@ public class PieChartActivity extends AppCompatActivity {
         //Colors
 
         ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.GRAY);
+        colors.add(Color.DKGRAY);
         colors.add(Color.BLUE);
         colors.add(Color.RED);
         colors.add(Color.GREEN);
         colors.add(Color.MAGENTA);
         colors.add(Color.CYAN);
         colors.add(Color.YELLOW);
+        colors.add(Color.GRAY);
 
         pieDataSet.setColors(colors);
 
@@ -143,15 +142,22 @@ public class PieChartActivity extends AppCompatActivity {
         }
         float data = 0;
         for (int i = 0; i < Categories.size(); i++) {
-            //data = AmountValues.get(i);
-            if (Categories.get(i).equals(Categories.get(i + 1))) {
-                data += AmountValues.get(i+1);
-                continue;
+            data = 0;
+            for (int j = i; j < Categories.size(); j++) {
+                if (Categories.get(i).equals(Categories.get(j))) {
+                    data += AmountValues.get(j);
+                }
             }
             yData.add(data);
             xData.add(Categories.get(i));
-            //yData[i] = data;
-            //xData[i] = Categories.get(i);
+
+            /*if (Categories.get(i).equals(Categories.get(i + 1))) {
+                data += AmountValues.get(i + 1);
+                continue;
+            }
+            yData.add(data);
+            xData.add(Categories.get(i));*/
+
         }
     }
 }
