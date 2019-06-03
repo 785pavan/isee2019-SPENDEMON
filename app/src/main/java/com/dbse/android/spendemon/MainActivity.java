@@ -117,6 +117,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new TotalFragment()).commit();*/
                 break;
+            case R.id.nav_trendLine:
+                Intent intent_trendLine = new Intent(getApplicationContext(), TrendLineActivity.class);
+                startActivity(intent_trendLine);
+                break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_LONG).show();
                 Intent intent_share = new Intent(Intent.ACTION_SEND);

@@ -14,21 +14,25 @@
             />
         <item
             android:id="@+id/nav_daily"
-            android:icon="@drawable/ic_view_day"
+            android:icon="@drawable/ic_pie_chart"
             android:title="@string/item_daily"
             />
         <item
             android:id="@+id/nav_weekly"
-            android:icon="@drawable/ic_view_day"
+            android:icon="@drawable/ic_pie_chart"
             android:title="@string/item_weekly" />
         <item
             android:id="@+id/nav_monthly"
-            android:icon="@drawable/ic_view_day"
+            android:icon="@drawable/ic_pie_chart"
             android:title="@string/item_monthly" />
         <item
             android:id="@+id/nav_total"
-            android:icon="@drawable/ic_view_day"
+            android:icon="@drawable/ic_pie_chart"
             android:title="@string/item_total"/>
+        <item
+            android:id="@+id/nav_trendLine"
+            android:icon="@drawable/ic_analytics"
+            android:title="@string/item_trendLine"/>
 
 
     </group>
