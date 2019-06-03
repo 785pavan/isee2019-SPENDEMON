@@ -98,7 +98,7 @@ public class TrendLineActivity extends AppCompatActivity {
             lineChart.getData().notifyDataChanged();
             lineChart.notifyDataSetChanged();
         } else {
-            lineDataSet = new LineDataSet(yAxesEx, "Sample Data");
+            lineDataSet = new LineDataSet(yAxesEx, "Expenses");
             lineDataSet.setDrawIcons(false);
             lineDataSet.enableDashedLine(10f, 5f, 0f);
             lineDataSet.enableDashedHighlightLine(10f, 5f, 0f);
@@ -126,11 +126,11 @@ public class TrendLineActivity extends AppCompatActivity {
         if (lineChart.getData() != null &&
                 lineChart.getData().getDataSetCount() > 0) {
             lineDataSet3 = (LineDataSet) lineChart.getData().getDataSetByIndex(0);
-            lineDataSet3.setValues(yAxesIn);
+            lineDataSet3.setValues(yAxesEx);
             lineChart.getData().notifyDataChanged();
             lineChart.notifyDataSetChanged();
         } else {
-            lineDataSet3 = new LineDataSet(yAxesIn, "Sample Data");
+            lineDataSet3 = new LineDataSet(yAxesEx, "Incomes");
             lineDataSet3.setDrawIcons(false);
             lineDataSet3.enableDashedLine(10f, 5f, 0f);
             lineDataSet3.enableDashedHighlightLine(10f, 5f, 0f);
@@ -145,7 +145,7 @@ public class TrendLineActivity extends AppCompatActivity {
             lineDataSet3.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
             lineDataSet3.setFormSize(15.f);
             if (Utils.getSDKInt() >= 18) {
-                Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_blue);
+                Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_red);
                 lineDataSet3.setFillDrawable(drawable);
             } else {
                 lineDataSet3.setFillColor(Color.DKGRAY);

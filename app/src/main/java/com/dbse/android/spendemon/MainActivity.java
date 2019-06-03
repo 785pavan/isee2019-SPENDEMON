@@ -103,8 +103,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent_daily);
                 break;
             case R.id.nav_weekly:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new WeeklyFragment()).commit();
+                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+                startActivity(intent_month);
+                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new WeeklyFragment()).commit();*/
                 break;
             case R.id.nav_monthly:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
