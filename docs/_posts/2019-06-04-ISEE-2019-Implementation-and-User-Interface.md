@@ -123,16 +123,32 @@ For this reason, we have come up with two representative users who could find us
 
 Based on the user stories that we had, we tried to make the App as easily usable and as tailor made as possible. Here, we show two storyboards that shall display how our App functions.
 
-* **Storyboard 1:**
+
+* **Storyboard 1:** Here, we display the screenshots from our App which navigates from the Login page to the Main Activity page where one can see the daily, monthly, overall summary. On clicking Summary, it takes to the overall Summary table from which one can navigate to the Edit Data page where one can
+add their expenses and incomes with descriptions and dates etc.
 
 
-<img src="{{site.baseurl}}/images/User1.png" alt="Storyboard1" width="800" align = "middle" />
+---
+<img src="{{site.baseurl}}/images/Login.png" alt="Login" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/EditData.png" alt="Edit Data" width="300" align = "middle" />
+---
 
 
-* **Storyboard 2:**
+
+* **Storyboard 2:** Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline.
 
 
-<img src="{{site.baseurl}}/images/User1.png" alt="Storyboard2" width="800" align = "middle" />
+---
+<img src="{{site.baseurl}}/images/PieChart.png" alt="PieChart" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/PieChart_1.png" alt="PieChart_1" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/Trendline.png" alt="Trendline" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/Trendline_1.png" alt="Trendline_1" width="300" align = "middle" />
+---
+
+
+
 
 
 ** Design Principles:** The basic idea behind our design choice is easy use of the App by the user and making the App such that one can have an easy and fruitful experience with it. The user should be able to keep track of his expenses and get an overview of his expenses in one quick glance. The basic design principles that we took into account are as follows:
@@ -152,6 +168,10 @@ Based on the user stories that we had, we tried to make the App as easily usable
 
 **<span style="color:#C2185B; font-family:Cursive">Summary of Changes:</span>**
 As mentioned in the previous Blog, we started with a pretty simple App design which had a Login page, a Summary Page and an Edit Data page. Along with that we had implemented the Database as a simple JSON file which was pretty basic in it's functionality.
+
+Old Verson:
+
+<img src="{{site.baseurl}}/images/OldVersion.png" alt="Old Version" width="800" align = "middle" />
 
 However, with the Advanced Prototype version we have tried to refine our App with the implementation of certain features to make our App more, well, App like. A summary of the added changes has been given below.
 
