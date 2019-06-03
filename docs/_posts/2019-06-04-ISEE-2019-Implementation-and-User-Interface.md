@@ -42,34 +42,33 @@ Room Database is an abstraction layer over the SQLite database which manages bot
 
 **<span style="color:#C2185B; font-family:Cursive">Coding Conventions :</span>**
 
-<img src="{{site.baseurl}}/images/LoginActivity.png" alt="Login Activity" width="800" align = "middle" />
 
 
 When working together in an Agile manner and following SCRUM methods one needs to follow certain conventions such that all team members work effectively and can communicate well. For us, we decided to implement the Google Java Style Guide coding conventions for Android. Here is a list of the coding conventions we applied:
 
 * **Naming Conventions:**
 
-* Java Classes/Interfaces: UpperCamelCase.java
-* Activity Java Files: UpperCamelCaseActivity.java
-* Activity Layout Files: activity_lowercase_name.xml
-* Fragment Files: fragment_lowercase_name.xml
-* Menu Files: menu_lowercase_name.xml
-* Method Names: lowerCamelCase
-* Constants: UPPER_CASE
-* Variables: lowercase_name
+* **Java Classes/Interfaces:** UpperCamelCase.java
+* **Activity Java Files:** UpperCamelCaseActivity.java
+* **Activity Layout Files:** activity_lowercase_name.xml
+* **Fragment Files:** fragment_lowercase_name.xml
+* **Menu Files:** menu_lowercase_name.xml
+* **Method Names:** lowerCamelCase
+* **Constants:** UPPER_CASE
+* **Variables:** lowercase_name
 
 
 * **Source File Structure:**
 
-* Package name
-* Import statements (Android statements, third party statements, java/javax statements)
-* One high level class
-* Overrides of methods
+* **Package name**
+* **Import statements (Android statements, third party statements, java/javax statements)**
+* **One high level class**
+* **Overrides of methods**
 
 
 **<span style="color:#C2185B; font-family:Cursive">Add Entries Activity:</span>**
 
-<img src="{{site.baseurl}}/images/AddEntryActivity.png" alt="Add Entries Activity" width="800" align = "middle" />
+
 
 This is the basic editorial page of our App where the user can add and edit incomes and expenses to the Summary page.
 
