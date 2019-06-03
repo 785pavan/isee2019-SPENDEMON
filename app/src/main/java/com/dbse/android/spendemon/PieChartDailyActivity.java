@@ -1,8 +1,13 @@
 package com.dbse.android.spendemon;
 
+import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.DatePicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,10 +23,12 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import static com.dbse.android.spendemon.Summary.entries;
 
-public class PieChartActivity extends AppCompatActivity {
+public class PieChartDailyActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener  {
+
 
     private static String TAG = "PieChart";
     /* private float[] yData = {25.4f, 10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f};
@@ -31,6 +38,8 @@ public class PieChartActivity extends AppCompatActivity {
 
     ArrayList<Float> yData = new ArrayList<>();
     ArrayList<String> xData = new ArrayList<>();
+    TextView tvDateDaily;
+    private DatePickerDialog.OnDateSetListener onDateSetListener;
 
 
     PieChart pieChart;
@@ -38,8 +47,35 @@ public class PieChartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pie_chart_daily);
+        tvDateDaily = findViewById(R.id.tvDateDaily);
 
-        setContentView(R.layout.activity_pie_chart);
+        tvDateDaily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        PieChartDailyActivity.this, onDateSetListener,
+                        year, month, day);
+                dialog.show();
+            }
+        });
+        onDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: dd/mm/yyyy: " + dayOfMonth + "/ " + month + "/ " + year);
+                String date = dayOfMonth + "/" + month + "/" + year;
+                tvDateDaily.setText(date);
+                Log.d(TAG, "onDateSet: date " + tvDateDaily.getText().toString());
+            }
+        };
+
+
         Log.d(TAG, "onCreate: Start of creation of chart");
         pieChart = findViewById(R.id.idPieChart);
         Description desc = new Description();
@@ -71,7 +107,7 @@ public class PieChartActivity extends AppCompatActivity {
                     }
                 }
                 String cat = xData.get(pos1);
-                Toast.makeText(PieChartActivity.this, "Category: " + cat + "\n" +
+                Toast.makeText(PieChartDailyActivity.this, "Category: " + cat + "\n" +
                         "spent: " + cost, Toast.LENGTH_LONG).show();
 
             }
@@ -83,7 +119,6 @@ public class PieChartActivity extends AppCompatActivity {
         });
 
     }
-
     private void addDataSet() {
 
         getData();
@@ -154,5 +189,15 @@ public class PieChartActivity extends AppCompatActivity {
             xData.add(Categories.get(i));*/
 
         }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

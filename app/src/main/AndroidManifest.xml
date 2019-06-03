@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PieChartDailyActivity"></activity>
         <activity
             android:name=".DetailsActivity"
             android:label="@string/title_activity_details"
-            android:theme="@style/ActivityDialog"></activity>
+            android:theme="@style/ActivityDialog" />
         <activity android:name=".TrendLineActivity" />
         <activity android:name=".PieChartActivity" />
         <activity android:name=".itemEntry" />
@@ -31,7 +32,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
