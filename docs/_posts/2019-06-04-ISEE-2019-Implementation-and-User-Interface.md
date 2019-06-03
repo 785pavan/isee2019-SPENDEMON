@@ -48,7 +48,6 @@ When working together in an Agile manner and following SCRUM methods one needs t
 
 * **Naming Conventions:**
 
-
   * Java Classes/Interfaces: UpperCamelCase.java
 
   * Activity Java Files: UpperCamelCaseActivity.java
@@ -104,108 +103,18 @@ When working together in an Agile manner and following SCRUM methods one needs t
 
 
 
-**<span style="color:#C2185B; font-family:Cursive">Add Entries Activity:</span>**
+**<span style="color:#C2185B; font-family:Cursive">Context of Use:</span>**
 
 
+While designing an App it is helpful to understand the kind of customers that the App is intended for and have an overview on what they expect off the App and also how we can make the App more tailor made for each customer.
 
-This is the basic editorial page of our App where the user can add and edit incomes and expenses to the Summary page.
-
-<span style="color:#C2185B; font-family:Cursive">*Add Button:*</span>
-This is a FAB created to take into account the Incomes of the user. The user is then taken to the main edit page where he/she can edit their income details.
-
-<span style="color:#C2185B; font-family:Cursive">*Minus Button:*</span> This FAB, like the Add Button, takes into account the user's Expenses and add details in the main edit page.
-
-<span style="color:#C2185B; font-family:Cursive">*Input Category:*</span> This is a drop down menu which gives some sub categories for the Income (like Salary, Allowance etc.) and Expense (like Restaurant, Travel etc.) fields.
-
-<span style="color:#C2185B; font-family:Cursive">*Input Amount:*</span> The amount for each case can be entered in here.
-
-<span style="color:#C2185B; font-family:Cursive">*Input Date:*</span>
-The date for the specific Income and Expenditure is added here.
-
-<span style="color:#C2185B; font-family:Cursive">*Save Button:*</span>
-
-**<span style="color:#C2185B; font-family:Cursive">Class Diagram:</span>**
-
-<img src="{{site.baseurl}}/images/UMLClassDiagram.png" alt="Class Diagram" width="800" align = "middle" />
-
-<span style="color:#C2185B; font-family:Cursive">*User Class:*</span>
-This class is used to store all User information plus helps in interaction of the User with the App.
-
-* **Attributes:** username, password and name
-
-* **Methods:** Along with the usual getters and setters methods we also have the below mentioned methods,
-
-  * login(): for authentication.
-
-  * add(): to add entries.
-
-  * remove(): to remove entries.
-
-  * calculate(): to do various calculations.
-
-  * carryOver(): to get the balance.
-
-<span style="color:#C2185B; font-family:Cursive">*Entry Class:*</span>
-This class is the model on which our App is built on.
-
-* **Attributes:** amount, currency, sign, tag, category.
-
-<span style="color:#C2185B; font-family:Cursive">*Category Class:*</span>
-This class is used for defining the pre-existing categories.
-
-* **Attributes:** name, entry, count
-
-* **Methods:**
-
-  * add(): for adding entries into categories.
-
-  * edit(): for editing entries in categories.
-
-  * remove(): for deleting entries from categories.
-
-<span style="color:#C2185B; font-family:Cursive">*Expense Class:*</span> This is a class generalised from entry to store expenses.
+For this reason, we have come up with two representative users who could find use in our App and tune our App such that we can make their needs and make more people use our Apps.
 
 
-* **Attributes:** type
+<img src="{{site.baseurl}}/images/User1.png" alt="User1" width="800" align = "middle" />
 
-<span style="color:#C2185B; font-family:Cursive">*Income Class:*</span> This is a class generalised from entry to store incomes.
+<img src="{{site.baseurl}}/images/User2.png" alt="User2" width="800" align = "middle" />
 
-
-* **Attributes:** type
-
-
-<span style="color:#C2185B; font-family:Cursive">*Display Class:*</span> This is a class used for displaying a summary of the expenses and incomes in a sorted manner.
-
-* **Methods:**
-
-  * daily(): for displaying everyday summary.
-
-  * weekly(): for displaying weekly summary.
-
-  * monthly(): for displaying monthly summary.
-
-  * yearly(): for displaying yearly summary.
-
-<span style="color:#C2185B; font-family:Cursive">*Calculator Class:*</span>
-This class is used for displaying a built-in calculator for quick calculations.
-
-* **Attributes:** inputs, outputs
-
-* **Methods:**
-
-  * add(): adds two doubles.
-
-  * subtract(): subtracts two doubles
-
-  * multiply(): multiplies two doubles
-
-  * divide(): divides two doubles
-
-  * interest(): calculates the interest rates for loans etc.
-
-  * tip(): calculates tips based on bills in Restaurants.
-
-  * tax(): calculates taxes based on Incomes.
 
 
 **<span style="color:#C2185B; font-family:Cursive">Final Thoughts:</span>**
