@@ -141,11 +141,29 @@ As mentioned in the previous Blog, we started with a pretty simple App design wh
 
 However, with the Advanced Prototype version we have tried to refine our App with the implementation of Room Database and features like Chart Visualizations for various time intervals, a Navigation Layout, Date Picker feature to ensure correct input of data etc. A summary of the added changes has been shown below.
 
-<img src="{{site.baseurl}}/images/Features.png" alt="Changes" width="800" align = "middle" />
+<img src="{{site.baseurl}}/images/Features.png" alt="Features" width="800" align = "middle" />
 
 The added features also were reflected the in the user stories as new additions an well as in the Class Diagrams which have been shown below:
 
-<img src="{{site.baseurl}}/images/Changes.png" alt="Changes" width="500" align = "middle" />
+**Addition to User Stories:**
+
+  * Easy visualization of expenses through graphs.
+
+  * Sort data by Date​
+
+  * Add small descriptions to the expenses.​
+
+  * Data stored in the Database permanently.​
+
+  * Deal with Configuration changes, App rotations etc.​
+
+**Addition to Class Diagrams:**
+
+  * View Model Class​
+
+  * Room Database Class​
+
+  * Pie Chart Class​
 
 
 **<span style="color:#C2185B; font-family:Cursive">Final Thoughts:</span>**
