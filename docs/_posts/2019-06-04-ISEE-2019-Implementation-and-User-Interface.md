@@ -127,10 +127,10 @@ Based on the user stories that we had, we tried to make the App as easily usable
 add their expenses and incomes with descriptions and dates etc.   
 
 ---
-Screenshot 1: <img src="{{site.baseurl}}/images/Login.png" alt="Login" width="100" align = "middle" />
-Screenshot 2: <img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="100" align = "middle" />
-Screenshot 3: <img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="100" align = "middle" />
-Screenshot 4: <img src="{{site.baseurl}}/images/EditData.png" alt="Edit Data" width="100" align = "middle" />
+<img src="{{site.baseurl}}/images/Login.png" alt="Login" width="100" align = "middle" />
+<img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="100" align = "middle" />
+<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="100" align = "middle" />
+<img src="{{site.baseurl}}/images/EditData.png" alt="Edit Data" width="100" align = "middle" />
 ---
 
 
