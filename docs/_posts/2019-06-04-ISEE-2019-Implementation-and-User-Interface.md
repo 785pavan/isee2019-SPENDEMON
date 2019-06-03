@@ -145,7 +145,7 @@ However, with the Advanced Prototype version we have tried to refine our App wit
 
 The added features also were reflected the in the user stories as new additions an well as in the Class Diagrams which have been shown below:
 
-<img src="{{site.baseurl}}/images/Changes.png" alt="Changes" width="800" align = "middle" />
+<img src="{{site.baseurl}}/images/Changes.png" alt="Changes" width="500" align = "middle" />
 
 
 **<span style="color:#C2185B; font-family:Cursive">Final Thoughts:</span>**
