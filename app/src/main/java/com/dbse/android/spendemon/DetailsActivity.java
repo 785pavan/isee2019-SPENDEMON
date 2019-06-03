@@ -33,7 +33,7 @@ public class DetailsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ivCat = findViewById(R.id.ivCatDetails);
         ivPay = findViewById(R.id.ivPaymentDetails);
-        ivType = findViewById(R.id.ivTypeDetails);
+        //ivType = findViewById(R.id.ivTypeDetails);
         tvAmount = findViewById(R.id.tvAmountDetails);
         tvDate = findViewById(R.id.tvDateDetails);
         tvNotes = findViewById(R.id.tvNotesDetails);
@@ -109,7 +109,7 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
 
-        switch (intent.getStringExtra("Type")) {
+        /*switch (intent.getStringExtra("Type")) {
             case "Incomes":
                 ivType.setImageResource(R.drawable.plus_black);
                 break;
@@ -126,9 +126,7 @@ public class DetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), intent.getStringExtra("Type"), Toast.LENGTH_LONG).show();
             }
-        });
-
-
+        });*/
         tvAmount.setText(String.valueOf(intent.getDoubleExtra("Amount", 0.0)));
         tvNotes.setText(intent.getStringExtra("Notes"));
         tvDate.setText(intent.getStringExtra("Date"));
@@ -137,10 +135,11 @@ public class DetailsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Edit Text", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Entering Edit mode", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                Intent intent = new Intent(getApplicationContext(), EditData.class);
+                startActivity(intent);
             }
         });
     }
-
 }

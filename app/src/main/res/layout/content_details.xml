@@ -22,12 +22,6 @@
             android:contentDescription="@string/categoryImageDesc"
             android:padding="4dp" />
 
-        <ImageView
-            android:id="@+id/ivTypeDetails"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:contentDescription="@string/typeImageDesc"
-            android:padding="4dp" />
 
         <ImageView
             android:id="@+id/ivPaymentDetails"
@@ -54,7 +48,6 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:padding="4dp"
-        android:textAlignment="center"
         tools:text="Notes to be added" />
 
 
