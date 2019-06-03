@@ -96,6 +96,12 @@ When working together in an Agile manner and following SCRUM methods one needs t
 <img src="{{site.baseurl}}/images/Conventions.png" alt="Conventions" width="800" align = "middle" />
 
 
+**<span style="color:#C2185B; font-family:Cursive">Checkstyle Tests Implemented:</span>** In order to make sure that the coding conventions were being implemented properly, we created a Checkstyle test which when run, gives us the errors wherever we have not followed the conventions properly.
+
+
+<img src="{{site.baseurl}}/images/Checkstyle.png" alt="Checkstyle" width="800" align = "middle" />
+
+
 
 
 **<span style="color:#C2185B; font-family:Cursive">Add Entries Activity:</span>**
