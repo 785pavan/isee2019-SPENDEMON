@@ -123,25 +123,28 @@ For this reason, we have come up with two representative users who could find us
 
 Based on the user stories that we had, we tried to make the App as easily usable and as tailor made as possible. Here, we show two storyboards that shall display how our App functions.
 
+
 * **Storyboard 1:** Here, we display the screenshots from our App which navigates from the Login page to the Main Activity page where one can see the daily, monthly, overall summary. On clicking Summary, it takes to the overall Summary table from which one can navigate to the Edit Data page where one can
-add their expenses and incomes with descriptions and dates etc.   
+add their expenses and incomes with descriptions and dates etc.
+
 
 ---
-<img src="{{site.baseurl}}/images/Login.png" alt="Login" width="100" align = "middle" />
-<img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="100" align = "middle" />
-<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="100" align = "middle" />
-<img src="{{site.baseurl}}/images/EditData.png" alt="Edit Data" width="100" align = "middle" />
+<img src="{{site.baseurl}}/images/Login.png" alt="Login" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/EditData.png" alt="Edit Data" width="300" align = "middle" />
 ---
 
 
 
-* **Storyboard 2:** Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline. 
+* **Storyboard 2:** Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline.
+
 
 ---
-<img src="{{site.baseurl}}/images/PieChart.png" alt="PieChart" width="800" align = "middle" />
-<img src="{{site.baseurl}}/images/PieChart_1.png" alt="PieChart_1" width="800" align = "middle" />
-<img src="{{site.baseurl}}/images/Trendline.png" alt="Trendline" width="800" align = "middle" />
-<img src="{{site.baseurl}}/images/Trendline_1.png" alt="Trendline_1" width="800" align = "middle" />
+<img src="{{site.baseurl}}/images/PieChart.png" alt="PieChart" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/PieChart_1.png" alt="PieChart_1" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/Trendline.png" alt="Trendline" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/Trendline_1.png" alt="Trendline_1" width="300" align = "middle" />
 ---
 
 
