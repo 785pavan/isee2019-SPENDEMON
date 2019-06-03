@@ -118,6 +118,7 @@
     <string name="item_total">All</string>
     <string name="item_share">Share</string>
     <string name="item_contactUs">Contact Us</string>
+    <string name="item_trendLine">Expense History Chart</string>
 
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
