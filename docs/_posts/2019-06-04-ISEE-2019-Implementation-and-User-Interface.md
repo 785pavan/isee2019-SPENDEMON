@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Blog#4: Advanced Prototype and UI Implementation"
+title: "Blog#4: Advanced Prototype"
 date: 2019-06-04
 ---
 
