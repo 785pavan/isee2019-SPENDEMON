@@ -30,6 +30,7 @@ public class Summary extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class); //reference to current
         // activity given to view model object.
         summaryViewModel.getTable().observe(this, new Observer<List<Table>>() {
@@ -92,7 +93,9 @@ public class Summary extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+
     }
+
 
 
 }

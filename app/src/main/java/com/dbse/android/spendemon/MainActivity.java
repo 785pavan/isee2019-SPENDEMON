@@ -33,9 +33,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DrawerLayout drawer1;
     private Menu menu1;
+    private int backKey = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        int backKey = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -76,7 +78,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (drawer1.isDrawerOpen(GravityCompat.END)){
             drawer1.closeDrawer(GravityCompat.END);
         } else {
-            super.onBackPressed();
+            backKey++;
+            if(backKey == 1) {
+                Toast.makeText(MainActivity.this,"Click one more time to exist app", Toast.LENGTH_SHORT).show();
+            } else {
+                //exit app to home screen
+                Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);
+                homeScreenIntent.addCategory(Intent.CATEGORY_HOME);
+                homeScreenIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(homeScreenIntent);
+            }
+//            super.onBackPressed();
         }
     }
 
