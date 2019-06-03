@@ -6,8 +6,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
@@ -20,7 +18,8 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import static com.dbse.android.spendemon.Summary.entries;
 
 public class PieChartActivity extends AppCompatActivity {
 
@@ -32,12 +31,13 @@ public class PieChartActivity extends AppCompatActivity {
     private String[] xData = {"Mitch", "Jessica", "Md", "Kelsey", "Sam", "Robert", "Ashley"};*/
 
 
-
     ArrayList<Float> AmountValues = new ArrayList<>();
     ArrayList<String> Categories = new ArrayList<>();
-    float[] yData = new float[AmountValues.size()];
-    String[] xData = new String[Categories.size()];
 
+    ArrayList<Float> yData = new ArrayList<>();
+    ArrayList<String> xData = new ArrayList<>();
+    // yData = new float[AmountValues.size()];
+    //String[] xData = new String[Categories.size()];
 
 
     PieChart pieChart;
@@ -71,13 +71,13 @@ public class PieChartActivity extends AppCompatActivity {
                 int pos1 = e.toString().indexOf("y: ");
                 String cost = e.toString().substring(pos1 + 3);
 
-                for (int i = 0; i < yData.length; i++) {
-                    if (yData[i] == Float.parseFloat(cost)) {
+                for (int i = 0; i < yData.size(); i++) {
+                    if (yData.get(i) == Float.parseFloat(cost)) {
                         pos1 = i;
                         break;
                     }
                 }
-                String cat = xData[pos1];
+                String cat = xData.get(pos1);
                 Toast.makeText(PieChartActivity.this, "Category" + cat + "\n" +
                         "spent: " + cost, Toast.LENGTH_LONG).show();
 
@@ -92,6 +92,10 @@ public class PieChartActivity extends AppCompatActivity {
     }
 
     private void addDataSet() {
+
+        getData();
+
+
         Log.d(TAG, "addDataSet called");
         ArrayList<PieEntry> yEntries = new ArrayList<>();
         ArrayList<String> xEntries = new ArrayList<>();
@@ -130,5 +134,24 @@ public class PieChartActivity extends AppCompatActivity {
         PieData pieData = new PieData(pieDataSet);
         pieChart.setData(pieData);
         pieChart.invalidate();
+    }
+
+    private void getData() {
+        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+            AmountValues.add((float) entry.getAmount());
+            Categories.add(entry.getCategory());
+        }
+        float data = 0;
+        for (int i = 0; i < Categories.size(); i++) {
+            //data = AmountValues.get(i);
+            if (Categories.get(i).equals(Categories.get(i + 1))) {
+                data += AmountValues.get(i+1);
+                continue;
+            }
+            yData.add(data);
+            xData.add(Categories.get(i));
+            //yData[i] = data;
+            //xData[i] = Categories.get(i);
+        }
     }
 }

@@ -69,10 +69,20 @@ public class EditData extends AppCompatActivity
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String cat = sCategory.getSelectedItem().toString();
-                final String note = etDescription.getText().toString();
-                String paymeth = sPaymentMethod.getSelectedItem().toString();
+                String cat = sCategory.getSelectedItem().toString();
+                String note = etDescription.getText().toString();
+                String payMethod = sPaymentMethod.getSelectedItem().toString();
                 final double amount;
+                if (cat.equals("---")) {
+                    cat = "Not Defined";
+                }
+
+                if (note.equals("---")) {
+                    note = "Not Defined";
+                }
+                if (payMethod.equals("---")) {
+                    payMethod = "Not Defined";
+                }
                 if (etAmount.getText().toString().equals("")) {
                     amount = 0;
                 } else {
@@ -83,26 +93,9 @@ public class EditData extends AppCompatActivity
                     Calendar cal = Calendar.getInstance();
                     date = cal.get(Calendar.DAY_OF_MONTH) + "/" + (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.YEAR);
                 }
-
-                if (paymeth.equals("---")) {
-                    paymeth = "Not Defined";
-                }
-
-                Table table = new Table(sType.getSelectedItem().toString(), cat, amount, date, paymeth, note);
+                Table table = new Table(sType.getSelectedItem().toString(), cat, amount, date, payMethod, note);
                 summaryViewModel.insert(table);
                 final Intent intent = new Intent(getApplicationContext(), Summary.class);
-               /* Entry entry = new Entry(sType.getSelectedItem().toString(), cat, amount, date, paymeth);
-                entries.clear();
-                entries.add(entry);*/
-              /*  ArrayList<Entry> Temp = getSavedObjectFromPreference(getApplicationContext(),
-                        "summary", "entries");
-                if (Temp == null) {
-                    Temp = new ArrayList<Entry>();
-                } else {
-                    Temp.addAll(entries);
-                }
-                saveObjectToSharedPreference(getApplicationContext(),
-                        "summary", "entries", Temp);*/
                 startActivity(intent);
             }
         });

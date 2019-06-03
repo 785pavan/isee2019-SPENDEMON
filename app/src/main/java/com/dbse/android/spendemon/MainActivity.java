@@ -1,5 +1,6 @@
 package com.dbse.android.spendemon;
 
+import android.content.Intent;
 import android.os.Bundle;
 //import android.support.annotation.NonNull;
 //import android.support.design.widget.NavigationView;
@@ -105,8 +106,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Contact Us E-mail", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_summary:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SummaryFragment()).commit();
+                Intent intent = new Intent(getApplicationContext(), Summary.class);
+                startActivity(intent);
+                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SummaryFragment()).commit();*/
 //                right drawer
             case R.id.nav_currency:
                 Toast.makeText(this, "Currency", Toast.LENGTH_LONG).show();

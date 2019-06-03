@@ -114,7 +114,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
                 if (Integer.valueOf(String.valueOf(passwordField.getText())).equals(passwordA1)) {
                     Toast.makeText(getApplicationContext(), "You are Logged in as: "
                             .concat(usernameA1), Toast.LENGTH_LONG).show();
-                    Intent intent1 = new Intent(this, Summary.class);
+                    Intent intent1 = new Intent(this, MainActivity.class);
                     startActivity(intent1);
                 } else {
                     Toast.makeText(getApplicationContext(), "Wrong password!",
