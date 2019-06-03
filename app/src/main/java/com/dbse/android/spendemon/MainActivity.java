@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer1 = findViewById(R.id.drawer_layout);
 
 
-        NavigationView navigationView1 = findViewById(R.id.navigation_view2);
+        NavigationView navigationView1 = findViewById(R.id.navigation_view1);
 
-        NavigationView navigationView2 = findViewById(R.id.navigation_view1);
+        NavigationView navigationView2 = findViewById(R.id.navigation_view2);
 
         navigationView1.setNavigationItemSelectedListener(this);
 

@@ -15,7 +15,6 @@
     <!--android:orientaiton="vertical"-->
     <!--&gt;-->
 
-    <!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 
     <fragment
         android:layout_width="wrap_content"
@@ -51,14 +50,14 @@
     <com.google.android.material.navigation.NavigationView
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:id="@+id/navigation_view1"
+    android:id="@+id/navigation_view2"
     android:layout_gravity="end"
     app:menu="@menu/drawer_menu_right">
     </com.google.android.material.navigation.NavigationView>
 
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view2"
+        android:id="@+id/navigation_view1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
