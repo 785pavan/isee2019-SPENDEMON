@@ -129,13 +129,13 @@ add their expenses and incomes with descriptions and dates etc.
 
 
 ---
-<img src="{{site.baseurl}}/images/Login.png" alt="Login" width="200" align = "middle" />
+<img src="{{site.baseurl}}/images/Login.png" alt="Login" width="80" align = "middle" />
 
-<img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="200" align = "middle" />
+<img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="80" align = "middle" />
 
-<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="200" align = "middle" />
+<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="80" align = "middle" />
 
-<img src="{{site.baseurl}}/images/EditData.png" alt="Edit Data" width="200" align = "middle" />
+<img src="{{site.baseurl}}/images/EditData.png" alt="Edit Data" width="80" align = "middle" />
 
 ---
 
@@ -145,13 +145,13 @@ add their expenses and incomes with descriptions and dates etc.
 
 
 ---
-<img src="{{site.baseurl}}/images/PieChart.png" alt="PieChart" width="200" align = "middle" />
+<img src="{{site.baseurl}}/images/PieChart.png" alt="PieChart" width="80" align = "middle" />
 
-<img src="{{site.baseurl}}/images/PieChart_1.png" alt="PieChart_1" width="200" align = "middle" />
+<img src="{{site.baseurl}}/images/PieChart_1.png" alt="PieChart_1" width="80" align = "middle" />
 
-<img src="{{site.baseurl}}/images/Trendline.png" alt="Trendline" width="200" align = "middle" />
+<img src="{{site.baseurl}}/images/Trendline.png" alt="Trendline" width="80" align = "middle" />
 
-<img src="{{site.baseurl}}/images/Trendline_1.png" alt="Trendline_1" width="200" align = "middle" />
+<img src="{{site.baseurl}}/images/Trendline_1.png" alt="Trendline_1" width="80" align = "middle" />
 
 ---
 
