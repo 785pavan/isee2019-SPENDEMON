@@ -104,10 +104,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_LONG).show();
+                Intent intent_share = new Intent(Intent.ACTION_SEND);
+                intent_share.setType("text/plain");
+                String shareBody = "We are team SPENDEMON. Please check out our blog: https://dbse-teaching.github.io/isee2019-SPENDEMON/";
+                String shareSubject = "The link for our Blog";
+                intent_share.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
+                intent_share.putExtra(Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(intent_share, "Share this by"));
                 break;
             case R.id.nav_send:
                 Toast.makeText(this, "Contact Us E-mail", Toast.LENGTH_LONG).show();
+                Intent intent_contactUs = new Intent(Intent.ACTION_SEND);
+                intent_contactUs.setType("message/rfc822");
+                String contactBody = "Sent from SPENDEMON app.";
+                String contactSubject = "Feedback for SPENDEMON team";
+                intent_contactUs.putExtra(Intent.EXTRA_SUBJECT, contactSubject);
+                intent_contactUs.putExtra(Intent.EXTRA_TEXT, contactBody);
+                intent_contactUs.putExtra(Intent.EXTRA_EMAIL, new String[]{"pavan.kandapagari@st.ovgu.de",
+                        "atrayee.neog@st.ovgu.de", "seyedbehnam.beladi@st.ovgu.de"});
+                startActivity(Intent.createChooser(intent_contactUs, "Share this by"));
                 break;
+//                pavan.kandapagari@st.ovgu.de,atrayee.neog@st.ovgu.de,seyedbehnam.beladi@st.ovgu.de
             case R.id.nav_summary:
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 startActivity(intent);
