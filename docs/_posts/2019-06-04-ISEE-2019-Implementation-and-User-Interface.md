@@ -95,7 +95,9 @@ When working together in an Agile manner and following SCRUM methods one needs t
 <img src="{{site.baseurl}}/images/Conventions.png" alt="Conventions" width="800" align = "middle" />
 
 
-**<span style="color:#C2185B; font-family:Cursive">Checkstyle Tests Implemented:</span>** In order to make sure that the coding conventions were being implemented properly, we created a Checkstyle test which when run, gives us the errors wherever we have not followed the conventions properly.
+**<span style="color:#C2185B; font-family:Cursive">Checkstyle Tests Implemented:</span>**
+
+In order to make sure that the coding conventions were being implemented properly, we created a Checkstyle test which when run, gives us the errors wherever we have not followed the conventions properly.
 
 
 <img src="{{site.baseurl}}/images/Checkstyle.png" alt="Checkstyle" width="800" align = "middle" />
@@ -116,11 +118,66 @@ For this reason, we have come up with two representative users who could find us
 <img src="{{site.baseurl}}/images/User2.png" alt="User2" width="800" align = "middle" />
 
 
+**<span style="color:#C2185B; font-family:Cursive">Design Solution:</span>**
+
+
+Based on the user stories that we had, we tried to make the App as easily usable and as tailor made as possible. Here, we show two storyboards that shall display how our App functions.
+
+* **Storyboard 1:**
+
+
+<img src="{{site.baseurl}}/images/User1.png" alt="Storyboard1" width="800" align = "middle" />
+
+
+* **Storyboard 2:**
+
+
+<img src="{{site.baseurl}}/images/User1.png" alt="Storyboard2" width="800" align = "middle" />
+
+
+
+**<span style="color:#C2185B; font-family:Cursive">Summary of Changes:</span>**
+As mentioned in the previous Blog, we started with a pretty simple App design which had a Login page, a Summary Page and an Edit Data page. Along with that we had implemented the Database as a simple JSON file which was pretty basic in it's functionality.
+
+However, with the Advanced Prototype version we have tried to refine our App with the implementation of certain features to make our App more, well, App like. A summary of the added changes has been given below.
+
+* Room Database implemented.
+
+* Navigation Bar added.
+
+* Charts feature added.
+
+* Icons added for each category.
+
+* Date Picker feature added.
+
+The added features also were reflected the in the user stories as new additions an well as in the Class Diagrams which have been shown below:
+
+**Addition to User Stories:**
+
+  * Easy visualization of expenses through graphs.
+
+  * Sort data by Date​
+
+  * Add small descriptions to the expenses.​
+
+  * Data stored in the Database permanently.​
+
+  * Deal with Configuration changes, App rotations etc.​
+
+**Addition to Class Diagrams:**
+
+  * View Model Class​
+
+  * Room Database Class​
+
+  * Pie Chart Class​
+
 
 **<span style="color:#C2185B; font-family:Cursive">Final Thoughts:</span>**
 
-The usage of the Class Diagrams and Activity Diagrams were immensely helpful during the implementation process and eased our struggles with Android and Java. It gave us a template and  structure to follow, such that we could keep track on the progress of our development phase and would not deviate.
+The understanding of the User Interface Implementation and Design Pattern, helped in better understanding of both our App and the customers expectations from the App. Doing research on the Design Architectures opened up new windows for us to implement in our App and we are glad we could implement some of it into the App. We hopefully, have been able to create an App that will be able to assist our customers and shall be easy on usage.
 
-The next task will be to illustrate before our users the Implementation procedures and also design a GUI for interactive usage of our application. Hope to make an interesting read for you again..
+We next intend to up our game some more by going into further detailing in our App and make it even more fun to use.  
 
-See you soon!! Tschüss!!
+So stay tuned!! Tschüss!!
