@@ -7,32 +7,25 @@
     android:background="@color/background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Summary"
-    tools:showIn="@layout/activity_summary">
+   >
+    <!--tools:showIn="@layout/activity_summary-->
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEntries"
         android:layout_width="match_parent"
-        android:layout_height="479dp"
+        android:layout_height="480dp"
         android:layout_margin="@dimen/fab_margin"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="88dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="160dp"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <Button
-        android:id="@+id/bDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="@string/chart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
 </androidx.constraintlayout.widget.ConstraintLayout>

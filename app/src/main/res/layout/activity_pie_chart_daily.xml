@@ -24,6 +24,12 @@
             android:layout_weight="1"
             android:hint="@string/enter_date"
             android:id="@+id/tvDateDaily"/>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/go"
+            android:src="@drawable/ic_done_black_24dp"
+            android:id="@+id/ivDone"/>
     </LinearLayout>
 
     <com.github.mikephil.charting.charts.PieChart
