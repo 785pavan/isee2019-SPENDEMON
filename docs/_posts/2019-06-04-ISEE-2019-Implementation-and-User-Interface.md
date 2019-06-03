@@ -28,11 +28,15 @@ The Repository creates an abstract layer between the View Model and actual Datab
 
 
 <span style="color:#C2185B; font-family:Cursive">*Room Database:*</span>
-Room Database is an abstraction layer over the SQLite database which manages both local data as well as data from the Database. 
+Room Database is an abstraction layer over the SQLite database which manages both local data as well as data from the Database.
+
+1. Data Access Object: An Interface implemented in the Database class and contains the methods like insert(), update(), delete(), deleteAll().
+2. Database: It extends the RoomDatabase class and stores all Entities that we pass from the App.
+3. Entities: These are values that we send from our App to the Database and are stored in the Database.
 
 
 
-**<span style="color:#C2185B; font-family:Cursive">Login Activity:</span>**
+**<span style="color:#C2185B; font-family:Cursive">:</span>**
 
 <img src="{{site.baseurl}}/images/LoginActivity.png" alt="Login Activity" width="800" align = "middle" />
 
