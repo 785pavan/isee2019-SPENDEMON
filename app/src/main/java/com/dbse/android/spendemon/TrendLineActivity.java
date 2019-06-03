@@ -110,7 +110,7 @@ public class TrendLineActivity extends AppCompatActivity {
             lineDataSet.setValueTextSize(9f);
             lineDataSet.setDrawFilled(true);
             lineDataSet.setFormLineWidth(1f);
-            //lineDataSet.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
+            lineDataSet.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
             lineDataSet.setFormSize(15.f);
             if (Utils.getSDKInt() >= 18) {
                 Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_blue);
@@ -126,11 +126,11 @@ public class TrendLineActivity extends AppCompatActivity {
         if (lineChart.getData() != null &&
                 lineChart.getData().getDataSetCount() > 0) {
             lineDataSet3 = (LineDataSet) lineChart.getData().getDataSetByIndex(0);
-            lineDataSet3.setValues(yAxesEx);
+            lineDataSet3.setValues(yAxesIn);
             lineChart.getData().notifyDataChanged();
             lineChart.notifyDataSetChanged();
         } else {
-            lineDataSet3 = new LineDataSet(yAxesEx, "Sample Data");
+            lineDataSet3 = new LineDataSet(yAxesIn, "Sample Data");
             lineDataSet3.setDrawIcons(false);
             lineDataSet3.enableDashedLine(10f, 5f, 0f);
             lineDataSet3.enableDashedHighlightLine(10f, 5f, 0f);
@@ -142,7 +142,7 @@ public class TrendLineActivity extends AppCompatActivity {
             lineDataSet3.setValueTextSize(9f);
             lineDataSet3.setDrawFilled(true);
             lineDataSet3.setFormLineWidth(1f);
-            //lineDataSet3.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
+            lineDataSet3.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
             lineDataSet3.setFormSize(15.f);
             if (Utils.getSDKInt() >= 18) {
                 Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_blue);
