@@ -85,10 +85,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (menuItem.getItemId()) {
             case R.id.nav_daily:
-                Intent intent_Daily = new Intent(getApplicationContext(),PieChartDailyActivity.class);
-                startActivity(intent_Daily);
+
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new DailyFragment()).commit();*/
+                Intent intent_daily = new Intent(getApplicationContext(),PieChartDailyActivity.class);
+                startActivity(intent_daily);
                 break;
             case R.id.nav_weekly:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

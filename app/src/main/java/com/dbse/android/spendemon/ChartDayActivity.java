@@ -1,8 +1,12 @@
 package com.dbse.android.spendemon;
 
+import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,39 +25,37 @@ import java.util.ArrayList;
 
 import static com.dbse.android.spendemon.Summary.entries;
 
-public class PieChartActivity extends AppCompatActivity {
+public class ChartDayActivity extends AppCompatActivity {
+    private static String TAG = "Chart";
 
-    private static String TAG = "PieChart";
-    /* private float[] yData = {25.4f, 10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f};
-     private String[] xData = {"Mitch", "Jessica", "Md", "Kelsey", "Sam", "Robert", "Ashley"};*/
+
     ArrayList<Float> AmountValues = new ArrayList<>();
     ArrayList<String> Categories = new ArrayList<>();
-
     ArrayList<Float> yData = new ArrayList<>();
     ArrayList<String> xData = new ArrayList<>();
-
-
+    TextView tvDateDaily;
     PieChart pieChart;
+    ImageView ivDone;
+    String date;
+    private DatePickerDialog.OnDateSetListener onDateSetListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_pie_chart);
+        setContentView(R.layout.activity_chart_day);
+        Intent intent = getIntent();
+        date = intent.getStringExtra("Date");
         Log.d(TAG, "onCreate: Start of creation of chart");
-        pieChart = findViewById(R.id.idPieChart);
-        Description desc = new Description();
-        desc.setText("Expenditure");
-        pieChart.setDescription(desc);
+        pieChart = findViewById(R.id.idPieChartDaily);
+        Description description = new Description();
+        description.setText("Expenditure");
+        pieChart.setDescription(description);
         pieChart.setRotationEnabled(true);
         pieChart.setHoleRadius(25f);
         pieChart.setTransparentCircleAlpha(25);
-        pieChart.setCenterText("Category");
+        pieChart.setCenterText("Expenditure");
         pieChart.setCenterTextSize(10);
         pieChart.setDrawEntryLabels(true);
-
-        addDataSet();
-
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
@@ -71,9 +73,8 @@ public class PieChartActivity extends AppCompatActivity {
                     }
                 }
                 String cat = xData.get(pos1);
-                Toast.makeText(PieChartActivity.this, "Category: " + cat + "\n" +
+                Toast.makeText(ChartDayActivity.this, "Category: " + cat + "\n" +
                         "spent: " + cost, Toast.LENGTH_LONG).show();
-
             }
 
             @Override
@@ -84,9 +85,9 @@ public class PieChartActivity extends AppCompatActivity {
 
     }
 
-    private void addDataSet() {
+    private void addDataSet(/*String date*/) {
 
-        getData();
+        getData(/*date*/);
 
 
         Log.d(TAG, "addDataSet called");
@@ -108,13 +109,14 @@ public class PieChartActivity extends AppCompatActivity {
         //Colors
 
         ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.GRAY);
+        colors.add(Color.DKGRAY);
         colors.add(Color.BLUE);
         colors.add(Color.RED);
         colors.add(Color.GREEN);
+        colors.add(Color.MAGENTA);
         colors.add(Color.CYAN);
         colors.add(Color.YELLOW);
-        colors.add(Color.MAGENTA);
+        colors.add(Color.GRAY);
 
         pieDataSet.setColors(colors);
 
@@ -129,12 +131,12 @@ public class PieChartActivity extends AppCompatActivity {
         pieChart.invalidate();
     }
 
-    private void getData() {
+    private void getData(/*String date*/) {
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
-            if (true) {
+            //if (entry.getDate().equals(date)) {
                 AmountValues.add((float) entry.getAmount());
                 Categories.add(entry.getCategory());
-            }
+            //}
         }
         float data = 0;
         for (int i = 0; i < Categories.size(); i++) {
@@ -147,13 +149,8 @@ public class PieChartActivity extends AppCompatActivity {
             yData.add(data);
             xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
 
-            /*if (Categories.get(i).equals(Categories.get(i + 1))) {
-                data += AmountValues.get(i + 1);
-                continue;
-            }
-            yData.add(data);
-            xData.add(Categories.get(i));*/
 
         }
     }
+
 }

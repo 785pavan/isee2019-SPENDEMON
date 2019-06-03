@@ -19,23 +19,19 @@
             android:text="@string/date001" />
 
         <TextView
+            android:id="@+id/tvDateDaily"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@string/enter_date"
-            android:id="@+id/tvDateDaily"/>
+            android:hint="@string/enter_date" />
+
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:id="@+id/ivDone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:contentDescription="@string/go"
-            android:src="@drawable/ic_done_black_24dp"
-            android:id="@+id/ivDone"/>
+            android:src="@drawable/ic_done_black_24dp" />
     </LinearLayout>
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/idPieChartDaily"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/rootPieChart"
-        android:layout_centerInParent="true" />
+
 </RelativeLayout>
