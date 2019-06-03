@@ -15,11 +15,18 @@
             android:text="@string/month"
             />
         <EditText
+            android:id="@+id/tvMonth"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="@string/enter_month"
             android:layout_weight="1"
             android:inputType="number" />
+        <ImageView
+            android:id="@+id/ivDone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/go"
+            android:src="@drawable/ic_done_black_24dp" />
     </LinearLayout>
     <com.github.mikephil.charting.charts.PieChart
         android:layout_width="wrap_content"

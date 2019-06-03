@@ -22,6 +22,12 @@
             android:importantForAutofill="no"
             android:autofillHints="string/enter_month"
             android:inputType="number" />
+        <ImageView
+            android:id="@+id/ivDone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/go"
+            android:src="@drawable/ic_done_black_24dp" />
     </LinearLayout>
     <com.github.mikephil.charting.charts.PieChart
         android:layout_width="wrap_content"
