@@ -137,5 +137,6 @@
     <string name="date001">DATE</string>
     <string name="enter_date">Enter date</string>
     <string name="title_activity_details">DetailsActivity</string>
+    <string name="go">Go</string>
 
 </resources>

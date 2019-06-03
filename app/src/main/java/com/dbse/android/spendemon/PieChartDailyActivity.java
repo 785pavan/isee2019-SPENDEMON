@@ -5,8 +5,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +27,7 @@ import java.util.Calendar;
 
 import static com.dbse.android.spendemon.Summary.entries;
 
-public class PieChartDailyActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class PieChartDailyActivity extends AppCompatActivity {
 
 
     private static String TAG = "PieChart";
@@ -40,13 +40,16 @@ public class PieChartDailyActivity extends AppCompatActivity implements AdapterV
     ArrayList<String> xData = new ArrayList<>();
     TextView tvDateDaily;
     PieChart pieChart;
+    ImageView ivDone;
     private DatePickerDialog.OnDateSetListener onDateSetListener;
+    String date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_chart_daily);
         tvDateDaily = findViewById(R.id.tvDateDaily);
+        ivDone = findViewById(R.id.ivDone);
 
         tvDateDaily.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +76,18 @@ public class PieChartDailyActivity extends AppCompatActivity implements AdapterV
             }
         };
 
+        ivDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                date = tvDateDaily.getText().toString().equals("") ? ("" + day + "/" + month + "/" + year) : tvDateDaily.getText().toString();
+
+            }
+        });
 
         Log.d(TAG, "onCreate: Start of creation of chart");
         pieChart = findViewById(R.id.idPieChartDaily);
@@ -85,10 +100,8 @@ public class PieChartDailyActivity extends AppCompatActivity implements AdapterV
         pieChart.setCenterText("Expenditure");
         pieChart.setCenterTextSize(10);
         pieChart.setDrawEntryLabels(true);
-        String date = tvDateDaily.getText().toString();
 
         addDataSet(date);
-
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
@@ -190,15 +203,5 @@ public class PieChartDailyActivity extends AppCompatActivity implements AdapterV
             xData.add(Categories.get(i));*/
 
         }
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }
