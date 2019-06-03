@@ -129,10 +129,14 @@ add their expenses and incomes with descriptions and dates etc.
 
 
 ---
-<img src="{{site.baseurl}}/images/Login.png" alt="Login" width="300" align = "middle" />
-<img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="300" align = "middle" />
-<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="300" align = "middle" />
-<img src="{{site.baseurl}}/images/EditData.png" alt="Edit Data" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/Login.png" alt="Login" width="200" align = "middle" />
+
+<img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="200" align = "middle" />
+
+<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="200" align = "middle" />
+
+<img src="{{site.baseurl}}/images/EditData.png" alt="Edit Data" width="200" align = "middle" />
+
 ---
 
 
@@ -141,17 +145,21 @@ add their expenses and incomes with descriptions and dates etc.
 
 
 ---
-<img src="{{site.baseurl}}/images/PieChart.png" alt="PieChart" width="300" align = "middle" />
-<img src="{{site.baseurl}}/images/PieChart_1.png" alt="PieChart_1" width="300" align = "middle" />
-<img src="{{site.baseurl}}/images/Trendline.png" alt="Trendline" width="300" align = "middle" />
-<img src="{{site.baseurl}}/images/Trendline_1.png" alt="Trendline_1" width="300" align = "middle" />
+<img src="{{site.baseurl}}/images/PieChart.png" alt="PieChart" width="200" align = "middle" />
+
+<img src="{{site.baseurl}}/images/PieChart_1.png" alt="PieChart_1" width="200" align = "middle" />
+
+<img src="{{site.baseurl}}/images/Trendline.png" alt="Trendline" width="200" align = "middle" />
+
+<img src="{{site.baseurl}}/images/Trendline_1.png" alt="Trendline_1" width="200" align = "middle" />
+
 ---
 
 
 
 
 
-** Design Principles:** The basic idea behind our design choice is easy use of the App by the user and making the App such that one can have an easy and fruitful experience with it. The user should be able to keep track of his expenses and get an overview of his expenses in one quick glance. The basic design principles that we took into account are as follows:
+**Design Principles:** The basic idea behind our design choice is easy use of the App by the user and making the App such that one can have an easy and fruitful experience with it. The user should be able to keep track of his expenses and get an overview of his expenses in one quick glance. The basic design principles that we took into account are as follows:
 
 * Cut Out The Clutter
 
