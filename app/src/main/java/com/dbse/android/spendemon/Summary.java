@@ -57,7 +57,7 @@ public class Summary extends AppCompatActivity  {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
-        Button bDelete = findViewById(R.id.bDelete);
+        //Button bDelete = findViewById(R.id.bDelete);
 
         entryAdaptor adaptor = new entryAdaptor(entries);
         rvEntries.setAdapter(adaptor);
@@ -83,15 +83,15 @@ public class Summary extends AppCompatActivity  {
 
             }
         });
-        bDelete.setOnClickListener(new View.OnClickListener() {
+        /*bDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PieChartActivity.class);
                 startActivity(intent);
-                /*EditData.deleteSharedPreferences(getApplicationContext(),
-                        "summary");*/
+                *//*EditData.deleteSharedPreferences(getApplicationContext(),
+                        "summary");*//*
             }
-        });
+        });*/
 
     }
 
