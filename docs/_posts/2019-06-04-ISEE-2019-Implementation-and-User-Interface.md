@@ -30,24 +30,42 @@ The Repository creates an abstract layer between the View Model and actual Datab
 <span style="color:#C2185B; font-family:Cursive">*Room Database:*</span>
 Room Database is an abstraction layer over the SQLite database which manages both local data as well as data from the Database.
 
-**1. Data Access Object:** An Interface implemented in the Database class and contains the methods like insert(), update(), delete(), deleteAll().
-**2. Database:** It extends the RoomDatabase class and stores all Entities that we pass from the App.
-**3. Entities:** These are values that we send from our App to the Database and are stored in the Database.
+* **Data Access Object:** An Interface implemented in the Database class and contains the methods like insert(), update(), delete(), deleteAll().
+
+
+* **Database:** It extends the RoomDatabase class and stores all Entities that we pass from the App.
+
+
+* **Entities:** These are values that we send from our App to the Database and are stored in the Database.
 
 
 
-**<span style="color:#C2185B; font-family:Cursive">:</span>**
+**<span style="color:#C2185B; font-family:Cursive">Coding Conventions :</span>**
 
 <img src="{{site.baseurl}}/images/LoginActivity.png" alt="Login Activity" width="800" align = "middle" />
 
 
-This activity diagram, depicts the entry point of the user into the App. We shall look at each activity one at a time.
+When working together in an Agile manner and following SCRUM methods one needs to follow certain conventions such that all team members work effectively and can communicate well. For us, we decided to implement the Google Java Style Guide coding conventions for Android. Here is a list of the coding conventions we applied:
 
-<span style="color:#C2185B; font-family:Cursive">*Sign-Up:*</span>  Incase of a first time installation of the app, the user will be required to add his/her signup details (Username and Password) into the Sign-Up activity which has a condition for a new and an existing user. Incase of the former, the Sign-Up details are used to create a new account and to authorize the user into the Summary page.
+* **Naming Conventions:**
 
-<span style="color:#C2185B; font-family:Cursive">*Login:*</span> The Login activity is used to authenticate an existing user. On correctly entering the Username and Password, the user shall be directed to the Summary page of the App.
+* Java Classes/Interfaces: UpperCamelCase.java
+* Activity Java Files: UpperCamelCaseActivity.java
+* Activity Layout Files: activity_lowercase_name.xml
+* Fragment Files: fragment_lowercase_name.xml
+* Menu Files: menu_lowercase_name.xml
+* Method Names: lowerCamelCase
+* Constants: UPPER_CASE
+* Variables: lowercase_name
 
-<span style="color:#C2185B; font-family:Cursive">*Summary:*</span> This page displays all the added expenses and incomes of the user sorted on the basis of the most recently added.   
+
+* **Source File Structure:**
+
+* Package name
+* Import statements (Android statements, third party statements, java/javax statements)
+* One high level class
+* Overrides of methods
+
 
 **<span style="color:#C2185B; font-family:Cursive">Add Entries Activity:</span>**
 
