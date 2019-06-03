@@ -135,10 +135,17 @@ add their expenses and incomes with descriptions and dates etc.
 
 
 
-* **Storyboard 2:**
+* **Storyboard 2:** Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline. 
+
+---
+<img src="{{site.baseurl}}/images/PieChart.png" alt="PieChart" width="800" align = "middle" />
+<img src="{{site.baseurl}}/images/PieChart_1.png" alt="PieChart_1" width="800" align = "middle" />
+<img src="{{site.baseurl}}/images/Trendline.png" alt="Trendline" width="800" align = "middle" />
+<img src="{{site.baseurl}}/images/Trendline_1.png" alt="Trendline_1" width="800" align = "middle" />
+---
 
 
-<img src="{{site.baseurl}}/images/User1.png" alt="Storyboard2" width="800" align = "middle" />
+
 
 
 ** Design Principles:** The basic idea behind our design choice is easy use of the App by the user and making the App such that one can have an easy and fruitful experience with it. The user should be able to keep track of his expenses and get an overview of his expenses in one quick glance. The basic design principles that we took into account are as follows:
