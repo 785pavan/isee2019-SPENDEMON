@@ -48,22 +48,72 @@ When working together in an Agile manner and following SCRUM methods one needs t
 
 * **Naming Conventions:**
 
+
 * **Java Classes/Interfaces:** UpperCamelCase.java
+
+
 * **Activity Java Files:** UpperCamelCaseActivity.java
+
+
 * **Activity Layout Files:** activity_lowercase_name.xml
+
+
 * **Fragment Files:** fragment_lowercase_name.xml
+
+
 * **Menu Files:** menu_lowercase_name.xml
+
+
 * **Method Names:** lowerCamelCase
+
+
 * **Constants:** UPPER_CASE
+
+
 * **Variables:** lowercase_name
 
 
 * **Source File Structure:**
 
 * **Package name**
+
+
 * **Import statements (Android statements, third party statements, java/javax statements)**
+
+
 * **One high level class**
+
+
 * **Overrides of methods**
+
+* **JavaDoc:** All Source files and sections should have params, functionalities to be written before.
+
+
+* **Line and Spacing Indentations:**
+
+* **basicOffset:** 4
+
+
+
+
+* **braceAdjustment:** 0
+
+
+* **caseIndent:** 4
+
+
+* **throwsIndent:** 8
+
+
+* **lineWrappingIndentation:** 8
+
+
+* **arrayInitIndent:** 4
+
+
+<img src="{{site.baseurl}}/images/Conventions.png" alt="Conventions" width="800" align = "middle" />
+
+
 
 
 **<span style="color:#C2185B; font-family:Cursive">Add Entries Activity:</span>**
