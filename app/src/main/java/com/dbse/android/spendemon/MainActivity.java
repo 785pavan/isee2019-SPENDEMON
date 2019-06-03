@@ -2,20 +2,10 @@ package com.dbse.android.spendemon;
 
 import android.content.Intent;
 import android.os.Bundle;
-//import android.support.annotation.NonNull;
-//import android.support.design.widget.NavigationView;
-//import android.support.v4.view.GravityCompat;
-//import android.support.v4.widget.DrawerLayout;
-//import android.support.v7.app.ActionBarDrawerToggle;
-//import android.support.v7.app.AppCompatActivity;
-//import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-//import android.support.v7.widget.Toolbar;
-
-//import android.widget.Toolbar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,8 +13,17 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.github.mikephil.charting.charts.PieChart;
 import com.google.android.material.navigation.NavigationView;
+
+//import android.support.annotation.NonNull;
+//import android.support.design.widget.NavigationView;
+//import android.support.v4.view.GravityCompat;
+//import android.support.v4.widget.DrawerLayout;
+//import android.support.v7.app.ActionBarDrawerToggle;
+//import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.widget.Toolbar;
+//import android.support.v7.widget.Toolbar;
+//import android.widget.Toolbar;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -75,12 +74,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed() {
         if (drawer1.isDrawerOpen(GravityCompat.START)) {
             drawer1.closeDrawer(GravityCompat.START);
-        } else if (drawer1.isDrawerOpen(GravityCompat.END)){
+        } else if (drawer1.isDrawerOpen(GravityCompat.END)) {
             drawer1.closeDrawer(GravityCompat.END);
         } else {
             backKey++;
-            if(backKey == 1) {
-                Toast.makeText(MainActivity.this,"Click one more time to exist app", Toast.LENGTH_SHORT).show();
+            if (backKey == 1) {
+                Toast.makeText(MainActivity.this, "Click one more time to exist app", Toast.LENGTH_SHORT).show();
             } else {
                 //exit app to home screen
                 Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);
@@ -100,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new DailyFragment()).commit();*/
-                Intent intent_daily = new Intent(getApplicationContext(),PieChartDailyActivity.class);
+                Intent intent_daily = new Intent(getApplicationContext(), PieChartDailyActivity.class);
                 startActivity(intent_daily);
                 break;
             case R.id.nav_weekly:
@@ -113,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_total:
                 Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);
+                intent_total.putExtra("Duration", "All");
                 startActivity(intent_total);
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new TotalFragment()).commit();*/

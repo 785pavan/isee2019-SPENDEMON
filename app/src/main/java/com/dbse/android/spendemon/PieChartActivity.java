@@ -1,5 +1,6 @@
 package com.dbse.android.spendemon;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +32,7 @@ public class PieChartActivity extends AppCompatActivity {
 
     ArrayList<Float> yData = new ArrayList<>();
     ArrayList<String> xData = new ArrayList<>();
+    Intent intent;
 
 
     PieChart pieChart;
@@ -39,6 +41,7 @@ public class PieChartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        intent = getIntent();
         setContentView(R.layout.activity_pie_chart);
         Log.d(TAG, "onCreate: Start of creation of chart");
         pieChart = findViewById(R.id.idPieChart);
@@ -131,7 +134,19 @@ public class PieChartActivity extends AppCompatActivity {
 
     private void getData() {
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
-            if (true) {
+            if ((intent.getStringExtra("Duration")).equals("Day")) {
+                if (entry.getDate().equals(intent.getStringExtra("Date"))) {
+                    AmountValues.add((float) entry.getAmount());
+                    Categories.add(entry.getCategory());
+                }
+            } else if (intent.getStringExtra("Duration").equals("Month")) {
+                String monthIntent = intent.getStringExtra("Month");
+                String monthEntry = entry.getDate().substring(1, 3);
+                if (monthEntry.equals(monthIntent)) {
+                    AmountValues.add((float) entry.getAmount());
+                    Categories.add(entry.getCategory());
+                }
+            } else if (intent.getStringExtra("Duration").equals("All")){
                 AmountValues.add((float) entry.getAmount());
                 Categories.add(entry.getCategory());
             }

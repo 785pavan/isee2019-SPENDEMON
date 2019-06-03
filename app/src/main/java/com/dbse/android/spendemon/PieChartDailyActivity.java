@@ -76,7 +76,8 @@ public class PieChartDailyActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "Done Clicked", Toast.LENGTH_LONG).show();
                 date = tvDateDaily.getText().toString().equals("") ? ("" + day + "/" + month + "/" + year) : tvDateDaily.getText().toString();
-                Intent intent = new Intent(getApplicationContext(), ChartDayActivity.class);
+                Intent intent = new Intent(getApplicationContext(), PieChartActivity.class);
+                intent.putExtra("Duration","Day");
                 intent.putExtra("Date", date);
                 startActivity(intent);
 

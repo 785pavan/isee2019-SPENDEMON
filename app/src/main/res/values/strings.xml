@@ -138,5 +138,7 @@
     <string name="enter_date">Enter date</string>
     <string name="title_activity_details">DetailsActivity</string>
     <string name="go">Go</string>
+    <string name="month001">Month</string>
+    <string name="select_month">Select month</string>
 
 </resources>
