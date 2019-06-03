@@ -149,7 +149,7 @@ public class PieChartActivity extends AppCompatActivity {
                 }
             }
             yData.add(data);
-            xData.add(Categories.get(i));
+            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
 
             /*if (Categories.get(i).equals(Categories.get(i + 1))) {
                 data += AmountValues.get(i + 1);

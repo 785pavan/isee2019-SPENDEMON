@@ -23,6 +23,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.github.mikephil.charting.charts.PieChart;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -96,8 +97,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new MonthlyFragment()).commit();
                 break;
             case R.id.nav_total:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new TotalFragment()).commit();
+                Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);
+                startActivity(intent_total);
+                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new TotalFragment()).commit();*/
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_LONG).show();
