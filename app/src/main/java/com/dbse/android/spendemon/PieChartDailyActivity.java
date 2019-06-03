@@ -27,7 +27,7 @@ import java.util.Calendar;
 
 import static com.dbse.android.spendemon.Summary.entries;
 
-public class PieChartDailyActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener  {
+public class PieChartDailyActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 
     private static String TAG = "PieChart";
@@ -39,10 +39,8 @@ public class PieChartDailyActivity extends AppCompatActivity implements AdapterV
     ArrayList<Float> yData = new ArrayList<>();
     ArrayList<String> xData = new ArrayList<>();
     TextView tvDateDaily;
-    private DatePickerDialog.OnDateSetListener onDateSetListener;
-
-
     PieChart pieChart;
+    private DatePickerDialog.OnDateSetListener onDateSetListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,18 +75,19 @@ public class PieChartDailyActivity extends AppCompatActivity implements AdapterV
 
 
         Log.d(TAG, "onCreate: Start of creation of chart");
-        pieChart = findViewById(R.id.idPieChart);
-        Description desc = new Description();
-        desc.setText("Expenditure");
-        pieChart.setDescription(desc);
+        pieChart = findViewById(R.id.idPieChartDaily);
+        Description description = new Description();
+        description.setText("Expenditure");
+        pieChart.setDescription(description);
         pieChart.setRotationEnabled(true);
         pieChart.setHoleRadius(25f);
         pieChart.setTransparentCircleAlpha(25);
         pieChart.setCenterText("Expenditure");
         pieChart.setCenterTextSize(10);
         pieChart.setDrawEntryLabels(true);
+        String date = tvDateDaily.getText().toString();
 
-        addDataSet();
+        addDataSet(date);
 
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
@@ -109,7 +108,6 @@ public class PieChartDailyActivity extends AppCompatActivity implements AdapterV
                 String cat = xData.get(pos1);
                 Toast.makeText(PieChartDailyActivity.this, "Category: " + cat + "\n" +
                         "spent: " + cost, Toast.LENGTH_LONG).show();
-
             }
 
             @Override
@@ -119,9 +117,10 @@ public class PieChartDailyActivity extends AppCompatActivity implements AdapterV
         });
 
     }
-    private void addDataSet() {
 
-        getData();
+    private void addDataSet(String date) {
+
+        getData(date);
 
 
         Log.d(TAG, "addDataSet called");
@@ -165,10 +164,12 @@ public class PieChartDailyActivity extends AppCompatActivity implements AdapterV
         pieChart.invalidate();
     }
 
-    private void getData() {
+    private void getData(String date) {
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
-            AmountValues.add((float) entry.getAmount());
-            Categories.add(entry.getCategory());
+            if (entry.getDate().equals(date)) {
+                AmountValues.add((float) entry.getAmount());
+                Categories.add(entry.getCategory());
+            }
         }
         float data = 0;
         for (int i = 0; i < Categories.size(); i++) {
