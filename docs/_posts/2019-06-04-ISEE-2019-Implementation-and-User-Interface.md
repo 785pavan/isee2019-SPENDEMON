@@ -8,7 +8,7 @@ date: 2019-06-04
 
 Welcome to Blog#4 for team SPENDEMON. We are happy to see you again. In this blog we would like to talk about the design pattern that we have implemented for the App and talk about the reasons for doing so. We also talk about the coding conventions we are implementing and the measures taken by us to ensure that we follow the conventions. We also talk about the kind of users that are likely to find our App useful and how we have added to our prototype to include the demands from the users. We have for the first time also included some screenshots of our App for better Visualization.
 
-If you would like to skip the blog read and just check our App click <a href = "https://github.com/DBSE-teaching/isee2019-SPENDEMON/raw/master/app/Spendemon.apk" target="_blank" > here </a>
+If you would like to skip the blog read and just check our App click <a href = "https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.02/Spendemon.apk" target="_blank" > here </a>
 
 **<span style="color:#C2185B; font-family:Cursive">Design Pattern:</span>**
 
