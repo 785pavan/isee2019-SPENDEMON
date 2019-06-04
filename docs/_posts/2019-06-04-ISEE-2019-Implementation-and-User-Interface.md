@@ -8,6 +8,8 @@ date: 2019-06-04
 
 Welcome to Blog#4 for team SPENDEMON. We are happy to see you again. In this blog we would like to talk about the design pattern that we have implemented for the App and talk about the reasons for doing so. We also talk about the coding conventions we are implementing and the measures taken by us to ensure that we follow the conventions. We also talk about the kind of users that are likely to find our App useful and how we have added to our prototype to include the demands from the users. We have for the first time also included some screenshots of our App for better Visualization.
 
+If you would like to skip the blog read and just check our App click <a href = "https://github.com/DBSE-teaching/isee2019-SPENDEMON/blob/master/app/Spendemon.apk" > here </a>
+
 **<span style="color:#C2185B; font-family:Cursive">Design Pattern:</span>**
 
 When we started with the research for the Design Pattern, we wanted an architecture which could help us combine multiple features like accessing the Database, Configuration changes, Data Binding etc. with one design implementation. Hence we decided to opt for the View Model architecture design which combines multiple features we needed and also had scope for expanding the features in the future.
