@@ -125,7 +125,7 @@ Based on the user stories that we had, we tried to make the App as easily usable
 
 
 
-**<span>Storyboard 1:</span>** Here, we display the screenshots from our App which navigates from the Login page to the Main Activity page where one can see the daily, monthly, overall summary. On clicking Summary, it takes to the overall Summary table from which one can navigate to the Edit Data page where one can
+**<span style= "color:#C2185B">Storyboard 1:</span>** Here, we display the screenshots from our App which navigates from the Login page to the Main Activity page where one can see the daily, monthly, overall summary. On clicking Summary, it takes to the overall Summary table from which one can navigate to the Edit Data page where one can
 add their expenses and incomes with descriptions and dates etc.
 
 
@@ -141,7 +141,7 @@ add their expenses and incomes with descriptions and dates etc.
 
 
 
-**<span>Storyboard 2:</span>** Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline.
+**<span style= "color:#C2185B">Storyboard 2:</span>** Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline.
 
 
 
