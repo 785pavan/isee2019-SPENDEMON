@@ -32,7 +32,7 @@ public class SummaryViewModel extends AndroidViewModel {
         repository.delete(table);
     }
 
-    public void deleteAllData(Table table){
+    public void deleteAllData(){
         repository.deleteAllData();
     }
 

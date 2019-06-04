@@ -159,7 +159,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Calculator", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_settings:
-                Toast.makeText(this, "Settings", Toast.LENGTH_LONG).show();
+                Intent intent_set = new Intent(getApplicationContext(),SettingsActivity.class);
+                startActivity(intent_set);
                 break;
             case R.id.nav_aboutUs:
                 Toast.makeText(this, "About Us", Toast.LENGTH_LONG).show();
