@@ -124,7 +124,8 @@ For this reason, we have come up with two representative users who could find us
 Based on the user stories that we had, we tried to make the App as easily usable and as tailor made as possible. Here, we show two storyboards that shall display how our App functions.
 
 
-* **Storyboard 1:** Here, we display the screenshots from our App which navigates from the Login page to the Main Activity page where one can see the daily, monthly, overall summary. On clicking Summary, it takes to the overall Summary table from which one can navigate to the Edit Data page where one can
+
+**<span>Storyboard 1:</span>** Here, we display the screenshots from our App which navigates from the Login page to the Main Activity page where one can see the daily, monthly, overall summary. On clicking Summary, it takes to the overall Summary table from which one can navigate to the Edit Data page where one can
 add their expenses and incomes with descriptions and dates etc.
 
 
@@ -140,7 +141,7 @@ add their expenses and incomes with descriptions and dates etc.
 
 
 
-* **Storyboard 2:** Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline.
+**<span>Storyboard 2:</span>** Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline.
 
 
 
