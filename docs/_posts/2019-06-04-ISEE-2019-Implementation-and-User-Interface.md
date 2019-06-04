@@ -178,7 +178,7 @@ As mentioned in the previous Blog, we started with a pretty simple App design wh
 
 Old Verson:
 
-<img src="{{site.baseurl}}/images/OldVersion.png" alt="Old Version" width="500" align = "middle" />
+<img src="{{site.baseurl}}/images/OldVersion.png" alt="Old Version" width="300" align = "middle" />
 
 However, with the Advanced Prototype version we have tried to refine our App with the implementation of certain features to make our App more, well, App like. A summary of the added changes has been given below.
 
