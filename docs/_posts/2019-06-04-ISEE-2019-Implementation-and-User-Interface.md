@@ -176,7 +176,7 @@ add their expenses and incomes with descriptions and dates etc.
 **<span style="color:#C2185B; font-family:Cursive">Summary of Changes:</span>**
 As mentioned in the previous Blog, we started with a pretty simple App design which had a Login page, a Summary Page and an Edit Data page. Along with that we had implemented the Database as a simple JSON file which was pretty basic in it's functionality.
 
-Old Verson:
+Old version:
 
 <img src="{{site.baseurl}}/images/OldVersion.png" alt="Old Version" width="300" align = "middle" />
 
