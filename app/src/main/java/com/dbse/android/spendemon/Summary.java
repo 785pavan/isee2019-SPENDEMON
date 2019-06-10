@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class Summary extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "myTag";
     static ArrayList<Entry> entries = new ArrayList<>();
@@ -83,8 +82,6 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
         toggle1.syncState();
 
 
-
-
         RecyclerView rvEntries = findViewById(R.id.rvEntries);
         //Button bDelete = findViewById(R.id.bDelete);
 
@@ -113,17 +110,6 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
             }
         });
 
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (true) {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-        } else {
-            super.onBackPressed();
-        }
 
     }
 
@@ -196,7 +182,7 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                 Toast.makeText(this, "Calculator", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_settings:
-                Intent intent_set = new Intent(getApplicationContext(),SettingsActivity.class);
+                Intent intent_set = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent_set);
                 break;
             case R.id.nav_aboutUs:
