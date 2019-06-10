@@ -71,7 +71,6 @@ public class EditData extends AppCompatActivity
         // activity given to view model object.
 
 
-
         etdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,7 +133,7 @@ public class EditData extends AppCompatActivity
         }
     }
 
-    public void saveTable(){
+    public void saveTable() {
         String cat = sCategory.getSelectedItem().toString();
         String note = etDescription.getText().toString();
         String payMethod = sPaymentMethod.getSelectedItem().toString();
@@ -195,35 +194,4 @@ public class EditData extends AppCompatActivity
     protected void onStop() {
         super.onStop();
     }
-
-    /*public static void saveObjectToSharedPreference(Context context, String preferenceFileName,
-                                                    String serializedObjectKey, Object object) {
-        SharedPreferences sharedPreferences = context
-                .getSharedPreferences(preferenceFileName, 0);
-        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
-        final Gson gson = new Gson();
-        String serializedObject = gson.toJson(object);
-        sharedPreferencesEditor.putString(serializedObjectKey, serializedObject);
-        sharedPreferencesEditor.apply();
-    }
-
-    public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context,
-                                                                           String preferenceFileName,
-                                                                           String preferenceKey) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,
-                0);
-        Type classType = new TypeToken<ArrayList<Entry>>() {
-        }.getType();
-        if (sharedPreferences.contains(preferenceKey)) {
-            final Gson gson = new Gson();
-            return gson.fromJson(sharedPreferences.getString(preferenceKey, ""), classType);
-        }
-        return null;
-    }
-
-    public static void deleteSharedPreferences(Context context, String preferenceFileName) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,
-                0);
-        sharedPreferences.edit().clear().apply();
-    }*/
 }
