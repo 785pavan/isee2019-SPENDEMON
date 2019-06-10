@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.dbse.android.spendemon.model.Entry;
@@ -34,6 +33,10 @@ public class EditData extends AppCompatActivity
 
     private static final String TAG = "editData";
     private static final String FILE_NAME = "NewFile";
+    Intent intent;
+    ArrayAdapter arrayAdapter;
+    String cat = "";
+    String pay = "";
     private Entry entry;
     private Spinner sCategory;
     private Spinner sPaymentMethod;
@@ -44,7 +47,6 @@ public class EditData extends AppCompatActivity
     private EditText etDescription;
     private DatePickerDialog.OnDateSetListener onDateSetListener;
     private SummaryViewModel summaryViewModel;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +63,28 @@ public class EditData extends AppCompatActivity
         etDescription = findViewById(R.id.etDescription);
 
         //Save menu created:
-        Intent intent = getIntent();
+        intent = getIntent();
         String type = intent.getStringExtra("type");
-        ArrayAdapter arrayAdapter = (ArrayAdapter) sType.getAdapter();
+        arrayAdapter = (ArrayAdapter) sType.getAdapter();
         int spinnerPos = arrayAdapter.getPosition(type);
         sType.setSelection(spinnerPos);
+        if (intent.hasExtra("Category")) cat = intent.getStringExtra("Category");
+        if (intent.hasExtra("PaymentMethod")) pay = intent.getStringExtra("PaymentMethod");
+
+        if (intent.hasExtra("Date")) {
+            etdate.setText(intent.getStringExtra("Date"));
+        }
+        /*ArrayAdapter arrayAdapterPay = (ArrayAdapter) sPaymentMethod.getAdapter();
+        if (!intent.getStringExtra("PaymentMethod").equals("")) {
+            int spinnerPay = arrayAdapterPay.getPosition(pay);
+            sPaymentMethod.setSelection(spinnerPay);
+        }*/
+        if (intent.hasExtra("Notes")) {
+            etDescription.setText(intent.getStringExtra("Notes"));
+        }
+        if (intent.hasExtra("Amount")) {
+            etAmount.setText(intent.getStringExtra("Amount"));
+        }
         Log.d(TAG, "onCreate: " + type);
         summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class); //reference to current
         // activity given to view model object.
@@ -103,6 +122,7 @@ public class EditData extends AppCompatActivity
     public void onItemSelected(android.widget.AdapterView<?> arg0, View arg1, int arg2,
                                long arg3) {
 
+        intent = getIntent();
         String sp1 = String.valueOf(sType.getSelectedItem());
         Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
         String[] paymentMethodsArray = getApplicationContext().getResources()
@@ -119,6 +139,11 @@ public class EditData extends AppCompatActivity
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             dataAdapter.notifyDataSetChanged();
             sCategory.setAdapter(dataAdapter);
+            arrayAdapter = (ArrayAdapter) sCategory.getAdapter();
+            if (!cat.equals("")) {
+                int spinnerCat = arrayAdapter.getPosition(cat);
+                sCategory.setSelection(spinnerCat);
+            }
         }
         if (sp1.contentEquals("Expenses")) {
             String[] expenses = getApplicationContext().getResources()
@@ -130,6 +155,12 @@ public class EditData extends AppCompatActivity
             dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             dataAdapter2.notifyDataSetChanged();
             sCategory.setAdapter(dataAdapter2);
+            arrayAdapter = (ArrayAdapter) sCategory.getAdapter();
+            if (!cat.equals("")) {
+                int spinnerCat = arrayAdapter.getPosition(cat);
+                sCategory.setSelection(spinnerCat);
+            }
+
         }
     }
 

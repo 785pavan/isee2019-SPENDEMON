@@ -23,10 +23,16 @@ public class DetailsActivity extends AppCompatActivity {
     TextView tvAmount;
     TextView tvDate;
     TextView tvNotes;
+    String Type;
+    String Category;
+    String Payment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final Intent intent = getIntent();
+        Type = intent.getStringExtra("Type");
+        Category = intent.getStringExtra("Category");
+        Payment = intent.getStringExtra("PaymentMethod");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -109,24 +115,7 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
 
-        /*switch (intent.getStringExtra("Type")) {
-            case "Incomes":
-                ivType.setImageResource(R.drawable.plus_black);
-                break;
-            case "Expenses":
-                ivType.setImageResource(R.drawable.minus_black);
-                break;
-            default:
-                ivType.setImageResource(R.drawable.default_pay);
-                break;
 
-        }
-        ivType.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), intent.getStringExtra("Type"), Toast.LENGTH_LONG).show();
-            }
-        });*/
         tvAmount.setText(String.valueOf(intent.getDoubleExtra("Amount", 0.0)));
         tvNotes.setText(intent.getStringExtra("Notes"));
         tvDate.setText(intent.getStringExtra("Date"));
@@ -138,6 +127,12 @@ public class DetailsActivity extends AppCompatActivity {
                 Snackbar.make(view, "Entering Edit mode", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 Intent intent = new Intent(getApplicationContext(), EditData.class);
+                intent.putExtra("type", Type);
+                intent.putExtra("Category", Category);
+                intent.putExtra("PaymentMethod", Payment);
+                intent.putExtra("Notes", tvNotes.getText().toString());
+                intent.putExtra("Amount", tvAmount.getText().toString());
+                intent.putExtra("Date", tvDate.getText().toString());
                 startActivity(intent);
             }
         });
