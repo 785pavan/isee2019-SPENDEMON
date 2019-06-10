@@ -4,6 +4,9 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.dbse.android.spendemon.model.Entry;
@@ -55,7 +59,8 @@ public class EditData extends AppCompatActivity
         etAmount = findViewById(R.id.etAmount);
         etdate = findViewById(R.id.etDate);
         etDescription = findViewById(R.id.etDescription);
-        bSave = findViewById(R.id.bSave);
+
+        //Save menu created:
         Intent intent = getIntent();
         String type = intent.getStringExtra("type");
         ArrayAdapter arrayAdapter = (ArrayAdapter) sType.getAdapter();
@@ -66,39 +71,7 @@ public class EditData extends AppCompatActivity
         // activity given to view model object.
 
 
-        bSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String cat = sCategory.getSelectedItem().toString();
-                String note = etDescription.getText().toString();
-                String payMethod = sPaymentMethod.getSelectedItem().toString();
-                final double amount;
-                if (cat.equals("---")) {
-                    cat = "Not Defined";
-                }
 
-                if (note.equals("---")) {
-                    note = "Not Defined";
-                }
-                if (payMethod.equals("---")) {
-                    payMethod = "Not Defined";
-                }
-                if (etAmount.getText().toString().equals("")) {
-                    amount = 0;
-                } else {
-                    amount = Double.parseDouble(etAmount.getText().toString());
-                }
-                String date = etdate.getText().toString();
-                if (date.equals("")) {
-                    Calendar cal = Calendar.getInstance();
-                    date = cal.get(Calendar.DAY_OF_MONTH) + "/" + (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.YEAR);
-                }
-                Table table = new Table(sType.getSelectedItem().toString(), cat, amount, date, payMethod, note);
-                summaryViewModel.insert(table);
-                final Intent intent = new Intent(getApplicationContext(), Summary.class);
-                startActivity(intent);
-            }
-        });
         etdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -159,6 +132,58 @@ public class EditData extends AppCompatActivity
             dataAdapter2.notifyDataSetChanged();
             sCategory.setAdapter(dataAdapter2);
         }
+    }
+
+    public void saveTable(){
+        String cat = sCategory.getSelectedItem().toString();
+        String note = etDescription.getText().toString();
+        String payMethod = sPaymentMethod.getSelectedItem().toString();
+        final double amount;
+        if (cat.equals("---")) {
+            cat = "Not Defined";
+        }
+
+        if (note.equals("---")) {
+            note = "Not Defined";
+        }
+        if (payMethod.equals("---")) {
+            payMethod = "Not Defined";
+        }
+        if (etAmount.getText().toString().equals("")) {
+            amount = 0;
+        } else {
+            amount = Double.parseDouble(etAmount.getText().toString());
+        }
+        String date = etdate.getText().toString();
+        if (date.equals("")) {
+            Calendar cal = Calendar.getInstance();
+            date = cal.get(Calendar.DAY_OF_MONTH) + "/" + (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.YEAR);
+        }
+        Table table = new Table(sType.getSelectedItem().toString(), cat, amount, date, payMethod, note);
+        summaryViewModel.insert(table);
+        final Intent intent = new Intent(getApplicationContext(), Summary.class);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.save_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.save_table:
+                saveTable();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
     }
 
     @Override
