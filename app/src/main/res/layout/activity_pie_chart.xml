@@ -16,7 +16,10 @@
     tools:openDrawer="start"
     android:fitsSystemWindows="true">
 
-    <include layout="@layout/toolbar_layout" />
+
+
+
+    <!--<include layout="@layout/toolbar_layout" />-->
 
     <com.github.mikephil.charting.charts.PieChart
         android:layout_width="match_parent"
