@@ -56,6 +56,7 @@ public class ChartDayActivity extends AppCompatActivity {
         pieChart.setCenterText("Expenditure");
         pieChart.setCenterTextSize(10);
         pieChart.setDrawEntryLabels(true);
+        addDataSet();
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
@@ -86,7 +87,8 @@ public class ChartDayActivity extends AppCompatActivity {
     }
 
     private void addDataSet(/*String date*/) {
-
+        Log.i("clicked", "addData" +
+                "set");
         getData(/*date*/);
 
 
@@ -132,6 +134,7 @@ public class ChartDayActivity extends AppCompatActivity {
     }
 
     private void getData(/*String date*/) {
+        yData.clear();
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
             //if (entry.getDate().equals(date)) {
                 AmountValues.add((float) entry.getAmount());
@@ -139,6 +142,7 @@ public class ChartDayActivity extends AppCompatActivity {
             //}
         }
         float data = 0;
+        boolean save_data;
         for (int i = 0; i < Categories.size(); i++) {
             data = 0;
             for (int j = i; j < Categories.size(); j++) {
@@ -146,8 +150,21 @@ public class ChartDayActivity extends AppCompatActivity {
                     data += AmountValues.get(j);
                 }
             }
-            yData.add(data);
-            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+//            add data modification code:
+            save_data = true;
+            for (int k = 0; k < i; k++){
+                if (Categories.get(k).equals(Categories.get(i))){
+                    save_data = false;
+                }
+                Log.i("k value:", String.valueOf(k));
+            }
+            if (save_data) {
+                yData.add(data);
+                xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+            }
+//            else {
+//                save_data = true;
+//            }
 
 
         }

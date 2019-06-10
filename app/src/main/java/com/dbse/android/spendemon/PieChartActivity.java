@@ -142,6 +142,12 @@ public class PieChartActivity extends AppCompatActivity {
             } else if (intent.getStringExtra("Duration").equals("Month")) {
                 String monthIntent = intent.getStringExtra("Month");
                 String monthEntry = entry.getDate().substring(2, 3);
+                if (entry.getDate().substring(1,2).equals("/")){
+                    monthEntry = entry.getDate().substring(2, 3);
+                }else if (entry.getDate().substring(2,3).equals("/")){
+                    monthEntry = entry.getDate().substring(3, 4);
+                }
+
                 if (monthEntry.equals(monthIntent)) {
                     AmountValues.add((float) entry.getAmount());
                     Categories.add(entry.getCategory());
@@ -151,6 +157,9 @@ public class PieChartActivity extends AppCompatActivity {
                 Categories.add(entry.getCategory());
             }
         }
+//        behnam code:
+        boolean save_data;
+
         float data = 0;
         for (int i = 0; i < Categories.size(); i++) {
             data = 0;
@@ -159,8 +168,21 @@ public class PieChartActivity extends AppCompatActivity {
                     data += AmountValues.get(j);
                 }
             }
-            yData.add(data);
-            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+//            yData.add(data);
+//            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+
+            //            add data modification code:
+            save_data = true;
+            for (int k = 0; k < i; k++){
+                if (Categories.get(k).equals(Categories.get(i))){
+                    save_data = false;
+                }
+                Log.i("k value:", String.valueOf(k));
+            }
+            if (save_data) {
+                yData.add(data);
+                xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+            }
 
             /*if (Categories.get(i).equals(Categories.get(i + 1))) {
                 data += AmountValues.get(i + 1);
