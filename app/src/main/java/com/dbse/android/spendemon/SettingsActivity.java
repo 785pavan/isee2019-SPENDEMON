@@ -2,6 +2,7 @@ package com.dbse.android.spendemon;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -30,6 +31,33 @@ public class SettingsActivity extends AppCompatActivity {
         }
         summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class);
         bDeleteAll = findViewById(R.id.bDeleteAll);
+//        adding the warning button for delete all:
+//        bDeleteAll.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.i("Button","deleteAll clicked");
+//                AlertDialog.Builder builder;
+//                builder = new AlertDialog.Builder(getApplicationContext());
+//                Log.i("builder: ", String.valueOf(builder));
+//                builder.setMessage("Are you sure you want to reset all the data?")
+//                        .setTitle("Reset All")
+//                        .setPositiveButton("confirm", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                Log.i("builder setMessage:","successful");
+//                                summaryViewModel.deleteAllData();
+//                            }
+//                        })
+//                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int id) {
+//                        // CANCEL
+//                    }
+//                });
+//                AlertDialog dialog = builder.create();
+//                dialog.show();
+//            }
+//        });
+
         bDeleteAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
