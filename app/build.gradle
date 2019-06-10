@@ -55,4 +55,6 @@ dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.28.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
 
+    //MultiChoiceSpinner implementation
+    implementation 'com.github.pratikbutani:MultiSelectSpinner:08d324c98'
 }
