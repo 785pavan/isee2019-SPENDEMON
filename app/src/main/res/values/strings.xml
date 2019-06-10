@@ -143,5 +143,6 @@
     <string name="select_month">Select month</string>
     <string name="delete_all">Delete All</string>
     <string name="currency">Currency</string>
+    <string name="del_msg">All the data will be deleted</string>
 
 </resources>

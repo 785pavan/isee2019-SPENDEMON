@@ -8,6 +8,7 @@ import androidx.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static androidx.test.espresso.Espresso.onView;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -24,4 +25,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.dbse.android.spendemon", appContext.getPackageName());
     }
+
 }
