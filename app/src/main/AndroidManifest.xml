@@ -18,7 +18,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dbse.android.spendemon.MainActivity" />
         </activity>
-        <activity android:name=".ChartMonthActivity" />
+        <activity
+            android:name=".ChartMonthActivity"
+            android:label="Monthly chart"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ChartDayActivity"
             android:theme="@style/ActivityDialog" />
