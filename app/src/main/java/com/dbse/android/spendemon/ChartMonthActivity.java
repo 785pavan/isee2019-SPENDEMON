@@ -1,6 +1,7 @@
 package com.dbse.android.spendemon;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ public class ChartMonthActivity extends AppCompatActivity {
 
     TextView tvMonth;
     ImageView ivDone;
+    private DrawerLayout drawer1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
