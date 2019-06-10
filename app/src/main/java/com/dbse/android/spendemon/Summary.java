@@ -120,92 +120,41 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.filter_summary, menu);
+        return true;
+    }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-        switch (menuItem.getItemId()) {
-            case R.id.nav_daily:
-
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new DailyFragment()).commit();*/
-                Intent intent_daily = new Intent(getApplicationContext(), PieChartDailyActivity.class);
-                startActivity(intent_daily);
-                break;
-            case R.id.nav_weekly:
-                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-                startActivity(intent_month);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new WeeklyFragment()).commit();*/
-                break;
-            case R.id.nav_monthly:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MonthlyFragment()).commit();
-                break;
-            case R.id.nav_total:
-                Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);
-                intent_total.putExtra("Duration", "All");
-                startActivity(intent_total);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new TotalFragment()).commit();*/
-                break;
-            case R.id.nav_trendLine:
-                Intent intent_trendLine = new Intent(getApplicationContext(), TrendLineActivity.class);
-                startActivity(intent_trendLine);
-                break;
-            case R.id.nav_share:
-                Toast.makeText(this, "Share", Toast.LENGTH_LONG).show();
-                Intent intent_share = new Intent(Intent.ACTION_SEND);
-                intent_share.setType("text/plain");
-                String shareBody = "We are team SPENDEMON. Please check out our blog: https://dbse-teaching.github.io/isee2019-SPENDEMON/";
-                String shareSubject = "The link for our Blog";
-                intent_share.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
-                intent_share.putExtra(Intent.EXTRA_TEXT, shareBody);
-                startActivity(Intent.createChooser(intent_share, "Share this by"));
-                break;
-            case R.id.nav_send:
-                Toast.makeText(this, "Contact Us E-mail", Toast.LENGTH_LONG).show();
-                Intent intent_contactUs = new Intent(Intent.ACTION_SEND);
-                intent_contactUs.setType("message/rfc822");
-                String contactBody = "Sent from SPENDEMON app.";
-                String contactSubject = "Feedback for SPENDEMON team";
-                intent_contactUs.putExtra(Intent.EXTRA_SUBJECT, contactSubject);
-                intent_contactUs.putExtra(Intent.EXTRA_TEXT, contactBody);
-                intent_contactUs.putExtra(Intent.EXTRA_EMAIL, new String[]{"pavan.kandapagari@st.ovgu.de",
-                        "atrayee.neog@st.ovgu.de", "seyedbehnam.beladi@st.ovgu.de"});
-                startActivity(Intent.createChooser(intent_contactUs, "Share this by"));
-                break;
-//                pavan.kandapagari@st.ovgu.de,atrayee.neog@st.ovgu.de,seyedbehnam.beladi@st.ovgu.de
-            case R.id.nav_summary:
-                Intent intent = new Intent(getApplicationContext(), Summary.class);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.filter:
+                final Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
                 startActivity(intent);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SummaryFragment()).commit();*/
-//                right drawer
-            case R.id.nav_currency:
-                Toast.makeText(this, "Currency", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.nav_Calculator:
-                Toast.makeText(this, "Calculator", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.nav_settings:
-                Intent intent_set = new Intent(getApplicationContext(), SettingsActivity.class);
-                startActivity(intent_set);
-                break;
-            case R.id.nav_aboutUs:
-                Toast.makeText(this, "About Us", Toast.LENGTH_LONG).show();
-                break;
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
         }
 
-        drawer1.closeDrawer(GravityCompat.START);
+    }
 
+    @Override
+    public void onBackPressed() {
+        if (true) {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+        } else {
+            super.onBackPressed();
+        }
 
-        return true;
     }
 
 
     @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }
