@@ -1,14 +1,11 @@
 package com.dbse.android.spendemon;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.DatePicker;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,7 +24,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 
@@ -38,14 +34,17 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
     private SummaryViewModel summaryViewModel; // object of View Model created.
     private DrawerLayout drawer1;
     private int backKey = 0;
+    private Intent intent;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class); //reference to current
+        intent = getIntent();
         // activity given to view model object.
         summaryViewModel.getTable().observe(this, new Observer<List<Table>>() {
+            List<Entry> filtered = new ArrayList<>();
             @Override
             public void onChanged(List<Table> tables) {
                 entries.clear();
@@ -53,6 +52,32 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                     Entry e = new Entry(table.getType(), table.getCategory(), table.getAmount(), table.getDate(), table.getPaymethod(),
                             table.getNote());
                     entries.add(e);
+                    if (intent.hasExtra("Types")) {
+                        String[] types = intent.getStringArrayExtra("Types");
+                        for (String type : types) {
+                            for (int i=0; i<entries.size();i++){
+                                if (entries.get(i).getType().equals(type)){
+                                    filtered.add(entries.get(i));
+                                }
+                            }
+                        }
+                        entries.clear();
+                        entries.addAll(filtered);
+                        filtered.clear();
+                    }
+                    if (intent.hasExtra("PayMethod")){
+                        String[] payMethods = intent.getStringArrayExtra("PayMethod");
+                        for (String pay: payMethods){
+                            for (Entry entry:entries){
+                                if (entry.getPayMethod().equals(pay)){
+                                    filtered.add(entry);
+                                }
+                            }
+                        }
+                        entries.clear();
+                        entries.addAll(filtered);
+                        filtered.clear();
+                    }
                 }
                 RecyclerView rvEntries = findViewById(R.id.rvEntries);
                 entryAdaptor adaptor = new entryAdaptor(entries);
@@ -238,7 +263,7 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                 Toast.makeText(this, "Calculator", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_settings:
-                Intent intent_set = new Intent(getApplicationContext(),SettingsActivity.class);
+                Intent intent_set = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent_set);
                 break;
             case R.id.nav_aboutUs:
@@ -257,7 +282,6 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
-
 
 
 }

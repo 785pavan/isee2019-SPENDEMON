@@ -19,6 +19,7 @@ import com.androidbuts.multispinnerfilter.MultiSpinner;
 import com.androidbuts.multispinnerfilter.MultiSpinnerListener;
 import com.androidbuts.multispinnerfilter.MultiSpinnerSearch;
 import com.androidbuts.multispinnerfilter.SpinnerListener;
+import com.dbse.android.spendemon.model.Entry;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +28,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import static com.dbse.android.spendemon.R.array.PaymentMethods;
+import static com.dbse.android.spendemon.Summary.entries;
 
 
 public class FilterActivity extends AppCompatActivity {
@@ -148,11 +150,29 @@ public class FilterActivity extends AppCompatActivity {
         return true;
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.filter1:
                 Toast.makeText(getApplicationContext(),"Filter initiated", Toast.LENGTH_LONG).show();
+                String startDate = StartDate.getText().toString();
+                String endDate = EndDate.getText().toString();
+                String[] typeSending = new String[types.size()];
+                String[] paySend = new String[paymeths.size()];
+                for (int i = 0; i<types.size();i++){
+                    typeSending[i] = types.get(i);
+                }
+                for (int i =0;i<paymeths.size();i++){
+                    paySend[i] = paymeths.get(i);
+                }
+                Intent intent = new Intent(getApplicationContext(),Summary.class);
+                intent.putExtra("Types",typeSending);
+                intent.putExtra("StartDate",startDate);
+                intent.putExtra("EndDate",endDate);
+                intent.putExtra("PayMethod",paySend);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
