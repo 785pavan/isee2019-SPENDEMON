@@ -37,7 +37,7 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
     private final String TYPE = "type";
     private SummaryViewModel summaryViewModel; // object of View Model created.
     private DrawerLayout drawer1;
-
+    private int backKey = 0;
 
 
     @Override
@@ -143,11 +143,28 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
 
     @Override
     public void onBackPressed() {
-        if (true) {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
+//        if (true) {
+//            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//            startActivity(intent);
+//        } else {
+//            super.onBackPressed();
+//        }
+        if (drawer1.isDrawerOpen(GravityCompat.START)) {
+            drawer1.closeDrawer(GravityCompat.START);
+        } else if (drawer1.isDrawerOpen(GravityCompat.END)) {
+            drawer1.closeDrawer(GravityCompat.END);
         } else {
-            super.onBackPressed();
+            backKey++;
+            if (backKey == 1) {
+                Toast.makeText(Summary.this, "Click one more time to exist app", Toast.LENGTH_SHORT).show();
+            } else {
+                //exit app to home screen
+                Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);
+                homeScreenIntent.addCategory(Intent.CATEGORY_HOME);
+                homeScreenIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(homeScreenIntent);
+            }
+//            super.onBackPressed();
         }
 
     }

@@ -45,6 +45,7 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
     private float Idata = 0;
     private float Edata = 0;
 
+    private int backKey = 0;
     private DrawerLayout drawer1;
 
 
@@ -286,6 +287,29 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
 
         drawer1.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    public void onBackPressed() {
+
+        if (drawer1.isDrawerOpen(GravityCompat.START)) {
+            drawer1.closeDrawer(GravityCompat.START);
+        } else if (drawer1.isDrawerOpen(GravityCompat.END)) {
+            drawer1.closeDrawer(GravityCompat.END);
+        } else {
+            backKey++;
+            if (backKey == 1) {
+                Toast.makeText(TrendLineActivity.this, "Click one more time to exist app", Toast.LENGTH_SHORT).show();
+            } else {
+                //exit app to home screen
+                Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);
+                homeScreenIntent.addCategory(Intent.CATEGORY_HOME);
+                homeScreenIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(homeScreenIntent);
+            }
+//            super.onBackPressed();
+        }
+
     }
 
 }
