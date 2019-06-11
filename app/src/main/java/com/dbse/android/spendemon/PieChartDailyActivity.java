@@ -41,6 +41,7 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
     String date;
     private DrawerLayout drawer;
     private DatePickerDialog.OnDateSetListener onDateSetListener;
+    private int backKey = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -203,5 +204,27 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
         return true;
     }
 
+
+    public void onBackPressed() {
+
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else if (drawer.isDrawerOpen(GravityCompat.END)) {
+            drawer.closeDrawer(GravityCompat.END);
+        } else {
+            backKey++;
+            if (backKey == 1) {
+                Toast.makeText(PieChartDailyActivity.this, "Click one more time to exist app", Toast.LENGTH_SHORT).show();
+            } else {
+                //exit app to home screen
+                Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);
+                homeScreenIntent.addCategory(Intent.CATEGORY_HOME);
+                homeScreenIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(homeScreenIntent);
+            }
+//            super.onBackPressed();
+        }
+
+    }
 
 }

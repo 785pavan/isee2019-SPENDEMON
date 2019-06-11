@@ -46,6 +46,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
     PieChart pieChart;
 
+    private int backKey = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -304,5 +306,28 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         drawer1.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void onBackPressed() {
+
+        if (drawer1.isDrawerOpen(GravityCompat.START)) {
+            drawer1.closeDrawer(GravityCompat.START);
+        } else if (drawer1.isDrawerOpen(GravityCompat.END)) {
+            drawer1.closeDrawer(GravityCompat.END);
+        } else {
+            backKey++;
+            if (backKey == 1) {
+                Toast.makeText(PieChartActivity.this, "Click one more time to exist app", Toast.LENGTH_SHORT).show();
+            } else {
+                //exit app to home screen
+                Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);
+                homeScreenIntent.addCategory(Intent.CATEGORY_HOME);
+                homeScreenIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(homeScreenIntent);
+            }
+//            super.onBackPressed();
+        }
+
+    }
+
 
 }
