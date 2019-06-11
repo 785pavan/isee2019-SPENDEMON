@@ -51,7 +51,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_chart);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolBarLayoutAll);
         setSupportActionBar(toolbar);
 
         drawer1 = findViewById(R.id.drawer_layout_pie);

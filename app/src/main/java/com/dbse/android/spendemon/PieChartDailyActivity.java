@@ -39,7 +39,7 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
     PieChart pieChart;
     ImageView ivDone;
     String date;
-    private DrawerLayout drawer1;
+    private DrawerLayout drawer;
     private DatePickerDialog.OnDateSetListener onDateSetListener;
 
     @Override
@@ -56,7 +56,7 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
 
 //        adding the navigation bar code:
 
-        drawer1 = findViewById(R.id.drawer_layout_Day);
+        drawer = findViewById(R.id.drawer_layout_Day);
 
 
         NavigationView navigationView1 = findViewById(R.id.navigation_view1_Day);
@@ -67,10 +67,10 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
 
         navigationView2.setNavigationItemSelectedListener(this);
 
-        ActionBarDrawerToggle toggle1 = new ActionBarDrawerToggle(this, drawer1, toolbar,
+        ActionBarDrawerToggle toggle1 = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
-        drawer1.addDrawerListener(toggle1);
+        drawer.addDrawerListener(toggle1);
         toggle1.syncState();
 
 
@@ -197,7 +197,7 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
                 break;
         }
 
-        drawer1.closeDrawer(GravityCompat.START);
+        drawer.closeDrawer(GravityCompat.START);
 
 
         return true;
