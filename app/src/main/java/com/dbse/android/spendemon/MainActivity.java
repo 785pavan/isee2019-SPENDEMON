@@ -109,8 +109,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new WeeklyFragment()).commit();*/
                 break;
             case R.id.nav_monthly:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MonthlyFragment()).commit();
+                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new MonthlyFragment()).commit();*/
                 break;
             case R.id.nav_total:
                 Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);

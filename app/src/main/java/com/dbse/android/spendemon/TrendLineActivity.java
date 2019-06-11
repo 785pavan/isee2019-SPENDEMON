@@ -221,14 +221,15 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
                 startActivity(intent_daily);
                 break;
             case R.id.nav_weekly:
-                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-                startActivity(intent_month);
+
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new WeeklyFragment()).commit();*/
                 break;
             case R.id.nav_monthly:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MonthlyFragment()).commit();
+                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+                startActivity(intent_month);
+                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new MonthlyFragment()).commit();*/
                 break;
             case R.id.nav_total:
                 Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);

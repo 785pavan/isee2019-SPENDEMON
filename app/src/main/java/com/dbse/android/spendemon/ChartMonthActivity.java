@@ -80,8 +80,8 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
                 startActivity(intent_daily);
                 break;
             case R.id.nav_weekly:
-                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-                startActivity(intent_month);
+                /*Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+                startActivity(intent_month);*/
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new WeeklyFragment()).commit();*/
                 break;

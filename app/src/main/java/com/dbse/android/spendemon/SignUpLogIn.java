@@ -1,13 +1,5 @@
 package com.dbse.android.spendemon;
 
-
-//package com.example.loginpage;
-//public class SignUpLogIn {
-//}
-
-//import android.support.constraint.ConstraintLayout;
-//import android.support.v7.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -29,26 +21,20 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Objects;
 
-/**
- *
- */
 public class SignUpLogIn extends AppCompatActivity implements View.OnClickListener,
         View.OnKeyListener {
 
-    private static final String TAG = "myTag";
+    private static final String TAG = "SignUpLogIn";
     EditText usernameField;
     EditText passwordField;
-    private String usernameA1 = null;
-    private Integer passwordA1;
-    private String[] usernameArray;
-    private Integer[] passwordArray;
     TextView changeSignUpModeTextView;
     Boolean signUpModeActive;
     Button signUpButton;
-    RelativeLayout relativeLayout;
     ConstraintLayout constraintLayout;
     ImageView teamLogo;
     SharedPreferences sharedPreferences;
+    private String usernameA1 = null;
+    private Integer passwordA1;
 
     public void signUpOrLogIn(View view) {
         if (signUpModeActive) {
@@ -101,10 +87,6 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
                         .apply();
                 sharedPreferences.edit().putInt("Password", Integer.parseInt(passwordField.getText()
                         .toString())).apply();
-
-
-                /*usernameA1 = String.valueOf(usernameField.getText());
-                passwordA1 = Integer.valueOf(String.valueOf(passwordField.getText()));*/
                 Toast.makeText(getApplicationContext(), "You are signed up as: ".concat(usernameA1)
                         , Toast.LENGTH_LONG).show();
             }
@@ -124,12 +106,8 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
                 Toast.makeText(getApplicationContext(), "Username was not found",
                         Toast.LENGTH_LONG).show();
             }
-
         }
-
-
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
