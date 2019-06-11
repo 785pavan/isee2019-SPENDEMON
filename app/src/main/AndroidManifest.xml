@@ -32,7 +32,9 @@
             android:name=".DetailsActivity"
             android:label="@string/title_activity_details"
             android:theme="@style/ActivityDialog" />
-        <activity android:name=".TrendLineActivity" />
+        <activity
+            android:name=".TrendLineActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".PieChartActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".itemEntry" />
