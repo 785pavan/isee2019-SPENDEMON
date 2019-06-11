@@ -25,7 +25,9 @@
         <activity
             android:name=".ChartDayActivity"
             android:theme="@style/ActivityDialog" />
-        <activity android:name=".PieChartDailyActivity" />
+        <activity
+            android:name=".PieChartDailyActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".DetailsActivity"
             android:label="@string/title_activity_details"
