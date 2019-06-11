@@ -2,10 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context = ".Summary">
-
+    tools:context = ".FilterActivity">
     <item
-        android:id="@+id/filter"
+        android:id="@+id/filter1"
         android:icon="@drawable/filter"
         android:title="Filter"
         app:showAsAction="always" />
