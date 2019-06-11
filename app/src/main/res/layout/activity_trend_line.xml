@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout_Day"
+    android:id="@+id/drawer_layout_TrendLine"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChartMonthActivity"
@@ -35,7 +35,7 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view2_Pie"
+        android:id="@+id/navigation_view2_TrendLine"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="end"
@@ -43,7 +43,7 @@
 
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view1_Pie"
+        android:id="@+id/navigation_view1_TrendLine"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
