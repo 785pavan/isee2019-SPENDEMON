@@ -42,7 +42,7 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
 
 
 
-        Toolbar toolbar = findViewById(R.id.include);
+        Toolbar toolbar = findViewById(R.id.toolBarLayoutMonthly);
         setSupportActionBar(toolbar);
 
 
