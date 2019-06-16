@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            navigationView1.setCheckedItem(R.id.nav_monthly);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new MonthlyFragment()).commit();
-            navigationView1.setCheckedItem(R.id.nav_weekly);
+            navigationView1.setCheckedItem(R.id.nav_balance);
         }
 
 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent_daily = new Intent(getApplicationContext(), PieChartDailyActivity.class);
                 startActivity(intent_daily);
                 break;
-            case R.id.nav_weekly:
+            case R.id.nav_balance:
 //                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
 //                startActivity(intent_month);
                 Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);

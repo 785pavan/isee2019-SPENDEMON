@@ -133,7 +133,7 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
                 Intent intent_daily = new Intent(getApplicationContext(), PieChartDailyActivity.class);
                 startActivity(intent_daily);
                 break;
-            case R.id.nav_weekly:
+            case R.id.nav_balance:
                 Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);
                 startActivity(intent_balance);
 //                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
