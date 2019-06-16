@@ -1,6 +1,7 @@
 package com.dbse.android.spendemon;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ public class BalanceActivity extends AppCompatActivity {
     ArrayList<Float> iData = new ArrayList<>();
     ArrayList<Float> eData = new ArrayList<>();
     float balance;
+
+    private DrawerLayout drawer1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
