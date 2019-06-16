@@ -44,7 +44,7 @@ public class BalanceActivity extends AppCompatActivity {
             string = "+  " + string;
             textView.setTextColor(Color.parseColor("green"));
         }else if (balance < 0){
-            string = "-  " + string;
+            string = "-  " + string.substring(1);
             textView.setTextColor(Color.parseColor("red"));
         }else{
             textView.setTextColor(Color.parseColor("balance"));
