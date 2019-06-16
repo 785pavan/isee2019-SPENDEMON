@@ -33,6 +33,9 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
     private DrawerLayout drawer1;
 
+    private float incomeSum;
+    private float expenseSum;
+
     private static String TAG = "PieChart";
     /* private float[] yData = {25.4f, 10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f};
      private String[] xData = {"Mitch", "Jessica", "Md", "Kelsey", "Sam", "Robert", "Ashley"};*/
@@ -107,6 +110,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         addDataSet();
         addDataSetIncome();
 
+//        Todo: Add extra piechart selectedlistener for income
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
@@ -282,6 +286,10 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                 yData.add(data);
                 xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
             }
+            expenseSum = 0;
+            for(float index : yData){
+                expenseSum += index;
+            }
 
             /*if (Categories.get(i).equals(Categories.get(i + 1))) {
                 data += AmountValues.get(i + 1);
@@ -353,6 +361,10 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                 xDataIn.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
             }
 
+            incomeSum = 0;
+            for(float index : yDataIn){
+                incomeSum += index;
+            }
             /*if (Categories.get(i).equals(Categories.get(i + 1))) {
                 data += AmountValues.get(i + 1);
                 continue;
