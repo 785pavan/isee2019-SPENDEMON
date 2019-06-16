@@ -60,6 +60,7 @@
         app:layout_constraintVertical_bias="0.0"
         android:textColor="#2A351F"
         android:background="#88D840"
+        android:textAlignment="center"
         android:text="Income"
         android:textSize="25dp"/>
 
@@ -73,6 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewIncomeText"
         android:textColor="#2A351F"
         android:background="#88D840"
+        android:textAlignment="center"
         android:textSize="25dp"
         />
 
@@ -89,6 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/balanceTextView"
         android:textColor="#660000"
         android:background="#FFC1C1"
+        android:textAlignment="center"
         android:textSize="25dp"/>
 
     <TextView
@@ -102,6 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewExpenseText"
         android:textColor="#660000"
         android:background="#FFC1C1"
+        android:textAlignment="center"
         android:textSize="25dp"/>
 
 

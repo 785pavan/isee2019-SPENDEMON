@@ -149,4 +149,7 @@
     <string name="currency">Currency</string>
     <string name="del_msg">All the data will be deleted</string>
 
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+
 </resources>
