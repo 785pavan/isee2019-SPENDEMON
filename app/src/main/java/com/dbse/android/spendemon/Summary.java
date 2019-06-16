@@ -37,6 +37,10 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
     private Intent intent;
 
 
+    ArrayList<Float> iData = new ArrayList<>();
+    ArrayList<Float> eData = new ArrayList<>();
+    float balance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -141,6 +145,16 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
 
             }
         });
+
+//        code for calculating the balance:
+
+        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+            if(entry.getType().equals("Incomes")){
+                iData.add((float)entry.getAmount());
+            }else if (entry.getType().equals("Expenses")){
+                eData.add((float)entry.getAmount());
+            }
+        }
 
 
     }

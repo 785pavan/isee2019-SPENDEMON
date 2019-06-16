@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FilterActivity"></activity>
+        <activity android:name=".BalanceActivity"></activity>
+        <activity android:name=".FilterActivity" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -21,22 +22,23 @@
         <activity
             android:name=".ChartMonthActivity"
             android:label="Monthly chart"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ChartDayActivity"
             android:theme="@style/ActivityDialog" />
         <activity
             android:name=".PieChartDailyActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DetailsActivity"
             android:label="@string/title_activity_details"
             android:theme="@style/ActivityDialog" />
         <activity
             android:name=".TrendLineActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".PieChartActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PieChartActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".itemEntry" />
         <activity android:name=".EditData" />
         <activity android:name=".Calculator" />

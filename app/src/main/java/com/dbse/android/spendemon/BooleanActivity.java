@@ -28,5 +28,9 @@ public class BooleanActivity {
         }
     }
 
+    private void onCreate(){
+        
+    }
+
 
 }
