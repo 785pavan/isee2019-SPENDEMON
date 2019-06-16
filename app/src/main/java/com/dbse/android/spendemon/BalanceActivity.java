@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import static com.dbse.android.spendemon.Summary.entries;
@@ -26,6 +28,8 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
     ArrayList<Float> iData = new ArrayList<>();
     ArrayList<Float> eData = new ArrayList<>();
     float balance;
+    float expenseSum;
+    float incomeSum;
 
     private DrawerLayout drawer1;
     private int backKey = 0;
@@ -56,6 +60,8 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         toggle1.syncState();
 
         TextView textView = findViewById(R.id.balanceTextView);
+        TextView textViewIn = findViewById(R.id.textViewIncomeValue);
+        TextView textViewEx = findViewById(R.id.textViewExpenseValue);
 
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
             if(entry.getType().equals("Incomes")){
@@ -65,11 +71,15 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
             }
         }
         balance = 0;
+        incomeSum = 0;
+        expenseSum = 0;
         for(float index : iData){
             balance += index;
+            incomeSum += index;
         }
         for(float index : eData){
             balance -= index;
+            expenseSum += index;
         }
 //        string should only have two numbers after the float
         String string = String.valueOf((float) ((int) ( balance * 100)) / 100);
@@ -84,6 +94,13 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
             textView.setTextColor(Color.parseColor("black"));
         }
         textView.setText(string);
+
+        String stringIncomeSum = String.valueOf((float) ((int) ( incomeSum * 100)) / 100);
+        stringIncomeSum = "+ " + stringIncomeSum;
+        textViewIn.setText(stringIncomeSum);
+        String stringExpenseSum = String.valueOf((float) ((int) ( expenseSum * 100)) / 100);
+        stringExpenseSum = "- " + stringExpenseSum;
+        textViewEx.setText(stringExpenseSum);
 
 
 
