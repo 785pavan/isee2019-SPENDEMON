@@ -33,4 +33,5 @@ public class MainActivityTest {
     public void tearDown() throws Exception {
         mActivity = null;
     }
+
 }

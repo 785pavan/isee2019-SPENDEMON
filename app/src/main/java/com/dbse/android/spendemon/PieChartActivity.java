@@ -488,8 +488,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
             case R.id.nav_monthly:
                 Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
                 startActivity(intent_month);
-                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-                startActivity(intent_month);
+                /*Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+                startActivity(intent_month);*/
 //                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
 //                        new MonthlyFragment()).commit();
                 break;

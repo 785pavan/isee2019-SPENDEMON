@@ -40,4 +40,21 @@ public class SignUpLogInTest {
         mActivity = null;
 
     }
+
+    @Test
+    public void signUpOrLogIn() {
+
+    }
+
+    @Test
+    public void onCreate() {
+    }
+
+    @Test
+    public void onClick() {
+    }
+
+    @Test
+    public void onKey() {
+    }
 }
