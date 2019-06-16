@@ -160,13 +160,13 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         //Colors
 
         ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.GRAY);
         colors.add(Color.BLUE);
         colors.add(Color.RED);
         colors.add(Color.GREEN);
         colors.add(Color.CYAN);
         colors.add(Color.YELLOW);
         colors.add(Color.MAGENTA);
+        colors.add(Color.GRAY);
 
         pieDataSet.setColors(colors);
 
@@ -206,13 +206,13 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         //Colors
 
         ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.GRAY);
         colors.add(Color.BLUE);
         colors.add(Color.RED);
         colors.add(Color.GREEN);
         colors.add(Color.CYAN);
         colors.add(Color.YELLOW);
         colors.add(Color.MAGENTA);
+        colors.add(Color.GRAY);
 
         pieDataSet.setColors(colors);
 
