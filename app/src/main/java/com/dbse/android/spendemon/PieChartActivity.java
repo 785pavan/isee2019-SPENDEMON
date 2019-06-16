@@ -45,6 +45,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
 
     PieChart pieChart;
+    PieChart pieChartInput;
 
     private int backKey = 0;
 
@@ -87,6 +88,19 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         pieChart.setCenterText("Category");
         pieChart.setCenterTextSize(10);
         pieChart.setDrawEntryLabels(true);
+
+        pieChartInput = findViewById(R.id.idPieChartIncome);
+        Description descIncome = new Description();
+        descIncome.setText("Expenditure");
+        pieChartInput.setDescription(descIncome);
+        pieChartInput.setRotationEnabled(true);
+        pieChartInput.setHoleRadius(25f);
+        pieChartInput.setTransparentCircleAlpha(25);
+        pieChartInput.setCenterText("Category");
+        pieChartInput.setCenterTextSize(10);
+        pieChartInput.setDrawEntryLabels(true);
+
+
 
         addDataSet();
 
@@ -158,11 +172,17 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         Legend legend = pieChart.getLegend();
         legend.setForm(Legend.LegendForm.CIRCLE);
 
+        Legend legendIncome = pieChartInput.getLegend();
+        legendIncome.setForm(Legend.LegendForm.CIRCLE);
+
         //Pie data create
 
         PieData pieData = new PieData(pieDataSet);
         pieChart.setData(pieData);
         pieChart.invalidate();
+
+        pieChartInput.setData(pieData);
+        pieChartInput.invalidate();
     }
 
     private void getData() {
