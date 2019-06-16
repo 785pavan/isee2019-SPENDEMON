@@ -15,7 +15,8 @@
         <item
             android:id="@+id/nav_balance"
             android:icon="@drawable/ic_audit"
-            android:title="@string/item_balance" />
+            android:title="@string/item_balance"
+            />
         <item
             android:id="@+id/nav_daily"
             android:icon="@drawable/ic_pie_chart"
@@ -24,15 +25,18 @@
         <item
             android:id="@+id/nav_monthly"
             android:icon="@drawable/ic_pie_chart"
-            android:title="@string/item_monthly" />
+            android:title="@string/item_monthly"
+            />
         <item
             android:id="@+id/nav_total"
             android:icon="@drawable/ic_pie_chart"
-            android:title="@string/item_total"/>
+            android:title="@string/item_total"
+            />
         <item
             android:id="@+id/nav_trendLine"
             android:icon="@drawable/ic_analytics"
-            android:title="@string/item_trendLine"/>
+            android:title="@string/item_trendLine"
+            />
 
 
     </group>
