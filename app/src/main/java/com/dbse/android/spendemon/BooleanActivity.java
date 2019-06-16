@@ -2,45 +2,31 @@ package com.dbse.android.spendemon;
 
 import android.content.Intent;
 
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import java.util.ArrayList;
 
 import static com.dbse.android.spendemon.Summary.entries;
 
 public class BooleanActivity {
 
+    private DrawerLayout drawer1;
 
-    ArrayList<Float> AmountValues = new ArrayList<>();
-    ArrayList<String> Categories = new ArrayList<>();
 
-    ArrayList<Float> yData = new ArrayList<>();
-    ArrayList<String> xData = new ArrayList<>();
+    ArrayList<Float> iData = new ArrayList<>();
+    ArrayList<Float> eData = new ArrayList<>();
     Intent intent;
 
 
     private void getData() {
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
-            if ((intent.getStringExtra("Duration")).equals("Day")) {
-                if (entry.getDate().equals(intent.getStringExtra("Date"))) {
-                    AmountValues.add((float) entry.getAmount());
-                    Categories.add(entry.getCategory());
-                }
-            } else if (intent.getStringExtra("Duration").equals("Month")) {
-                String monthIntent = intent.getStringExtra("Month");
-                String monthEntry = entry.getDate().substring(2, 3);
-                if (entry.getDate().substring(1, 2).equals("/")) {
-                    monthEntry = entry.getDate().substring(2, 3);
-                } else if (entry.getDate().substring(2, 3).equals("/")) {
-                    monthEntry = entry.getDate().substring(3, 4);
-                }
-
-                if (monthEntry.equals(monthIntent)) {
-                    AmountValues.add((float) entry.getAmount());
-                    Categories.add(entry.getCategory());
-                }
-            } else if (intent.getStringExtra("Duration").equals("All")) {
-                AmountValues.add((float) entry.getAmount());
-                Categories.add(entry.getCategory());
+            if(entry.getType().equals("Incomes")){
+                iData.add((float)entry.getAmount());
+            }else if (entry.getType().equals("Expenses")){
+                eData.add((float)entry.getAmount());
             }
         }
     }
+
+
 }
