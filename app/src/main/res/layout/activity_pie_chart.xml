@@ -24,7 +24,6 @@
 
 
 
-
     <include
         android:id="@+id/toolBarLayoutAll"
         layout="@layout/toolbar_layout" />

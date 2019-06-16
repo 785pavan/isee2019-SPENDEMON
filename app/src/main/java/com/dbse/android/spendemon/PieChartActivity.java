@@ -41,6 +41,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
     ArrayList<Float> yData = new ArrayList<>();
     ArrayList<String> xData = new ArrayList<>();
+    ArrayList<Float> yDataIn = new ArrayList<>();
+    ArrayList<String> xDataIn = new ArrayList<>();
     Intent intent;
 
 
@@ -103,6 +105,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
 
         addDataSet();
+        addDataSetIncome();
 
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
@@ -136,8 +139,10 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
     private void addDataSet() {
 
-        getData();
+//        getData();
+//        getDataIncome();
 
+        getDataExpense();
 
         Log.d(TAG, "addDataSet called");
         ArrayList<PieEntry> yEntries = new ArrayList<>();
@@ -172,8 +177,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         Legend legend = pieChart.getLegend();
         legend.setForm(Legend.LegendForm.CIRCLE);
 
-        Legend legendIncome = pieChartInput.getLegend();
-        legendIncome.setForm(Legend.LegendForm.CIRCLE);
+//        Legend legendIncome = pieChartInput.getLegend();
+//        legendIncome.setForm(Legend.LegendForm.CIRCLE);
 
         //Pie data create
 
@@ -181,9 +186,67 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         pieChart.setData(pieData);
         pieChart.invalidate();
 
+//        pieChartInput.setData(pieData);
+//        pieChartInput.invalidate();
+    }
+
+
+
+    private void addDataSetIncome() {
+
+//        getData();
+        getDataIncome();
+
+//        getDataExpense();
+
+        Log.d(TAG, "addDataSetIncome called");
+        ArrayList<PieEntry> yEntries = new ArrayList<>();
+        ArrayList<String> xEntries = new ArrayList<>();
+
+        int i = 0;
+        for (float data : yDataIn) {
+            yEntries.add(new PieEntry(data, i++));
+        }
+        for (String name : xDataIn) {
+            xEntries.add(name);
+        }
+
+        PieDataSet pieDataSet = new PieDataSet(yEntries, "Cost");
+        pieDataSet.setSliceSpace(2);
+        pieDataSet.setValueTextSize(12);
+
+        //Colors
+
+        ArrayList<Integer> colors = new ArrayList<>();
+        colors.add(Color.GRAY);
+        colors.add(Color.BLUE);
+        colors.add(Color.RED);
+        colors.add(Color.GREEN);
+        colors.add(Color.CYAN);
+        colors.add(Color.YELLOW);
+        colors.add(Color.MAGENTA);
+
+        pieDataSet.setColors(colors);
+
+        //add legend
+//        Legend legend = pieChart.getLegend();
+//        legend.setForm(Legend.LegendForm.CIRCLE);
+
+        Legend legendIncome = pieChartInput.getLegend();
+        legendIncome.setForm(Legend.LegendForm.CIRCLE);
+
+        //Pie data create
+
+        PieData pieData = new PieData(pieDataSet);
+//        pieChart.setData(pieData);
+//        pieChart.invalidate();
+
         pieChartInput.setData(pieData);
         pieChartInput.invalidate();
     }
+
+
+
 
     private void getData() {
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
@@ -246,6 +309,148 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
         }
     }
+
+
+
+
+    private void getDataIncome() {
+        AmountValues.clear();
+        Categories.clear();
+        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+            if (entry.getType().equals("Incomes")) {
+
+                if ((intent.getStringExtra("Duration")).equals("Day")) {
+                    if (entry.getDate().equals(intent.getStringExtra("Date"))) {
+                        AmountValues.add((float) entry.getAmount());
+                        Categories.add(entry.getCategory());
+                    }
+                } else if (intent.getStringExtra("Duration").equals("Month")) {
+                    String monthIntent = intent.getStringExtra("Month");
+                    String monthEntry = entry.getDate().substring(2, 3);
+                    if (entry.getDate().substring(1, 2).equals("/")) {
+                        monthEntry = entry.getDate().substring(2, 3);
+                    } else if (entry.getDate().substring(2, 3).equals("/")) {
+                        monthEntry = entry.getDate().substring(3, 4);
+                    }
+
+                    if (monthEntry.equals(monthIntent)) {
+                        AmountValues.add((float) entry.getAmount());
+                        Categories.add(entry.getCategory());
+                    }
+                } else if (intent.getStringExtra("Duration").equals("All")) {
+                    AmountValues.add((float) entry.getAmount());
+                    Categories.add(entry.getCategory());
+                }
+            }
+        }
+//        behnam code:
+        boolean save_data;
+
+        float data = 0;
+        for (int i = 0; i < Categories.size(); i++) {
+            data = 0;
+            for (int j = i; j < Categories.size(); j++) {
+                if (Categories.get(i).equals(Categories.get(j))) {
+                    data += AmountValues.get(j);
+                }
+            }
+//            yData.add(data);
+//            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+
+            //            add data modification code:
+            save_data = true;
+            for (int k = 0; k < i; k++){
+                if (Categories.get(k).equals(Categories.get(i))){
+                    save_data = false;
+                }
+                Log.i("k value:", String.valueOf(k));
+            }
+            if (save_data) {
+                yDataIn.add(data);
+                xDataIn.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+            }
+
+            /*if (Categories.get(i).equals(Categories.get(i + 1))) {
+                data += AmountValues.get(i + 1);
+                continue;
+            }
+            yData.add(data);
+            xData.add(Categories.get(i));*/
+
+        }
+    }
+
+
+
+
+
+    private void getDataExpense() {
+        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+            if (entry.getType().equals("Expenses")) {
+
+                if ((intent.getStringExtra("Duration")).equals("Day")) {
+                    if (entry.getDate().equals(intent.getStringExtra("Date"))) {
+                        AmountValues.add((float) entry.getAmount());
+                        Categories.add(entry.getCategory());
+                    }
+                } else if (intent.getStringExtra("Duration").equals("Month")) {
+                    String monthIntent = intent.getStringExtra("Month");
+                    String monthEntry = entry.getDate().substring(2, 3);
+                    if (entry.getDate().substring(1, 2).equals("/")) {
+                        monthEntry = entry.getDate().substring(2, 3);
+                    } else if (entry.getDate().substring(2, 3).equals("/")) {
+                        monthEntry = entry.getDate().substring(3, 4);
+                    }
+
+                    if (monthEntry.equals(monthIntent)) {
+                        AmountValues.add((float) entry.getAmount());
+                        Categories.add(entry.getCategory());
+                    }
+                } else if (intent.getStringExtra("Duration").equals("All")) {
+                    AmountValues.add((float) entry.getAmount());
+                    Categories.add(entry.getCategory());
+                }
+            }
+        }
+//        behnam code:
+        boolean save_data;
+
+        float data = 0;
+        for (int i = 0; i < Categories.size(); i++) {
+            data = 0;
+            for (int j = i; j < Categories.size(); j++) {
+                if (Categories.get(i).equals(Categories.get(j))) {
+                    data += AmountValues.get(j);
+                }
+            }
+//            yData.add(data);
+//            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+
+            //            add data modification code:
+            save_data = true;
+            for (int k = 0; k < i; k++){
+                if (Categories.get(k).equals(Categories.get(i))){
+                    save_data = false;
+                }
+                Log.i("k value:", String.valueOf(k));
+            }
+            if (save_data) {
+                yData.add(data);
+                xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+            }
+
+            /*if (Categories.get(i).equals(Categories.get(i + 1))) {
+                data += AmountValues.get(i + 1);
+                continue;
+            }
+            yData.add(data);
+            xData.add(Categories.get(i));*/
+
+        }
+    }
+
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
