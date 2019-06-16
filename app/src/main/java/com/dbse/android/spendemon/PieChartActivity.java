@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextClock;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -286,10 +288,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                 yData.add(data);
                 xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
             }
-            expenseSum = 0;
-            for(float index : yData){
-                expenseSum += index;
-            }
+
+
 
             /*if (Categories.get(i).equals(Categories.get(i + 1))) {
                 data += AmountValues.get(i + 1);
@@ -365,6 +365,10 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
             for(float index : yDataIn){
                 incomeSum += index;
             }
+            TextView textViewIncome = findViewById(R.id.textViewChartIncomeValue);
+            String stringIncomeSum = String.valueOf((float) ((int) ( incomeSum * 100)) / 100);
+            stringIncomeSum = "+ " + stringIncomeSum;
+            textViewIncome.setText(stringIncomeSum);
             /*if (Categories.get(i).equals(Categories.get(i + 1))) {
                 data += AmountValues.get(i + 1);
                 continue;
@@ -433,6 +437,18 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                 yData.add(data);
                 xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
             }
+
+
+
+            expenseSum = 0;
+            for(float index : yData){
+                expenseSum += index;
+            }
+
+            TextView textViewExpense = findViewById(R.id.textViewChartExpenseValue);
+            String stringExpenseSum = String.valueOf((float) ((int) ( expenseSum * 100)) / 100);
+            stringExpenseSum = "- " + stringExpenseSum;
+            textViewExpense.setText(stringExpenseSum);
 
             /*if (Categories.get(i).equals(Categories.get(i + 1))) {
                 data += AmountValues.get(i + 1);
