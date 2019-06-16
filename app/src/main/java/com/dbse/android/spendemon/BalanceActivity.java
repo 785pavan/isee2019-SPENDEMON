@@ -38,7 +38,8 @@ public class BalanceActivity extends AppCompatActivity {
         for(float index : eData){
             balance -= index;
         }
-        String string = String.valueOf(balance);
+//        string should only have two numbers after the float
+        String string = String.valueOf((float) ((int) ( balance * 100)) / 100);
 
         if (balance > 0){
             string = "+  " + string;
@@ -47,7 +48,7 @@ public class BalanceActivity extends AppCompatActivity {
             string = "-  " + string.substring(1);
             textView.setTextColor(Color.parseColor("red"));
         }else{
-            textView.setTextColor(Color.parseColor("balance"));
+            textView.setTextColor(Color.parseColor("black"));
         }
         textView.setText(string);
 
