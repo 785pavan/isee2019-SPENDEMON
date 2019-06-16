@@ -56,7 +56,7 @@
         android:layout_marginTop="8dp"
         android:textSize="@dimen/balanceTextSize2"
         android:text="@string/expense"
-        android:textColor="@color/lightGreen"
+        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idPieChart" />
 
@@ -66,7 +66,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="70dp"
-        android:textColor="@color/lightGreen"
+        android:textColor="@color/red"
         android:textSize="@dimen/balanceTextSize2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idPieChart" />
