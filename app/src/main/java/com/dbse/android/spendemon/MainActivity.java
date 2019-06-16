@@ -61,9 +61,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle1.syncState();
 
         if (savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                    new MonthlyFragment()).commit();
+//            navigationView1.setCheckedItem(R.id.nav_monthly);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new MonthlyFragment()).commit();
-            navigationView1.setCheckedItem(R.id.nav_monthly);
+            navigationView1.setCheckedItem(R.id.nav_weekly);
         }
 
 
@@ -103,14 +106,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent_daily);
                 break;
             case R.id.nav_weekly:
-                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-                startActivity(intent_month);
+//                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+//                startActivity(intent_month);
+                Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);
+                startActivity(intent_balance);
+
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new WeeklyFragment()).commit();*/
                 break;
             case R.id.nav_monthly:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MonthlyFragment()).commit();
+                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+                startActivity(intent_month);
+
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                        new MonthlyFragment()).commit();
                 break;
             case R.id.nav_total:
                 Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);

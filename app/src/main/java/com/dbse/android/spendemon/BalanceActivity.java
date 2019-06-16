@@ -38,9 +38,19 @@ public class BalanceActivity extends AppCompatActivity {
         for(float index : eData){
             balance -= index;
         }
+        String string = String.valueOf(balance);
 
-        textView.setText((int) balance);
-        textView.setTextColor(Color.parseColor("red"));
+        if (balance > 0){
+            string = "+  " + string;
+            textView.setTextColor(Color.parseColor("green"));
+        }else if (balance < 0){
+            string = "-  " + string;
+            textView.setTextColor(Color.parseColor("red"));
+        }else{
+            textView.setTextColor(Color.parseColor("balance"));
+        }
+        textView.setText(string);
+
 
 
 
