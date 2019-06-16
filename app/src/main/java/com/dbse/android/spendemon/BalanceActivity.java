@@ -35,15 +35,15 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balance);
 
-        Toolbar toolbar = findViewById(R.id.toolBarLayoutAll);
+        Toolbar toolbar = findViewById(R.id.toolBarLayoutBalance);
         setSupportActionBar(toolbar);
 
-        drawer1 = findViewById(R.id.drawer_layout_pie);
+        drawer1 = findViewById(R.id.drawer_balance);
 
 
-        NavigationView navigationView1 = findViewById(R.id.navigation_view1_Pie);
+        NavigationView navigationView1 = findViewById(R.id.navigation_view1_balance);
 
-        NavigationView navigationView2 = findViewById(R.id.navigation_view2_Pie);
+        NavigationView navigationView2 = findViewById(R.id.navigation_view2_balance);
 
         navigationView1.setNavigationItemSelectedListener(this);
 

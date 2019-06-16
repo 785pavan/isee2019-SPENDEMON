@@ -5,4 +5,5 @@
     <dimen name="header1">40sp</dimen>
     <dimen name="logIn1">20sp</dimen>
     <dimen name="signUp1">20sp</dimen>
+    <dimen name="balanceTextSize">35sp</dimen>
 </resources>

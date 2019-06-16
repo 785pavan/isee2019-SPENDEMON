@@ -25,7 +25,7 @@
     android:id="@+id/constraintBalance">
 
     <include
-        android:id="@+id/toolBarLayoutAll"
+        android:id="@+id/toolBarLayoutBalance"
         layout="@layout/toolbar_layout" />
 
     <TextView
@@ -35,12 +35,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:text="Total Balance:"
-        android:textSize="40dp"
+        android:text="@string/total_balance_text"
+        android:textSize="@dimen/balanceTextSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolBarLayoutAll" />
+        app:layout_constraintTop_toBottomOf="@+id/toolBarLayoutBalance" />
 
     <TextView
         android:id="@+id/balanceTextView"
@@ -50,7 +50,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
-        android:textSize="40dp"
+        android:textSize="@dimen/balanceTextSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,14 +62,14 @@
 <com.google.android.material.navigation.NavigationView
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:id="@+id/navigation_view2"
+    android:id="@+id/navigation_view2_balance"
     android:layout_gravity="end"
     app:menu="@menu/drawer_menu_right">
 </com.google.android.material.navigation.NavigationView>
 
 
 <com.google.android.material.navigation.NavigationView
-    android:id="@+id/navigation_view1"
+    android:id="@+id/navigation_view1_balance"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_gravity="start"

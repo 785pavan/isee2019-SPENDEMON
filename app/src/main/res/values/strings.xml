@@ -129,6 +129,8 @@
     <string name="fragment_total">All Fragment</string>
 
 
+    <string name="total_balance_text">Total Balance:</string>
+
     <string name="item_right_setting">Settings</string>
     <string name="item_right_calculator">Calculator</string>
     <string name="item_right_currency">Currency</string>
