@@ -194,7 +194,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
     private void addDataSetIncome() {
 
-//        getData();
         getDataIncome();
 
         Log.d(TAG, "addDataSetIncome called");
@@ -227,17 +226,12 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         pieDataSet.setColors(colors);
 
         //add legend
-//        Legend legend = pieChart.getLegend();
-//        legend.setForm(Legend.LegendForm.CIRCLE);
-
         Legend legendIncome = pieChartInput.getLegend();
         legendIncome.setForm(Legend.LegendForm.CIRCLE);
 
         //Pie data create
 
         PieData pieData = new PieData(pieDataSet);
-//        pieChart.setData(pieData);
-//        pieChart.invalidate();
 
         pieChartInput.setData(pieData);
         pieChartInput.invalidate();
