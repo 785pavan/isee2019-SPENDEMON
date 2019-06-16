@@ -104,9 +104,6 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
 
 
 
-
-
-
     }
 
 
