@@ -61,7 +61,7 @@
         android:textColor="#2A351F"
         android:background="#88D840"
         android:textAlignment="center"
-        android:text="Income"
+        android:text="@string/income"
         android:textSize="25dp"/>
 
     <TextView
@@ -85,7 +85,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
-        android:text="Expense"
+        android:text="@string/expense"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewIncomeText"
         app:layout_constraintTop_toBottomOf="@+id/balanceTextView"
