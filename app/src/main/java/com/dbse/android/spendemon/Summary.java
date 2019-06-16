@@ -23,7 +23,10 @@ import com.dbse.android.spendemon.model.Entry;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -40,40 +43,25 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
     //    ArrayList<Float> iData = new ArrayList<>();
 //    ArrayList<Float> eData = new ArrayList<>();
 //    float balance;
-    private int compareDate(String a, String b) {
-        String[] aSplit = a.split("/");
-        String[] bSplit = b.split("/");
-        int aDay = Integer.parseInt(aSplit[0]);
-        int bDay = Integer.parseInt(bSplit[0]);
-        int aMonth = Integer.parseInt(aSplit[1]);
-        int bMonth = Integer.parseInt(bSplit[1]);
-        int aYear = Integer.parseInt(aSplit[2]);
-        int bYear = Integer.parseInt(bSplit[2]);
-        if (aYear < bYear) {
-            if (aMonth < bMonth) {
-                if (aDay < bDay) {
-                    return -1;
-                }
-                else if(aDay == bDay){
-                    return 0;
-                }
-                 else
-                     return 1;
-            }
-            else if (aMonth == bMonth){
-                return 0;
-            }
-            else
+
+    private int compareDate(String a, String b){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date date1 = simpleDateFormat.parse(a);
+            Date date2 = simpleDateFormat.parse(b);
+            if (date1.compareTo(date2) > 0) {
                 return 1;
-        }
-        else if (aYear == bYear){
-            return 0;
-        }
-        else
-            return 1;
+            } else if (date1.compareTo(date2) < 0) {
+                return -1;
+            } else return 0;
 
+        }
+            catch (ParseException e) {              // Insert this block.
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return -2;
+        }
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -116,12 +104,12 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                         entries.addAll(filtered);
                         filtered.clear();
                     }
-                    if (intent.hasExtra("StartDate")) {
+                    if (intent.hasExtra("StartDate") && intent.hasExtra("EndDate")) {
                         String start = intent.getStringExtra("StartDate");
                         String end = intent.getStringExtra("EndDate");
                         for (Entry entry : entries){
-                            if((compareDate(start, entry.getDate()) == 0) || ((compareDate(start, entry.getDate()) == 1)
-                                    && (compareDate(end, entry.getDate()) == 0)) || (compareDate(end, entry.getDate()) == 1)) {
+                            {   if (((compareDate(start, entry.getDate())==-1)||(compareDate(start, entry.getDate())==0))
+                                    && ((compareDate(end, entry.getDate())==1)||(compareDate(end, entry.getDate())==0)))
                                 filtered.add(entry);
                             }
                         }

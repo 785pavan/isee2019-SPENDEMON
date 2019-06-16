@@ -11,11 +11,13 @@ public class SummaryRepository {
 
     private TableDAO tableDAO;
     private LiveData<List<Table>> allTables;
+    private LiveData<List<Table>> datedTables;
 
     public SummaryRepository(Application application) {
         SummaryDatabase database = SummaryDatabase.getInstance(application);
         tableDAO = database.tableDAO();
         allTables = tableDAO.getAllData();
+        //datedTables = tableDAO.getDateData();
     }
 
     public void insert(Table table) {
@@ -37,6 +39,8 @@ public class SummaryRepository {
     public LiveData<List<Table>> getAllTables() {
         return allTables;
     }
+
+    public LiveData<List<Table>> getDateData(String date1, String date2){return tableDAO.getDateData(date1, date2);}
 
     private static class InsertTableAsyncTask extends AsyncTask<Table, Void, Void> {
         private TableDAO tableDAO;
