@@ -37,6 +37,43 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
     private Intent intent;
 
 
+    //    ArrayList<Float> iData = new ArrayList<>();
+//    ArrayList<Float> eData = new ArrayList<>();
+//    float balance;
+    private int compareDate(String a, String b) {
+        String[] aSplit = a.split("/");
+        String[] bSplit = b.split("/");
+        int aDay = Integer.parseInt(aSplit[0]);
+        int bDay = Integer.parseInt(bSplit[0]);
+        int aMonth = Integer.parseInt(aSplit[1]);
+        int bMonth = Integer.parseInt(bSplit[1]);
+        int aYear = Integer.parseInt(aSplit[2]);
+        int bYear = Integer.parseInt(bSplit[2]);
+        if (aYear < bYear) {
+            if (aMonth < bMonth) {
+                if (aDay < bDay) {
+                    return -1;
+                }
+                else if(aDay == bDay){
+                    return 0;
+                }
+                 else
+                     return 1;
+            }
+            else if (aMonth == bMonth){
+                return 0;
+            }
+            else
+                return 1;
+        }
+        else if (aYear == bYear){
+            return 0;
+        }
+        else
+            return 1;
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -45,6 +82,7 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
         // activity given to view model object.
         summaryViewModel.getTable().observe(this, new Observer<List<Table>>() {
             List<Entry> filtered = new ArrayList<>();
+
             @Override
             public void onChanged(List<Table> tables) {
                 entries.clear();
@@ -55,8 +93,8 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                     if (intent.hasExtra("Types")) {
                         String[] types = intent.getStringArrayExtra("Types");
                         for (String type : types) {
-                            for (int i=0; i<entries.size();i++){
-                                if (entries.get(i).getType().equals(type)){
+                            for (int i = 0; i < entries.size(); i++) {
+                                if (entries.get(i).getType().equals(type)) {
                                     filtered.add(entries.get(i));
                                 }
                             }
@@ -65,13 +103,26 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                         entries.addAll(filtered);
                         filtered.clear();
                     }
-                    if (intent.hasExtra("PayMethod")){
+                    if (intent.hasExtra("PayMethod")) {
                         String[] payMethods = intent.getStringArrayExtra("PayMethod");
-                        for (String pay: payMethods){
-                            for (Entry entry:entries){
-                                if (entry.getPayMethod().equals(pay)){
+                        for (String pay : payMethods) {
+                            for (Entry entry : entries) {
+                                if (entry.getPayMethod().equals(pay)) {
                                     filtered.add(entry);
                                 }
+                            }
+                        }
+                        entries.clear();
+                        entries.addAll(filtered);
+                        filtered.clear();
+                    }
+                    if (intent.hasExtra("StartDate")) {
+                        String start = intent.getStringExtra("StartDate");
+                        String end = intent.getStringExtra("EndDate");
+                        for (Entry entry : entries){
+                            if((compareDate(start, entry.getDate()) == 0) || ((compareDate(start, entry.getDate()) == 1)
+                                    && (compareDate(end, entry.getDate()) == 0)) || (compareDate(end, entry.getDate()) == 1)) {
+                                filtered.add(entry);
                             }
                         }
                         entries.clear();
@@ -142,6 +193,16 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
             }
         });
 
+//        code for calculating the balance:
+
+//        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+//            if(entry.getType().equals("Incomes")){
+//                iData.add((float)entry.getAmount());
+//            }else if (entry.getType().equals("Expenses")){
+//                eData.add((float)entry.getAmount());
+//            }
+//        }
+
 
     }
 
@@ -206,15 +267,20 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                 Intent intent_daily = new Intent(getApplicationContext(), PieChartDailyActivity.class);
                 startActivity(intent_daily);
                 break;
-            case R.id.nav_weekly:
-                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-                startActivity(intent_month);
+            case R.id.nav_balance:
+//                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+//                startActivity(intent_month);
+                Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);
+                startActivity(intent_balance);
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new WeeklyFragment()).commit();*/
                 break;
             case R.id.nav_monthly:
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MonthlyFragment()).commit();*/
+                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+                startActivity(intent_month);
+
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                        new MonthlyFragment()).commit();
                 break;
             case R.id.nav_total:
                 Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);

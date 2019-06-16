@@ -8,53 +8,46 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class ChartMonthActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import org.w3c.dom.Text;
 
-    TextView tvMonth;
-    ImageView ivDone;
+import java.util.ArrayList;
+
+import static com.dbse.android.spendemon.Summary.entries;
+
+public class BalanceActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    ArrayList<Float> iData = new ArrayList<>();
+    ArrayList<Float> eData = new ArrayList<>();
+    float balance;
+    float expenseSum;
+    float incomeSum;
+
     private DrawerLayout drawer1;
     private int backKey = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chart_month);
-        tvMonth = findViewById(R.id.tvMonthDaily);
-        ivDone = findViewById(R.id.ivDone);
-        ivDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PieChartActivity.class);
-                intent.putExtra("Duration","Month");
-                intent.putExtra("Month", tvMonth.getText().toString());
-                startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_balance);
 
-
-
-
-        Toolbar toolbar = findViewById(R.id.toolBarLayoutMonthly);
+        Toolbar toolbar = findViewById(R.id.toolBarLayoutBalance);
         setSupportActionBar(toolbar);
 
-
-//        adding the navigation bar code:
-
-        drawer1 = findViewById(R.id.drawer_layout_Month);
+        drawer1 = findViewById(R.id.drawer_balance);
 
 
-        NavigationView navigationView1 = findViewById(R.id.navigation_view1_Month);
+        NavigationView navigationView1 = findViewById(R.id.navigation_view1_balance);
 
-        NavigationView navigationView2 = findViewById(R.id.navigation_view2_Month);
+        NavigationView navigationView2 = findViewById(R.id.navigation_view2_balance);
 
         navigationView1.setNavigationItemSelectedListener(this);
 
@@ -65,6 +58,52 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
 
         drawer1.addDrawerListener(toggle1);
         toggle1.syncState();
+
+        TextView textView = findViewById(R.id.balanceTextView);
+        TextView textViewIn = findViewById(R.id.textViewIncomeValue);
+        TextView textViewEx = findViewById(R.id.textViewExpenseValue);
+
+        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+            if(entry.getType().equals("Incomes")){
+                iData.add((float)entry.getAmount());
+            }else if (entry.getType().equals("Expenses")){
+                eData.add((float)entry.getAmount());
+            }
+        }
+        balance = 0;
+        incomeSum = 0;
+        expenseSum = 0;
+        for(float index : iData){
+            balance += index;
+            incomeSum += index;
+        }
+        for(float index : eData){
+            balance -= index;
+            expenseSum += index;
+        }
+//        string should only have two numbers after the float
+        String string = String.valueOf((float) ((int) ( balance * 100)) / 100);
+
+        if (balance > 0){
+            string = "+  " + string;
+            textView.setTextColor(Color.parseColor("green"));
+        }else if (balance < 0){
+            string = "-  " + string.substring(1);
+            textView.setTextColor(Color.parseColor("red"));
+        }else{
+            textView.setTextColor(Color.parseColor("black"));
+        }
+        textView.setText(string);
+
+        String stringIncomeSum = String.valueOf((float) ((int) ( incomeSum * 100)) / 100);
+        stringIncomeSum = "+ " + stringIncomeSum;
+        textViewIn.setText(stringIncomeSum);
+        String stringExpenseSum = String.valueOf((float) ((int) ( expenseSum * 100)) / 100);
+        stringExpenseSum = "- " + stringExpenseSum;
+        textViewEx.setText(stringExpenseSum);
+
+
+
     }
 
 
@@ -84,9 +123,6 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
                 startActivity(intent_balance);
 //                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
 //                startActivity(intent_month);
-            case R.id.nav_weekly:
-                /*Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-                startActivity(intent_month);*/
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new WeeklyFragment()).commit();*/
                 break;
@@ -143,7 +179,7 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
                 Toast.makeText(this, "Calculator", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_settings:
-                Intent intent_set = new Intent(getApplicationContext(),SettingsActivity.class);
+                Intent intent_set = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent_set);
                 break;
             case R.id.nav_aboutUs:
@@ -152,10 +188,9 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
         }
 
         drawer1.closeDrawer(GravityCompat.START);
-
-
         return true;
     }
+
 
     public void onBackPressed() {
 
@@ -166,7 +201,7 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
         } else {
             backKey++;
             if (backKey == 1) {
-                Toast.makeText(ChartMonthActivity.this, "Click one more time to exist app", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BalanceActivity.this, "Click one more time to exist app", Toast.LENGTH_SHORT).show();
             } else {
                 //exit app to home screen
                 Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);
@@ -178,8 +213,4 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
         }
 
     }
-
-
-
-
 }

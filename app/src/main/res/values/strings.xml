@@ -119,6 +119,7 @@
     <string name="item_share">Share</string>
     <string name="item_contactUs">Contact Us</string>
     <string name="item_trendLine">Expense History Chart</string>
+    <string name="item_balance">Overview</string>
 
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
@@ -126,6 +127,9 @@
     <string name="fragment_weekly">Weekly Fragment</string>
     <string name="fragment_monthly">Monthly Fragment</string>
     <string name="fragment_total">All Fragment</string>
+
+
+    <string name="total_balance_text">Total Balance:</string>
 
     <string name="item_right_setting">Settings</string>
     <string name="item_right_calculator">Calculator</string>
@@ -144,5 +148,8 @@
     <string name="delete_all">Delete All</string>
     <string name="currency">Currency</string>
     <string name="del_msg">All the data will be deleted</string>
+
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
 
 </resources>

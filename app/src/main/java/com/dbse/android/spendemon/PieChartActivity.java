@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextClock;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,6 +35,9 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
     private DrawerLayout drawer1;
 
+    private float incomeSum;
+    private float expenseSum;
+
     private static String TAG = "PieChart";
     /* private float[] yData = {25.4f, 10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f};
      private String[] xData = {"Mitch", "Jessica", "Md", "Kelsey", "Sam", "Robert", "Ashley"};*/
@@ -41,10 +46,13 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
     ArrayList<Float> yData = new ArrayList<>();
     ArrayList<String> xData = new ArrayList<>();
+    ArrayList<Float> yDataIn = new ArrayList<>();
+    ArrayList<String> xDataIn = new ArrayList<>();
     Intent intent;
 
 
     PieChart pieChart;
+    PieChart pieChartInput;
 
     private int backKey = 0;
 
@@ -88,8 +96,23 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         pieChart.setCenterTextSize(10);
         pieChart.setDrawEntryLabels(true);
 
-        addDataSet();
+        pieChartInput = findViewById(R.id.idPieChartIncome);
+        Description descIncome = new Description();
+        descIncome.setText("Expenditure");
+        pieChartInput.setDescription(descIncome);
+        pieChartInput.setRotationEnabled(true);
+        pieChartInput.setHoleRadius(25f);
+        pieChartInput.setTransparentCircleAlpha(25);
+        pieChartInput.setCenterText("Category");
+        pieChartInput.setCenterTextSize(10);
+        pieChartInput.setDrawEntryLabels(true);
 
+
+
+        addDataSet();
+        addDataSetIncome();
+
+//        Todo: Add extra piechart selectedlistener for income
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
@@ -122,8 +145,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
     private void addDataSet() {
 
-        getData();
-
+        getDataExpense();
 
         Log.d(TAG, "addDataSet called");
         ArrayList<PieEntry> yEntries = new ArrayList<>();
@@ -144,13 +166,13 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         //Colors
 
         ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.GRAY);
         colors.add(Color.BLUE);
         colors.add(Color.RED);
         colors.add(Color.GREEN);
         colors.add(Color.CYAN);
         colors.add(Color.YELLOW);
         colors.add(Color.MAGENTA);
+        colors.add(Color.GRAY);
 
         pieDataSet.setColors(colors);
 
@@ -159,11 +181,61 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         legend.setForm(Legend.LegendForm.CIRCLE);
 
         //Pie data create
-
         PieData pieData = new PieData(pieDataSet);
         pieChart.setData(pieData);
         pieChart.invalidate();
+
     }
+
+
+
+    private void addDataSetIncome() {
+
+        getDataIncome();
+
+        Log.d(TAG, "addDataSetIncome called");
+        ArrayList<PieEntry> yEntries = new ArrayList<>();
+        ArrayList<String> xEntries = new ArrayList<>();
+
+        int i = 0;
+        for (float data : yDataIn) {
+            yEntries.add(new PieEntry(data, i++));
+        }
+        for (String name : xDataIn) {
+            xEntries.add(name);
+        }
+
+        PieDataSet pieDataSet = new PieDataSet(yEntries, "Cost");
+        pieDataSet.setSliceSpace(2);
+        pieDataSet.setValueTextSize(12);
+
+        //Colors
+
+        ArrayList<Integer> colors = new ArrayList<>();
+        colors.add(Color.BLUE);
+        colors.add(Color.RED);
+        colors.add(Color.GREEN);
+        colors.add(Color.CYAN);
+        colors.add(Color.YELLOW);
+        colors.add(Color.MAGENTA);
+        colors.add(Color.GRAY);
+
+        pieDataSet.setColors(colors);
+
+        //add legend
+        Legend legendIncome = pieChartInput.getLegend();
+        legendIncome.setForm(Legend.LegendForm.CIRCLE);
+
+        //Pie data create
+
+        PieData pieData = new PieData(pieDataSet);
+
+        pieChartInput.setData(pieData);
+        pieChartInput.invalidate();
+    }
+
+
+
 
     private void getData() {
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
@@ -217,6 +289,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                 xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
             }
 
+
+
             /*if (Categories.get(i).equals(Categories.get(i + 1))) {
                 data += AmountValues.get(i + 1);
                 continue;
@@ -226,6 +300,168 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
         }
     }
+
+
+
+
+    private void getDataIncome() {
+        AmountValues.clear();
+        Categories.clear();
+        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+            if (entry.getType().equals("Incomes")) {
+
+                if ((intent.getStringExtra("Duration")).equals("Day")) {
+                    if (entry.getDate().equals(intent.getStringExtra("Date"))) {
+                        AmountValues.add((float) entry.getAmount());
+                        Categories.add(entry.getCategory());
+                    }
+                } else if (intent.getStringExtra("Duration").equals("Month")) {
+                    String monthIntent = intent.getStringExtra("Month");
+                    String monthEntry = entry.getDate().substring(2, 3);
+                    if (entry.getDate().substring(1, 2).equals("/")) {
+                        monthEntry = entry.getDate().substring(2, 3);
+                    } else if (entry.getDate().substring(2, 3).equals("/")) {
+                        monthEntry = entry.getDate().substring(3, 4);
+                    }
+
+                    if (monthEntry.equals(monthIntent)) {
+                        AmountValues.add((float) entry.getAmount());
+                        Categories.add(entry.getCategory());
+                    }
+                } else if (intent.getStringExtra("Duration").equals("All")) {
+                    AmountValues.add((float) entry.getAmount());
+                    Categories.add(entry.getCategory());
+                }
+            }
+        }
+//        behnam code:
+        boolean save_data;
+
+        float data = 0;
+        for (int i = 0; i < Categories.size(); i++) {
+            data = 0;
+            for (int j = i; j < Categories.size(); j++) {
+                if (Categories.get(i).equals(Categories.get(j))) {
+                    data += AmountValues.get(j);
+                }
+            }
+//            yData.add(data);
+//            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+
+            //            add data modification code:
+            save_data = true;
+            for (int k = 0; k < i; k++){
+                if (Categories.get(k).equals(Categories.get(i))){
+                    save_data = false;
+                }
+                Log.i("k value:", String.valueOf(k));
+            }
+            if (save_data) {
+                yDataIn.add(data);
+                xDataIn.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+            }
+
+            incomeSum = 0;
+            for(float index : yDataIn){
+                incomeSum += index;
+            }
+            TextView textViewIncome = findViewById(R.id.textViewChartIncomeValue);
+            String stringIncomeSum = String.valueOf((float) ((int) ( incomeSum * 100)) / 100);
+            stringIncomeSum = "+ " + stringIncomeSum;
+            textViewIncome.setText(stringIncomeSum);
+            /*if (Categories.get(i).equals(Categories.get(i + 1))) {
+                data += AmountValues.get(i + 1);
+                continue;
+            }
+            yData.add(data);
+            xData.add(Categories.get(i));*/
+
+        }
+    }
+
+
+
+
+
+    private void getDataExpense() {
+        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+            if (entry.getType().equals("Expenses")) {
+
+                if ((intent.getStringExtra("Duration")).equals("Day")) {
+                    if (entry.getDate().equals(intent.getStringExtra("Date"))) {
+                        AmountValues.add((float) entry.getAmount());
+                        Categories.add(entry.getCategory());
+                    }
+                } else if (intent.getStringExtra("Duration").equals("Month")) {
+                    String monthIntent = intent.getStringExtra("Month");
+                    String monthEntry = entry.getDate().substring(2, 3);
+                    if (entry.getDate().substring(1, 2).equals("/")) {
+                        monthEntry = entry.getDate().substring(2, 3);
+                    } else if (entry.getDate().substring(2, 3).equals("/")) {
+                        monthEntry = entry.getDate().substring(3, 4);
+                    }
+
+                    if (monthEntry.equals(monthIntent)) {
+                        AmountValues.add((float) entry.getAmount());
+                        Categories.add(entry.getCategory());
+                    }
+                } else if (intent.getStringExtra("Duration").equals("All")) {
+                    AmountValues.add((float) entry.getAmount());
+                    Categories.add(entry.getCategory());
+                }
+            }
+        }
+//        behnam code:
+        boolean save_data;
+
+        float data = 0;
+        for (int i = 0; i < Categories.size(); i++) {
+            data = 0;
+            for (int j = i; j < Categories.size(); j++) {
+                if (Categories.get(i).equals(Categories.get(j))) {
+                    data += AmountValues.get(j);
+                }
+            }
+//            yData.add(data);
+//            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+
+            //            add data modification code:
+            save_data = true;
+            for (int k = 0; k < i; k++){
+                if (Categories.get(k).equals(Categories.get(i))){
+                    save_data = false;
+                }
+                Log.i("k value:", String.valueOf(k));
+            }
+            if (save_data) {
+                yData.add(data);
+                xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
+            }
+
+
+
+            expenseSum = 0;
+            for(float index : yData){
+                expenseSum += index;
+            }
+
+            TextView textViewExpense = findViewById(R.id.textViewChartExpenseValue);
+            String stringExpenseSum = String.valueOf((float) ((int) ( expenseSum * 100)) / 100);
+            stringExpenseSum = "- " + stringExpenseSum;
+            textViewExpense.setText(stringExpenseSum);
+
+            /*if (Categories.get(i).equals(Categories.get(i + 1))) {
+                data += AmountValues.get(i + 1);
+                continue;
+            }
+            yData.add(data);
+            xData.add(Categories.get(i));*/
+
+        }
+    }
+
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -238,6 +474,11 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                 Intent intent_daily = new Intent(getApplicationContext(), PieChartDailyActivity.class);
                 startActivity(intent_daily);
                 break;
+            case R.id.nav_balance:
+                Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);
+                startActivity(intent_balance);
+//                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+//                startActivity(intent_month);
             case R.id.nav_weekly:
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new MonthlyFragment()).commit();*/
@@ -247,6 +488,10 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
             case R.id.nav_monthly:
                 Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
                 startActivity(intent_month);
+                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+                startActivity(intent_month);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                        new MonthlyFragment()).commit();
                 break;
             case R.id.nav_total:
                 Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);

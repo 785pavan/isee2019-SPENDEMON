@@ -106,6 +106,8 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
                 Toast.makeText(getApplicationContext(), "Username was not found",
                         Toast.LENGTH_LONG).show();
             }
+
+
         }
     }
     @Override
@@ -116,18 +118,25 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
         usernameA1 = sharedPreferences.getString("UserName", null);
         passwordA1 = sharedPreferences.getInt("Password", 0);
         signUpModeActive = sharedPreferences.getBoolean("SignUpMode", false);
-        signUpButton = (Button) findViewById(R.id.buttonSignUp);
-        teamLogo = (ImageView) findViewById(R.id.teamLogo);
-//        relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout1);
-        constraintLayout = (ConstraintLayout) findViewById(R.id.relativeLayout1);
+//        signUpButton = (Button) findViewById(R.id.buttonSignUp);
+//        teamLogo = (ImageView) findViewById(R.id.teamLogo);
+//        constraintLayout = (ConstraintLayout) findViewById(R.id.relativeLayout1);
+
+        signUpButton =  findViewById(R.id.buttonSignUp);
+        teamLogo =  findViewById(R.id.teamLogo);
+        constraintLayout =  findViewById(R.id.relativeLayout1);
 
         teamLogo.setOnClickListener(this);
-        //relativeLayout.setOnClickListener(this);
+
         constraintLayout.setOnClickListener(this);
 
-        usernameField = (EditText) findViewById(R.id.username1);
-        passwordField = (EditText) findViewById(R.id.password1);
-        changeSignUpModeTextView = (TextView) findViewById(R.id.changeSignUpMode);
+//        usernameField = (EditText) findViewById(R.id.username1);
+//        passwordField = (EditText) findViewById(R.id.password1);
+//        changeSignUpModeTextView = (TextView) findViewById(R.id.changeSignUpMode);
+
+        usernameField =  findViewById(R.id.username1);
+        passwordField =  findViewById(R.id.password1);
+        changeSignUpModeTextView =  findViewById(R.id.changeSignUpMode);
 
         changeSignUpModeTextView.setOnClickListener(this);
 

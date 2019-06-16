@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_balance"
+    android:fitsSystemWindows="true">
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/constraintBalance">
+
+    <include
+        android:id="@+id/toolBarLayoutBalance"
+        layout="@layout/toolbar_layout" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/total_balance_text"
+        android:textSize="@dimen/balanceTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarLayoutBalance" />
+
+    <TextView
+        android:id="@+id/balanceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:textSize="@dimen/balanceTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textViewIncomeText"
+        android:layout_width="175dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="586dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/balanceTextView"
+        app:layout_constraintVertical_bias="0.0"
+        android:textColor="#2A351F"
+        android:background="#88D840"
+        android:textAlignment="center"
+        android:text="@string/income"
+        android:textSize="@dimen/balanceTextSize2"/>
+
+    <TextView
+        android:id="@+id/textViewIncomeValue"
+        android:layout_width="175dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="20dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIncomeText"
+        android:textColor="#2A351F"
+        android:background="#88D840"
+        android:textAlignment="center"
+        android:textSize="@dimen/balanceTextSize2"
+        />
+
+    <TextView
+        android:id="@+id/textViewExpenseText"
+        android:layout_width="175dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/expense"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewIncomeText"
+        app:layout_constraintTop_toBottomOf="@+id/balanceTextView"
+        android:textColor="#660000"
+        android:background="#FFC1C1"
+        android:textAlignment="center"
+        android:textSize="@dimen/balanceTextSize2"/>
+
+    <TextView
+        android:id="@+id/textViewExpenseValue"
+        android:layout_width="175dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewIncomeValue"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExpenseText"
+        android:textColor="#660000"
+        android:background="#FFC1C1"
+        android:textAlignment="center"
+        android:textSize="@dimen/balanceTextSize2"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<com.google.android.material.navigation.NavigationView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:id="@+id/navigation_view2_balance"
+    android:layout_gravity="end"
+    app:menu="@menu/drawer_menu_right">
+</com.google.android.material.navigation.NavigationView>
+
+
+<com.google.android.material.navigation.NavigationView
+    android:id="@+id/navigation_view1_balance"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    app:menu="@menu/drawer_menu"
+    app:headerLayout="@layout/nav_header"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

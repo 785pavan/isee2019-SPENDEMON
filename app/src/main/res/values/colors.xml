@@ -9,5 +9,9 @@
     <color name="changeSignUpMode1">#FF3F51B5</color>
     <color name="fabMinusColor">#E00909</color>
     <color name="fabPlusColor">#4CAF50</color>
+    <color name="darkGreen">#2A351F</color>
+    <color name="lightGreen">#88D840</color>
+    <color name="darkRed">#660000</color>
+    <color name="lightRed">#FFC1C1</color>
 
 </resources>
