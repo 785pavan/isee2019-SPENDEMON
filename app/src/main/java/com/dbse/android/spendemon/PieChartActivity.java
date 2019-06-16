@@ -197,8 +197,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 //        getData();
         getDataIncome();
 
-//        getDataExpense();
-
         Log.d(TAG, "addDataSetIncome called");
         ArrayList<PieEntry> yEntries = new ArrayList<>();
         ArrayList<String> xEntries = new ArrayList<>();
