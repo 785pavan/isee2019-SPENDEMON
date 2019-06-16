@@ -15,20 +15,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.androidbuts.multispinnerfilter.KeyPairBoolData;
-import com.androidbuts.multispinnerfilter.MultiSpinner;
-import com.androidbuts.multispinnerfilter.MultiSpinnerListener;
 import com.androidbuts.multispinnerfilter.MultiSpinnerSearch;
 import com.androidbuts.multispinnerfilter.SpinnerListener;
-import com.dbse.android.spendemon.model.Entry;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import static com.dbse.android.spendemon.R.array.PaymentMethods;
-import static com.dbse.android.spendemon.Summary.entries;
 
 
 public class FilterActivity extends AppCompatActivity {
@@ -40,6 +35,8 @@ public class FilterActivity extends AppCompatActivity {
     List<String> paymeths = new ArrayList<>();
     final List<KeyPairBoolData> listArray0 = new ArrayList<>();
     final List<KeyPairBoolData> listArray1 = new ArrayList<>();
+    final String[] typeSelected = new String[4];
+    final String[] paymethSelected = new String[7];
 
 
     @Override
@@ -68,23 +65,30 @@ public class FilterActivity extends AppCompatActivity {
             listArray1.add(h);
         }
 
-
         typeSpinner.setItems(listArray0, -1, new SpinnerListener() {
-                    @Override
-                    public void onItemsSelected(List<KeyPairBoolData> items) {
-                        for (int i = 0; i < items.size(); i++) {
-                            if (items.get(i).isSelected()) {
-                                Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
-                            }
-                        }
+            @Override
+            public void onItemsSelected(List<KeyPairBoolData> items) {
+                int j = 0;
+                for (int i = 0; i < items.size(); i++) {
+                    //Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
+                    if (items.get(i).isSelected()) {
+                        typeSelected[j] = String.valueOf((items.get(i).getName()));
+                        j++;
                     }
-                });
+
+                }
+            }
+        });
+
         paymethSpinner.setItems(listArray1, -1, new SpinnerListener() {
             @Override
             public void onItemsSelected(List<KeyPairBoolData> items) {
+                int j = 0;
                 for (int i = 0; i < items.size(); i++) {
                     if (items.get(i).isSelected()) {
-                        Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
+                        //Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
+                        paymethSelected[j] = String.valueOf((items.get(i).getName()));
+                        j++;
                     }
                 }
             }
@@ -151,27 +155,26 @@ public class FilterActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.filter1:
-                Toast.makeText(getApplicationContext(),"Filter initiated", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Filter initiated", Toast.LENGTH_LONG).show();
                 String startDate = StartDate.getText().toString();
                 String endDate = EndDate.getText().toString();
-                String[] typeSending = new String[types.size()];
+                /*String[] typeSending = new String[types.size()];
                 String[] paySend = new String[paymeths.size()];
-                for (int i = 0; i<types.size();i++){
-                    typeSending[i] = types.get(i);
+                for (int i = 0; i<typeSelected.length;i++){
+                    typeSending[i] = typeSelected.get(i);
                 }
                 for (int i =0;i<paymeths.size();i++){
                     paySend[i] = paymeths.get(i);
-                }
-                Intent intent = new Intent(getApplicationContext(),Summary.class);
-                intent.putExtra("Types",typeSending);
-                intent.putExtra("StartDate",startDate);
-                intent.putExtra("EndDate",endDate);
-                intent.putExtra("PayMethod",paySend);
+                }*/
+                Intent intent = new Intent(getApplicationContext(), Summary.class);
+                intent.putExtra("Types", typeSelected);
+                intent.putExtra("StartDate", startDate);
+                intent.putExtra("EndDate", endDate);
+                intent.putExtra("PayMethod", paymethSelected);
                 startActivity(intent);
                 return true;
             default:
