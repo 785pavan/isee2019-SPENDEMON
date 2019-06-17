@@ -192,18 +192,18 @@ public class FilterActivity extends AppCompatActivity {
                 String endDate = EndDate.getText().toString();
                 if (startDate.equals("Select date")||endDate.equals("Select date")){
                     Intent intent = new Intent(getApplicationContext(), Summary.class);
-                    if (typeSelected!=null)
+                    if (typeSelected!=null && typeSelected.size()!=0)
                         intent.putExtra("Types", typeSelected.toArray(new String[0]));
                     else
                         intent.putExtra("Types", types.toArray(new String[0]));
                     if (!startDate.equals("Select date"))
                         intent.putExtra("StartDate", startDate);
                     if (!endDate.equals("Select date")) intent.putExtra("EndDate", endDate);
-                    if (paymethSelected!=null)
+                    if (paymethSelected!=null && paymethSelected.size()!=0)
                         intent.putExtra("PayMethod", paymethSelected.toArray(new String[0]));
                     else
                         intent.putExtra("PayMethod", paymeths.toArray(new String[0]));
-                    if (catsSelected!=null)
+                    if (catsSelected!=null && catsSelected.size()!=0)
                         intent.putExtra("Categories", catsSelected.toArray(new String[0]));
                     else
                         intent.putExtra("Categories", cats.toArray(new String[0]));
@@ -216,18 +216,18 @@ public class FilterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Start date should be before End Date", Toast.LENGTH_LONG).show();
                 } else {
                     Intent intent = new Intent(getApplicationContext(), Summary.class);
-                    if (typeSelected!=null)
-                        intent.putExtra("Types", typeSelected.toArray());
+                    if (typeSelected!=null && typeSelected.size()!=0)
+                        intent.putExtra("Types", typeSelected.toArray(new String[0]));
                     else
-                        intent.putExtra("Types", types.toArray());
+                        intent.putExtra("Types", types.toArray(new String[0]));
                     if (!startDate.equals("Select date"))
                         intent.putExtra("StartDate", startDate);
                     if (!endDate.equals("Select date")) intent.putExtra("EndDate", endDate);
-                    if (paymethSelected!=null)
+                    if (paymethSelected!=null && paymethSelected.size()!=0)
                         intent.putExtra("PayMethod", paymethSelected.toArray(new String[0]));
                     else
                         intent.putExtra("PayMethod", paymeths.toArray(new String[0]));
-                    if (catsSelected!=null)
+                    if (catsSelected!=null && catsSelected.size()!=0)
                         intent.putExtra("Categories", catsSelected.toArray(new String[0]));
                     else
                         intent.putExtra("Categories", cats.toArray(new String[0]));

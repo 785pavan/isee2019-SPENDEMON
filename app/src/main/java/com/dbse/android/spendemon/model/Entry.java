@@ -8,6 +8,7 @@ public class Entry {
     private String payMethod;
     private String type;
     private String note;
+    private int id;
 
     public Entry(String category, double amount, String date) {
         this.category = category;
