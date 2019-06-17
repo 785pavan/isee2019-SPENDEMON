@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Calculator", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_settings:
-                Intent intent_set = new Intent(getApplicationContext(),SettingsActivity.class);
+                Intent intent_set = new Intent(getApplicationContext(), SettingsActivity.class);
                 startActivity(intent_set);
                 break;
             case R.id.nav_aboutUs:

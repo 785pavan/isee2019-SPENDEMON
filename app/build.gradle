@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     dataBinding.enabled = true
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
     defaultConfig {
         applicationId "com.dbse.android.spendemon"
         minSdkVersion 22
@@ -57,4 +60,6 @@ dependencies {
 
     //MultiChoiceSpinner implementation
     implementation 'com.github.pratikbutani:MultiSelectSpinner:08d324c98'
+
+    testImplementation 'org.hamcrest:hamcrest-library:1.3'
 }
