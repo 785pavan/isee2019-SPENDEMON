@@ -113,6 +113,32 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         addDataSetIncome();
 
 //        Todo: Add extra piechart selectedlistener for income
+        pieChartInput.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+
+                int posIn = e.toString().indexOf("y: ");
+                String cost = e.toString().substring(posIn + 3);
+
+                for (int i = 0; i < yDataIn.size(); i++) {
+                    if (yDataIn.get(i) == Float.parseFloat(cost)) {
+                        posIn = i;
+                        break;
+                    }
+                }
+                String cat = xDataIn.get(posIn);
+                Toast.makeText(PieChartActivity.this, "Category: " + cat + "\n" +
+                        "spent: " + cost, Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
+
+
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
