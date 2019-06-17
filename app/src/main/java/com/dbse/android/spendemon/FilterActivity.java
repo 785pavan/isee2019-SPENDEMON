@@ -3,6 +3,7 @@ package com.dbse.android.spendemon;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,6 +19,7 @@ import com.androidbuts.multispinnerfilter.KeyPairBoolData;
 import com.androidbuts.multispinnerfilter.MultiSpinnerSearch;
 import com.androidbuts.multispinnerfilter.SpinnerListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -25,6 +27,7 @@ import java.util.List;
 
 import static com.dbse.android.spendemon.R.array.AllCategories;
 import static com.dbse.android.spendemon.R.array.PaymentMethods;
+import static java.lang.String.valueOf;
 
 
 public class FilterActivity extends AppCompatActivity {
@@ -38,12 +41,9 @@ public class FilterActivity extends AppCompatActivity {
     final List<KeyPairBoolData> listArray0 = new ArrayList<>();
     final List<KeyPairBoolData> listArray1 = new ArrayList<>();
     final List<KeyPairBoolData> listArray2 = new ArrayList<>();
-    final String[] typeSelected = new String[4];
-    final String[] paymethSelected = new String[7];
-    final String[] catsSelected = new String[11];
-
-
-
+    List<String> typeSelected = new ArrayList<>();
+    List<String> paymethSelected = new ArrayList<>();
+    List<String> catsSelected = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +58,7 @@ public class FilterActivity extends AppCompatActivity {
         cats = Arrays.asList(getResources().getStringArray(AllCategories));
         StartDate = findViewById(R.id.StartDateFilter);
         EndDate = findViewById(R.id.EndDateFilter);
+
         for (int i = 0; i < types.size(); i++) {
             KeyPairBoolData h = new KeyPairBoolData();
             h.setId(i + 1);
@@ -83,27 +84,26 @@ public class FilterActivity extends AppCompatActivity {
         typeSpinner.setItems(listArray0, -1, new SpinnerListener() {
             @Override
             public void onItemsSelected(List<KeyPairBoolData> items) {
-                int j = 0;
                 for (int i = 0; i < items.size(); i++) {
                     //Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
                     if (items.get(i).isSelected()) {
-                        typeSelected[j] = String.valueOf((items.get(i).getName()));
-                        j++;
+                        typeSelected.add(items.get(i).getName());
                     }
 
                 }
+
             }
+
+
         });
 
         paymethSpinner.setItems(listArray1, -1, new SpinnerListener() {
             @Override
             public void onItemsSelected(List<KeyPairBoolData> items) {
-                int j = 0;
                 for (int i = 0; i < items.size(); i++) {
                     if (items.get(i).isSelected()) {
                         //Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
-                        paymethSelected[j] = String.valueOf((items.get(i).getName()));
-                        j++;
+                        paymethSelected.add(items.get(i).getName());
                     }
                 }
             }
@@ -115,7 +115,7 @@ public class FilterActivity extends AppCompatActivity {
                 for (int i = 0; i < items.size(); i++) {
                     if (items.get(i).isSelected()) {
                         //Log.i(TAG, i + " : " + items.get(i).getName() + " : " + items.get(i).isSelected());
-                        catsSelected[j] = String.valueOf((items.get(i).getName()));
+                        catsSelected.add(items.get(i).getName());
                         j++;
                     }
                 }
@@ -190,20 +190,52 @@ public class FilterActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Filter initiated", Toast.LENGTH_LONG).show();
                 String startDate = StartDate.getText().toString();
                 String endDate = EndDate.getText().toString();
-                if (Summary.compareDate(startDate,endDate)==1){
-                    Toast.makeText(getApplicationContext(),"Start date should be before End Date", Toast.LENGTH_LONG ).show();
-                }
-                else {
+                if (startDate.equals("Select date")||endDate.equals("Select date")){
                     Intent intent = new Intent(getApplicationContext(), Summary.class);
-                    intent.putExtra("Types", typeSelected);
-                    intent.putExtra("StartDate", startDate);
-                    intent.putExtra("EndDate", endDate);
-                    intent.putExtra("PayMethod", paymethSelected);
-                    intent.putExtra("Categories", catsSelected);
+                    if (typeSelected!=null)
+                        intent.putExtra("Types", typeSelected.toArray(new String[0]));
+                    else
+                        intent.putExtra("Types", types.toArray(new String[0]));
+                    if (!startDate.equals("Select date"))
+                        intent.putExtra("StartDate", startDate);
+                    if (!endDate.equals("Select date")) intent.putExtra("EndDate", endDate);
+                    if (paymethSelected!=null)
+                        intent.putExtra("PayMethod", paymethSelected.toArray(new String[0]));
+                    else
+                        intent.putExtra("PayMethod", paymeths.toArray(new String[0]));
+                    if (catsSelected!=null)
+                        intent.putExtra("Categories", catsSelected.toArray(new String[0]));
+                    else
+                        intent.putExtra("Categories", cats.toArray(new String[0]));
+
+                    startActivity(intent);
+                    return true;
+
+                }
+                if (Summary.compareDate(startDate, endDate) == 1) {
+                    Toast.makeText(getApplicationContext(), "Start date should be before End Date", Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), Summary.class);
+                    if (typeSelected!=null)
+                        intent.putExtra("Types", typeSelected.toArray());
+                    else
+                        intent.putExtra("Types", types.toArray());
+                    if (!startDate.equals("Select date"))
+                        intent.putExtra("StartDate", startDate);
+                    if (!endDate.equals("Select date")) intent.putExtra("EndDate", endDate);
+                    if (paymethSelected!=null)
+                        intent.putExtra("PayMethod", paymethSelected.toArray(new String[0]));
+                    else
+                        intent.putExtra("PayMethod", paymeths.toArray(new String[0]));
+                    if (catsSelected!=null)
+                        intent.putExtra("Categories", catsSelected.toArray(new String[0]));
+                    else
+                        intent.putExtra("Categories", cats.toArray(new String[0]));
 
                     startActivity(intent);
                     return true;
                 }
+
             default:
                 return super.onOptionsItemSelected(item);
 
