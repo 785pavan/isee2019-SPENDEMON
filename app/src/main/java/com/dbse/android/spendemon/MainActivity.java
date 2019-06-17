@@ -166,10 +166,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                right drawer
                 break;
             case R.id.nav_currency:
-                Toast.makeText(this, "Currency", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Feature Not Available", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_Calculator:
-                Toast.makeText(this, "Calculator", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Feature Not Available", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_settings:
                 Intent intent_set = new Intent(getApplicationContext(), SettingsActivity.class);
@@ -190,8 +190,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         drawer1.closeDrawer(GravityCompat.START);
-
-
         return true;
     }
 }
