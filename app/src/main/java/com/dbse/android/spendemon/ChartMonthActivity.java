@@ -84,12 +84,12 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
                 startActivity(intent_balance);
 //                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
 //                startActivity(intent_month);
-            case R.id.nav_weekly:
-                /*Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-                startActivity(intent_month);*/
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new WeeklyFragment()).commit();*/
-                break;
+//            case R.id.nav_weekly:
+//                /*Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
+//                startActivity(intent_month);*/
+//                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                        new WeeklyFragment()).commit();*/
+//                break;
             case R.id.nav_monthly:
                 Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
                 startActivity(intent_month);
