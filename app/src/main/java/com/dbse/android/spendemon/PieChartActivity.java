@@ -98,7 +98,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
         pieChartInput = findViewById(R.id.idPieChartIncome);
         Description descIncome = new Description();
-        descIncome.setText("Expenditure");
+        descIncome.setText("Earnings");
         pieChartInput.setDescription(descIncome);
         pieChartInput.setRotationEnabled(true);
         pieChartInput.setHoleRadius(25f);
