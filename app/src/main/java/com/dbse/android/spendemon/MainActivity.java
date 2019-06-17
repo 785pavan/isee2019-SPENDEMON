@@ -164,6 +164,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new SummaryFragment()).commit();*/
 //                right drawer
+                break;
             case R.id.nav_currency:
                 Toast.makeText(this, "Currency", Toast.LENGTH_LONG).show();
                 break;
