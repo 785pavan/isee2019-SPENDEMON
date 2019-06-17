@@ -137,9 +137,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_LONG).show();
                 Intent intent_share = new Intent(Intent.ACTION_SEND);
-                intent_share.setType("text/plain");
-                String shareBody = "We are team SPENDEMON. Please check out our blog: https://dbse-teaching.github.io/isee2019-SPENDEMON/";
-                String shareSubject = "The link for our Blog";
+                intent_share.setType("application/vnd.android.package-archive");
+                String shareBody = "https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.02/Spendemon.apk";
+                String shareSubject = "The link to our App";
                 intent_share.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
                 intent_share.putExtra(Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(intent_share, "Share this by"));
@@ -175,6 +175,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_aboutUs:
                 Toast.makeText(this, "About Us", Toast.LENGTH_LONG).show();
+
+                Intent intent_aboutUs = new Intent(Intent.ACTION_SEND);
+                intent_aboutUs.setType("text/plain");
+                String aboutUsBody = "We are team SPENDEMON. Please check out our blog: https://dbse-teaching.github.io/isee2019-SPENDEMON/";
+                String aboutUsSubject = "The link for our Blog";
+                intent_aboutUs.putExtra(Intent.EXTRA_SUBJECT, aboutUsSubject);
+                intent_aboutUs.putExtra(Intent.EXTRA_TEXT, aboutUsBody);
+                startActivity(Intent.createChooser(intent_aboutUs, "aboutUs"));
                 break;
         }
 
