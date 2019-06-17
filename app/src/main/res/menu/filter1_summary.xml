@@ -5,7 +5,7 @@
     tools:context = ".FilterActivity">
     <item
         android:id="@+id/filter1"
-        android:icon="@drawable/filter"
+        android:icon="@drawable/filter1"
         android:title="Filter"
         app:showAsAction="always" />
 
