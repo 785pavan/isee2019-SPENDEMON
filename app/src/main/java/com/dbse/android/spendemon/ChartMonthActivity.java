@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -81,6 +82,8 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
                 startActivity(intent_daily);
                 break;
             case R.id.nav_balance:
+                Log.i("Enter", "nav_balance clicked");
+
                 Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);
                 startActivity(intent_balance);
 //                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
@@ -90,7 +93,7 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
 //                startActivity(intent_month);*/
 //                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
 //                        new WeeklyFragment()).commit();*/
-//                break;
+                break;
             case R.id.nav_monthly:
                 Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
                 startActivity(intent_month);

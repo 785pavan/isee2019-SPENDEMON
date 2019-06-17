@@ -292,7 +292,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 //        behnam code:
         boolean save_data;
 
-        float data = 0;
+        float data;
         for (int i = 0; i < Categories.size(); i++) {
             data = 0;
             for (int j = i; j < Categories.size(); j++) {
@@ -364,7 +364,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 //        behnam code:
         boolean save_data;
 
-        float data = 0;
+        float data;
         for (int i = 0; i < Categories.size(); i++) {
             data = 0;
             for (int j = i; j < Categories.size(); j++) {
@@ -441,7 +441,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 //        behnam code:
         boolean save_data;
 
-        float data = 0;
+        float data;
         for (int i = 0; i < Categories.size(); i++) {
             data = 0;
             for (int j = i; j < Categories.size(); j++) {
@@ -501,6 +501,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                 Intent intent_daily = new Intent(getApplicationContext(), PieChartDailyActivity.class);
                 startActivity(intent_daily);
                 break;
+
             case R.id.nav_balance:
                 Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);
                 startActivity(intent_balance);
@@ -511,7 +512,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 //                        new MonthlyFragment()).commit();*/
 //                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
 //                        new WeeklyFragment()).commit();*/
-//                break;
+                break;
             case R.id.nav_monthly:
                 Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
                 startActivity(intent_month);
