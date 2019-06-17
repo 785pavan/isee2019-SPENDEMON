@@ -28,6 +28,7 @@ import com.github.mikephil.charting.utils.Utils;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static com.dbse.android.spendemon.Summary.entries;
 
@@ -41,9 +42,12 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
     private float[] yIncome = {10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f, 25.4f};*/
     private ArrayList<Float> yExpense = new ArrayList<>();
     private ArrayList<Float> yIncome = new ArrayList<>();
+    private ArrayList<Float> yAxes = new ArrayList<>();
+    private ArrayList<Float> yAxesNew = new ArrayList<>();
     private ArrayList<String> xCategoryI = new ArrayList<>();
     private ArrayList<String> xCategoryE = new ArrayList<>();
     private float Idata = 0;
+    private float Alldata;
     private float Edata = 0;
 
     private int backKey = 0;
@@ -61,7 +65,7 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
         lineChart.setPinchZoom(true);
 
         Description desc = new Description();
-        desc.setText("Expenditure");
+        desc.setText("Trend Line");
         lineChart.setDescription(desc);
 
         addDataSet();
@@ -92,48 +96,92 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
     }
 
     private void getData() {
+//        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+//            if (entry.getType().equals("Incomes")) {
+//                Idata += entry.getAmount();
+//                yIncome.add(Idata);
+//                xCategoryI.add(entry.getCategory());
+//            } else if (entry.getType().equals("Expenses")) {
+//                Edata += entry.getAmount();
+//                yExpense.add(Edata);
+//                xCategoryE.add(entry.getCategory());
+//            }
+//        }
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
+            Log.i(TAG, "get Entry: " + entry.getAmount());
             if (entry.getType().equals("Incomes")) {
-                Idata += entry.getAmount();
-                yIncome.add(Idata);
-                xCategoryI.add(entry.getCategory());
+                Alldata = (float) entry.getAmount();
+//                yAxes.add(Alldata);
+//                xCategoryI.add(entry.getCategory());
             } else if (entry.getType().equals("Expenses")) {
-                Edata += entry.getAmount();
-                yExpense.add(Edata);
-                xCategoryE.add(entry.getCategory());
+                Alldata = (float) - entry.getAmount();
+//                yAxes.add(Alldata);
+//                xCategoryE.add(entry.getCategory());
             }
+            Log.i(TAG, "get Alldata: " + Alldata);
+            yAxes.add(Alldata);
         }
+        Collections.reverse(yAxes);
+        float sumNext;
+        Log.i(TAG, String.format("getData: %s", yAxes));
+        yAxesNew.add((float) 0);
+        for (int counter = 0; counter < yAxes.size(); counter++){
+            sumNext = 0;
+            for (int counterIn = 0; counterIn < counter + 1; counterIn++){
+                sumNext += yAxes.get(counterIn);
+            }
+            yAxesNew.add(sumNext);
+        }
+        Log.i(TAG, "getData: " + yAxesNew);
     }
 
     private void addDataSet() {
         Log.d(TAG, "addDataSet called");
         getData();
         ArrayList<Entry> yAxesEx = new ArrayList<>();
+        ArrayList<Entry> yAxesLine = new ArrayList<>();
         ArrayList<Integer> xAxes = new ArrayList<>();
+        ArrayList<Integer> xAxesLine = new ArrayList<>();
+
         ArrayList<Entry> yAxesIn = new ArrayList<>();
 
-        int i = 0, j = 0;
-        for (float data : yExpense) {
-            yAxesEx.add(new Entry(i++, data));
-            xAxes.add(i);
-            i++;
+        int counter = 0;
+        for (float data: yAxesNew){
+            yAxesLine.add(new Entry(counter++, data));
+            xAxesLine.add(counter);
+            Log.i("counter: ", String.valueOf(counter));
         }
-        for (float data : yIncome) {
-            yAxesIn.add(new Entry(j++, data));
+
+
+//        int i = 0, j = 0;
+//        for (float data : yExpense) {
+//            yAxesEx.add(new Entry(i++, data));
+//            xAxes.add(i);
+////            i++;
+//        }
+//        for (float data : yIncome) {
+//            yAxesIn.add(new Entry(j++, data));
+//
+//        }
+        String[] xaxes = new String[xAxesLine.size()];
+        for (int k = 0; k < xAxesLine.size(); k++) {
+            xaxes[k] = xAxesLine.get(k).toString();
         }
-        String[] xaxes = new String[xAxes.size()];
-        for (int k = 0; k < xAxes.size(); k++) {
-            xaxes[k] = xAxes.get(k).toString();
-        }
+//        String[] xaxes = new String[xAxes.size()];
+//        for (int k = 0; k < xAxes.size(); k++) {
+//            xaxes[k] = xAxes.get(k).toString();
+//        }
         LineDataSet lineDataSet;
         if (lineChart.getData() != null &&
                 lineChart.getData().getDataSetCount() > 0) {
             lineDataSet = (LineDataSet) lineChart.getData().getDataSetByIndex(0);
-            lineDataSet.setValues(yAxesEx);
+            lineDataSet.setValues(yAxesLine);
+//            lineDataSet.setValues(yAxesEx);
             lineChart.getData().notifyDataChanged();
             lineChart.notifyDataSetChanged();
         } else {
-            lineDataSet = new LineDataSet(yAxesEx, "Expenses");
+            lineDataSet = new LineDataSet(yAxesLine, "Expenses and Incomes");
+//            lineDataSet = new LineDataSet(yAxesEx, "Expenses");
             lineDataSet.setDrawIcons(false);
             lineDataSet.enableDashedLine(10f, 5f, 0f);
             lineDataSet.enableDashedHighlightLine(10f, 5f, 0f);
@@ -158,38 +206,38 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
             LineData data = new LineData(dataSets);
             lineChart.setData(data);
         }LineDataSet lineDataSet3;
-        if (lineChart.getData() != null &&
-                lineChart.getData().getDataSetCount() > 0) {
-            lineDataSet3 = (LineDataSet) lineChart.getData().getDataSetByIndex(0);
-            lineDataSet3.setValues(yAxesEx);
-            lineChart.getData().notifyDataChanged();
-            lineChart.notifyDataSetChanged();
-        } else {
-            lineDataSet3 = new LineDataSet(yAxesEx, "Incomes");
-            lineDataSet3.setDrawIcons(false);
-            lineDataSet3.enableDashedLine(10f, 5f, 0f);
-            lineDataSet3.enableDashedHighlightLine(10f, 5f, 0f);
-            lineDataSet3.setColor(Color.DKGRAY);
-            lineDataSet3.setCircleColor(Color.DKGRAY);
-            lineDataSet3.setLineWidth(1f);
-            lineDataSet3.setCircleRadius(3f);
-            lineDataSet3.setDrawCircleHole(false);
-            lineDataSet3.setValueTextSize(9f);
-            lineDataSet3.setDrawFilled(true);
-            lineDataSet3.setFormLineWidth(1f);
-            lineDataSet3.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
-            lineDataSet3.setFormSize(15.f);
-            if (Utils.getSDKInt() >= 18) {
-                Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_red);
-                lineDataSet3.setFillDrawable(drawable);
-            } else {
-                lineDataSet3.setFillColor(Color.DKGRAY);
-            }
-            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-            dataSets.add(lineDataSet3);
-            LineData data = new LineData(dataSets);
-            lineChart.setData(data);
-        }
+//        if (lineChart.getData() != null &&
+//                lineChart.getData().getDataSetCount() > 0) {
+//            lineDataSet3 = (LineDataSet) lineChart.getData().getDataSetByIndex(0);
+//            lineDataSet3.setValues(yAxesEx);
+//            lineChart.getData().notifyDataChanged();
+//            lineChart.notifyDataSetChanged();
+//        } else {
+//            lineDataSet3 = new LineDataSet(yAxesEx, "Incomes");
+//            lineDataSet3.setDrawIcons(false);
+//            lineDataSet3.enableDashedLine(10f, 5f, 0f);
+//            lineDataSet3.enableDashedHighlightLine(10f, 5f, 0f);
+//            lineDataSet3.setColor(Color.DKGRAY);
+//            lineDataSet3.setCircleColor(Color.DKGRAY);
+//            lineDataSet3.setLineWidth(1f);
+//            lineDataSet3.setCircleRadius(3f);
+//            lineDataSet3.setDrawCircleHole(false);
+//            lineDataSet3.setValueTextSize(9f);
+//            lineDataSet3.setDrawFilled(true);
+//            lineDataSet3.setFormLineWidth(1f);
+//            lineDataSet3.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
+//            lineDataSet3.setFormSize(15.f);
+//            if (Utils.getSDKInt() >= 18) {
+//                Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_red);
+//                lineDataSet3.setFillDrawable(drawable);
+//            } else {
+//                lineDataSet3.setFillColor(Color.DKGRAY);
+//            }
+//            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+//            dataSets.add(lineDataSet3);
+//            LineData data = new LineData(dataSets);
+//            lineChart.setData(data);
+//        }
 
 
         /*ArrayList<ILineDataSet> lineDataSets = new ArrayList<>();
@@ -276,8 +324,8 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
                 startActivity(intent);
                 /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new SummaryFragment()).commit();*/
-//                right drawer
                 break;
+                //                right drawer
             case R.id.nav_currency:
                 Toast.makeText(this, "Currency", Toast.LENGTH_LONG).show();
                 break;
