@@ -11,12 +11,16 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-public class MainActivityTest {
+public class MainActivityTest extends ActivityTestRule<MainActivity> {
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
     private MainActivity mActivity = null;
+
+    public MainActivityTest(Class<MainActivity> activityClass) {
+        super(activityClass);
+    }
 
     @Before
     public void setUp() throws Exception {
@@ -27,6 +31,7 @@ public class MainActivityTest {
     public void testLaunch() {
         View view = mActivity.findViewById(R.id.drawer_layout);
         assertNotNull(view);
+
     }
 
     @After
