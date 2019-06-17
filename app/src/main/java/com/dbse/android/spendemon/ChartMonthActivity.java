@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -150,6 +151,8 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
                 break;
             case R.id.nav_aboutUs:
                 Toast.makeText(this, "About Us", Toast.LENGTH_LONG).show();
+                Intent intent_aboutUs = new Intent(Intent.ACTION_VIEW, Uri.parse("https://dbse-teaching.github.io/isee2019-SPENDEMON"));
+                startActivity(intent_aboutUs);
                 break;
         }
 
