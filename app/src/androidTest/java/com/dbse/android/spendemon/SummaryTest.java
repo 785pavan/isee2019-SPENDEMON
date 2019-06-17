@@ -2,6 +2,10 @@ package com.dbse.android.spendemon;
 
 import android.view.View;
 
+import androidx.test.espresso.Espresso;
+import androidx.test.espresso.action.ViewActions;
+import androidx.test.espresso.intent.Intents;
+import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.rule.ActivityTestRule;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -11,14 +15,21 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static androidx.test.espresso.intent.Intents.intended;
+import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.junit.Assert.assertNotNull;
 
-public class SummaryTest {
+public class SummaryTest extends IntentsTestRule {
 
     @Rule
     public ActivityTestRule<Summary> mActivityTestRule = new ActivityTestRule<>(Summary.class);
 
     private Summary mSummary = null;
+
+    public SummaryTest() {
+        super(Summary.class);
+    }
 
     @Before
     public void setUp() throws Exception {
@@ -41,6 +52,31 @@ public class SummaryTest {
         assertNotNull(drawerView);
         assertNotNull(recyclerView);
     }
+
+    @Test
+    public void minusClickTest() {
+        Intents.init();
+        Espresso.onView(withId(R.id.fabMinus)).perform(ViewActions.click());
+        intended(hasComponent(EditData.class.getName()));
+        Intents.release();
+    }
+
+    @Test
+    public void plusClickTest() {
+        Intents.init();
+        Espresso.onView(withId(R.id.fabPlus)).perform(ViewActions.click());
+        intended(hasComponent(EditData.class.getName()));
+        Intents.release();
+    }
+
+    @Test
+    public void detailsClickTest() {
+        Intents.init();
+        Espresso.onView(withId(R.id.rvEntries)).perform(ViewActions.click());
+        intended(hasComponent(DetailsActivity.class.getName()));
+        Intents.release();
+    }
+
 
     @After
     public void tearDown() throws Exception {
