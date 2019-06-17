@@ -138,8 +138,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Share", Toast.LENGTH_LONG).show();
                 Intent intent_share = new Intent(Intent.ACTION_SEND);
                 intent_share.setType("application/vnd.android.package-archive");
-                String shareBody = "https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.02/Spendemon.apk";
-                String shareSubject = "The link to our App";
+                String shareBody = "We are team SPENDEMON. " +
+                        "\n Please check out our App at:" +
+                        "\n https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.02/Spendemon.apk";
+                String shareSubject = "The Link to SPENDEMON App:";
                 intent_share.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
                 intent_share.putExtra(Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(intent_share, "Share this by"));
