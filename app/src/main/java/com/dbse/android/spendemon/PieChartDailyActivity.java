@@ -2,6 +2,7 @@ package com.dbse.android.spendemon;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -201,6 +202,8 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
                 break;
             case R.id.nav_aboutUs:
                 Toast.makeText(this, "About Us", Toast.LENGTH_LONG).show();
+                Intent intent_aboutUs = new Intent(Intent.ACTION_VIEW, Uri.parse("https://dbse-teaching.github.io/isee2019-SPENDEMON"));
+                startActivity(intent_aboutUs);
                 break;
         }
 
