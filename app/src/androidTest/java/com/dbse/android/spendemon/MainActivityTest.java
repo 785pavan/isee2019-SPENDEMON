@@ -11,16 +11,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-public class MainActivityTest extends ActivityTestRule<MainActivity> {
+public class MainActivityTest {
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
     private MainActivity mActivity = null;
 
-    public MainActivityTest(Class<MainActivity> activityClass) {
-        super(activityClass);
-    }
 
     @Before
     public void setUp() throws Exception {

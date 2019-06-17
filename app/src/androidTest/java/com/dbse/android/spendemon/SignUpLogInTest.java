@@ -32,7 +32,6 @@ public class SignUpLogInTest extends IntentsTestRule {
     private String username = "admin";
     private int password = 12345;
     private SignUpLogIn mActivity = null;
-    //private Summary mSummary = new Summary();
     private SharedPreferences sharedPreferences;
     private Instrumentation instrumentation;
 
@@ -58,7 +57,6 @@ public class SignUpLogInTest extends IntentsTestRule {
         assertNotNull(editText);
         View button = mActivity.findViewById(R.id.buttonSignUp);
         assertNotNull(button);
-        //View summaryActivity = mSummary.findViewById(R.id.drawer_layout_sum);
 
         mActivityTestRule.launchActivity(new Intent());
         if (mActivity.signUpModeActive) {
@@ -84,7 +82,6 @@ public class SignUpLogInTest extends IntentsTestRule {
                 .perform(ViewActions.click());
         assertEquals(sharedPreferences.getString("UserName", null), username);
         assertEquals(sharedPreferences.getInt("Password", 0), password);
-        //assertNotNull(summaryActivity);
         intended(hasComponent(Summary.class.getName()));
         Intents.release();
 
