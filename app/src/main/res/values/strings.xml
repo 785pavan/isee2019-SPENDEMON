@@ -38,6 +38,19 @@
         <item>Bonus</item>
         <item>Gift</item>
     </string-array>
+    <string-array name="AllCategories">
+        <item>---</item>
+        <item>Allowance</item>
+        <item>Salary</item>
+        <item>Bonds</item>
+        <item>Bonus</item>
+        <item>Gift</item>
+        <item>Rent</item>
+        <item>Insurance</item>
+        <item>Groceries</item>
+        <item>Travel</item>
+        <item>Restaurant</item>
+    </string-array>
     <string-array name="PaymentMethods">
         <item>---</item>
         <item>Cash</item>
