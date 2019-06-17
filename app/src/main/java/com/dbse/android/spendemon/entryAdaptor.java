@@ -171,6 +171,12 @@ public class entryAdaptor extends
         return entries.size();
     }
 
+    public Table getTableAt(int position){
+        return new Table(entries.get(position).getType(),entries.get(position).getCategory()
+                ,entries.get(position).getAmount(),entries.get(position).getDate()
+                ,entries.get(position).getPayMethod(),entries.get(position).getNote());
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView tvCategoryItem;

@@ -17,6 +17,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,6 +40,8 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
     private DrawerLayout drawer1;
     private int backKey = 0;
     private Intent intent;
+    private entryAdaptor entryAdaptor = new entryAdaptor(entries);
+    RecyclerView rvEntries;
 
 
     //    ArrayList<Float> iData = new ArrayList<>();
@@ -65,6 +68,7 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
 
         summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class); //reference to current
         intent = getIntent();
@@ -133,13 +137,16 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                         filtered.clear();
                     }
                 }
-                RecyclerView rvEntries = findViewById(R.id.rvEntries);
+
+                rvEntries = findViewById(R.id.rvEntries);
                 entryAdaptor adaptor = new entryAdaptor(entries);
                 rvEntries.setAdapter(adaptor);
                 rvEntries.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
             }
         });
+
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
@@ -195,6 +202,19 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
 
             }
         });
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                summaryViewModel.delete(entryAdaptor.getTableAt(viewHolder.getAdapterPosition()));
+                Toast.makeText(getApplicationContext(),"Entry Deleted", Toast.LENGTH_LONG).show();
+            }
+        }).attachToRecyclerView(rvEntries);
 
 //        code for calculating the balance:
 
@@ -205,7 +225,6 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
 //                eData.add((float)entry.getAmount());
 //            }
 //        }
-
 
     }
 
