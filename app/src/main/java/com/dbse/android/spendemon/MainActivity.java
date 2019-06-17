@@ -111,9 +111,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                startActivity(intent_month);
                 Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);
                 startActivity(intent_balance);
-
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new WeeklyFragment()).commit();*/
+                
                 break;
             case R.id.nav_monthly:
                 Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
