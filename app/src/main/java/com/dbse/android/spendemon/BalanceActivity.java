@@ -207,7 +207,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         } else {
             backKey++;
             if (backKey == 1) {
-                Toast.makeText(BalanceActivity.this, "Click one more time to exist app", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BalanceActivity.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
             } else {
                 //exit app to home screen
                 Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);

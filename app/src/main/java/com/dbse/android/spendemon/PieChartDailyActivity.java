@@ -224,7 +224,7 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
         } else {
             backKey++;
             if (backKey == 1) {
-                Toast.makeText(PieChartDailyActivity.this, "Click one more time to exist app", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PieChartDailyActivity.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
             } else {
                 //exit app to home screen
                 Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);
