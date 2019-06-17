@@ -3,9 +3,8 @@ package com.dbse.android.spendemon;
 import android.view.View;
 
 import androidx.test.espresso.Espresso;
-import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.action.ViewActions;
-import androidx.test.espresso.contrib.PickerActions;
+import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.After;
@@ -13,7 +12,11 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.util.Calendar;
+
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.intent.Intents.intended;
+import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withSpinnerText;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -56,22 +59,43 @@ public class EditDataTest {
         String type = "Incomes";
         String paymentMethod = "GooglePay";
         String category = "Salary";
+        String amount = "750";
+        String notes = "This is a test addition";
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        String date = "" + day + "/" + (month + 1) + "/" + year;
+
+        Intents.init();
         Espresso.onView(withId(R.id.sType)).perform(ViewActions.click());
         Espresso.onData(allOf(is(instanceOf(String.class)), is(type)))
                 .perform(ViewActions.click());
         Espresso.onView(withId(R.id.sType)).check(matches(withSpinnerText(containsString(type))));
+        Espresso.onView(withId(R.id.sCategory)).perform(ViewActions.click());
+        Espresso.onData(allOf(is(instanceOf(String.class)), is(category)))
+                .perform(ViewActions.click());
         Espresso.onView(withId(R.id.sPaymentMethod)).perform(ViewActions.click());
-        Espresso.onData(allOf(is(instanceOf(String.class)),is(paymentMethod)))
+        Espresso.onData(allOf(is(instanceOf(String.class)), is(paymentMethod)))
                 .perform(ViewActions.click());
         Espresso.onView(withId(R.id.sPaymentMethod)).check(matches(withSpinnerText(paymentMethod)));
-        Espresso.onView(withId(R.id.sCategory)).perform(ViewActions.click());
-        Espresso.onData(allOf(is(instanceOf(String.class)),is(category)))
-                .perform(ViewActions.click());
-        Espresso.onView(withId(R.id.sCategory)).check(matches(withSpinnerText(category)));
-        //Espresso.onView(withId(R.id.etDate)).perform(ViewActions.click());
-        //Espresso.onView(withId(R.id.etDate)).perform(PickerActions.setDate(2017,6,17));
-        Espresso.onView(withId(R.id.etAmount)).perform(ViewActions.typeText("750"));
 
+        Espresso.onView(withId(R.id.sCategory)).check(matches(withSpinnerText(category)));
+        Espresso.onView(withId(R.id.etAmount)).perform(ViewActions.typeText(amount));
+        Espresso.onView(withId(R.id.etDescription)).perform(ViewActions.typeText(notes));
+        Espresso.closeSoftKeyboard();
+        Espresso.onView(withId(R.id.save_table)).perform(ViewActions.click());
+        intended(hasComponent(Summary.class.getName()));
+        Espresso.onView(withId(R.id.rvEntries)).perform(ViewActions.click());
+        intended(hasComponent(DetailsActivity.class.getName()));
+        Espresso.onView(withId(R.id.tvAmountDetails))
+                .check(matches(withText(containsString(amount))));
+        Espresso.onView(withId(R.id.tvNotesDetails))
+                .check(matches(withText(containsString(notes))));
+        Espresso.onView(withId(R.id.tvDateDetails))
+                .check(matches(withText(containsString(date))));
+
+        Intents.release();
 
 
     }
