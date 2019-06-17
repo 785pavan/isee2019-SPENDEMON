@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -288,6 +289,8 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
                 break;
             case R.id.nav_aboutUs:
                 Toast.makeText(this, "About Us", Toast.LENGTH_LONG).show();
+                Intent intent_aboutUs = new Intent(Intent.ACTION_VIEW, Uri.parse("https://dbse-teaching.github.io/isee2019-SPENDEMON"));
+                startActivity(intent_aboutUs);
                 break;
         }
 

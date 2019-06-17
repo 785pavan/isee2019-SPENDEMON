@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -186,6 +187,8 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                 break;
             case R.id.nav_aboutUs:
                 Toast.makeText(this, "About Us", Toast.LENGTH_LONG).show();
+                Intent intent_aboutUs = new Intent(Intent.ACTION_VIEW, Uri.parse("https://dbse-teaching.github.io/isee2019-SPENDEMON"));
+                startActivity(intent_aboutUs);
                 break;
         }
 
