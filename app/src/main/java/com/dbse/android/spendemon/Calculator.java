@@ -1,15 +1,15 @@
 package com.dbse.android.spendemon;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DecimalFormat;
 
 public class Calculator extends AppCompatActivity {
 
 
-    private char CURRENT_ACTION;
+    /*private char CURRENT_ACTION;
 
     private double valueOne = Double.NaN;
     private double valueTwo;
@@ -18,7 +18,7 @@ public class Calculator extends AppCompatActivity {
     private static final char ADDITION = '+';
     private static final char SUBTRACTION = '-';
     private static final char MULTIPLICATION = '*';
-    private static final char DIVISION = '/';
+    private static final char DIVISION = '/';*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

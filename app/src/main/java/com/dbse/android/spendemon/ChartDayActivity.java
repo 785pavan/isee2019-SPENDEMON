@@ -1,12 +1,9 @@
 package com.dbse.android.spendemon;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,11 +30,9 @@ public class ChartDayActivity extends AppCompatActivity {
     ArrayList<String> Categories = new ArrayList<>();
     ArrayList<Float> yData = new ArrayList<>();
     ArrayList<String> xData = new ArrayList<>();
-    TextView tvDateDaily;
     PieChart pieChart;
-    ImageView ivDone;
     String date;
-    private DatePickerDialog.OnDateSetListener onDateSetListener;
+    //private DatePickerDialog.OnDateSetListener onDateSetListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,14 +89,10 @@ public class ChartDayActivity extends AppCompatActivity {
 
         Log.d(TAG, "addDataSet called");
         ArrayList<PieEntry> yEntries = new ArrayList<>();
-        ArrayList<String> xEntries = new ArrayList<>();
 
         int i = 0;
         for (float data : yData) {
             yEntries.add(new PieEntry(data, i++));
-        }
-        for (String name : xData) {
-            xEntries.add(name);
         }
 
         PieDataSet pieDataSet = new PieDataSet(yEntries, "Cost");
@@ -137,11 +128,11 @@ public class ChartDayActivity extends AppCompatActivity {
         yData.clear();
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
             //if (entry.getDate().equals(date)) {
-                AmountValues.add((float) entry.getAmount());
-                Categories.add(entry.getCategory());
+            AmountValues.add((float) entry.getAmount());
+            Categories.add(entry.getCategory());
             //}
         }
-        float data = 0;
+        float data ;
         boolean save_data;
         for (int i = 0; i < Categories.size(); i++) {
             data = 0;
@@ -152,8 +143,8 @@ public class ChartDayActivity extends AppCompatActivity {
             }
 //            add data modification code:
             save_data = true;
-            for (int k = 0; k < i; k++){
-                if (Categories.get(k).equals(Categories.get(i))){
+            for (int k = 0; k < i; k++) {
+                if (Categories.get(k).equals(Categories.get(i))) {
                     save_data = false;
                 }
                 Log.i("k value:", String.valueOf(k));

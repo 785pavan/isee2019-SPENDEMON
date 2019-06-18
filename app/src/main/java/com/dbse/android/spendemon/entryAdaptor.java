@@ -23,7 +23,7 @@ public class entryAdaptor extends
     private List<Entry> entries;
 
 
-    public entryAdaptor(List<Entry> entries) {
+    entryAdaptor(List<Entry> entries) {
         this.entries = entries;
     }
 
@@ -40,7 +40,7 @@ public class entryAdaptor extends
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewholder, int position) {
-        final Entry entry = (Entry) entries.get(position);
+        final Entry entry = entries.get(position);
 
 
         ImageView ivCat = viewholder.ivCat;
@@ -56,7 +56,6 @@ public class entryAdaptor extends
                 break;
             case "Travel":
                 ivCat.setImageResource(R.drawable.travel);
-                ;
                 break;
             case "Restaurant":
                 ivCat.setImageResource(R.drawable.restaurant);
@@ -78,7 +77,6 @@ public class entryAdaptor extends
                 break;
             default:
                 ivCat.setImageResource(R.drawable.defaultcat);
-                ;
         }
 
         ivCat.setOnClickListener(new View.OnClickListener() {
@@ -139,13 +137,13 @@ public class entryAdaptor extends
             }
         });
         //ivType.setImageDrawable(Drawable.createFromPath(typeImages[entry.getTypeResource()]));
-        TextView tvCategoryItem = viewholder.tvCategoryItem;
+        //TextView tvCategoryItem = viewholder.tvCategoryItem;
         //tvCategoryItem.setText(entry.getCategory());
         TextView tvAmountItem = viewholder.tvAmountItem;
         tvAmountItem.setText(String.valueOf(entry.getAmount()));
         TextView tvDateItem = viewholder.tvDateItem;
         tvDateItem.setText(entry.getDate());
-        TextView tvPayment = viewholder.tvPaymentMethodItem;
+        //TextView tvPayment = viewholder.tvPaymentMethodItem;
         TextView tvNotes = viewholder.tvNotes;
         tvNotes.setText(entry.getNote());
         //tvPayment.setText(entry.getPayMethod());
@@ -171,26 +169,26 @@ public class entryAdaptor extends
         return entries.size();
     }
 
-    public Table getTableAt(int position){
+    Table getTableAt(int position){
         return new Table(entries.get(position).getType(),entries.get(position).getCategory()
                 ,entries.get(position).getAmount(),entries.get(position).getDate()
                 ,entries.get(position).getPayMethod(),entries.get(position).getNote());
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView tvCategoryItem;
-        public TextView tvAmountItem;
-        public TextView tvDateItem;
-        public TextView tvPaymentMethodItem;
-        public TextView tvNotes;
-        public ImageView ivCat;
-        public ImageView ivPayment;
-        public ImageView ivType;
-        public RelativeLayout rvItem;
+        //public TextView tvCategoryItem;
+        TextView tvAmountItem;
+        TextView tvDateItem;
+        //public TextView tvPaymentMethodItem;
+        TextView tvNotes;
+        ImageView ivCat;
+        ImageView ivPayment;
+        ImageView ivType;
+        RelativeLayout rvItem;
 
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             // tvCategoryItem = itemView.findViewById(R.id.tvCategoryItem);
             ivCat = itemView.findViewById(R.id.categoryImage);

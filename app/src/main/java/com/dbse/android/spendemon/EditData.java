@@ -19,8 +19,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.dbse.android.spendemon.model.Entry;
-
 import java.util.Arrays;
 import java.util.Calendar;
 
@@ -31,12 +29,10 @@ public class EditData extends AppCompatActivity
 
 
     private static final String TAG = "editData";
-    private static final String FILE_NAME = "NewFile";
     Intent intent;
     ArrayAdapter arrayAdapter;
     String cat = "";
     String pay = "";
-    private Entry entry;
     private Spinner sCategory;
     private Spinner sPaymentMethod;
     private Spinner sType;
@@ -125,14 +121,14 @@ public class EditData extends AppCompatActivity
         Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
         String[] paymentMethodsArray = getApplicationContext().getResources()
                 .getStringArray(R.array.PaymentMethods);
-        ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, paymentMethodsArray);
         sPaymentMethod.setAdapter(dataAdapter3);
         if (sp1.contentEquals("Incomes")) {
             String[] incomes = getApplicationContext().getResources()
                     .getStringArray(R.array.Incomes);
             Log.d(TAG, "onCreate: " + Arrays.toString(incomes));
-            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+            ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
                     android.R.layout.simple_spinner_dropdown_item, incomes);
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             dataAdapter.notifyDataSetChanged();
@@ -148,7 +144,7 @@ public class EditData extends AppCompatActivity
                     .getStringArray(R.array.Expenses);
             Log.d(TAG, "onCreate: " + Arrays.toString(expenses));
 
-            ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this,
+            ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<>(this,
                     android.R.layout.simple_spinner_item, expenses);
             dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             dataAdapter2.notifyDataSetChanged();
@@ -203,14 +199,11 @@ public class EditData extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.save_table:
-                saveTable();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-
+        if (item.getItemId() == R.id.save_table) {
+            saveTable();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
 
     }
 

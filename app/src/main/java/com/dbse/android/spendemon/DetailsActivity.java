@@ -19,7 +19,6 @@ public class DetailsActivity extends AppCompatActivity {
 
     ImageView ivCat;
     ImageView ivPay;
-    ImageView ivType;
     TextView tvAmount;
     TextView tvDate;
     TextView tvNotes;
@@ -56,7 +55,6 @@ public class DetailsActivity extends AppCompatActivity {
                 break;
             case "Travel":
                 ivCat.setImageResource(R.drawable.travel);
-                ;
                 break;
             case "Restaurant":
                 ivCat.setImageResource(R.drawable.restaurant);
@@ -78,7 +76,6 @@ public class DetailsActivity extends AppCompatActivity {
                 break;
             default:
                 ivCat.setImageResource(R.drawable.defaultcat);
-                ;
         }
         ivCat.setOnClickListener(new View.OnClickListener() {
             @Override

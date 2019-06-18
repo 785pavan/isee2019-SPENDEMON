@@ -1,12 +1,5 @@
 package com.dbse.android.spendemon;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -15,9 +8,14 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.navigation.NavigationView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
-import org.w3c.dom.Text;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
@@ -65,44 +63,43 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         TextView textViewEx = findViewById(R.id.textViewExpenseValue);
 
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
-            if(entry.getType().equals("Incomes")){
-                iData.add((float)entry.getAmount());
-            }else if (entry.getType().equals("Expenses")){
-                eData.add((float)entry.getAmount());
+            if (entry.getType().equals("Incomes")) {
+                iData.add((float) entry.getAmount());
+            } else if (entry.getType().equals("Expenses")) {
+                eData.add((float) entry.getAmount());
             }
         }
         balance = 0;
         incomeSum = 0;
         expenseSum = 0;
-        for(float index : iData){
+        for (float index : iData) {
             balance += index;
             incomeSum += index;
         }
-        for(float index : eData){
+        for (float index : eData) {
             balance -= index;
             expenseSum += index;
         }
 //        string should only have two numbers after the float
-        String string = String.valueOf((float) ((int) ( balance * 100)) / 100);
+        String string = String.valueOf((float) ((int) (balance * 100)) / 100);
 
-        if (balance > 0){
+        if (balance > 0) {
             string = "+  " + string;
             textView.setTextColor(Color.parseColor("green"));
-        }else if (balance < 0){
+        } else if (balance < 0) {
             string = "-  " + string.substring(1);
             textView.setTextColor(Color.parseColor("red"));
-        }else{
+        } else {
             textView.setTextColor(Color.parseColor("black"));
         }
         textView.setText(string);
 
-        String stringIncomeSum = String.valueOf((float) ((int) ( incomeSum * 100)) / 100);
+        String stringIncomeSum = String.valueOf((float) ((int) (incomeSum * 100)) / 100);
         stringIncomeSum = "+ " + stringIncomeSum;
         textViewIn.setText(stringIncomeSum);
-        String stringExpenseSum = String.valueOf((float) ((int) ( expenseSum * 100)) / 100);
+        String stringExpenseSum = String.valueOf((float) ((int) (expenseSum * 100)) / 100);
         stringExpenseSum = "- " + stringExpenseSum;
         textViewEx.setText(stringExpenseSum);
-
 
 
     }
