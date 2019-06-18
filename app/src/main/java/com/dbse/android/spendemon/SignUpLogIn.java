@@ -171,9 +171,11 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
             sharedPreferences.edit().putBoolean("SignUpMode", signUpModeActive).apply();
             Log.i("AppInfo", "Change the mode");
         } else if (v.getId() == R.id.teamLogo || v.getId() == R.id.relativeLayout1) {
-            InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(Objects.requireNonNull(getCurrentFocus()).getWindowToken(),
-                    0);
+            if (!String.valueOf(passwordField.getText()).equals("")) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(Objects.requireNonNull(getCurrentFocus()).getWindowToken(),
+                        0);
+            }
             Log.i("AppInfo", "Clicked on");
         }
 
