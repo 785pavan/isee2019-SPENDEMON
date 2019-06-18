@@ -331,6 +331,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
 
 
+
+
     private void getDataIncome() {
         AmountValues.clear();
         Categories.clear();
