@@ -29,6 +29,8 @@
     * Categorical thresholds.
     * Adding Legends for Pie charts.
     * Swipe delete options bug to be fixed.
+    * In case of testing, partial class testing, with different data input.
+    * PDF download option for report.
     * Enable/Disable password in Settings.
 
 * #### **Section 4:**
