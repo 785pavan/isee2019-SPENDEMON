@@ -92,7 +92,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
             }
         } else {
 
-            if (String.valueOf(usernameField.getText()).equals(usernameA1)) {
+            if (String.valueOf(usernameField.getText()).equals(usernameA1) && !String.valueOf(passwordField.getText()).equals("")) {
                 if (Integer.valueOf(String.valueOf(passwordField.getText())).equals(passwordA1)) {
                     Toast.makeText(getApplicationContext(), "You are Logged in as: "
                             .concat(usernameA1), Toast.LENGTH_LONG).show();
