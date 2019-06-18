@@ -225,6 +225,7 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
             backKey++;
             if (backKey == 1) {
                 Toast.makeText(PieChartDailyActivity.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
+                super.onBackPressed();
             } else {
                 //exit app to home screen
                 Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);

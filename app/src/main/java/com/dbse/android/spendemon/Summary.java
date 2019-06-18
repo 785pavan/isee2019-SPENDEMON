@@ -265,6 +265,7 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
             backKey++;
             if (backKey == 1) {
                 Toast.makeText(Summary.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
+                super.onBackPressed();
             } else {
                 //exit app to home screen
                 Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);

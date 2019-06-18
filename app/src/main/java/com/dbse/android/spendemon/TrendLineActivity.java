@@ -358,6 +358,7 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
             backKey++;
             if (backKey == 1) {
                 Toast.makeText(TrendLineActivity.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
+                super.onBackPressed();
             } else {
                 //exit app to home screen
                 Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);
