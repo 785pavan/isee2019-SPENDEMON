@@ -2,4 +2,4 @@ name: ISEE 2019 -- Template
 markdown: kramdown
 baseurl: /isee2019-SPENDEMON
 permalink: /blog/:year/:month/:day/:title/
-remote_theme: benbalter/retlab
+theme: minima
