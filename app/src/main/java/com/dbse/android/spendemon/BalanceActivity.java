@@ -158,6 +158,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 startActivity(intent);
                 break;
+            //                right drawer
             case R.id.nav_currency:
                 Toast.makeText(this, "Currency", Toast.LENGTH_LONG).show();
                 break;

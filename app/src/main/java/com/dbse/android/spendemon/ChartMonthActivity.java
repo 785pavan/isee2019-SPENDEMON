@@ -135,12 +135,9 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
                         "atrayee.neog@st.ovgu.de", "seyedbehnam.beladi@st.ovgu.de"});
                 startActivity(Intent.createChooser(intent_contactUs, "Share this by"));
                 break;
-//                pavan.kandapagari@st.ovgu.de,atrayee.neog@st.ovgu.de,seyedbehnam.beladi@st.ovgu.de
             case R.id.nav_summary:
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 startActivity(intent);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SummaryFragment()).commit();*/
 //                right drawer
             case R.id.nav_currency:
                 Toast.makeText(this, "Currency", Toast.LENGTH_LONG).show();
