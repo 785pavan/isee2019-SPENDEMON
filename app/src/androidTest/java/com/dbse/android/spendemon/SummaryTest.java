@@ -15,10 +15,13 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withSpinnerText;
 import static org.junit.Assert.assertNotNull;
+
 
 public class SummaryTest extends IntentsTestRule {
 
@@ -58,6 +61,7 @@ public class SummaryTest extends IntentsTestRule {
         Intents.init();
         Espresso.onView(withId(R.id.fabMinus)).perform(ViewActions.click());
         intended(hasComponent(EditData.class.getName()));
+        Espresso.onView(withId(R.id.sType)).check(matches(withSpinnerText("Expenses")));
         Intents.release();
     }
 
@@ -66,6 +70,7 @@ public class SummaryTest extends IntentsTestRule {
         Intents.init();
         Espresso.onView(withId(R.id.fabPlus)).perform(ViewActions.click());
         intended(hasComponent(EditData.class.getName()));
+        Espresso.onView(withId(R.id.sType)).check(matches(withSpinnerText("Incomes")));
         Intents.release();
     }
 
