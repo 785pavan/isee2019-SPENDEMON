@@ -313,15 +313,6 @@ public class SettingsActivity extends AppCompatActivity {
             }
 
 
-//            for (int i=1;i<5;i++){
-//                table.addCell(String.valueOf(i));
-//                table.addCell("Date:"+i);
-//                table.addCell("Amount:"+i);
-//                table.addCell("Type:"+i);
-//                table.addCell("Category:"+i);
-//                table.addCell("Payment Method:"+i);
-//            }
-
             Log.i("exit:", "entries");
             mDoc.add(table);
             mDoc.close();
@@ -333,12 +324,5 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
 
-//        Document document = new Document();
-//
-//        PdfWriter.getInstance(document, new FileOutputStream("sample1.pdf"));
-//        document.open();
-//        document.add(new Paragraph("Sample 1: Hello, this is SPENDEMON"));
-//        document.close();
-//        Log.i("clicked","Done");
     }
 }
