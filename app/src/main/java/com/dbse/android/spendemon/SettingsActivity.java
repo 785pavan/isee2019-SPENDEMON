@@ -29,9 +29,13 @@ import java.util.Locale;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
+import static com.dbse.android.spendemon.Summary.entries;
 
 
 public class SettingsActivity extends AppCompatActivity {
@@ -190,10 +194,39 @@ public class SettingsActivity extends AppCompatActivity {
         try {
             PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
             mDoc.open();
-
-            String mText = "testing";
-            mDoc.addAuthor("Behnam");
+            String mText = "Summary Report:";
             mDoc.add(new Paragraph(mText));
+            int iteration = 0;
+            for (com.dbse.android.spendemon.model.Entry entry : entries) {
+                iteration ++;
+                mText = "T_" + iteration + "   " + entry.getDate() + "   " + entry.getAmount() + " "
+                + entry.getType() + " " + entry.getCategory() + " " + entry.getPayMethod();
+                mDoc.add(new Paragraph(mText));
+
+            }
+            PdfPTable table = new PdfPTable(6);
+
+//            mDoc.addAuthor("Behnam");
+            table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell("#");
+            table.addCell("Date");
+            table.addCell("Amount");
+            table.addCell("Type");
+            table.addCell("Category");
+            table.addCell("Payment Method");
+
+            table.setHeaderRows(1);
+            PdfPCell[] cells = table.getRow(0).getCells();
+
+            for (int i=1;i<5;i++){
+                table.addCell(String.valueOf(i));
+                table.addCell("Date:"+i);
+                table.addCell("Amount:"+i);
+                table.addCell("Type:"+i);
+                table.addCell("Category:"+i);
+                table.addCell("Payment Method:"+i);
+            }
+            mDoc.add(table);
             mDoc.close();
             Log.i("path:", mFilePath);
             Toast.makeText(this,"try initiated", Toast.LENGTH_SHORT).show();
