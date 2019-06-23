@@ -6,7 +6,7 @@ date: 2019-04-16
 
 > *"Money, like emotions, is something you must control to keep your life on the right track"  - Natasha Munson*
 
-## **<span style="color:#C2185B ">Project Motivation:</span>**
+## **<span style="color:#008183 ">Project Motivation:</span>**
 
 During the initial months of us coming to a foreign land for studies, we realized only too late that money can seep through your hands like sand through a closed fist if you do not keep a track on it. Being Android users ourselves, through this project we shall try our level best to tailor make an app according to the customer demand, which is easy to use and would require just one look to keep a track and plan a budget according to the needs and expenses of an individual and something we can use ourselves.
 
@@ -17,7 +17,7 @@ As, for our app name, we being 90's kids, this is a pun on our beloved anime *"P
 
 
 ***
-## **<span style="color:#C2185B ">Our Team:</span>**
+## **<span style="color:#008183 ">Our Team:</span>**
 <img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="250" align = "middle" />
 
 
@@ -26,15 +26,15 @@ As, for our app name, we being 90's kids, this is a pun on our beloved anime *"P
 
 Our team consists of a mix bag of an Electrical, Mechanical and an Electronics Engineer, who have now dived headfirst into the sea of Computer Science and are  really excited to develop an app and show it off to their friends and peers back home. Without further ado, here we introduce our team members:
 
-**<span style="color:#C2185B">1. Atrayee Neog :</span>** A struggling Electronic Engineer who found passion and comfort behind the programming logics and algorithms of Computer Science. My motivation behind doing this project is to testify my theoretical knowledge into an implementation in real life and to channelize my ideas into building something worthwhile.
+## **<span style="color:#008183">1. Atrayee Neog :</span>** A struggling Electronic Engineer who found passion and comfort behind the programming logics and algorithms of Computer Science. My motivation behind doing this project is to testify my theoretical knowledge into an implementation in real life and to channelize my ideas into building something worthwhile.
 
-**<span style="color:#C2185B">2.Seyed Behnam Beladi :</span>** In a world full of innovative ideas, app development is a wonderful tool to implement them. As person who always has new ideas, I believe learning how to make phone applications is a perfect way to developing them. It also opens up a door to new opportunities in my future career.
+## **<span style="color:#008183">2.Seyed Behnam Beladi :</span>** In a world full of innovative ideas, app development is a wonderful tool to implement them. As person who always has new ideas, I believe learning how to make phone applications is a perfect way to developing them. It also opens up a door to new opportunities in my future career.
 
-**<span style="color:#C2185B">3.Pavan Kumar Kandapagari :</span>** A guy with an insatiable thirst for knowledge and a soft spot for technology. My motivation behind this project is to produce an usable product along with testing the skills I have learnt in the previous semester.
+## **<span style="color:#008183">3.Pavan Kumar Kandapagari :</span>** A guy with an insatiable thirst for knowledge and a soft spot for technology. My motivation behind this project is to produce an usable product along with testing the skills I have learnt in the previous semester.
 
 
 ***
-## **<span style="color:#C2185B "> Project Breakdown and Roles:</span>**
+## **<span style="color:#008183 "> Project Breakdown and Roles:</span>**
 
 As of now each of the team members have been given a temporary role which is subjected to change with the course of the project as more responsibilities build up.
 
@@ -48,7 +48,7 @@ As of now each of the team members have been given a temporary role which is sub
  | Blog and Presentation | Atrayee     |
 
 
-## **<span style="color:#C2185B>Complimetary Skills:</span>**
+## **<span style="color:#008183>Complimetary Skills:</span>**
 
 Our team is, as mentioned earlier, an amalgamation of engineers from different cultures and backgrounds and as such, each of us possesses some specific set of soft and hard skills like which we intend on applying as we march forward in the project.
 
@@ -57,7 +57,7 @@ Our team is, as mentioned earlier, an amalgamation of engineers from different c
 **Behnam:** Android Knowledge from online courses, Java, Leadership, Assertiveness, Problem solving.
 
 **Pavan:** Java, Preliminary XML knowledge, Software Testing and Quality Control, Team Player, Critical Thinking and Work ethic.
-## **<span style= "color:#C2185B;font-family:Cursive">Communication Mediums:</span>**
+## **<span style= "color:#008183;font-family:Cursive">Communication Mediums:</span>**
 
 
 
