@@ -7,7 +7,7 @@ date: 2019-05-15
 Welcome to Blog#3 for team SPENDEMON. In this blog, we would like to delve deep into the actual implementation process for our App.
 In the previous blog we looked into the user aspects of the App with the User stories and the Use-Case Diagram. In this blog we will look more into the implementation level of the App with Activity diagram and Class diagrams. We try to explain each aspect of these diagrams in detail for better understanding of the user and you our readers! So, let us begin..
 
-**<span style="color:#008183 ">Activity Diagram:</span>**
+## **<span style="color:#008183 ">Activity Diagram:</span>**
 
 We present here two Activity Diagrams for our App, namely:
 
@@ -15,7 +15,7 @@ We present here two Activity Diagrams for our App, namely:
 
 * Add Entries Activity.
 
-**<span style="color:#008183 ">Login Activity:</span>**
+## **<span style="color:#008183 ">Login Activity:</span>**
 
 <img src="{{site.baseurl}}/images/LoginActivity.png" alt="Login Activity" width="800" align = "middle" />
 
@@ -28,7 +28,7 @@ This activity diagram, depicts the entry point of the user into the App. We shal
 
 <span style="color:#008183 ">*Summary:*</span> This page displays all the added expenses and incomes of the user sorted on the basis of the most recently added.   
 
-**<span style="color:#008183 ">Add Entries Activity:</span>**
+## **<span style="color:#008183 ">Add Entries Activity:</span>**
 
 <img src="{{site.baseurl}}/images/AddEntryActivity.png" alt="Add Entries Activity" width="800" align = "middle" />
 
@@ -48,7 +48,7 @@ The date for the specific Income and Expenditure is added here.
 
 <span style="color:#008183 ">*Save Button:*</span>
 
-**<span style="color:#008183 ">Class Diagram:</span>**
+## **<span style="color:#008183 ">Class Diagram:</span>**
 
 <img src="{{site.baseurl}}/images/UMLClassDiagram.png" alt="Class Diagram" width="800" align = "middle" />
 
@@ -132,7 +132,7 @@ This class is used for displaying a built-in calculator for quick calculations.
   * tax(): calculates taxes based on Incomes.
 
 
-**<span style="color:#008183 ">Final Thoughts:</span>**
+## **<span style="color:#008183 ">Final Thoughts:</span>**
 
 The usage of the Class Diagrams and Activity Diagrams were immensely helpful during the implementation process and eased our struggles with Android and Java. It gave us a template and  structure to follow, such that we could keep track on the progress of our development phase and would not deviate.
 
