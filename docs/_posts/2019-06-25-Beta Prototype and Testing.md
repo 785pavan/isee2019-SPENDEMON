@@ -19,7 +19,22 @@ The full workflow, as shown in the Figure, contains a series of nested, iterativ
 **Configuring the Test Environments:** We had two directories created for running the tests as recommended by the official Android site:
 
 * androidTest Directory: This has all the tests which run on the virtual environments like the integration tests, system tests etc. which cannot be implemented by the JVM alone.
-* test Directory: This contains all the tests that runs on the local machine and are limited to the Unit Tests. 
+* test Directory: This contains all the tests that runs on the local machine and are limited to the Unit Tests.
+
+
+**<span style="color:#C2185B; font-family:Cursive">Testing Pyramid:</span>** The testing pyramid as shown below was implemented by us in order to run three categories of Tests:
+
+* Small tests are unit tests that validate our app's behavior one class at a time and constituted 70% of all Tests.
+* Medium tests are integration tests that validate either interactions between levels of the stack within a module, or interactions between related modules and constituted 20% of the Tests.
+* Large tests are end-to-end tests that validate user journeys spanning multiple modules of our app and constitute the final 10% of the Tests.
+
+<img src="{{site.baseurl}}/images/Pyramid.png" alt="Pyramid" width="200" />
+
+
+
+
+
+
 
 
 
