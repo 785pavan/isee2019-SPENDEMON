@@ -5,7 +5,7 @@ date: 2019-06-25
 ---
 Welcome to Blog#5 for team SPENDEMON. In this particular Blog we shall talk about how we put our App to test in different circumstances and what was the outcome of the tests. In a real-world scenario, a user interacts with an App at various levels from pressing buttons to putting in data to changing something by mistake. As an App Developer, we need to predict every possible circumstance that might test our App in any condition and come up with solutions for each such case. This is where Software Testing plays an important role in developing a user friendly App iteratively. Even though Exhaustive Tests are not possible, we have tried our level best to make our App not only functional, but a well tested App.
 
-**<span style="color:#C2185B ">Methodology:</span>** As one of our team members had done a Software Testing course in the previous semester, we came in terms with the *CORRECT* approach towards implementing Tests from him. Here *CORRECT* stands for:
+**<span style="color:#008183 ">Methodology:</span>** As one of our team members had done a Software Testing course in the previous semester, we came in terms with the *CORRECT* approach towards implementing Tests from him. Here *CORRECT* stands for:
 
 
 ~~~
@@ -441,7 +441,7 @@ Now say you want to implement these tests in your own app these are the steps we
 
 
 
-**<span style="color:#C2185B ">Final Thoughts:</span>**
+**<span style="color:#008183 ">Final Thoughts:</span>**
 
 The understanding of the User Interface Implementation and Design Pattern, helped in better understanding of both our App and the customers expectations from the App. Doing research on the Design Architectures opened up new windows for us to implement in our App and we are glad we could implement some of it into the App. We hopefully, have been able to create an App that will be able to assist our customers and shall be easy on usage.
 

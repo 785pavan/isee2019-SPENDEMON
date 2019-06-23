@@ -6,7 +6,7 @@ date: 2019-05-15
 
 Welcome to the second stage of our development for the app SPENDEMON. In this particular blog, we intend to present the requirements which our customer wanted implemented in our app and how we analyzed the requirements into tangible formats so as to implement it in our App.
 
-**<span style="color:#C2185B ">Overview:</span>**
+**<span style="color:#008183 ">Overview:</span>**
 
 The main stages for the Requirement Analysis includes:
 
@@ -18,7 +18,7 @@ The main stages for the Requirement Analysis includes:
 
 -   Mapping the user stories into various diagrams.
 
-**<span style="color:#C2185B ">1. Drafting the initial Requirements questionnaire:</span>**
+**<span style="color:#008183 ">1. Drafting the initial Requirements questionnaire:</span>**
 We did a thorough research on the available apps in the market and brain stormed new ideas which were doable for us as well as which would give the App an X-factor. With this information we came up with the questionnaire below for our team meetings with the customer:
 
 -   Do you need the option for automated expenses and incomes/Salaries?
@@ -85,7 +85,7 @@ We did a thorough research on the available apps in the market and brain stormed
 
 -   Reminder for something that you don’t have time to put down right now/ Fast mode
 
-**<span style="color:#C2185B ">2. Gathering and Analysing the requirements from the customer.</span>**
+**<span style="color:#008183 ">2. Gathering and Analysing the requirements from the customer.</span>**
 The meeting for our requirement analysis took place on the 20/04/2019, where we decided on the questions and requirements that we want to suggest to the customer for the next meeting.
 Based on the meetings with our customer, we could now finalize on our User stories and decided to divide the requirements based on the stages of the App development as follows:
 
@@ -134,7 +134,7 @@ Based on the meetings with our customer, we could now finalize on our User stori
 
     -   Automate Expenses/Incomes.
 
-**<span style="color:#C2185B ">3. Creation of User stories:</span>**
+**<span style="color:#008183 ">3. Creation of User stories:</span>**
 
 Based on the requirement analysis we were able to design the following User-stories which we validated in the next team meeting with the customer:
 
@@ -162,13 +162,13 @@ Based on the requirement analysis we were able to design the following User-stor
 
 -   As a user, I need to keep all my financial transactions in one place with easy access
 
-**<span style="color:#C2185B ">4. Mapping the user stories into Use-Case diagrams:</span>**
+**<span style="color:#008183 ">4. Mapping the user stories into Use-Case diagrams:</span>**
 
 After validation of the User stories, we needed to map the requirements into the Use-Case Diagrams with the valid interactions and activities. A snapshot of our design is given below:
 
 <img src="{{site.baseurl}}/images/Use-Case-Diagram.png" alt="Use Case Diagram image" width="400" align = "middle" />
 
-**<span style="color:#C2185B ">Final Thoughts:</span>**
+**<span style="color:#008183 ">Final Thoughts:</span>**
 
 Going through this entire process of dealing with customer demands and mapping them to a Use-Case diagram was both testing and educational. Although we struggled initially with categorizing the requirements based on priorities, but once that was done, it gave us a clear idea about the direction which we need to take.
 
