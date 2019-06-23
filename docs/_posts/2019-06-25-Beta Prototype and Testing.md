@@ -138,6 +138,21 @@ Main Activity:
         assertNotNull(view);
     }
 ~~~
+~~~
+Balance Activity:
+@Test
+    public void testLaunch() {
+        View view = mActivity.findViewById(R.id.textView);
+        assertNotNull(view);
+        view = mActivity.findViewById(R.id.balanceTextView);
+        assertNotNull(view);
+        view = mActivity.findViewById(R.id.textViewIncomeValue);
+        assertNotNull(view);
+        view = mActivity.findViewById(R.id.textViewExpenseValue);
+        assertNotNull(view);
+    }
+~~~
+
 
 
 ii) End-to-end Tests: These are the kind of tests which start from one activity of the app and continue till the end of that particular series of operations is reached and testing in every step of the way. We have included a code snippet to help explain this concept. For the tests we have used Espresso library which is very good at emulating steps.
@@ -148,6 +163,7 @@ In Summary Activity, there are tests which check if pressing the "+" button take
 takes in input as Expenses or not.
 In Edit Data Activity, there are two Entry Tests which takes some default values assigned by
 us and creates an Expense and an Income Entry.
+In Balance Activity, we check whether the correct balance is being retrieved or not.  
 In the Main Activity, we have tested each fragment of the Navigation Drawer if it opens the
 activity when the respective fragment is clicked on.
 All these individual tests finally gives an overall test implementation, which logs in,
@@ -368,6 +384,44 @@ Edit Data Activity:
 
        Intents.release();
    }
+~~~
+~~~
+Balance Activity:
+@Test
+    public void balanceCheck() {
+        Intents.init();
+        onView(withId(R.id.drawer_layout_sum))
+                .check(matches(isClosed(Gravity.LEFT)))
+                .perform(DrawerActions.open());
+        onView(withId(R.id.navigation_view1))
+                .perform(NavigationViewActions.navigateTo(R.id.nav_balance));
+        intended(hasComponent(BalanceActivity.class.getName()));
+
+        ArrayList<Float> iData = new ArrayList<>();
+        ArrayList<Float> eData = new ArrayList<>();
+        float balance = 0;
+        float expenseSum = 0;
+        float incomeSum = 0;
+        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+            if (entry.getType().equals("Incomes")) {
+                iData.add((float) entry.getAmount());
+            } else if (entry.getType().equals("Expenses")) {
+                eData.add((float) entry.getAmount());
+            }
+        }
+        for (float index : iData) {
+            balance += index;
+            incomeSum += index;
+        }
+        for (float index : eData) {
+            balance -= index;
+            expenseSum += index;
+        }
+        onView(withId(R.id.textView))
+                .check(matches(withText(String.valueOf(balance))));
+        Intents.release();
+    }
+
 ~~~
 
 
