@@ -28,6 +28,7 @@ The full workflow, as shown in the Figure, contains a series of nested, iterativ
 * Medium tests are integration tests that validate either interactions between levels of the stack within a module, or interactions between related modules and constituted 20% of the Tests.
 * Large tests are end-to-end tests that validate user journeys spanning multiple modules of our app and constitute the final 10% of the Tests.
 
+
 <img src="{{site.baseurl}}/images/Pyramid.png" alt="Pyramid" width="200" />
 
 
