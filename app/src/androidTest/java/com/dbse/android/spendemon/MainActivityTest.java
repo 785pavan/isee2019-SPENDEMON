@@ -14,12 +14,16 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.contrib.DrawerMatchers.isClosed;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static com.dbse.android.spendemon.Summary.entries;
 import static org.junit.Assert.assertNotNull;
 
 public class MainActivityTest extends IntentsTestRule {
@@ -117,7 +121,6 @@ public class MainActivityTest extends IntentsTestRule {
         intended(hasComponent(TrendLineActivity.class.getName()));
         Intents.release();
     }
-
     @After
     public void tearDown() throws Exception {
         mActivity = null;

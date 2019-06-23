@@ -1,9 +1,12 @@
 package com.dbse.android.spendemon;
 
+import android.view.Gravity;
 import android.view.View;
 
 import androidx.test.espresso.Espresso;
 import androidx.test.espresso.action.ViewActions;
+import androidx.test.espresso.contrib.DrawerActions;
+import androidx.test.espresso.contrib.NavigationViewActions;
 import androidx.test.espresso.intent.Intents;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.rule.ActivityTestRule;
@@ -15,11 +18,17 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
+import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.contrib.DrawerMatchers.isClosed;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withSpinnerText;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static com.dbse.android.spendemon.Summary.entries;
 import static org.junit.Assert.assertNotNull;
 
 
@@ -81,6 +90,7 @@ public class SummaryTest extends IntentsTestRule {
         intended(hasComponent(DetailsActivity.class.getName()));
         Intents.release();
     }
+
 
 
     @After
