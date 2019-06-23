@@ -1,5 +1,6 @@
 package com.dbse.android.spendemon;
 
+import com.dbse.android.spendemon.BalanceActivity;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -201,6 +202,11 @@ public class SettingsActivity extends AppCompatActivity {
             mDoc.add(new Paragraph(mText));
             mText ="        ";
             mDoc.add(new Paragraph(mText));
+            mText = "Balance:";
+
+            mText = "           ";
+
+
 
             int iteration = 0;
 //            for (com.dbse.android.spendemon.model.Entry entry : entries) {

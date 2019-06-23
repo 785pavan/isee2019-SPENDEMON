@@ -29,6 +29,9 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
     float balance;
     float expenseSum;
     float incomeSum;
+    public static float expenseSumSetting;
+    public static float incomeSumSetting;
+    public static float balanceSetting;
 
     private DrawerLayout drawer1;
     private int backKey = 0;
@@ -101,6 +104,9 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         stringExpenseSum = "- " + stringExpenseSum;
         textViewEx.setText(stringExpenseSum);
 
+        balanceSetting = balance;
+        expenseSumSetting = expenseSum;
+        incomeSumSetting = incomeSum;
 
 
     }
