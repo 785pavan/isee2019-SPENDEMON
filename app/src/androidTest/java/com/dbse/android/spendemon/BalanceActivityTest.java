@@ -44,41 +44,7 @@ public class BalanceActivityTest extends IntentsTestRule {
         view = mActivity.findViewById(R.id.textViewExpenseValue);
         assertNotNull(view);
     }
-    @Test
-    public void balanceCheck() {
-        Intents.init();
-        onView(withId(R.id.drawer_layout_sum))
-                .check(matches(isClosed(Gravity.LEFT)))
-                .perform(DrawerActions.open());
-        onView(withId(R.id.navigation_view1))
-                .perform(NavigationViewActions.navigateTo(R.id.nav_balance));
-        intended(hasComponent(BalanceActivity.class.getName()));
-
-        ArrayList<Float> iData = new ArrayList<>();
-        ArrayList<Float> eData = new ArrayList<>();
-        float balance = 0;
-        float expenseSum = 0;
-        float incomeSum = 0;
-        for (com.dbse.android.spendemon.model.Entry entry : entries) {
-            if (entry.getType().equals("Incomes")) {
-                iData.add((float) entry.getAmount());
-            } else if (entry.getType().equals("Expenses")) {
-                eData.add((float) entry.getAmount());
-            }
-        }
-        for (float index : iData) {
-            balance += index;
-            incomeSum += index;
-        }
-        for (float index : eData) {
-            balance -= index;
-            expenseSum += index;
-        }
-        onView(withId(R.id.textView))
-                .check(matches(withText(String.valueOf(balance))));
-        Intents.release();
-    }
-
+    
 
     @After
     public void tearDown() throws Exception {
