@@ -30,7 +30,6 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
     float expenseSum;
     float incomeSum;
 
-
     private DrawerLayout drawer1;
     private int backKey = 0;
 
