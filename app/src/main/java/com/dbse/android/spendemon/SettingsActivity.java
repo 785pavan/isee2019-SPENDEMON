@@ -2,6 +2,8 @@ package com.dbse.android.spendemon;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.print.PrintAttributes;
+import android.print.pdf.PrintedPdfDocument;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +19,7 @@ public class SettingsActivity extends AppCompatActivity {
     Button bDeleteAll;
     private SummaryViewModel summaryViewModel;
     Button bDownloadReport;
+    private int testNumber = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,13 +76,26 @@ public class SettingsActivity extends AppCompatActivity {
                             }
                         })
                         .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                            private Object PrintAttributes;
+
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 //Cancel
+                                PrintedPdfDocument doncument_pdf = new PrintedPdfDocument(getApplicationContext(), (android.print.PrintAttributes) PrintAttributes);
+
+
+
                             }
                         });
                 AlertDialog dialog = builder.create();
                 dialog.show();
+            }
+        });
+
+        bDownloadReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
