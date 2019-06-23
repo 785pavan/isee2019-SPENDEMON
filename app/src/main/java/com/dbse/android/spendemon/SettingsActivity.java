@@ -1,6 +1,6 @@
 package com.dbse.android.spendemon;
 
-import com.dbse.android.spendemon.BalanceActivity;
+//import com.dbse.android.spendemon.BalanceActivity;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -39,6 +39,9 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
+import static com.dbse.android.spendemon.BalanceActivity.balanceSetting;
+import static com.dbse.android.spendemon.BalanceActivity.expenseSumSetting;
+import static com.dbse.android.spendemon.BalanceActivity.incomeSumSetting;
 import static com.dbse.android.spendemon.Summary.entries;
 
 
@@ -198,14 +201,28 @@ public class SettingsActivity extends AppCompatActivity {
         try {
             PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
             mDoc.open();
-            String mText = "Summary Report:";
+            String mText = "Summary Report";
             mDoc.add(new Paragraph(mText));
             mText ="        ";
             mDoc.add(new Paragraph(mText));
             mText = "Balance:";
-
+            mDoc.add(new Paragraph(mText));
+            mText = String.valueOf(balanceSetting);
+            mDoc.add(new Paragraph(mText));
             mText = "           ";
-
+            mDoc.add(new Paragraph(mText));
+            mText = "Sum of all the expenses: ";
+            mDoc.add(new Paragraph(mText));
+            mText = String.valueOf(expenseSumSetting);
+            mDoc.add(new Paragraph(mText));
+            mText = "           ";
+            mDoc.add(new Paragraph(mText));
+            mText = "Sum of all the incomes: ";
+            mDoc.add(new Paragraph(mText));
+            mText = String.valueOf(incomeSumSetting);
+            mDoc.add(new Paragraph(mText));
+            mText = "           ";
+            mDoc.add(new Paragraph(mText));
 
 
             int iteration = 0;
@@ -309,7 +326,7 @@ public class SettingsActivity extends AppCompatActivity {
             mDoc.add(table);
             mDoc.close();
             Log.i("path:", mFilePath);
-            Toast.makeText(this,"try initiated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,mFileName + ".pdf\nis saved to\n" + mFilePath, Toast.LENGTH_SHORT).show();
         }
         catch (Exception e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
