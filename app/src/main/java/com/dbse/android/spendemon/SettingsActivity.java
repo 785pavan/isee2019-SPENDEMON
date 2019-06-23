@@ -229,28 +229,28 @@ public class SettingsActivity extends AppCompatActivity {
                 Log.i("enter:", "entries");
                 iteration++;
                 if (entry.getType().equals("Incomes")) {
+
                     @SuppressLint("DefaultLocale") String iterationString = String.format("T_%04d", iteration);
-//                    table.addCell(String.valueOf(iterationString));
                     nextCell = new PdfPCell(new Phrase(iterationString));
                     nextCell.setBackgroundColor(BaseColor.GREEN);
                     table.addCell(nextCell);
-//                    table.addCell(entry.getDate());
+
                     nextCell = new PdfPCell(new Phrase(entry.getDate()));
                     nextCell.setBackgroundColor(BaseColor.GREEN);
                     table.addCell(nextCell);
-//                    table.addCell(String.valueOf(entry.getAmount()));
+
                     nextCell = new PdfPCell(new Phrase(String.valueOf(entry.getAmount())));
                     nextCell.setBackgroundColor(BaseColor.GREEN);
                     table.addCell(nextCell);
-//                    table.addCell(entry.getType());
+
                     nextCell = new PdfPCell(new Phrase(entry.getType()));
                     nextCell.setBackgroundColor(BaseColor.GREEN);
                     table.addCell(nextCell);
-//                    table.addCell(entry.getCategory());
+
                     nextCell = new PdfPCell(new Phrase(entry.getCategory()));
                     nextCell.setBackgroundColor(BaseColor.GREEN);
                     table.addCell(nextCell);
-//                    table.addCell(entry.getPayMethod());
+
                     nextCell = new PdfPCell(new Phrase(entry.getPayMethod()));
                     nextCell.setBackgroundColor(BaseColor.GREEN);
                     table.addCell(nextCell);
