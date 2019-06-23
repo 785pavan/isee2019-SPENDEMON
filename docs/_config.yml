@@ -39,7 +39,7 @@ subtitle: ...gotta track'em all.
 description: >- # this means to ignore newlines until "baseurl:"
   Hello to all visiting this page! Along with the lecture "Introduction to Software Engineering for Enginners" at Otto-von-Guericke, Magdeburg, we, a team of three Engineers are foraging into the universe of Android App development. Here in this page, you can read about our struggles and progresses as we try to develop an app "SPENDEMON", a money control app, to keep track of the money you spend and keep a ledger for all your incomes and expenses. Thank you for showing interest in our efforts. Hope you enjoy the ride! <font size="5">Prost!!</font>
 author: Pavan Kumar kandapagari, Atrayee Neog, Behnam Beladi.
-email: pavan.kandapagari@st.ovgu.de,atrayee.neog@st.ovgu.de,seyedbehnam.beladi@st.ovgu.de"
+email: pavan.kandapagari@st.ovgu.de;atrayee.neog@st.ovgu.de;seyedbehnam.beladi@st.ovgu.de"
 avatar: assets/images/avatar.jpg
 
 # You'll want to customize url and baseurl for your own site:
