@@ -1,6 +1,7 @@
 package com.dbse.android.spendemon;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -27,10 +28,12 @@ import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -214,18 +217,72 @@ public class SettingsActivity extends AppCompatActivity {
             table.addCell("Type");
             table.addCell("Category");
             table.addCell("Payment Method");
-
             table.setHeaderRows(1);
             PdfPCell[] cells = table.getRow(0).getCells();
-
-            for (int i=1;i<5;i++){
-                table.addCell(String.valueOf(i));
-                table.addCell("Date:"+i);
-                table.addCell("Amount:"+i);
-                table.addCell("Type:"+i);
-                table.addCell("Category:"+i);
-                table.addCell("Payment Method:"+i);
+            for (int j=0;j<cells.length;j++){
+                cells[j].setBackgroundColor(BaseColor.GRAY);
             }
+            iteration = 1;
+            int columnNumber = cells.length;
+            PdfPCell nextCell;
+            for (com.dbse.android.spendemon.model.Entry entry : entries) {
+                Log.i("enter:", "entries");
+                iteration++;
+                if (entry.getType().equals("Incomes")) {
+                    @SuppressLint("DefaultLocale") String iterationString = String.format("T_%04d", iteration);
+//                    table.addCell(String.valueOf(iterationString));
+                    nextCell = new PdfPCell(new Phrase(iterationString));
+                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    table.addCell(nextCell);
+//                    table.addCell(entry.getDate());
+                    nextCell = new PdfPCell(new Phrase(entry.getDate()));
+                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    table.addCell(nextCell);
+//                    table.addCell(String.valueOf(entry.getAmount()));
+                    nextCell = new PdfPCell(new Phrase(String.valueOf(entry.getAmount())));
+                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    table.addCell(nextCell);
+//                    table.addCell(entry.getType());
+                    nextCell = new PdfPCell(new Phrase(entry.getType()));
+                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    table.addCell(nextCell);
+//                    table.addCell(entry.getCategory());
+                    nextCell = new PdfPCell(new Phrase(entry.getCategory()));
+                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    table.addCell(nextCell);
+//                    table.addCell(entry.getPayMethod());
+                    nextCell = new PdfPCell(new Phrase(entry.getPayMethod()));
+                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    table.addCell(nextCell);
+
+                }
+//
+//                } else if (entry.getType().equals("Expenses")) {
+////                    @SuppressLint("DefaultLocale") String iterationString = String.format("%04d",iteration);
+//                    table.addCell(String.valueOf(iteration));
+//                    table.addCell(entry.getDate());
+//                    table.addCell(String.valueOf(entry.getAmount()));
+//                    table.addCell(entry.getType());
+//                    table.addCell(entry.getCategory());
+//                    table.addCell(entry.getPayMethod());
+//                    for (int j=cells.length;j> (cells.length - columnNumber);j--){
+//                        cells[j].setBackgroundColor(BaseColor.RED);
+//                    }
+//
+//                }
+            }
+
+
+//            for (int i=1;i<5;i++){
+//                table.addCell(String.valueOf(i));
+//                table.addCell("Date:"+i);
+//                table.addCell("Amount:"+i);
+//                table.addCell("Type:"+i);
+//                table.addCell("Category:"+i);
+//                table.addCell("Payment Method:"+i);
+//            }
+
+            Log.i("exit:", "entries");
             mDoc.add(table);
             mDoc.close();
             Log.i("path:", mFilePath);
