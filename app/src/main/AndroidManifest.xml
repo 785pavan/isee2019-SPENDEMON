@@ -18,7 +18,8 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:icon="@drawable/team_logo_3">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dbse.android.spendemon.MainActivity" />
