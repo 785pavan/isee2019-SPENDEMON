@@ -127,7 +127,6 @@ public class SettingsActivity extends AppCompatActivity {
                     }
                     else {
                             createPDF();
-
                     }
                 }
                 else{
@@ -184,6 +183,7 @@ public class SettingsActivity extends AppCompatActivity {
         Document mDoc = new Document();
         String mFileName = new SimpleDateFormat("yyyyMMdd_HHmmss",
                 Locale.getDefault()).format(System.currentTimeMillis());
+        mFileName = "SPENDEMON_" + mFileName;
         String mFilePath = Environment.getExternalStorageDirectory() + "/" + mFileName + ".pdf";
 
 
@@ -195,7 +195,7 @@ public class SettingsActivity extends AppCompatActivity {
             mDoc.addAuthor("Behnam");
             mDoc.add(new Paragraph(mText));
             mDoc.close();
-
+            Log.i("path:", mFilePath);
             Toast.makeText(this,"try initiated", Toast.LENGTH_SHORT).show();
         }
         catch (Exception e){
