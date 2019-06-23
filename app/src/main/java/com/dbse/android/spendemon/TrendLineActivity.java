@@ -205,6 +205,10 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
             dataSets.add(lineDataSet);
             LineData data = new LineData(dataSets);
             lineChart.setData(data);
+            String X = String.valueOf(lineChart.getAxisLeft());
+            Log.i(TAG, "X axis: " + X);
+            String Y = String.valueOf(lineChart.getXAxis());
+            Log.i(TAG, "Y axis: " + Y);
         }LineDataSet lineDataSet3;
 //        if (lineChart.getData() != null &&
 //                lineChart.getData().getDataSetCount() > 0) {
