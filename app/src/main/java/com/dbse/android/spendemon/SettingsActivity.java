@@ -27,6 +27,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Locale;
 
 import com.itextpdf.text.BaseColor;
@@ -46,6 +47,12 @@ import static com.dbse.android.spendemon.Summary.entries;
 
 
 public class SettingsActivity extends AppCompatActivity {
+
+    ArrayList<Float> iData = new ArrayList<>();
+    ArrayList<Float> eData = new ArrayList<>();
+    float balance;
+    float expenseSum;
+    float incomeSum;
 
     Button bDeleteAll;
     private SummaryViewModel summaryViewModel;
