@@ -200,16 +200,15 @@ public class SettingsActivity extends AppCompatActivity {
             String mText = "Summary Report:";
             mDoc.add(new Paragraph(mText));
             int iteration = 0;
-            for (com.dbse.android.spendemon.model.Entry entry : entries) {
-                iteration ++;
-                mText = "T_" + iteration + "   " + entry.getDate() + "   " + entry.getAmount() + " "
-                + entry.getType() + " " + entry.getCategory() + " " + entry.getPayMethod();
-                mDoc.add(new Paragraph(mText));
-
-            }
+//            for (com.dbse.android.spendemon.model.Entry entry : entries) {
+//                iteration ++;
+//                mText = "T_" + iteration + "   " + entry.getDate() + "   " + entry.getAmount() + " "
+//                + entry.getType() + " " + entry.getCategory() + " " + entry.getPayMethod();
+//                mDoc.add(new Paragraph(mText));
+//
+//            }
             PdfPTable table = new PdfPTable(6);
 
-//            mDoc.addAuthor("Behnam");
             table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell("#");
             table.addCell("Date");
