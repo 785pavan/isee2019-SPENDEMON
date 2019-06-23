@@ -1,14 +1,11 @@
 ---
 layout: post
-title: "Blog#5: Beta Prototype and Testing"
+title: "Beta Prototype and Testing"
 date: 2019-06-25
 ---
-
-**<span style="color:#C2185B; font-family:Cursive">Introduction:</span>**
-
 Welcome to Blog#5 for team SPENDEMON. In this particular Blog we shall talk about how we put our App to test in different circumstances and what was the outcome of the tests. In a real-world scenario, a user interacts with an App at various levels from pressing buttons to putting in data to changing something by mistake. As an App Developer, we need to predict every possible circumstance that might test our App in any condition and come up with solutions for each such case. This is where Software Testing plays an important role in developing a user friendly App iteratively.
 
-**<span style="color:#C2185B; font-family:Cursive">Methodology:</span>** In order to come up with an effective testing scheme, we referred to the <a href = "https://developer.android.com/training/testing/fundamentals" target="_blank" > site. </a>
+**<span style="color:#C2185B ">Methodology:</span>** In order to come up with an effective testing scheme, we referred to the <a href = "https://developer.android.com/training/testing/fundamentals" target="_blank" > site. </a>
 This particular site gave us a systematic approach on how to design and implement our Tests. The basic methodology flow diagram that we have followed is as follows:
 
 <img src="{{site.baseurl}}/images/testing-workflow.png" alt="Testing" width="200" />
@@ -22,105 +19,43 @@ The full workflow, as shown in the Figure, contains a series of nested, iterativ
 * test Directory: This contains all the tests that runs on the local machine and are limited to the Unit Tests.
 
 
-**<span style="color:#C2185B; font-family:Cursive">Testing Pyramid:</span>** The testing pyramid as shown below was implemented by us in order to run three categories of Tests:
+**Testing Pyramid:** The testing pyramid as shown below was implemented during each phase of our App development and consisted of the following categories:
+
+**<span style="color:#C2185B ">Testing Pyramid:</span>** The testing pyramid as shown below was implemented by us in order to run three categories of Tests:
+
 
 * Small tests are unit tests that validate our app's behavior one class at a time and constituted 70% of all Tests.
 * Medium tests are integration tests that validate either interactions between levels of the stack within a module, or interactions between related modules and constituted 20% of the Tests.
 * Large tests are end-to-end tests that validate user journeys spanning multiple modules of our app and constitute the final 10% of the Tests.
 
+
 <img src="{{site.baseurl}}/images/Pyramid.png" alt="Pyramid" width="200" />
 
 
+**Tests Implemented:**
+* Local Unit Tests: Local Unit Tests are run on the Java Virtual machine rather than on the device or the emulator. In these tests we test the component lifecycle, Event loops and Resources that need to be present for running the app. When we need to call other components of the app like a Database or a server it might take a minute to respond but the test would fail it this didn't happen instantaneously, for this reason we use mocking, using which we can define the output of particular dependency before hand.
+* Instrumentation Unit Tests: The implementation tests are the JUnit tests which test the App on the local level and contain the following test classes:
+  * Launch Tests: These tests check if each component of the activity gets launched or if launching any activity crashes the App at some particular point in time.
+  * End-to-end Tests: These are the kind of tests which start from one activity of the app and continue till the end of that particular series of operations is reached and testing in every step of the way. We have included a code snippet to help explain this concept. For the tests we have used Espresso library which is very good at emulating steps.
+* System Tests:
+
+
+Now say you want to implement these tests in your own app these are the steps we followed that can help you as well.
+1. First step as always when you implement someone else code, to include all the dependencies in our app level gradle file. for the above tests dependencies are :
+2. Next we created test classes which extend IntentTestRule as we test intents when testing end to end.
+3. Then we created @Rule for the each class so that we can operate without disturbing the original class.
+4. Now we define @Before setup that activity starts with defined Configuration.
+5. Then we implement tests that are annotated as @Test for example to start an activity from Summary class and go to edit data class enter few details like amount and all the usual stuff there then click save now go to details of the saved activity using the following code.
+6. we also write few more tests which take some other route and finally reach the destination.
+7. After finishing the test for a class we had to invalidate the setup this is done in @After annotated classes.
+8. These steps needed to be followed for all the classes that needed testing.
 
 
 
 
 
 
-
-
-
-
-
-
-**<span style= "color:#C2185B">Storyboard 2:</span>** Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline.
-
-
-
----
-<img src="{{site.baseurl}}/images/PieChart.png" alt="PieChart" width="200" />
-<img src="{{site.baseurl}}/images/PieChart_1.png" alt="PieChart_1" width="200" />
-<img src="{{site.baseurl}}/images/TrendLine.png" alt="Trendline" width="200" />
-<img src="{{site.baseurl}}/images/TrendLine_1.png" alt="Trendline_1" width="200" />
----
-
-
-
-
-
-**Design Principles:** The basic idea behind our design choice is easy use of the App by the user and making the App such that one can have an easy and fruitful experience with it. The user should be able to keep track of his expenses and get an overview of his expenses in one quick glance. The basic design principles that we took into account are as follows:
-
-* Cut Out The Clutter
-
-* Create a Seamless Experience
-
-* Design Finger-friendly Tap-targets
-
-* Text Content Should Be Legible
-
-* Design Controls Based on Hand Position
-
-* Minimize Need For Typing
-
-
-**<span style="color:#C2185B; font-family:Cursive">Summary of Changes:</span>**
-As mentioned in the previous Blog, we started with a pretty simple App design which had a Login page, a Summary Page and an Edit Data page. Along with that we had implemented the Database as a simple JSON file which was pretty basic in it's functionality.
-
-Old version:
-
-<img src="{{site.baseurl}}/images/OldVersion.png" alt="Old Version" width="300" align = "middle" />
-
-New version:
-
-<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="300"  />
-
-However, with the Advanced Prototype version we have tried to refine our App with the implementation of certain features to make our App more, well, App like. A summary of the added changes has been given below.
-
-* Room Database implemented.
-
-* Navigation Bar added.
-
-* Charts feature added.
-
-* Icons added for each category.
-
-* Date Picker feature added.
-
-The added features also were reflected the in the user stories as new additions an well as in the Class Diagrams which have been shown below:
-
-**Addition to User Stories:**
-
-  * Easy visualization of expenses through graphs.
-
-  * Sort data by Date​
-
-  * Add small descriptions to the expenses.​
-
-  * Data stored in the Database permanently.​
-
-  * Deal with Configuration changes, App rotations etc.​
-
-**Addition to Class Diagrams:**
-
-  * View Model Class​
-
-  * Room Database Class​
-
-  * Pie Chart Class​
-
-
-
-**<span style="color:#C2185B; font-family:Cursive">Final Thoughts:</span>**
+**<span style="color:#C2185B ">Final Thoughts:</span>**
 
 The understanding of the User Interface Implementation and Design Pattern, helped in better understanding of both our App and the customers expectations from the App. Doing research on the Design Architectures opened up new windows for us to implement in our App and we are glad we could implement some of it into the App. We hopefully, have been able to create an App that will be able to assist our customers and shall be easy on usage.
 
