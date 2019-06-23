@@ -34,12 +34,11 @@ permalink: /blog/:year/:month/:day/:title/
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
-subtitle: Your awesome subtitle
+title: SPENDEMON
+subtitle: ...gotta track'em all.
 description: >- # this means to ignore newlines until "baseurl:"
-  This is the demo site for a Jekyll theme version of
-  HTML5 UP's sleek, responsive site template Prologue.
-author: Your Incredible Name
+  Hello to all visiting this page! Along with the lecture "Introduction to Software Engineering for Enginners" at Otto-von-Guericke, Magdeburg, we, a team of three Engineers are foraging into the universe of Android App development. Here in this page, you can read about our struggles and progresses as we try to develop an app "SPENDEMON", a money control app, to keep track of the money you spend and keep a ledger for all your incomes and expenses. Thank you for showing interest in our efforts. Hope you enjoy the ride! <font size="5">Prost!!</font>
+author: Pavan Kumar kandapagari, Atrayee Neog, Behnam Beladi.
 email: pavan.kandapagari@st.ovgu.de,atrayee.neog@st.ovgu.de,seyedbehnam.beladi@st.ovgu.de"
 avatar: assets/images/avatar.jpg
 
@@ -54,7 +53,7 @@ facebook_url:
 googleplus_url:
 instagram_url:
 linkedin_url:
-github_url:
+github_url: https://github.com/DBSE-teaching/isee2019-SPENDEMON
 pinterest_url:
 slack_url:
 dribbble_url:
@@ -63,6 +62,5 @@ dribbble_url:
 google_analytics:
 
 # The following settings are NECESSARY for the Prologue theme to run:
-theme: jekyll-theme-prologue
+remote_theme: chrisbobbe/jekyll-theme-prologue
 collections: [sections]
-
