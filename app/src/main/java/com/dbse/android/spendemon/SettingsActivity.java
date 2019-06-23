@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -122,21 +123,36 @@ public class SettingsActivity extends AppCompatActivity {
                     if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
                         String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
                         requestPermissions(permissions, STORAGE_CODE);
+                        Log.i("clicked","permission denied");
                     }
                     else {
+                        try {
+                            createPDF();
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (DocumentException e) {
+                            e.printStackTrace();
+                        }
 
                     }
                 }
                 else{
+                    try {
+                        createPDF();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (DocumentException e) {
+                        e.printStackTrace();
+                    }
 
                 }
-                try {
-                    createPDF();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (DocumentException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    createPDF();
+//                } catch (FileNotFoundException e) {
+//                    e.printStackTrace();
+//                } catch (DocumentException e) {
+//                    e.printStackTrace();
+//                }
 
             }
         });
@@ -154,6 +170,24 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode){
+            case STORAGE_CODE:{
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+//                permission granted
+                }
+                else {
+//                    permission denied
+                    Toast.makeText(this, "permission denied...!", Toast.LENGTH_SHORT).show();
+
+                }
+            }
         }
     }
 
