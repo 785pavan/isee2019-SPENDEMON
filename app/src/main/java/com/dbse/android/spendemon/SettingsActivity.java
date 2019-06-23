@@ -16,7 +16,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     Button bDeleteAll;
     private SummaryViewModel summaryViewModel;
-
+    Button bDownloadReport;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +31,8 @@ public class SettingsActivity extends AppCompatActivity {
         }
         summaryViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class);
         bDeleteAll = findViewById(R.id.bDeleteAll);
+        bDownloadReport = findViewById(R.id.download_report);
+
 //        adding the warning button for delete all:
 //        bDeleteAll.setOnClickListener(new View.OnClickListener() {
 //            @Override
