@@ -9,7 +9,7 @@ date: 2019-06-25
 Welcome to Blog#5 for team SPENDEMON. In this particular Blog we shall talk about how we put our App to test in different circumstances and what was the outcome of the tests. We have implemented three basic kinds of Tests: Unit Tests, Implementation Tests and Integration Tests. These tests use both White and Black Box Testing methods and shall be described further ahead.
 
 **<span style="color:#C2185B; font-family:Cursive">White Box Testing:</span>**
-The White Box testing methods are basically implemented by the software engineer who has a clear knowledge of the functioning of the App and the implementation of each unit of the software. There are several White Box Testing methods that can be implemented out of which we decided to implement the Unit tests and the  
+The White Box testing methods are basically implemented by the software engineer who has a clear knowledge of the functioning of the App and the implementation of each unit of the software. There are several White Box Testing methods that can be implemented out of which we decided to implement the Unit tests, System Tests and the Integration Tests.
 
 
 
