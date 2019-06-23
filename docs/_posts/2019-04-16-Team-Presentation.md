@@ -7,7 +7,7 @@ date: 2019-04-16
 > *"Money, like emotions, is something you must control to keep your life on the right track"  - Natasha Munson*
 
 
-## **<h1>Project Motivation:</h1>**
+<h1>Project Motivation:</h1>
 
 During the initial months of us coming to a foreign land for studies, we realized only too late that money can seep through your hands like sand through a closed fist if you do not keep a track on it. Being Android users ourselves, through this project we shall try our level best to tailor make an app according to the customer demand, which is easy to use and would require just one look to keep a track and plan a budget according to the needs and expenses of an individual and something we can use ourselves.
 
