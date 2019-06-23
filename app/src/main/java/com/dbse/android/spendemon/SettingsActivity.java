@@ -326,27 +326,27 @@ public class SettingsActivity extends AppCompatActivity {
 ////
                     @SuppressLint("DefaultLocale") String iterationString = String.format("T_%04d", iteration);
                     nextCell = new PdfPCell(new Phrase(iterationString));
-                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
+                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getDate()));
-                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
+                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(String.valueOf(entry.getAmount())));
-                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
+                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getType()));
-                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
+                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getCategory()));
-                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
+                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getPayMethod()));
-                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
+                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
                     table.addCell(nextCell);
 //
                 }
