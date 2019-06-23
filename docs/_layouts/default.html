@@ -1,35 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-
-<head>
-  <title>{{ page.title }}</title>
-  <!-- link to main stylesheet -->
-  <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/main.css">
-</head>
-
-<body style="background-image:url({{site.baseurl}}//images/Background.png)">
-  <nav>
-    <ul>
-      <li><a href="{{site.baseurl}}/">
-          <img src="{{site.baseurl}}//images/Team_logo.png" height="200">
-        </a></li>
-      <li><a href="{{site.baseurl}}/">Home</a></li>
-      <!--<li><a href="/about">About</a></li>
-	        		<li><a href="/cv">CV</a></li>-->
-      <li><a href="{{site.baseurl}}/blog">Blog</a></li>
-    </ul>
-  </nav>
-  <div class="container" align="justify">
-
-    {{ content }}
-
-  </div><!-- /.container -->
-  <footer>
-    <ul>
-      <li><a href="mailto:pavan.kandapagari@st.ovgu.de,atrayee.neog@st.ovgu.de,seyedbehnam.beladi@st.ovgu.de">Email us</a></li>
-      <!--<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>-->
-    </ul>
-  </footer>
-</body>
-
+	{%- include head.html -%}
+	<body>
+		{{- content -}}
+		{%- include footer.html -%}
+	</body>
 </html>
