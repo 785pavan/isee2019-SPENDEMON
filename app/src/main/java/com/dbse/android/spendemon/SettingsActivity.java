@@ -5,6 +5,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -204,6 +205,38 @@ public class SettingsActivity extends AppCompatActivity {
         mFileName = "SPENDEMON_" + mFileName;
         String mFilePath = Environment.getExternalStorageDirectory() + "/" + mFileName + ".pdf";
 
+        for (com.dbse.android.spendemon.model.Entry entry : entries) {
+            if (entry.getType().equals("Incomes")) {
+                iData.add((float) entry.getAmount());
+            } else if (entry.getType().equals("Expenses")) {
+                eData.add((float) entry.getAmount());
+            }
+        }
+
+        balance = 0;
+        incomeSum = 0;
+        expenseSum = 0;
+        for (float index : iData) {
+            balance += index;
+            incomeSum += index;
+        }
+        for (float index : eData) {
+            balance -= index;
+            expenseSum += index;
+        }
+//        string should only have two numbers after the float
+        String stringBalance = String.valueOf((float) ((int) (balance * 100)) / 100);
+        if (balance > 0) {
+            stringBalance = "+  " + stringBalance;
+        } else if (balance < 0) {
+            stringBalance = "- " + stringBalance.substring(1);
+        }
+
+        String stringIncomeSum = String.valueOf((float) ((int) (incomeSum * 100)) / 100);
+        stringIncomeSum = "+ " + stringIncomeSum;
+
+        String stringExpenseSum = String.valueOf((float) ((int) (expenseSum * 100)) / 100);
+        stringExpenseSum = "- " + stringExpenseSum;
 
         try {
             PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
@@ -214,19 +247,19 @@ public class SettingsActivity extends AppCompatActivity {
             mDoc.add(new Paragraph(mText));
             mText = "Balance:";
             mDoc.add(new Paragraph(mText));
-            mText = String.valueOf(balanceSetting);
+            mText = stringBalance;
             mDoc.add(new Paragraph(mText));
             mText = "           ";
             mDoc.add(new Paragraph(mText));
             mText = "Sum of all the expenses: ";
             mDoc.add(new Paragraph(mText));
-            mText = String.valueOf(expenseSumSetting);
+            mText = stringExpenseSum;
             mDoc.add(new Paragraph(mText));
             mText = "           ";
             mDoc.add(new Paragraph(mText));
             mText = "Sum of all the incomes: ";
             mDoc.add(new Paragraph(mText));
-            mText = String.valueOf(incomeSumSetting);
+            mText = stringIncomeSum;
             mDoc.add(new Paragraph(mText));
             mText = "           ";
             mDoc.add(new Paragraph(mText));
