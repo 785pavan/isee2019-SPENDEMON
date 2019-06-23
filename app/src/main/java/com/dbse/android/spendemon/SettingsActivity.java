@@ -126,24 +126,12 @@ public class SettingsActivity extends AppCompatActivity {
                         Log.i("clicked","permission denied");
                     }
                     else {
-                        try {
                             createPDF();
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
-                        } catch (DocumentException e) {
-                            e.printStackTrace();
-                        }
 
                     }
                 }
                 else{
-                    try {
-                        createPDF();
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    } catch (DocumentException e) {
-                        e.printStackTrace();
-                    }
+                    createPDF();
 
                 }
 //                try {
@@ -191,12 +179,13 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    private void createPDF() throws FileNotFoundException, DocumentException {
+    private void createPDF() {
         // DocumentFile doc = new DocumentFile();
         Document mDoc = new Document();
         String mFileName = new SimpleDateFormat("yyyyMMdd_HHmmss",
                 Locale.getDefault()).format(System.currentTimeMillis());
         String mFilePath = Environment.getExternalStorageDirectory() + "/" + mFileName + ".pdf";
+
 
         try {
             PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
