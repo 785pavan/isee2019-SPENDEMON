@@ -203,7 +203,7 @@ public class SettingsActivity extends AppCompatActivity {
         String mFileName = new SimpleDateFormat("yyyyMMdd_HHmmss",
                 Locale.getDefault()).format(System.currentTimeMillis());
         mFileName = "SPENDEMON_" + mFileName;
-        String mFilePath = Environment.getExternalStorageDirectory() + "/" + mFileName + ".pdf";
+        String mFilePath = Environment.getExternalStorageDirectory() + "/" + "Download/" + mFileName + ".pdf";
 
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
             if (entry.getType().equals("Incomes")) {
@@ -297,27 +297,27 @@ public class SettingsActivity extends AppCompatActivity {
 
                     @SuppressLint("DefaultLocale") String iterationString = String.format("T_%04d", iteration);
                     nextCell = new PdfPCell(new Phrase(iterationString));
-                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    nextCell.setBackgroundColor(new BaseColor(124,252,0));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getDate()));
-                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    nextCell.setBackgroundColor(new BaseColor(124,252,0));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(String.valueOf(entry.getAmount())));
-                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    nextCell.setBackgroundColor(new BaseColor(124,252,0));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getType()));
-                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    nextCell.setBackgroundColor(new BaseColor(124,252,0));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getCategory()));
-                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    nextCell.setBackgroundColor(new BaseColor(124,252,0));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getPayMethod()));
-                    nextCell.setBackgroundColor(BaseColor.GREEN);
+                    nextCell.setBackgroundColor(new BaseColor(124,252,0));
                     table.addCell(nextCell);
 
 
@@ -326,27 +326,27 @@ public class SettingsActivity extends AppCompatActivity {
 ////
                     @SuppressLint("DefaultLocale") String iterationString = String.format("T_%04d", iteration);
                     nextCell = new PdfPCell(new Phrase(iterationString));
-                    nextCell.setBackgroundColor(BaseColor.RED);
+                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getDate()));
-                    nextCell.setBackgroundColor(BaseColor.RED);
+                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(String.valueOf(entry.getAmount())));
-                    nextCell.setBackgroundColor(BaseColor.RED);
+                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getType()));
-                    nextCell.setBackgroundColor(BaseColor.RED);
+                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getCategory()));
-                    nextCell.setBackgroundColor(BaseColor.RED);
+                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getPayMethod()));
-                    nextCell.setBackgroundColor(BaseColor.RED);
+                    nextCell.setBackgroundColor(new BaseColor(255,128,128));
                     table.addCell(nextCell);
 //
                 }
