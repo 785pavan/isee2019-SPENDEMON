@@ -6,10 +6,39 @@ date: 2019-06-25
 
 **<span style="color:#C2185B; font-family:Cursive">Introduction:</span>**
 
-Welcome to Blog#5 for team SPENDEMON. In this particular Blog we shall talk about how we put our App to test in different circumstances and what was the outcome of the tests. We have implemented three basic kinds of Tests: Unit Tests, Implementation Tests and Integration Tests. These tests use both White and Black Box Testing methods and shall be described further ahead.
+Welcome to Blog#5 for team SPENDEMON. In this particular Blog we shall talk about how we put our App to test in different circumstances and what was the outcome of the tests. In a real-world scenario, a user interacts with an App at various levels from pressing buttons to putting in data to changing something by mistake. As an App Developer, we need to predict every possible circumstance that might test our App in any condition and come up with solutions for each such case. This is where Software Testing plays an important role in developing a user friendly App iteratively.
 
-**<span style="color:#C2185B; font-family:Cursive">White Box Testing:</span>**
-The White Box testing methods are basically implemented by the software engineer who has a clear knowledge of the functioning of the App and the implementation of each unit of the software. There are several White Box Testing methods that can be implemented out of which we decided to implement the Unit tests, System Tests and the Integration Tests.
+**<span style="color:#C2185B; font-family:Cursive">Methodology:</span>** In order to come up with an effective testing scheme, we referred to the <a href = "https://developer.android.com/training/testing/fundamentals" target="_blank" > site. </a>
+This particular site gave us a systematic approach on how to design and implement our Tests. The basic methodology flow diagram that we have followed is as follows:
+
+<img src="{{site.baseurl}}/images/testing-workflow.png" alt="Testing" width="200" />
+
+
+The full workflow, as shown in the Figure, contains a series of nested, iterative cycles where a long, slow, UI-driven cycle tests the integration of code units. We test the units themselves using shorter, faster development cycles. This set of cycles continues until our app satisfies every use case.
+
+**Configuring the Test Environments:** We had two directories created for running the tests as recommended by the official Android site:
+
+* androidTest Directory: This has all the tests which run on the virtual environments like the integration tests, system tests etc. which cannot be implemented by the JVM alone.
+* test Directory: This contains all the tests that runs on the local machine and are limited to the Unit Tests.
+
+
+**<span style="color:#C2185B; font-family:Cursive">Testing Pyramid:</span>** The testing pyramid as shown below was implemented by us in order to run three categories of Tests:
+
+* Small tests are unit tests that validate our app's behavior one class at a time and constituted 70% of all Tests.
+* Medium tests are integration tests that validate either interactions between levels of the stack within a module, or interactions between related modules and constituted 20% of the Tests.
+* Large tests are end-to-end tests that validate user journeys spanning multiple modules of our app and constitute the final 10% of the Tests.
+
+<img src="{{site.baseurl}}/images/Pyramid.png" alt="Pyramid" width="200" />
+
+
+
+
+
+
+
+
+
+
 
 
 
