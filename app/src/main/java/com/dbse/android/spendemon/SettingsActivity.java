@@ -254,21 +254,36 @@ public class SettingsActivity extends AppCompatActivity {
                     nextCell.setBackgroundColor(BaseColor.GREEN);
                     table.addCell(nextCell);
 
+
+//
+                } else if (entry.getType().equals("Expenses")) {
+////
+                    @SuppressLint("DefaultLocale") String iterationString = String.format("T_%04d", iteration);
+                    nextCell = new PdfPCell(new Phrase(iterationString));
+                    nextCell.setBackgroundColor(BaseColor.RED);
+                    table.addCell(nextCell);
+
+                    nextCell = new PdfPCell(new Phrase(entry.getDate()));
+                    nextCell.setBackgroundColor(BaseColor.RED);
+                    table.addCell(nextCell);
+
+                    nextCell = new PdfPCell(new Phrase(String.valueOf(entry.getAmount())));
+                    nextCell.setBackgroundColor(BaseColor.RED);
+                    table.addCell(nextCell);
+
+                    nextCell = new PdfPCell(new Phrase(entry.getType()));
+                    nextCell.setBackgroundColor(BaseColor.RED);
+                    table.addCell(nextCell);
+
+                    nextCell = new PdfPCell(new Phrase(entry.getCategory()));
+                    nextCell.setBackgroundColor(BaseColor.RED);
+                    table.addCell(nextCell);
+
+                    nextCell = new PdfPCell(new Phrase(entry.getPayMethod()));
+                    nextCell.setBackgroundColor(BaseColor.RED);
+                    table.addCell(nextCell);
+//
                 }
-//
-//                } else if (entry.getType().equals("Expenses")) {
-////                    @SuppressLint("DefaultLocale") String iterationString = String.format("%04d",iteration);
-//                    table.addCell(String.valueOf(iteration));
-//                    table.addCell(entry.getDate());
-//                    table.addCell(String.valueOf(entry.getAmount()));
-//                    table.addCell(entry.getType());
-//                    table.addCell(entry.getCategory());
-//                    table.addCell(entry.getPayMethod());
-//                    for (int j=cells.length;j> (cells.length - columnNumber);j--){
-//                        cells[j].setBackgroundColor(BaseColor.RED);
-//                    }
-//
-//                }
             }
 
 
