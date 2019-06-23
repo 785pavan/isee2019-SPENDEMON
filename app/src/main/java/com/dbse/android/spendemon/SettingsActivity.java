@@ -199,6 +199,9 @@ public class SettingsActivity extends AppCompatActivity {
             mDoc.open();
             String mText = "Summary Report:";
             mDoc.add(new Paragraph(mText));
+            mText ="        ";
+            mDoc.add(new Paragraph(mText));
+
             int iteration = 0;
 //            for (com.dbse.android.spendemon.model.Entry entry : entries) {
 //                iteration ++;
