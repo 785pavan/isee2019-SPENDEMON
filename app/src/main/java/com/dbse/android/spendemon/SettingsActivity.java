@@ -1,18 +1,37 @@
 package com.dbse.android.spendemon;
 
+import android.Manifest;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.print.PrintAttributes;
 import android.print.pdf.PrintedPdfDocument;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.documentfile.provider.DocumentFile;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.preference.PreferenceFragmentCompat;
+
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
+
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -20,6 +39,7 @@ public class SettingsActivity extends AppCompatActivity {
     private SummaryViewModel summaryViewModel;
     Button bDownloadReport;
     private int testNumber = 0;
+    private static final int STORAGE_CODE = 1000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,7 +101,7 @@ public class SettingsActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 //Cancel
-                                PrintedPdfDocument doncument_pdf = new PrintedPdfDocument(getApplicationContext(), (android.print.PrintAttributes) PrintAttributes);
+                                //PrintedPdfDocument doncumentPdf = new PrintedPdfDocument(getApplicationContext(), (android.print.PrintAttributes) PrintAttributes);
 
 
 
@@ -90,14 +110,39 @@ public class SettingsActivity extends AppCompatActivity {
                 AlertDialog dialog = builder.create();
                 dialog.show();
             }
+
         });
 
         bDownloadReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i("clicked","inside onClick");
+                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
+
+                    if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
+                        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                        requestPermissions(permissions, STORAGE_CODE);
+                    }
+                    else {
+
+                    }
+                }
+                else{
+
+                }
+                try {
+                    createPDF();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (DocumentException e) {
+                    e.printStackTrace();
+                }
 
             }
         });
+
+
+
     }
 
     @Override
@@ -110,5 +155,37 @@ public class SettingsActivity extends AppCompatActivity {
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
         }
+    }
+
+    private void createPDF() throws FileNotFoundException, DocumentException {
+        // DocumentFile doc = new DocumentFile();
+        Document mDoc = new Document();
+        String mFileName = new SimpleDateFormat("yyyyMMdd_HHmmss",
+                Locale.getDefault()).format(System.currentTimeMillis());
+        String mFilePath = Environment.getExternalStorageDirectory() + "/" + mFileName + ".pdf";
+
+        try {
+            PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
+            mDoc.open();
+
+            String mText = "testing";
+            mDoc.addAuthor("Behnam");
+            mDoc.add(new Paragraph(mText));
+            mDoc.close();
+
+            Toast.makeText(this,"try initiated", Toast.LENGTH_SHORT).show();
+        }
+        catch (Exception e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+
+//        Document document = new Document();
+//
+//        PdfWriter.getInstance(document, new FileOutputStream("sample1.pdf"));
+//        document.open();
+//        document.add(new Paragraph("Sample 1: Hello, this is SPENDEMON"));
+//        document.close();
+//        Log.i("clicked","Done");
     }
 }
