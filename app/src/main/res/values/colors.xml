@@ -13,5 +13,7 @@
     <color name="lightGreen">#88D840</color>
     <color name="darkRed">#660000</color>
     <color name="lightRed">#FFC1C1</color>
+    <color name="gray1">#6F7C80</color>
+    <color name="gray2">#EEEEEE</color>
 
 </resources>
