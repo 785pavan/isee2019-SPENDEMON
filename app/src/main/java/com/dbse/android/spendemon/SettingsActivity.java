@@ -249,21 +249,6 @@ public class SettingsActivity extends AppCompatActivity {
         try {
             PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
             mDoc.open();
-            /*
-            * try {
-    document.open();
-    Drawable d = getResources().getDrawable(R.drawable.myImage);
-    BitmapDrawable bitDw = ((BitmapDrawable) d);
-    Bitmap bmp = bitDw.getBitmap();
-    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-    bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-    Image image = Image.getInstance(stream.toByteArray());
-    document.add(image);
-    document.close();
-} catch (Exception e) {
-      e.printStackTrace();
-}
-            * */
             Drawable d = getResources().getDrawable(R.drawable.team_logo_3);
             BitmapDrawable bitDw = ((BitmapDrawable) d);
             Bitmap bmp = bitDw.getBitmap();
@@ -272,12 +257,6 @@ public class SettingsActivity extends AppCompatActivity {
             Image logo = Image.getInstance(stream.toByteArray());
             logo.scaleAbsolute(100, 100);
             mDoc.add(logo);
-//            Image logo = Image.getInstance("drawable-v24");
-//            mDoc.add(logo);
-            // Creating image by file name drawable-v24/team_logo_3.png
-//            String filename = "other-sample/src/main/resources/java.gif";
-//            Image image = Image.getInstance(filename);
-//            mDoc.add(image);
 
             String mText = "Summary Report";
             mDoc.add(new Paragraph(mText));
