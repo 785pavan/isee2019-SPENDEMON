@@ -1,16 +1,13 @@
 ---
 layout: post
-title: "Blog#4: Advanced Prototype"
+title: "Advanced Prototype"
 date: 2019-06-04
 ---
-
-**<span style="color:#C2185B; font-family:Cursive">Introduction:</span>**
-
 Welcome to Blog#4 for team SPENDEMON. We are happy to see you again. In this blog we would like to talk about the design pattern that we have implemented for the App and talk about the reasons for doing so. We also talk about the coding conventions we are implementing and the measures taken by us to ensure that we follow the conventions. We also talk about the kind of users that are likely to find our App useful and how we have added to our prototype to include the demands from the users. We have for the first time also included some screenshots of our App for better Visualization.
 
 If you would like to skip the blog read and just check our App click <a href = "https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.02/Spendemon.apk" target="_blank" > here </a>
 
-**<span style="color:#C2185B; font-family:Cursive">Design Pattern:</span>**
+**<span style="color:#C2185B ">Design Pattern:</span>**
 
 When we started with the research for the Design Pattern, we wanted an architecture which could help us combine multiple features like accessing the Database, Configuration changes, Data Binding etc. with one design implementation. Hence we decided to opt for the View Model architecture design which combines multiple features we needed and also had scope for expanding the features in the future.
 
@@ -18,18 +15,18 @@ The View Model architecture basically has a structure as below:
 
 <img src="{{site.baseurl}}/images/ViewModel.png" alt="View Model Diagram" width="800" align = "middle" />
 
-<span style="color:#C2185B; font-family:Cursive">*Activity/Fragments:*</span>
+<span style="color:#C2185B ">*Activity/Fragments:*</span>
 This basically is the top most level of the UI and represents all the activity interfaces that we have in the App that the user interacts with. For us we have the Summary, Edit Data, Pie Charts (Daily, Monthly, Weekly and Total) as activities.
 
-<span style="color:#C2185B; font-family:Cursive">*View Model:*</span>
+<span style="color:#C2185B ">*View Model:*</span>
 This part of the Architecture takes care of any Configuration changes like App rotations and saves the Data even when the activity gets destroyed during configuration changes.
 
 
-<span style="color:#C2185B; font-family:Cursive">*Repository:*</span>
+<span style="color:#C2185B ">*Repository:*</span>
 The Repository creates an abstract layer between the View Model and actual Database. This particular layer does not much add too much into our App just yet, but can be implemented later if we want to make our App online and access data from Websites.
 
 
-<span style="color:#C2185B; font-family:Cursive">*Room Database:*</span>
+<span style="color:#C2185B ">*Room Database:*</span>
 Room Database is an abstraction layer over the SQLite database which manages both local data as well as data from the Database.
 
 * **Data Access Object:** An Interface implemented in the Database class and contains the methods like insert(), update(), delete(), deleteAll().
@@ -42,7 +39,7 @@ Room Database is an abstraction layer over the SQLite database which manages bot
 
 
 
-**<span style="color:#C2185B; font-family:Cursive">Coding Conventions :</span>**
+**<span style="color:#C2185B ">Coding Conventions :</span>**
 
 
 
@@ -97,7 +94,7 @@ When working together in an Agile manner and following SCRUM methods one needs t
 <img src="{{site.baseurl}}/images/Conventions.png" alt="Conventions" width="800" align = "middle" />
 
 
-**<span style="color:#C2185B; font-family:Cursive">Checkstyle Tests Implemented:</span>**
+**<span style="color:#C2185B ">Checkstyle Tests Implemented:</span>**
 
 In order to make sure that the coding conventions were being implemented properly, we created a Checkstyle test which when run, gives us the errors wherever we have not followed the conventions properly.
 
@@ -107,7 +104,7 @@ In order to make sure that the coding conventions were being implemented properl
 
 
 
-**<span style="color:#C2185B; font-family:Cursive">Context of Use:</span>**
+**<span style="color:#C2185B ">Context of Use:</span>**
 
 
 While designing an App it is helpful to understand the kind of customers that the App is intended for and have an overview on what they expect off the App and also how we can make the App more tailor made for each customer.
@@ -120,7 +117,7 @@ For this reason, we have come up with two representative users who could find us
 <img src="{{site.baseurl}}/images/User2.png" alt="User2" width="800" align = "middle" />
 
 
-**<span style="color:#C2185B; font-family:Cursive">Design Solution:</span>**
+**<span style="color:#C2185B ">Design Solution:</span>**
 
 
 Based on the user stories that we had, we tried to make the App as easily usable and as tailor made as possible. Here, we show two storyboards that shall display how our App functions.
@@ -173,7 +170,7 @@ add their expenses and incomes with descriptions and dates etc.
 * Minimize Need For Typing
 
 
-**<span style="color:#C2185B; font-family:Cursive">Summary of Changes:</span>**
+**<span style="color:#C2185B ">Summary of Changes:</span>**
 As mentioned in the previous Blog, we started with a pretty simple App design which had a Login page, a Summary Page and an Edit Data page. Along with that we had implemented the Database as a simple JSON file which was pretty basic in it's functionality.
 
 Old version:
@@ -217,10 +214,10 @@ The added features also were reflected the in the user stories as new additions 
   * Room Database Class​
 
   * Pie Chart Class​
-  
 
 
-**<span style="color:#C2185B; font-family:Cursive">Final Thoughts:</span>**
+
+**<span style="color:#C2185B ">Final Thoughts:</span>**
 
 The understanding of the User Interface Implementation and Design Pattern, helped in better understanding of both our App and the customers expectations from the App. Doing research on the Design Architectures opened up new windows for us to implement in our App and we are glad we could implement some of it into the App. We hopefully, have been able to create an App that will be able to assist our customers and shall be easy on usage.
 

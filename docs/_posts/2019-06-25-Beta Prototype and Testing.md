@@ -1,14 +1,11 @@
 ---
 layout: post
-title: "Blog#5: Beta Prototype and Testing"
+title: "Beta Prototype and Testing"
 date: 2019-06-25
 ---
-
-**<span style="color:#C2185B; font-family:Cursive">Introduction:</span>**
-
 Welcome to Blog#5 for team SPENDEMON. In this particular Blog we shall talk about how we put our App to test in different circumstances and what was the outcome of the tests. In a real-world scenario, a user interacts with an App at various levels from pressing buttons to putting in data to changing something by mistake. As an App Developer, we need to predict every possible circumstance that might test our App in any condition and come up with solutions for each such case. This is where Software Testing plays an important role in developing a user friendly App iteratively.
 
-**<span style="color:#C2185B; font-family:Cursive">Methodology:</span>** In order to come up with an effective testing scheme, we referred to the <a href = "https://developer.android.com/training/testing/fundamentals" target="_blank" > site. </a>
+**<span style="color:#C2185B ">Methodology:</span>** In order to come up with an effective testing scheme, we referred to the <a href = "https://developer.android.com/training/testing/fundamentals" target="_blank" > site. </a>
 This particular site gave us a systematic approach on how to design and implement our Tests. The basic methodology flow diagram that we have followed is as follows:
 
 <img src="{{site.baseurl}}/images/testing-workflow.png" alt="Testing" width="200" />
@@ -23,6 +20,9 @@ The full workflow, as shown in the Figure, contains a series of nested, iterativ
 
 
 **Testing Pyramid:** The testing pyramid as shown below was implemented during each phase of our App development and consisted of the following categories:
+
+**<span style="color:#C2185B ">Testing Pyramid:</span>** The testing pyramid as shown below was implemented by us in order to run three categories of Tests:
+
 
 * Small tests are unit tests that validate our app's behavior one class at a time and constituted 70% of all Tests.
 * Medium tests are integration tests that validate either interactions between levels of the stack within a module, or interactions between related modules and constituted 20% of the Tests.
@@ -54,16 +54,7 @@ Now say you want to implement these tests in your own app these are the steps we
 
 
 
-
-
-
-
-
-
-
-
-
-**<span style="color:#C2185B; font-family:Cursive">Final Thoughts:</span>**
+**<span style="color:#C2185B ">Final Thoughts:</span>**
 
 The understanding of the User Interface Implementation and Design Pattern, helped in better understanding of both our App and the customers expectations from the App. Doing research on the Design Architectures opened up new windows for us to implement in our App and we are glad we could implement some of it into the App. We hopefully, have been able to create an App that will be able to assist our customers and shall be easy on usage.
 
