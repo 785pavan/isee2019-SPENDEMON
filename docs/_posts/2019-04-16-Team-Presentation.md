@@ -51,7 +51,7 @@ As of now each of the team members have been given a temporary role which is sub
  | Blog and Presentation | Atrayee     |
 
 
-## **<span style="color:#008183" >Complimetary Skills:</span>**
+## **<span style="color:#008183 ">Complimetary Skills:</span>**
 
 Our team is, as mentioned earlier, an amalgamation of engineers from different cultures and backgrounds and as such, each of us possesses some specific set of soft and hard skills like which we intend on applying as we march forward in the project.
 
@@ -60,7 +60,7 @@ Our team is, as mentioned earlier, an amalgamation of engineers from different c
 **Behnam:** Android Knowledge from online courses, Java, Leadership, Assertiveness, Problem solving.
 
 **Pavan:** Java, Preliminary XML knowledge, Software Testing and Quality Control, Team Player, Critical Thinking and Work ethic.
-## **<span style= "color:#008183;font-family:Cursive">Communication Mediums:</span>**
+## **<span style= "color:#008183 ">Communication Mediums:</span>**
 
 
 
