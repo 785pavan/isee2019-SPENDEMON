@@ -1,7 +1,9 @@
 package com.dbse.android.spendemon;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -145,6 +147,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
             mProgressBar.setProgress(50);
         }*/
         mSubmit.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
                 sharedPreferences.edit().putString("Threshold", mThreshold.getText().toString()).apply();
@@ -161,6 +164,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                 } else {
                     mProgressBar.setMax(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
                 }
+
 
             }
         });
