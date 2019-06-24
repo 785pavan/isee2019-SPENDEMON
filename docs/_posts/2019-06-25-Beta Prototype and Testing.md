@@ -580,5 +580,6 @@ These steps needed to be followed for all the classes that need testing. We have
 
 This particular phase of the App Development process taught us that no matter how well you think about the implementation and the design of an App, testing brings into the forefront a lot of loopholes that can save the developers from complaints from customers later on. Hence, a good insight into different Testing methods and circumstances can be truly beneficial in the long run.
 Next we shall be back with the last to one and then last Blog to reflect on our journey that has been and simulate our Playstore Entry.
+To check the latest version of our App please click <a href = "https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.1.2/Spendemon.apk" target="_blank" > here. </a>
 
-So see you again soon!! Tschüss!!
+Till then, Tschüss!!
