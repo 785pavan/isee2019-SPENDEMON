@@ -60,7 +60,7 @@ Our team is, as mentioned earlier, an amalgamation of engineers from different c
 **Behnam:** Android Knowledge from online courses, Java, Leadership, Assertiveness, Problem solving.
 
 **Pavan:** Java, Preliminary XML knowledge, Software Testing and Quality Control, Team Player, Critical Thinking and Work ethic.
-## **<span style= "color:#008183 ">Communication Mediums:</span>**
+## **<span style="color:#008183 ">Communication Mediums:</span>**
 
 
 
