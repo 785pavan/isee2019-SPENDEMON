@@ -146,9 +146,13 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                 int expenseSumProgressBar = (int) expenseSum;
                 Log.i("expenseSum   ", "onCreate: " + expenseSumProgressBar);
                 mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
-                String progress = mThreshold.getText().toString();
-                if (progress != ""){
+                String progress = "0";
+                progress = progress + mThreshold.getText().toString();
+                mProgressBar.setMax(Integer.parseInt(progress));
+                if (!progress.equals("0")) {
+                    Log.i("progress:    ", "p = " + progress);
                     mProgressBar.setMax(Integer.parseInt(progress));
+
                 }else {
                     mProgressBar.setMax(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
                 }
