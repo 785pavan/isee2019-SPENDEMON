@@ -7,4 +7,6 @@
     <dimen name="signUp1">20sp</dimen>
     <dimen name="balanceTextSize">40sp</dimen>
     <dimen name="balanceTextSize2">25sp</dimen>
+    <dimen name="trendLineX">15sp</dimen>
+    <dimen name="trendLineY">20sp</dimen>
 </resources>

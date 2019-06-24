@@ -5,7 +5,10 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -25,6 +28,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.preference.PreferenceFragmentCompat;
 
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
@@ -244,12 +249,14 @@ public class SettingsActivity extends AppCompatActivity {
         try {
             PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
             mDoc.open();
-//            Image logo = Image.getInstance(String.valueOf(R.id.teamLogo));
-//            mDoc.add(logo);
-            // Creating image by file name drawable-v24/team_logo_3.png
-//            String filename = "other-sample/src/main/resources/java.gif";
-//            Image image = Image.getInstance(filename);
-//            mDoc.add(image);
+            Drawable d = getResources().getDrawable(R.drawable.team_logo_3);
+            BitmapDrawable bitDw = ((BitmapDrawable) d);
+            Bitmap bmp = bitDw.getBitmap();
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            Image logo = Image.getInstance(stream.toByteArray());
+            logo.scaleAbsolute(100, 100);
+            mDoc.add(logo);
 
             String mText = "Summary Report";
             mDoc.add(new Paragraph(mText));

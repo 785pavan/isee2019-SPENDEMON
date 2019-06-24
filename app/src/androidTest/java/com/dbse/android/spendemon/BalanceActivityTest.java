@@ -44,7 +44,7 @@ public class BalanceActivityTest extends IntentsTestRule {
         view = mActivity.findViewById(R.id.textViewExpenseValue);
         assertNotNull(view);
     }
-    
+
 
     @After
     public void tearDown() throws Exception {

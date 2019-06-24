@@ -167,4 +167,7 @@
 
     <string name="setting_report">Download transaction history</string>
 
+    <string name="trendLine_yAxis">Amount</string>
+    <string name="trendLine_xAxis">Number of Transactions</string>
+
 </resources>
