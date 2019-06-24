@@ -63,6 +63,7 @@ When working together in an Agile manner and following SCRUM methods one needs t
 
   * Variables: lowercase_name
 
+
 * **Source File Structure:**
 
   * Package name
@@ -124,7 +125,8 @@ Based on the user stories that we had, we tried to make the App as easily usable
 
 
 
-## **<span style= "color:#008183">Storyboard 1:</span>** Here, we display the screenshots from our App which navigates from the Login page to the Main Activity page where one can see the daily, monthly, overall summary. On clicking Summary, it takes to the overall Summary table from which one can navigate to the Edit Data page where one can
+## **<span style= "color:#008183">Storyboard 1:</span>**
+Here, we display the screenshots from our App which navigates from the Login page to the Main Activity page where one can see the daily, monthly, overall summary. On clicking Summary, it takes to the overall Summary table from which one can navigate to the Edit Data page where one can
 add their expenses and incomes with descriptions and dates etc.
 
 
@@ -140,7 +142,8 @@ add their expenses and incomes with descriptions and dates etc.
 
 
 
-## **<span style= "color:#008183">Storyboard 2:</span>** Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline.
+## **<span style= "color:#008183">Storyboard 2:</span>**
+Here we have displayed the Graph visualizations for all the expenses in the form of a Pie chart and a Trendline.
 
 
 
@@ -175,14 +178,15 @@ As mentioned in the previous Blog, we started with a pretty simple App design wh
 
 Old version:
 
-<img src="{{site.baseurl}}/images/OldVersion.png" alt="Old Version" width="300" align = "middle" />
+<center><img src="{{site.baseurl}}/images/OldVersion.png" alt="Old Version" width="300"/></center>
 
 New version:
 
-<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="300"  />
+<center><img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="300" /></center>
+
 
 However, with the Advanced Prototype version we have tried to refine our App with the implementation of certain features to make our App more, well, App like. A summary of the added changes has been given below.
-
+~~~
 * Room Database implemented.
 
 * Navigation Bar added.
@@ -192,11 +196,12 @@ However, with the Advanced Prototype version we have tried to refine our App wit
 * Icons added for each category.
 
 * Date Picker feature added.
+~~~
 
 The added features also were reflected the in the user stories as new additions an well as in the Class Diagrams which have been shown below:
 
 **Addition to User Stories:**
-
+~~~
   * Easy visualization of expenses through graphs.
 
   * Sort data by Date​
@@ -206,15 +211,16 @@ The added features also were reflected the in the user stories as new additions 
   * Data stored in the Database permanently.​
 
   * Deal with Configuration changes, App rotations etc.​
+~~~
 
 **Addition to Class Diagrams:**
-
+~~~
   * View Model Class​
 
   * Room Database Class​
 
   * Pie Chart Class​
-
+~~~
 
 
 ## **<span style="color:#008183 ">Final Thoughts:</span>**
