@@ -316,8 +316,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                     data += AmountValues.get(j);
                 }
             }
-//            yData.add(data);
-//            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
 
             //            add data modification code:
             save_data = true;
@@ -386,8 +384,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                     data += AmountValues.get(j);
                 }
             }
-//            yData.add(data);
-//            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
 
             //            add data modification code:
             save_data = true;
@@ -460,8 +456,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                     data += AmountValues.get(j);
                 }
             }
-//            yData.add(data);
-//            xData.add(Categories.get(i).equals("---") ? "Not Defined" : Categories.get(i));
 
             //            add data modification code:
             save_data = true;
@@ -503,9 +497,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
         switch (menuItem.getItemId()) {
             case R.id.nav_daily:
-
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new DailyFragment()).commit();*/
                 Intent intent_daily = new Intent(getApplicationContext(), PieChartDailyActivity.class);
                 startActivity(intent_daily);
                 break;
@@ -513,28 +504,15 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
             case R.id.nav_balance:
                 Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);
                 startActivity(intent_balance);
-//                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-//                startActivity(intent_month);
-//            case R.id.nav_weekly:
-//                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new MonthlyFragment()).commit();*/
-//                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new WeeklyFragment()).commit();*/
                 break;
             case R.id.nav_monthly:
                 Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
                 startActivity(intent_month);
-                /*Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-                startActivity(intent_month);*/
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new MonthlyFragment()).commit();
                 break;
             case R.id.nav_total:
                 Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);
                 intent_total.putExtra("Duration", "All");
                 startActivity(intent_total);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new TotalFragment()).commit();*/
                 break;
             case R.id.nav_trendLine:
                 Intent intent_trendLine = new Intent(getApplicationContext(), TrendLineActivity.class);
@@ -564,12 +542,10 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                         "atrayee.neog@st.ovgu.de", "seyedbehnam.beladi@st.ovgu.de"});
                 startActivity(Intent.createChooser(intent_contactUs, "Share this by"));
                 break;
-//                pavan.kandapagari@st.ovgu.de,atrayee.neog@st.ovgu.de,seyedbehnam.beladi@st.ovgu.de
             case R.id.nav_summary:
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 startActivity(intent);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SummaryFragment()).commit();*/
+
 //                right drawer
                 break;
             case R.id.nav_currency:
