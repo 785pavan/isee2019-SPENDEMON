@@ -25,8 +25,8 @@ import com.dbse.android.spendemon.model.Entry;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
-import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -36,19 +36,19 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
     private static final String TAG = "myTag";
     static ArrayList<Entry> entries = new ArrayList<>();
     private final String TYPE = "type";
+    RecyclerView rvEntries;
     private SummaryViewModel summaryViewModel; // object of View Model created.
     private DrawerLayout drawer1;
     private int backKey = 0;
     private Intent intent;
     private entryAdaptor entryAdaptor = new entryAdaptor(entries);
-    RecyclerView rvEntries;
 
 
     //    ArrayList<Float> iData = new ArrayList<>();
 //    ArrayList<Float> eData = new ArrayList<>();
 //    float balance;
 
-    public static int compareDate(String a, String b){
+    public static int compareDate(String a, String b) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try {
             Date date1 = simpleDateFormat.parse(a);
@@ -59,13 +59,13 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                 return -1;
             } else return 0;
 
-        }
-            catch (ParseException e) {              // Insert this block.
+        } catch (ParseException e) {              // Insert this block.
             // TODO Auto-generated catch block
             e.printStackTrace();
             return -2;
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -82,6 +82,7 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                 for (Table table : tables) {
                     Entry e = new Entry(table.getType(), table.getCategory(), table.getAmount(), table.getDate(), table.getPaymethod(),
                             table.getNote());
+                    e.setId(table.getId());
                     entries.add(e);
                     if (intent.hasExtra("Types")) {
                         String[] types = intent.getStringArrayExtra("Types");
@@ -126,10 +127,11 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                     if (intent.hasExtra("StartDate") && intent.hasExtra("EndDate")) {
                         String start = intent.getStringExtra("StartDate");
                         String end = intent.getStringExtra("EndDate");
-                        for (Entry entry : entries){
-                            {   if (((compareDate(start, entry.getDate())==-1)||(compareDate(start, entry.getDate())==0))
-                                    && ((compareDate(end, entry.getDate())==1)||(compareDate(end, entry.getDate())==0)))
-                                filtered.add(entry);
+                        for (Entry entry : entries) {
+                            {
+                                if (((compareDate(start, entry.getDate()) == -1) || (compareDate(start, entry.getDate()) == 0))
+                                        && ((compareDate(end, entry.getDate()) == 1) || (compareDate(end, entry.getDate()) == 0)))
+                                    filtered.add(entry);
                             }
                         }
                         entries.clear();
@@ -145,7 +147,6 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
 
             }
         });
-
 
 
         super.onCreate(savedInstanceState);
@@ -210,21 +211,32 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
             }
 
             @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                summaryViewModel.delete(entryAdaptor.getTableAt(viewHolder.getAdapterPosition()));
-                Toast.makeText(getApplicationContext(),"Entry Deleted", Toast.LENGTH_LONG).show();
+            public void onSwiped(@NonNull final RecyclerView.ViewHolder viewHolder, int direction) {
+                /*AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                builder.setMessage(R.string.del_msg)
+                        .setTitle(R.string.confirm_dialog_title)
+                        .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                summaryViewModel.delete(summaryViewModel.getTableById(entryAdaptor.getEntryAt(viewHolder.getAdapterPosition()).getId()));
+                                Toast.makeText(getApplicationContext(), "Entry Deleted", Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .setNegativeButton(R.string.cancel,new DialogInterface.OnClickListener() {
+                            private Object PrintAttributes;
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Cancel
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.show();*/
+                summaryViewModel.delete(summaryViewModel.getTableById(entryAdaptor.getEntryAt(viewHolder.getAdapterPosition()).getId()));
+                Toast.makeText(getApplicationContext(), "Entry Deleted", Toast.LENGTH_LONG).show();
             }
         }).attachToRecyclerView(rvEntries);
 
-//        code for calculating the balance:
-
-//        for (com.dbse.android.spendemon.model.Entry entry : entries) {
-//            if(entry.getType().equals("Incomes")){
-//                iData.add((float)entry.getAmount());
-//            }else if (entry.getType().equals("Expenses")){
-//                eData.add((float)entry.getAmount());
-//            }
-//        }
 
     }
 
