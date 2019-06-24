@@ -559,7 +559,7 @@ These steps needed to be followed for all the classes that need testing. We have
     - A PDF can be downloaded now from the App which gives a summary of all Transactions.
     - Categorical Filtering Activity was added.
     - Definitions and Legends added to graphs and pie-charts.
-    - Delete All transactions button added to the Settings page.
+    -  Swipe Delete and Delete All transactions button added to the   Settings page.
     - Categorical thresholds added to keep track on transactions.
 
 
