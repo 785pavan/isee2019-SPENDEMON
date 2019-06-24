@@ -1,5 +1,6 @@
 package com.dbse.android.spendemon;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +12,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +35,16 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
     SharedPreferences sharedPreferences;
     private String usernameA1 = null;
     private Integer passwordA1;
+
+    public SignUpLogIn(Context context) {
+    }
+
+    public String validate(String userName, String password) {
+        if (userName.equals("admin") && password.equals("12345"))
+            return "Login was successful";
+        else
+            return "Invalid login!";
+    }
 
     public void signUpOrLogIn(View view) {
         if (signUpModeActive) {
@@ -110,6 +120,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
 
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,9 +133,9 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
 //        teamLogo = (ImageView) findViewById(R.id.teamLogo);
 //        constraintLayout = (ConstraintLayout) findViewById(R.id.relativeLayout1);
 
-        signUpButton =  findViewById(R.id.buttonSignUp);
-        teamLogo =  findViewById(R.id.teamLogo);
-        constraintLayout =  findViewById(R.id.relativeLayout1);
+        signUpButton = findViewById(R.id.buttonSignUp);
+        teamLogo = findViewById(R.id.teamLogo);
+        constraintLayout = findViewById(R.id.relativeLayout1);
 
         teamLogo.setOnClickListener(this);
 
@@ -134,9 +145,9 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
 //        passwordField = (EditText) findViewById(R.id.password1);
 //        changeSignUpModeTextView = (TextView) findViewById(R.id.changeSignUpMode);
 
-        usernameField =  findViewById(R.id.username1);
-        passwordField =  findViewById(R.id.password1);
-        changeSignUpModeTextView =  findViewById(R.id.changeSignUpMode);
+        usernameField = findViewById(R.id.username1);
+        passwordField = findViewById(R.id.password1);
+        changeSignUpModeTextView = findViewById(R.id.changeSignUpMode);
 
         changeSignUpModeTextView.setOnClickListener(this);
 
