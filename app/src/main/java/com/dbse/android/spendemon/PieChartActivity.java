@@ -111,6 +111,10 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
 
         addDataSet();
+        Legend l = pieChart.getLegend();
+        l.setXEntrySpace(7);
+        l.getYEntrySpace();
+
         addDataSetIncome();
 
 //        Todo: Add extra piechart selectedlistener for income

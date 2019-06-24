@@ -39,6 +39,10 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
     public SignUpLogIn(Context context) {
     }
 
+    public SignUpLogIn() {
+
+    }
+
     public String validate(String userName, String password) {
         if (userName.equals("admin") && password.equals("12345"))
             return "Login was successful";
