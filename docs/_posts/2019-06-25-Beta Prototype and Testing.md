@@ -39,7 +39,7 @@ The full workflow, as shown in the Figure, contains a series of nested, iterativ
 **Testing Pyramid:** The testing pyramid as shown below was implemented during each phase of our App development and consisted of the following categories:
 
 
-<img src="{{site.baseurl}}/images/Pyramid.png" alt="Pyramid" width="500" />
+<center><img src="{{site.baseurl}}/images/Pyramid.png" alt="Pyramid" width="500" /></center>
 
 
 
