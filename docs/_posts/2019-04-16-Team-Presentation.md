@@ -13,12 +13,12 @@ During the initial months of us coming to a foreign land for studies, we realize
 As, for our app name, we being 90's kids, this is a pun on our beloved anime *"Pokemon"* as well as a ledger to check where did our user actually *"Spend Them On?"*
 
 
-<img src="{{site.baseurl}}/images/PokeCard.jpg" alt="Pokemon Card image" width="400" align = "middle" />
+<center><img src="{{site.baseurl}}/images/PokeCard.jpg" alt="Pokemon Card image" width="400" align = "middle" /></center>
 
 
 ***
 ## **<span style="color:#008183 ">Our Team:</span>**
-<img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="250" align = "middle" />
+<center><img src="{{site.baseurl}}/images/team_pokemon.jpg" alt="Pokemon team image" width="250" align = "middle" /></center>
 
 
 
@@ -26,11 +26,14 @@ As, for our app name, we being 90's kids, this is a pun on our beloved anime *"P
 
 Our team consists of a mix bag of an Electrical, Mechanical and an Electronics Engineer, who have now dived headfirst into the sea of Computer Science and are  really excited to develop an app and show it off to their friends and peers back home. Without further ado, here we introduce our team members:
 
-## **<span style="color:#008183">1. Atrayee Neog :</span>** A struggling Electronic Engineer who found passion and comfort behind the programming logics and algorithms of Computer Science. My motivation behind doing this project is to testify my theoretical knowledge into an implementation in real life and to channelize my ideas into building something worthwhile.
+## **<span style="color:#008183">1. Atrayee Neog :</span>**
+A struggling Electronic Engineer who found passion and comfort behind the programming logics and algorithms of Computer Science. My motivation behind doing this project is to testify my theoretical knowledge into an implementation in real life and to channelize my ideas into building something worthwhile.
 
-## **<span style="color:#008183">2.Seyed Behnam Beladi :</span>** In a world full of innovative ideas, app development is a wonderful tool to implement them. As person who always has new ideas, I believe learning how to make phone applications is a perfect way to developing them. It also opens up a door to new opportunities in my future career.
+## **<span style="color:#008183">2. Seyed Behnam Beladi :</span>**
+In a world full of innovative ideas, app development is a wonderful tool to implement them. As person who always has new ideas, I believe learning how to make phone applications is a perfect way to developing them. It also opens up a door to new opportunities in my future career.
 
-## **<span style="color:#008183">3.Pavan Kumar Kandapagari :</span>** A guy with an insatiable thirst for knowledge and a soft spot for technology. My motivation behind this project is to produce an usable product along with testing the skills I have learnt in the previous semester.
+## **<span style="color:#008183">3. Pavan Kumar Kandapagari :</span>**
+A guy with an insatiable thirst for knowledge and a soft spot for technology. My motivation behind this project is to produce an usable product along with testing the skills I have learnt in the previous semester.
 
 
 ***
@@ -48,7 +51,7 @@ As of now each of the team members have been given a temporary role which is sub
  | Blog and Presentation | Atrayee     |
 
 
-## **<span style="color:#008183>Complimetary Skills:</span>**
+## **<span style="color:#008183 ">Complimetary Skills:</span>**
 
 Our team is, as mentioned earlier, an amalgamation of engineers from different cultures and backgrounds and as such, each of us possesses some specific set of soft and hard skills like which we intend on applying as we march forward in the project.
 
@@ -57,14 +60,14 @@ Our team is, as mentioned earlier, an amalgamation of engineers from different c
 **Behnam:** Android Knowledge from online courses, Java, Leadership, Assertiveness, Problem solving.
 
 **Pavan:** Java, Preliminary XML knowledge, Software Testing and Quality Control, Team Player, Critical Thinking and Work ethic.
-## **<span style= "color:#008183;font-family:Cursive">Communication Mediums:</span>**
+## **<span style="color:#008183 ">Communication Mediums:</span>**
 
 
 
 Apart from the most popular mediums like Whatsapp and Google drive, we intend to work on and communicate via Github and Slack. We shall manage our team goals via apps like Trello.
 
-<a href="https://github.com/" target="_blank"><img src="{{site.baseurl}}/images/GitHub-Mark-120px-plus.png" alt="github" width="50"/></a>
-<a href="https://www.whatsapp.com/" target="_blank"><img src="{{site.baseurl}}/images/WhatsApp_Logo_1.png" alt="Whatsapp" width="50"/></a>
-<a href="https://drive.google.com/" target="_blank"><img src="{{site.baseurl}}/images/Google_Drive_logo.png" alt="GoogleDrive" width="50"/></a>
-<a href="https://trello.com" target="_blank"><img src="{{site.baseurl}}/images/trello_logo.png" alt="Trello" width="50"/></a>
-<a href="https://slack.com" target="_blank"><img src="{{site.baseurl}}/images/slack-logo-icon.png" alt="Slack" width="50"/></a>
+<center><a href="https://github.com/" target="_blank"><img src="{{site.baseurl}}/images/GitHub-Mark-120px-plus.png" alt="github" width="50"/></a></center>
+<center><a href="https://www.whatsapp.com/" target="_blank"><img src="{{site.baseurl}}/images/WhatsApp_Logo_1.png" alt="Whatsapp" width="50"/></a></center>
+<center><a href="https://drive.google.com/" target="_blank"><img src="{{site.baseurl}}/images/Google_Drive_logo.png" alt="GoogleDrive" width="50"/></a></center>
+<center><a href="https://trello.com" target="_blank"><img src="{{site.baseurl}}/images/trello_logo.png" alt="Trello" width="50"/></a></center>
+<center><a href="https://slack.com" target="_blank"><img src="{{site.baseurl}}/images/slack-logo-icon.png" alt="Slack" width="50"/></a></center></center>

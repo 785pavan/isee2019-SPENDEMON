@@ -7,7 +7,7 @@ Welcome to Blog#5 for team SPENDEMON. In this particular Blog we shall talk abou
 
 ## **<span style="color:#008183 ">Methodology:</span>**
 
-As one of our team members had done a Software Testing course in the previous semester, we came in terms with the *CORRECT* approach towards implementing Tests from him. Here *CORRECT* stands for: 
+As one of our team members had done a Software Testing course in the previous semester, we came in terms with the *CORRECT* approach towards implementing Tests from him. Here *CORRECT* stands for:
 
 ~~~
 C: Conformance
@@ -25,7 +25,7 @@ In order to come up with an effective testing scheme, we also referred to the <a
 This particular site gave us a systematic approach on how to design and implement our Tests. The basic methodology flow diagram that we have followed is as follows:
 
 
-<img src="{{site.baseurl}}/images/testing-workflow.png" alt="Testing" width="500" />
+<center><img src="{{site.baseurl}}/images/testing-workflow.png" alt="Testing" width="500" /></center>
 
 
 The full workflow, as shown in the Figure, contains a series of nested, iterative cycles where a long, slow, UI-driven cycle tests the integration of code units. We test the units themselves using shorter, faster development cycles. This set of cycles continues until our app satisfies every use case.
@@ -39,7 +39,7 @@ The full workflow, as shown in the Figure, contains a series of nested, iterativ
 **Testing Pyramid:** The testing pyramid as shown below was implemented during each phase of our App development and consisted of the following categories:
 
 
-<img src="{{site.baseurl}}/images/Pyramid.png" alt="Pyramid" width="500" />
+<center><img src="{{site.baseurl}}/images/Pyramid.png" alt="Pyramid" width="500" /></center>
 
 
 
@@ -426,26 +426,131 @@ Balance Activity:
 ~~~
 
 
-
-Now say you want to implement these tests in your own app these are the steps we followed that can help you as well.
-1. First step as always when you implement someone else code, to include all the dependencies in our app level gradle file. for the above tests dependencies are :
+**Steps of Implementation:** Now say you want to implement these tests in your own App these are the steps we followed that can help you as well. (We have taken the example of the Main Activity class below except point 6: )
+1. First step as always when you implement someone else's code, is to include all the dependencies in your App level gradle file. For the above tests dependencies are as given below:
+~~~
+androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+   androidTestImplementation 'androidx.test.espresso:espresso-intents:3.2.0'
+   androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.2.0'
+   androidTestImplementation 'androidx.test:runner:1.2.0'
+   androidTestImplementation 'androidx.test:rules:1.2.0'
+   testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.28.2'
+   testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+~~~
 2. Next we created test classes which extend IntentTestRule as we test intents when testing end to end.
+~~~
+public class MainActivityTest extends IntentsTestRule
+~~~
 3. Then we created @Rule for the each class so that we can operate without disturbing the original class.
+~~~
+@Rule
+    public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
+~~~
 4. Now we define @Before setup that activity starts with defined Configuration.
+~~~
+@Before
+   public void setUp() throws Exception {
+       mActivity = mActivityTestRule.getActivity();
+   }
+~~~
 5. Then we implement tests that are annotated as @Test for example to start an activity from Summary class and go to edit data class enter few details like amount and all the usual stuff there then click save now go to details of the saved activity using the following code.
-6. we also write few more tests which take some other route and finally reach the destination.
+~~~
+@Test
+    public void navBarTestTrendLine() {
+        Intents.init();
+        onView(withId(R.id.drawer_layout))
+                .check(matches(isClosed(Gravity.LEFT)))
+                .perform(DrawerActions.open());
+        onView(withId(R.id.navigation_view1))
+                .perform(NavigationViewActions.navigateTo(R.id.nav_trendLine));
+        intended(hasComponent(TrendLineActivity.class.getName()));
+        Intents.release();
+    }
+~~~
+6. We also write few more tests which take some other route and finally reach the destination.
+~~~
+(For Edit Data Class:)
+@Test
+    public void dataIncomeEntryTest() {
+        String type = "Incomes";
+        String paymentMethod = "GooglePay";
+        String category = "Salary";
+        String amount = "750";
+        String notes = "This is a test addition";
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        String date = "" + day + "/" + (month + 1) + "/" + year;
+
+        Intents.init();
+        Espresso.onView(withId(R.id.sType)).perform(click());
+        Espresso.onData(allOf(is(instanceOf(String.class)), is(type)))
+                .perform(click());
+        Espresso.onView(withId(R.id.sType)).check(matches(withSpinnerText(containsString(type))));
+        Espresso.onView(withId(R.id.sCategory)).perform(click());
+        Espresso.onData(allOf(is(instanceOf(String.class)), is(category)))
+                .perform(click());
+        Espresso.onView(withId(R.id.sPaymentMethod)).perform(click());
+        Espresso.onData(allOf(is(instanceOf(String.class)), is(paymentMethod)))
+                .perform(click());
+        Espresso.onView(withId(R.id.sPaymentMethod)).check(matches(withSpinnerText(paymentMethod)));
+
+        Espresso.onView(withId(R.id.sCategory)).check(matches(withSpinnerText(category)));
+        Espresso.onView(withId(R.id.etAmount)).perform(ViewActions.typeText(amount));
+        Espresso.onView(withId(R.id.etDescription)).perform(ViewActions.typeText(notes));
+        Espresso.closeSoftKeyboard();
+        Espresso.onView(withId(R.id.save_table)).perform(click());
+        intended(hasComponent(Summary.class.getName()));
+        Espresso.onView(withId(R.id.rvEntries))
+                .perform(RecyclerViewActions
+                        .<RecyclerView.ViewHolder>actionOnItemAtPosition(0, click()));
+        intended(hasComponent(DetailsActivity.class.getName()));
+        Espresso.onView(withId(R.id.tvAmountDetails))
+                .check(matches(withText(containsString(amount))));
+        Espresso.onView(withId(R.id.tvNotesDetails))
+                .check(matches(withText(containsString(notes))));
+        Espresso.onView(withId(R.id.tvDateDetails))
+                .check(matches(withText(containsString(date))));
+
+        Intents.release();
+    }
+~~~
 7. After finishing the test for a class we had to invalidate the setup this is done in @After annotated classes.
-8. These steps needed to be followed for all the classes that needed testing.
+~~~
+@After
+    public void tearDown() throws Exception {
+        mActivity = null;
+    }
+~~~
+
+These steps needed to be followed for all the classes that need testing. We have made it easier for the reader to copy paste our test implementation by providing all possible implementation code snippets.
 
 
 
+## **<span style="color:#008183 ">Summary of Changes:</span>**
 
+- Pre-Testing:
+    - A PDF can be downloaded now from the App which gives a summary of all Transactions.
+    - Categorical Filtering Activity was added.
+    - Definitions and Legends added to graphs and pie-charts.
+    - Delete All transactions button added to the Settings page.
+    - Categorical thresholds added to keep track on transactions.
+
+
+- Post Testing:
+    - Cause: App crashed when Login fields were empty and User tapped anywhere other than the fields. This was found while testing the SignUpLogin class().
+      - Solution: A void function was implemented which simply makes the keypad go down once the fields are empty and the User taps in blank space.
+    - Cause: App crashed when any category in the filtering activity was left empty. This was found during testing the Summary class.
+      - Solution: Methods were created to take in all values if the user did not select a value for any field or category.
 
 
 ## **<span style="color:#008183 ">Final Thoughts:</span>**
 
-The understanding of the User Interface Implementation and Design Pattern, helped in better understanding of both our App and the customers expectations from the App. Doing research on the Design Architectures opened up new windows for us to implement in our App and we are glad we could implement some of it into the App. We hopefully, have been able to create an App that will be able to assist our customers and shall be easy on usage.
 
-We next intend to up our game some more by going into further detailing in our App and make it even more fun to use.  
 
-So stay tuned!! Tschüss!!
+
+This particular phase of the App Development process taught us that no matter how well you think about the implementation and the design of an App, testing brings into the forefront a lot of loopholes that can save the developers from complaints from customers later on. Hence, a good insight into different Testing methods and circumstances can be truly beneficial in the long run.
+Next we shall be back with the last to one and then last Blog to reflect on our journey that has been and simulate our Playstore Entry.
+
+So see you again soon!! Tschüss!!
