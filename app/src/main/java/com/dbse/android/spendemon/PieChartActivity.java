@@ -1,12 +1,10 @@
 package com.dbse.android.spendemon;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +24,7 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -34,27 +33,21 @@ import static com.dbse.android.spendemon.Summary.entries;
 
 public class PieChartActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private DrawerLayout drawer1;
-
-    private float incomeSum;
-    private float expenseSum;
-
     private static String TAG = "PieChart";
     /* private float[] yData = {25.4f, 10.6f, 66.76f, 44.32f, 46.0f, 16.8f, 23.6f};
      private String[] xData = {"Mitch", "Jessica", "Md", "Kelsey", "Sam", "Robert", "Ashley"};*/
     ArrayList<Float> AmountValues = new ArrayList<>();
     ArrayList<String> Categories = new ArrayList<>();
-
     ArrayList<Float> yData = new ArrayList<>();
     ArrayList<String> xData = new ArrayList<>();
     ArrayList<Float> yDataIn = new ArrayList<>();
     ArrayList<String> xDataIn = new ArrayList<>();
     Intent intent;
-
-
     PieChart pieChart;
     PieChart pieChartInput;
-
+    private DrawerLayout drawer1;
+    private float incomeSum;
+    private float expenseSum;
     private int backKey = 0;
 
     @Override
@@ -84,7 +77,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
 
         intent = getIntent();
-//        setContentView(R.layout.activity_pie_chart);
         Log.d(TAG, "onCreate: Start of creation of chart");
         pieChart = findViewById(R.id.idPieChart);
         Description desc = new Description();
@@ -109,11 +101,22 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         pieChartInput.setDrawEntryLabels(true);
 
 
-
         addDataSet();
         Legend l = pieChart.getLegend();
-        l.setXEntrySpace(7);
-        l.getYEntrySpace();
+        l.getEntries();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        l.setDrawInside(false);
+        l.setYEntrySpace(xData.size());
+        l.setXEntrySpace(yData.size());
+
+        Legend L = pieChartInput.getLegend();
+        L.getEntries();
+        L.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        L.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        L.setDrawInside(false);
+        L.setYEntrySpace(xData.size());
+        L.setXEntrySpace(yData.size());
 
         addDataSetIncome();
 
@@ -190,6 +193,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
             xEntries.add(name);
         }
 
+
         PieDataSet pieDataSet = new PieDataSet(yEntries, "Cost");
         pieDataSet.setSliceSpace(2);
         pieDataSet.setValueTextSize(12);
@@ -197,13 +201,21 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         //Colors
 
         ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.BLUE);
-        colors.add(Color.RED);
-        colors.add(Color.GREEN);
-        colors.add(Color.CYAN);
-        colors.add(Color.YELLOW);
-        colors.add(Color.MAGENTA);
-        colors.add(Color.GRAY);
+
+        for (int c : ColorTemplate.VORDIPLOM_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.JOYFUL_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.COLORFUL_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.LIBERTY_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.PASTEL_COLORS)
+            colors.add(c);
 
         pieDataSet.setColors(colors);
 
@@ -217,7 +229,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         pieChart.invalidate();
 
     }
-
 
 
     private void addDataSetIncome() {
@@ -243,13 +254,16 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
         //Colors
 
         ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.BLUE);
-        colors.add(Color.RED);
-        colors.add(Color.GREEN);
-        colors.add(Color.CYAN);
-        colors.add(Color.YELLOW);
-        colors.add(Color.MAGENTA);
-        colors.add(Color.GRAY);
+        for (int c : ColorTemplate.VORDIPLOM_COLORS)
+            colors.add(c);
+        for (int c : ColorTemplate.JOYFUL_COLORS)
+            colors.add(c);
+        for (int c : ColorTemplate.COLORFUL_COLORS)
+            colors.add(c);
+        for (int c : ColorTemplate.LIBERTY_COLORS)
+            colors.add(c);
+        for (int c : ColorTemplate.PASTEL_COLORS)
+            colors.add(c);
 
         pieDataSet.setColors(colors);
 
@@ -266,8 +280,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
     }
 
 
-
-
     private void getData() {
         for (com.dbse.android.spendemon.model.Entry entry : entries) {
             if ((intent.getStringExtra("Duration")).equals("Day")) {
@@ -278,9 +290,9 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
             } else if (intent.getStringExtra("Duration").equals("Month")) {
                 String monthIntent = intent.getStringExtra("Month");
                 String monthEntry = entry.getDate().substring(2, 3);
-                if (entry.getDate().substring(1,2).equals("/")){
+                if (entry.getDate().substring(1, 2).equals("/")) {
                     monthEntry = entry.getDate().substring(2, 3);
-                }else if (entry.getDate().substring(2,3).equals("/")){
+                } else if (entry.getDate().substring(2, 3).equals("/")) {
                     monthEntry = entry.getDate().substring(3, 4);
                 }
 
@@ -288,7 +300,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                     AmountValues.add((float) entry.getAmount());
                     Categories.add(entry.getCategory());
                 }
-            } else if (intent.getStringExtra("Duration").equals("All")){
+            } else if (intent.getStringExtra("Duration").equals("All")) {
                 AmountValues.add((float) entry.getAmount());
                 Categories.add(entry.getCategory());
             }
@@ -309,8 +321,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
             //            add data modification code:
             save_data = true;
-            for (int k = 0; k < i; k++){
-                if (Categories.get(k).equals(Categories.get(i))){
+            for (int k = 0; k < i; k++) {
+                if (Categories.get(k).equals(Categories.get(i))) {
                     save_data = false;
                 }
                 Log.i("k value:", String.valueOf(k));
@@ -331,10 +343,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
         }
     }
-
-
-
-
 
 
     private void getDataIncome() {
@@ -383,8 +391,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
             //            add data modification code:
             save_data = true;
-            for (int k = 0; k < i; k++){
-                if (Categories.get(k).equals(Categories.get(i))){
+            for (int k = 0; k < i; k++) {
+                if (Categories.get(k).equals(Categories.get(i))) {
                     save_data = false;
                 }
                 Log.i("k value:", String.valueOf(k));
@@ -395,11 +403,11 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
             }
 
             incomeSum = 0;
-            for(float index : yDataIn){
+            for (float index : yDataIn) {
                 incomeSum += index;
             }
             TextView textViewIncome = findViewById(R.id.textViewChartIncomeValue);
-            String stringIncomeSum = String.valueOf((float) ((int) ( incomeSum * 100)) / 100);
+            String stringIncomeSum = String.valueOf((float) ((int) (incomeSum * 100)) / 100);
             stringIncomeSum = "+ " + stringIncomeSum;
             textViewIncome.setText(stringIncomeSum);
             /*if (Categories.get(i).equals(Categories.get(i + 1))) {
@@ -411,9 +419,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
         }
     }
-
-
-
 
 
     private void getDataExpense() {
@@ -460,8 +465,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
             //            add data modification code:
             save_data = true;
-            for (int k = 0; k < i; k++){
-                if (Categories.get(k).equals(Categories.get(i))){
+            for (int k = 0; k < i; k++) {
+                if (Categories.get(k).equals(Categories.get(i))) {
                     save_data = false;
                 }
                 Log.i("k value:", String.valueOf(k));
@@ -472,14 +477,13 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
             }
 
 
-
             expenseSum = 0;
-            for(float index : yData){
+            for (float index : yData) {
                 expenseSum += index;
             }
 
             TextView textViewExpense = findViewById(R.id.textViewChartExpenseValue);
-            String stringExpenseSum = String.valueOf((float) ((int) ( expenseSum * 100)) / 100);
+            String stringExpenseSum = String.valueOf((float) ((int) (expenseSum * 100)) / 100);
             stringExpenseSum = "- " + stringExpenseSum;
             textViewExpense.setText(stringExpenseSum);
 
@@ -492,8 +496,6 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
 
         }
     }
-
-
 
 
     @Override
