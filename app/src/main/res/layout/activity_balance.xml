@@ -108,6 +108,29 @@
         android:textAlignment="center"
         android:textSize="@dimen/balanceTextSize2"/>
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="115dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="48dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIncomeValue" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="136dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExpenseValue" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
