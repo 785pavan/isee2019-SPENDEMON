@@ -525,8 +525,8 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                 String shareBody = "We are team SPENDEMON. " +
                         "\n Please check out our App at:" +
                         "\n https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.02/Spendemon.apk";
-                String shareSubject = "The Link to SPENDEMON App:";
-                intent_share.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
+//                String shareSubject = "The Link to SPENDEMON App:";
+//                intent_share.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
                 intent_share.putExtra(Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(intent_share, "Share this by"));
                 break;
