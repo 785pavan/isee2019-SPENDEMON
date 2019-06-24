@@ -25,7 +25,7 @@ In order to come up with an effective testing scheme, we also referred to the <a
 This particular site gave us a systematic approach on how to design and implement our Tests. The basic methodology flow diagram that we have followed is as follows:
 
 
-<img src="{{site.baseurl}}/images/testing-workflow.png" alt="Testing" width="500" />
+<center><img src="{{site.baseurl}}/images/testing-workflow.png" alt="Testing" width="500" /></center>
 
 
 The full workflow, as shown in the Figure, contains a series of nested, iterative cycles where a long, slow, UI-driven cycle tests the integration of code units. We test the units themselves using shorter, faster development cycles. This set of cycles continues until our app satisfies every use case.
