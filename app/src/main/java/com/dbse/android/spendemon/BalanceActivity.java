@@ -1,6 +1,7 @@
 package com.dbse.android.spendemon;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,34 +23,32 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
+import java.util.Objects;
 
 import static com.dbse.android.spendemon.Summary.entries;
 
 public class BalanceActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
+    public static float expenseSumSetting;
+    public static float incomeSumSetting;
+    public static float balanceSetting;
     ArrayList<Float> iData = new ArrayList<>();
     ArrayList<Float> eData = new ArrayList<>();
     float balance;
     float expenseSum;
     float incomeSum;
-    public static float expenseSumSetting;
-    public static float incomeSumSetting;
-    public static float balanceSetting;
-
-    private DrawerLayout drawer1;
-    private int backKey = 0;
     ProgressBar mProgressBar;
     EditText mThreshold;
     Button mSubmit;
+    SharedPreferences sharedPreferences;
+    private DrawerLayout drawer1;
+    private int backKey = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
+        sharedPreferences = this.getSharedPreferences("Balance", 0);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balance);
@@ -77,6 +76,11 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         mProgressBar = findViewById(R.id.progressBarThreshold);
         mSubmit = findViewById(R.id.buttonSubmit);
         mThreshold = findViewById(R.id.editTextThreshold);
+
+        if (!(Objects.equals(sharedPreferences.getString("Threshold", ""), ""))) {
+            mThreshold.setText(sharedPreferences.getString("Threshold", ""));
+        }
+
 
         TextView textView = findViewById(R.id.balanceTextView);
         TextView textViewIn = findViewById(R.id.textViewIncomeValue);
@@ -143,6 +147,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         mSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sharedPreferences.edit().putString("Threshold", mThreshold.getText().toString()).apply();
                 int expenseSumProgressBar = (int) expenseSum;
                 Log.i("expenseSum   ", "onCreate: " + expenseSumProgressBar);
                 mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
@@ -153,7 +158,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                     Log.i("progress:    ", "p = " + progress);
                     mProgressBar.setMax(Integer.parseInt(progress));
 
-                }else {
+                } else {
                     mProgressBar.setMax(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
                 }
 
