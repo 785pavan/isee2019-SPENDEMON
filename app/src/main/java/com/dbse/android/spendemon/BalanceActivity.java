@@ -4,7 +4,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +21,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -35,9 +42,15 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
 
     private DrawerLayout drawer1;
     private int backKey = 0;
+    ProgressBar mProgressBar;
+    EditText mThreshold;
+    Button mSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balance);
 
@@ -60,6 +73,10 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
 
         drawer1.addDrawerListener(toggle1);
         toggle1.syncState();
+
+        mProgressBar = findViewById(R.id.progressBarThreshold);
+        mSubmit = findViewById(R.id.buttonSubmit);
+        mThreshold = findViewById(R.id.editTextThreshold);
 
         TextView textView = findViewById(R.id.balanceTextView);
         TextView textViewIn = findViewById(R.id.textViewIncomeValue);
@@ -88,10 +105,10 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
 
         if (balance > 0) {
             string = "+  " + string;
-            textView.setTextColor(Color.parseColor("green"));
+            textView.setTextColor(Color.parseColor("#60a917"));
         } else if (balance < 0) {
             string = "-  " + string.substring(1);
-            textView.setTextColor(Color.parseColor("red"));
+            textView.setTextColor(Color.parseColor("#e51400"));
         } else {
             textView.setTextColor(Color.parseColor("black"));
         }
@@ -107,8 +124,37 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         balanceSetting = balance;
         expenseSumSetting = expenseSum;
         incomeSumSetting = incomeSum;
+//        int expenseSumProgressBar = (int) expenseSum;
+//        int expenseSumProgressBar = 900;
+//        Log.i("expenseSum   ", "onCreate: " + expenseSumProgressBar);
+//        mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+        /*if (mProgressBar == null){
+            Log.i("Null exception", "mProgressBar is null");
+        }else {
+            if (expenseSumProgressBar <= 0) {
+                int i = 100;
+                mProgressBar.setMax(Integer.parseInt(String.valueOf(i)));
+            } else {
+                mProgressBar.setMax(expenseSumProgressBar);
+            }
 
+            mProgressBar.setProgress(50);
+        }*/
+        mSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int expenseSumProgressBar = (int) expenseSum;
+                Log.i("expenseSum   ", "onCreate: " + expenseSumProgressBar);
+                mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+                String progress = mThreshold.getText().toString();
+                if (progress != ""){
+                    mProgressBar.setMax(Integer.parseInt(progress));
+                }else {
+                    mProgressBar.setMax(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+                }
 
+            }
+        });
     }
 
 

@@ -58,8 +58,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/balanceTextView"
         app:layout_constraintVertical_bias="0.0"
-        android:textColor="#2A351F"
-        android:background="#88D840"
+        android:textColor="#60a917"
+        android:background="#C8E6C9"
         android:textAlignment="center"
         android:text="@string/income"
         android:textSize="@dimen/balanceTextSize2"/>
@@ -72,8 +72,8 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewIncomeText"
-        android:textColor="#2A351F"
-        android:background="#88D840"
+        android:textColor="#60a917"
+        android:background="#C8E6C9"
         android:textAlignment="center"
         android:textSize="@dimen/balanceTextSize2"
         />
@@ -89,8 +89,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewIncomeText"
         app:layout_constraintTop_toBottomOf="@+id/balanceTextView"
-        android:textColor="#660000"
-        android:background="#FFC1C1"
+        android:textColor="#e51400"
+        android:background="#ffcdd2"
         android:textAlignment="center"
         android:textSize="@dimen/balanceTextSize2"/>
 
@@ -103,18 +103,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewIncomeValue"
         app:layout_constraintTop_toBottomOf="@+id/textViewExpenseText"
-        android:textColor="#660000"
-        android:background="#FFC1C1"
+        android:textColor="#e51400"
+        android:background="#ffcdd2"
         android:textAlignment="center"
         android:textSize="@dimen/balanceTextSize2"/>
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="115dp"
-        android:layout_height="82dp"
+        android:layout_width="162dp"
+        android:layout_height="103dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="48dp"
-        android:text="TextView"
+        android:text="@string/threshold_text"
+        android:textAlignment="center"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewIncomeValue" />
 
@@ -122,7 +124,7 @@
         android:id="@+id/editTextThreshold"
         android:layout_width="136dp"
         android:layout_height="49dp"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="30dp"
         android:ems="10"
@@ -130,6 +132,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textViewExpenseValue" />
+
+    <ProgressBar
+        android:id="@+id/progressBarThreshold"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarThreshold" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
