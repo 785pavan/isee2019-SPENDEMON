@@ -69,6 +69,31 @@ it might take a minute to respond but the test would fail if this didn't happen
 instantaneously. For this reason we use mocking, using which we can define the output of
 particular dependency before hand.
 ~~~
+~~~
+@RunWith(MockitoJUnitRunner.class)
+public class SignUpLogInTest {
+
+    private static final String FAKE_STRING = "Login was successful";
+
+    @Mock
+    Context mMockContext;
+
+    @Test
+    public void readStringFromContext_LocalizedString() {
+        SignUpLogIn myObjectUnderTest = new SignUpLogIn(mMockContext);
+        String result = myObjectUnderTest.validate("admin", "12345");
+        assertThat(result, is(FAKE_STRING));
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
+}
+~~~
 
 
 2. Instrumentation Unit Tests: The implementation tests are the JUnit tests which test the App on the local level and contain the following test classes:
