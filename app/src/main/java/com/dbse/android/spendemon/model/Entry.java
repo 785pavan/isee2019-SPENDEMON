@@ -34,20 +34,25 @@ public class Entry {
 
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getType() {
         return type;
     }
-
 
     public String getCategory() {
         return category;
     }
 
-
     public double getAmount() {
         return Amount;
     }
-
 
     public String getDate() {
         return date;
@@ -66,11 +71,11 @@ public class Entry {
         return "Entry{" +
                 "category='" + category + '\'' +
                 ", Amount=" + Amount +
-                ", date=" + date +
-                ", payMethod=" + payMethod +
-                ", note=" + note +
+                ", date='" + date + '\'' +
+                ", payMethod='" + payMethod + '\'' +
+                ", type='" + type + '\'' +
+                ", note='" + note + '\'' +
+                ", id=" + id +
                 '}';
     }
-
-
 }

@@ -31,4 +31,7 @@ public interface TableDAO {
 
     @Query("SELECT * FROM summary_table ORDER BY id DESC")
     LiveData<List<Table>> getAllData();
+
+    @Query("SELECT * FROM summary_table WHERE id = :idIncoming")
+    Table getTableById(int idIncoming);
 }

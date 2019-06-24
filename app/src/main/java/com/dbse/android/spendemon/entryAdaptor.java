@@ -169,10 +169,8 @@ public class entryAdaptor extends
         return entries.size();
     }
 
-    Table getTableAt(int position){
-        return new Table(entries.get(position).getType(),entries.get(position).getCategory()
-                ,entries.get(position).getAmount(),entries.get(position).getDate()
-                ,entries.get(position).getPayMethod(),entries.get(position).getNote());
+    Entry getEntryAt(int position){
+        return entries.get(position);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

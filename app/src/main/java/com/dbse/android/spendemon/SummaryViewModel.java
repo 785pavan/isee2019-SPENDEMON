@@ -35,6 +35,9 @@ public class SummaryViewModel extends AndroidViewModel {
     public void delete(Table table){
         repository.delete(table);
     }
+    public Table getTableById(int id){
+        return repository.getTableById(id);
+    }
 
     public void deleteAllData(){
         repository.deleteAllData();

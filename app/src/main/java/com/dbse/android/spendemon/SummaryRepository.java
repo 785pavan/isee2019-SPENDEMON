@@ -9,6 +9,7 @@ import java.util.List;
 
 public class SummaryRepository {
 
+    public static Table tableGet = new Table();
     private TableDAO tableDAO;
     private LiveData<List<Table>> allTables;
     private LiveData<List<Table>> datedTables;
@@ -19,6 +20,7 @@ public class SummaryRepository {
         allTables = tableDAO.getAllData();
         //datedTables = tableDAO.getDateData();
     }
+
 
     public void insert(Table table) {
         new InsertTableAsyncTask(tableDAO).execute(table);
@@ -40,7 +42,14 @@ public class SummaryRepository {
         return allTables;
     }
 
-    public LiveData<List<Table>> getDateData(String date1, String date2){return tableDAO.getDateData(date1, date2);}
+    public Table getTableById(int id) {
+        new getTableAsyncTask(tableDAO).execute(id);
+        return tableGet;
+    }
+
+    public LiveData<List<Table>> getDateData(String date1, String date2) {
+        return tableDAO.getDateData(date1, date2);
+    }
 
     private static class InsertTableAsyncTask extends AsyncTask<Table, Void, Void> {
         private TableDAO tableDAO;
@@ -52,6 +61,20 @@ public class SummaryRepository {
         @Override
         protected Void doInBackground(Table... tables) {
             tableDAO.insert(tables[0]);
+            return null;
+        }
+    }
+
+    private static class getTableAsyncTask extends AsyncTask<Integer, Void, Void> {
+        private TableDAO tableDAO;
+
+        private getTableAsyncTask(TableDAO tableDAO) {
+            this.tableDAO = tableDAO;
+        }
+
+        @Override
+        protected Void doInBackground(Integer... integers) {
+            tableGet = tableDAO.getTableById(integers[0]);
             return null;
         }
     }
