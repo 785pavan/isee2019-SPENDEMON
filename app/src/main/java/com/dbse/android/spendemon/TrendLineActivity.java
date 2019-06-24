@@ -267,32 +267,21 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
 
         switch (menuItem.getItemId()) {
             case R.id.nav_daily:
-
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new DailyFragment()).commit();*/
                 Intent intent_daily = new Intent(getApplicationContext(), PieChartDailyActivity.class);
                 startActivity(intent_daily);
                 break;
             case R.id.nav_balance:
                 Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);
                 startActivity(intent_balance);
-//                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-//                startActivity(intent_month);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new WeeklyFragment()).commit();*/
                 break;
             case R.id.nav_monthly:
                 Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
                 startActivity(intent_month);
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new MonthlyFragment()).commit();
                 break;
             case R.id.nav_total:
                 Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);
                 intent_total.putExtra("Duration", "All");
                 startActivity(intent_total);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new TotalFragment()).commit();*/
                 break;
             case R.id.nav_trendLine:
                 Intent intent_trendLine = new Intent(getApplicationContext(), TrendLineActivity.class);
@@ -326,8 +315,6 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
             case R.id.nav_summary:
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 startActivity(intent);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SummaryFragment()).commit();*/
                 break;
                 //                right drawer
             case R.id.nav_currency:
