@@ -160,13 +160,6 @@ public class SettingsActivity extends AppCompatActivity {
                     createPDF();
 
                 }
-//                try {
-//                    createPDF();
-//                } catch (FileNotFoundException e) {
-//                    e.printStackTrace();
-//                } catch (DocumentException e) {
-//                    e.printStackTrace();
-//                }
 
             }
         });
