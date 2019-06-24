@@ -92,8 +92,6 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
                 Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);
                 intent_total.putExtra("Duration", "All");
                 startActivity(intent_total);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new TotalFragment()).commit();*/
                 break;
             case R.id.nav_trendLine:
                 Intent intent_trendLine = new Intent(getApplicationContext(), TrendLineActivity.class);
