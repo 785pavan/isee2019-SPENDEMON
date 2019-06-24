@@ -119,7 +119,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewIncomeValue" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextThreshold"
         android:layout_width="136dp"
         android:layout_height="49dp"
         android:layout_marginStart="72dp"
