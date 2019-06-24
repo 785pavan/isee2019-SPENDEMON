@@ -3,6 +3,7 @@ package com.dbse.android.spendemon;
 import android.view.Gravity;
 import android.view.View;
 
+import androidx.test.espresso.Espresso;
 import androidx.test.espresso.contrib.DrawerActions;
 import androidx.test.espresso.contrib.NavigationViewActions;
 import androidx.test.espresso.intent.Intents;
@@ -89,10 +90,10 @@ public class MainActivityTest extends IntentsTestRule {
     @Test
     public void navBarTestAll() {
         Intents.init();
-        onView(withId(R.id.drawer_layout))
+        Espresso.onView(withId(R.id.drawer_layout))
                 .check(matches(isClosed(Gravity.LEFT)))
                 .perform(DrawerActions.open());
-        onView(withId(R.id.navigation_view1))
+        Espresso.onView(withId(R.id.navigation_view1))
                 .perform(NavigationViewActions.navigateTo(R.id.nav_total));
         intended(hasComponent(PieChartActivity.class.getName()));
         Intents.release();

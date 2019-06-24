@@ -538,11 +538,14 @@ These steps needed to be followed for all the classes that need testing. We have
     - Categorical thresholds added to keep track on transactions.
 
 
-- Post Testing:
+- Post-Testing:
     - Cause: App crashed when Login fields were empty and User tapped anywhere other than the fields. This was found while testing the SignUpLogin class().
       - Solution: A void function was implemented which simply makes the keypad go down once the fields are empty and the User taps in blank space.
     - Cause: App crashed when any category in the filtering activity was left empty. This was found during testing the Summary class.
-      - Solution: Methods were created to take in all values if the user did not select a value for any field or category.
+      - Solution 1: Methods were created to take in all values if the user did not select a value for any field or category.
+      - Solution 2: Start and End dates were checked such that Start dates are always after End dates.
+
+
 
 
 ## **<span style="color:#008183 ">Final Thoughts:</span>**

@@ -83,7 +83,6 @@ public class EditDataTest {
         Espresso.onData(allOf(is(instanceOf(String.class)), is(paymentMethod)))
                 .perform(click());
         Espresso.onView(withId(R.id.sPaymentMethod)).check(matches(withSpinnerText(paymentMethod)));
-
         Espresso.onView(withId(R.id.sCategory)).check(matches(withSpinnerText(category)));
         Espresso.onView(withId(R.id.etAmount)).perform(ViewActions.typeText(amount));
         Espresso.onView(withId(R.id.etDescription)).perform(ViewActions.typeText(notes));
