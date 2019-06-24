@@ -263,12 +263,7 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
 
     @Override
     public void onBackPressed() {
-//        if (true) {
-//            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//            startActivity(intent);
-//        } else {
-//            super.onBackPressed();
-//        }
+
         if (drawer1.isDrawerOpen(GravityCompat.START)) {
             drawer1.closeDrawer(GravityCompat.START);
         } else if (drawer1.isDrawerOpen(GravityCompat.END)) {
@@ -296,33 +291,21 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
 
         switch (menuItem.getItemId()) {
             case R.id.nav_daily:
-
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new DailyFragment()).commit();*/
                 Intent intent_daily = new Intent(getApplicationContext(), PieChartDailyActivity.class);
                 startActivity(intent_daily);
                 break;
             case R.id.nav_balance:
-//                Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
-//                startActivity(intent_month);
                 Intent intent_balance = new Intent(getApplicationContext(), BalanceActivity.class);
                 startActivity(intent_balance);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new WeeklyFragment()).commit();*/
                 break;
             case R.id.nav_monthly:
                 Intent intent_month = new Intent(getApplicationContext(), ChartMonthActivity.class);
                 startActivity(intent_month);
-
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new MonthlyFragment()).commit();
                 break;
             case R.id.nav_total:
                 Intent intent_total = new Intent(getApplicationContext(), PieChartActivity.class);
                 intent_total.putExtra("Duration", "All");
                 startActivity(intent_total);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new TotalFragment()).commit();*/
                 break;
             case R.id.nav_trendLine:
                 Intent intent_trendLine = new Intent(getApplicationContext(), TrendLineActivity.class);
@@ -353,12 +336,10 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                         "atrayee.neog@st.ovgu.de", "seyedbehnam.beladi@st.ovgu.de"});
                 startActivity(Intent.createChooser(intent_contactUs, "Share this by"));
                 break;
-//                pavan.kandapagari@st.ovgu.de,atrayee.neog@st.ovgu.de,seyedbehnam.beladi@st.ovgu.de
             case R.id.nav_summary:
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 startActivity(intent);
-                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SummaryFragment()).commit();*/
+
 //                right drawer
                 break;
             case R.id.nav_currency:
@@ -375,13 +356,6 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
                 Toast.makeText(this, "About Us", Toast.LENGTH_LONG).show();
                 Intent intent_aboutUs = new Intent(Intent.ACTION_VIEW, Uri.parse("https://dbse-teaching.github.io/isee2019-SPENDEMON"));
                 startActivity(intent_aboutUs);
-//                Intent intent_aboutUs = new Intent(Intent.ACTION_);
-//                intent_aboutUs.setType("text/html");
-//                String aboutUsBody = "We are team SPENDEMON. Please check out our blog: https://dbse-teaching.github.io/isee2019-SPENDEMON/";
-//                String aboutUsSubject = "The link for our Blog:";
-//                intent_aboutUs.putExtra(Intent.EXTRA_SUBJECT, aboutUsSubject);
-//                intent_aboutUs.putExtra(Intent.EXTRA_TEXT, aboutUsBody);
-//                startActivity(Intent.createChooser(intent_aboutUs, "aboutUs"));
                 break;
         }
 
