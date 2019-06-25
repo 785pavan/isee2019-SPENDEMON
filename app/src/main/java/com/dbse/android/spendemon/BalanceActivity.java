@@ -199,7 +199,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_LONG).show();
                 Intent intent_share = new Intent(Intent.ACTION_SEND);
-                intent_share.setType("application/vnd.android.package-archive");
+                intent_share.setType("text/plain");
                 String shareBody = "We are team SPENDEMON. " +
                         "\n Please check out our App at:" +
                         "\n https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.02/Spendemon.apk";
