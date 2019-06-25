@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
@@ -170,7 +171,19 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                 if(s.length() != 0){
                     String progress = "0";
                     progress = progress + mThreshold.getText().toString();
+                    int expenseSumProgressBar = (int) expenseSum;
+                    if (expenseSumProgressBar > Integer.parseInt(progress)){
+                        mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
+                                PorterDuff.Mode.SRC_IN);
+
+
+                    }else{
+                        mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
+                                PorterDuff.Mode.SRC_IN);
+                    }
                     mProgressBar.setMax(Integer.parseInt(progress));
+
+
                     mSubmit.performClick();
                 }
 
@@ -187,6 +200,14 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                 mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
                 String progress = "0";
                 progress = progress + mThreshold.getText().toString();
+                if (expenseSumProgressBar > Integer.parseInt(progress)){
+                    mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
+                            PorterDuff.Mode.SRC_IN);
+
+                }else{
+                    mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
+                            PorterDuff.Mode.SRC_IN);
+                }
                 mProgressBar.setMax(Integer.parseInt(progress));
                 mProgressBar.setMax(Integer.parseInt(progress));
                 if (!progress.equals("0")) {
@@ -196,6 +217,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                 } else {
                     mProgressBar.setMax(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
                 }
+
 
 
             }
