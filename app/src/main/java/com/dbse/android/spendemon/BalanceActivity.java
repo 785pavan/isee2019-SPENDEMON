@@ -157,6 +157,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                 String progress = "0";
                 progress = progress + mThreshold.getText().toString();
                 mProgressBar.setMax(Integer.parseInt(progress));
+                mProgressBar.setMax(Integer.parseInt(progress));
                 if (!progress.equals("0")) {
                     Log.i("progress:    ", "p = " + progress);
                     mProgressBar.setMax(Integer.parseInt(progress));
