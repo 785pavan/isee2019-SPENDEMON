@@ -133,6 +133,21 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         balanceSetting = balance;
         expenseSumSetting = expenseSum;
         incomeSumSetting = incomeSum;
+
+        String progress = "0";
+        progress = progress + mThreshold.getText().toString();
+        int expenseSumProgressBar = (int) expenseSum;
+        mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+        mProgressBar.setMax(Integer.parseInt(progress));
+        mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+        mProgressBar.setMax(Integer.parseInt(progress));
+
+//        mSubmit.performClick();
+
+        sharedPreferences.edit().putString("Threshold", mThreshold.getText().toString()).apply();
+        mSubmit.performClick();
+
+
 //        int expenseSumProgressBar = (int) expenseSum;
 //        int expenseSumProgressBar = 900;
 //        Log.i("expenseSum   ", "onCreate: " + expenseSumProgressBar);
@@ -153,10 +168,13 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         mThreshold.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                if(s.length() != 0){
+                if(s.length() != 0 && s.length()<10){
                     String progress = "0";
                     progress = progress + mThreshold.getText().toString();
                     mProgressBar.setMax(Integer.parseInt(progress));
+                    int expenseSumProgressBar = (int) expenseSum;
+                    mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+                    mSubmit.performClick();
                 }
 
             }
@@ -168,21 +186,13 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(s.length() != 0){
+                if(s.length() != 0 && s.length()<10){
                     String progress = "0";
                     progress = progress + mThreshold.getText().toString();
                     int expenseSumProgressBar = (int) expenseSum;
-                    if (expenseSumProgressBar > Integer.parseInt(progress)){
-                        mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
-                                PorterDuff.Mode.SRC_IN);
 
-
-                    }else{
-                        mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
-                                PorterDuff.Mode.SRC_IN);
-                    }
                     mProgressBar.setMax(Integer.parseInt(progress));
-
+                    mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
 
                     mSubmit.performClick();
                 }
@@ -196,20 +206,28 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
             public void onClick(View v) {
                 sharedPreferences.edit().putString("Threshold", mThreshold.getText().toString()).apply();
                 int expenseSumProgressBar = (int) expenseSum;
-                Log.i("expenseSum   ", "onCreate: " + expenseSumProgressBar);
-                mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
                 String progress = "0";
                 progress = progress + mThreshold.getText().toString();
-                if (expenseSumProgressBar > Integer.parseInt(progress)){
-                    mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
-                            PorterDuff.Mode.SRC_IN);
+                if (!progress.equals("0")) {
+                    Log.i("progress:    ", "p = " + progress);
+                    mProgressBar.setMax(Integer.parseInt(progress));
 
-                }else{
-                    mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
-                            PorterDuff.Mode.SRC_IN);
+                } else {
+                    mProgressBar.setMax(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
                 }
-                mProgressBar.setMax(Integer.parseInt(progress));
-                mProgressBar.setMax(Integer.parseInt(progress));
+                Log.i("expenseSum   ", "onCreate: " + expenseSumProgressBar);
+                mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+
+//                if (expenseSumProgressBar > Integer.parseInt(progress)){
+//                    mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
+//                            PorterDuff.Mode.SRC_IN);
+//
+//                }else{
+//                    mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
+//                            PorterDuff.Mode.SRC_IN);
+//                }
+//                mProgressBar.setMax(Integer.parseInt(progress));
+//                mProgressBar.setMax(Integer.parseInt(progress));
                 if (!progress.equals("0")) {
                     Log.i("progress:    ", "p = " + progress);
                     mProgressBar.setMax(Integer.parseInt(progress));
