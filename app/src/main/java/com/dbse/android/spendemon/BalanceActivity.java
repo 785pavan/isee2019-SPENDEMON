@@ -174,6 +174,9 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                     mProgressBar.setMax(Integer.parseInt(progress));
                     int expenseSumProgressBar = (int) expenseSum;
                     mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+                    mProgressBar.setMax(Integer.parseInt(progress));
+                    mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+                    mProgressBar.setMax(Integer.parseInt(progress));
                     mSubmit.performClick();
                 }
 
@@ -193,6 +196,9 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
 
                     mProgressBar.setMax(Integer.parseInt(progress));
                     mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+                    mProgressBar.setMax(Integer.parseInt(progress));
+                    mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+
 
                     mSubmit.performClick();
                 }
@@ -217,6 +223,9 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                 }
                 Log.i("expenseSum   ", "onCreate: " + expenseSumProgressBar);
                 mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+                mProgressBar.setMax(Integer.parseInt(progress));
+                mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
+
 
 //                if (expenseSumProgressBar > Integer.parseInt(progress)){
 //                    mProgressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
