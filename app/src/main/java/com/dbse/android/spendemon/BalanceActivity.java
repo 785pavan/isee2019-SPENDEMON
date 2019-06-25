@@ -177,7 +177,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                     mProgressBar.setMax(Integer.parseInt(progress));
                     mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
                     mProgressBar.setMax(Integer.parseInt(progress));
-                    mSubmit.performClick();
+//                    mSubmit.performClick();
                 }
 
             }
@@ -200,7 +200,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
                     mProgressBar.setProgress(Integer.parseInt(String.valueOf(expenseSumProgressBar)));
 
 
-                    mSubmit.performClick();
+//                    mSubmit.performClick();
                 }
 
             }
