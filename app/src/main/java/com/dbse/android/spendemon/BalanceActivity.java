@@ -168,6 +168,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         mThreshold.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                sharedPreferences.edit().putString("Threshold", mThreshold.getText().toString()).apply();
                 if(s.length() != 0 && s.length()<10){
                     String progress = "0";
                     progress = progress + mThreshold.getText().toString();
@@ -189,6 +190,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
 
             @Override
             public void afterTextChanged(Editable s) {
+                sharedPreferences.edit().putString("Threshold", mThreshold.getText().toString()).apply();
                 if(s.length() != 0 && s.length()<10){
                     String progress = "0";
                     progress = progress + mThreshold.getText().toString();
