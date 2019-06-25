@@ -24,8 +24,10 @@
 * #### **Section 3:**
   * **To do:**
     * Categorical thresholds.
+    * Resolve double tap on the submit button in Threshold.
     * Playstore simulation.
     * Reflections and Learnings.
+    * Resize the FAB button.
 
 * #### **Section 4:**
   * Get feedbacks for the implementation so far.
