@@ -7,6 +7,8 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -146,6 +148,35 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
 
             mProgressBar.setProgress(50);
         }*/
+
+        mThreshold.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                if(s.length() != 0){
+                    String progress = "0";
+                    progress = progress + mThreshold.getText().toString();
+                    mProgressBar.setMax(Integer.parseInt(progress));
+                }
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(s.length() != 0){
+                    String progress = "0";
+                    progress = progress + mThreshold.getText().toString();
+                    mProgressBar.setMax(Integer.parseInt(progress));
+                    mSubmit.performClick();
+                }
+
+            }
+        });
+
         mSubmit.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
             @Override
