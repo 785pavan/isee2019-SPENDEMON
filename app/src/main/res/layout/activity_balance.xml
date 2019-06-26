@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/balanceTextView"
         app:layout_constraintVertical_bias="0.0"
         android:textColor="#60a917"
-        android:background="#C8E6C9"
+        android:background="@color/background_green"
         android:textAlignment="center"
         android:text="@string/income"
         android:textSize="@dimen/balanceTextSize2"/>
@@ -73,7 +73,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewIncomeText"
         android:textColor="#60a917"
-        android:background="#C8E6C9"
+        android:background="@color/background_green"
         android:textAlignment="center"
         android:textSize="@dimen/balanceTextSize2"
         />
@@ -90,7 +90,7 @@
         app:layout_constraintStart_toEndOf="@+id/textViewIncomeText"
         app:layout_constraintTop_toBottomOf="@+id/balanceTextView"
         android:textColor="#e51400"
-        android:background="#ffcdd2"
+        android:background="@color/background_red"
         android:textAlignment="center"
         android:textSize="@dimen/balanceTextSize2"/>
 
@@ -104,7 +104,7 @@
         app:layout_constraintStart_toEndOf="@+id/textViewIncomeValue"
         app:layout_constraintTop_toBottomOf="@+id/textViewExpenseText"
         android:textColor="#e51400"
-        android:background="#ffcdd2"
+        android:background="@color/background_red"
         android:textAlignment="center"
         android:textSize="@dimen/balanceTextSize2"/>
 
