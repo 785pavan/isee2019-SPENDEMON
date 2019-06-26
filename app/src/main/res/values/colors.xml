@@ -16,4 +16,6 @@
     <color name="gray1">#6F7C80</color>
     <color name="gray2">#EEEEEE</color>
 
+    <color name="background_red">#ffcdd2</color>
+
 </resources>
