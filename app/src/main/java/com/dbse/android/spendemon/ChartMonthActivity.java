@@ -157,7 +157,7 @@ public class ChartMonthActivity extends AppCompatActivity implements NavigationV
         } else {
             backKey++;
             if (backKey == 1) {
-                Toast.makeText(ChartMonthActivity.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ChartMonthActivity.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
                 super.onBackPressed();
             } else {
                 //exit app to home screen

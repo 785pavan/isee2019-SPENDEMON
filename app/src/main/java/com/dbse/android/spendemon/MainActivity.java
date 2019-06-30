@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             backKey++;
             if (backKey == 1) {
-                Toast.makeText(MainActivity.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
                 super.onBackPressed();
             } else {
                 //exit app to home screen
