@@ -297,7 +297,7 @@ public class SettingsActivity extends AppCompatActivity {
             for (int j=0;j<cells.length;j++){
                 cells[j].setBackgroundColor(BaseColor.GRAY);
             }
-            iteration = 1;
+            iteration = 0;
             int columnNumber = cells.length;
             PdfPCell nextCell;
             for (com.dbse.android.spendemon.model.Entry entry : entries) {
