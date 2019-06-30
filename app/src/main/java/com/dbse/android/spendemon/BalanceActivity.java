@@ -330,6 +330,8 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
     }
 
 
+
+
     public void onBackPressed() {
 
         if (drawer1.isDrawerOpen(GravityCompat.START)) {
@@ -339,7 +341,7 @@ public class BalanceActivity extends AppCompatActivity implements NavigationView
         } else {
             backKey++;
             if (backKey == 1) {
-                Toast.makeText(BalanceActivity.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(BalanceActivity.this, "Click one more time to exit app", Toast.LENGTH_SHORT).show();
                 super.onBackPressed();
             } else {
                 //exit app to home screen
