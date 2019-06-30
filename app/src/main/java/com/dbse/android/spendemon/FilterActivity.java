@@ -182,6 +182,11 @@ public class FilterActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -235,6 +240,11 @@ public class FilterActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 }
+
+
+//            case android.R.id.home:
+//                onBackPressed();
+//                return true;
 
             default:
                 return super.onOptionsItemSelected(item);
