@@ -170,5 +170,6 @@
     <string name="trendLine_yAxis">Amount</string>
     <string name="trendLine_xAxis">Number of Transactions</string>
     <string name="threshold_text">Set a threshold for your expenses in this field: </string>
+    <string name="rs">\u20A8</string>
 
 </resources>
