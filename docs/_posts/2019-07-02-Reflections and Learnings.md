@@ -20,7 +20,7 @@ The App that we decided on was based on our own struggles and experiences with m
 The name SPENDEMON was coined by the three of us as we were creating permutations and combinations with words related to *Spending*, *Expenses*, *Currencies* etc. But the amount of discussions we had to finalise the name of the App made us realise how much time and brainstorming a small task such as coming up with an appropriate name takes. It was however an extremely fun beginning to the entire project.
 
 
-## **<span style="color:#008183 ">User Requirements:</span>**
+<h2> **<span style="color:#008183 ">User Requirements:</span>**</h2>
 After the initial smooth transitions through the team formation and coining the App name, the real job started once we stared preparing the user requirements that the customer might require from the App. Predicting customer requirements, assigning priorities to them and mapping them into classes and interfaces in the App tested our skillsets of Android and Java to the most. Also, convincing the client with the requirement designs that we came up with was an altogether different experience for us.
 <p>
 
