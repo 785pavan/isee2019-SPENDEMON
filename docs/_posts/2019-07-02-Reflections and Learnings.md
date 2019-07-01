@@ -10,6 +10,7 @@ So let us dive into these pools of reflections and see what kind of a journey te
 ## **<span style="color:#008183 ">Team Formation:</span>**
 <div style = "text-align:justify">The team formation process for SPENDEMON was quite spontaneous as all of us have been friends since the previous semester and had decide to take the course together. Although we were in need of another team member for our team, but it looked like Lady Luck also wanted the three Musketeers to be so and hence we were allowed to stick with the team of three. Hence, the team formation milestone was as smooth as a piece of cheesecake.</div>
 
+
 ## **<span style="color:#008183 ">About the App:</span>**
 <div style = "text-align:justify">The App that we decided on was based on our own struggles and experiences with money management and taking control of our expenses from the beginning of the month. The App came to us as an opportunity to turn the lemons of our lives into lemonade and create something out of our struggles.
 
