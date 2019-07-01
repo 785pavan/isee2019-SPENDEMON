@@ -22,12 +22,12 @@ After the initial smooth transitions through the team formation and coining the 
 
 
 ## **<span style="color:#008183 ">Technical Difficulties:</span>**
-**Android Studio:**
+<h3>Android Studio:</h3>
 If you have followed our Blog before, you probably are familiar with the fact that all three of us are from different backgrounds namely, Mechanical, Electrical and Electronics. This is why, we needed to get our hands dirty with the tool Android Studio itself before we could even think about designing the 1st stage of the App. Android App development courses and Youtube tutorials as well as StackOverflow came to our rescue during this constant learning phase. Also, the weekly meetings with the Coach/Customer helped us a lot to keep track of our progress and clarify any technical issues that we might be facing.
 
-**Activities:** Designing the interface in a way, that we have an optimised number of Activites such that all required information is displayed yet the App is not cluttered with un-necessary information was a task that required some brainstorming. Also linking each Activity to one another and creating intents in an effective way was something we needed to spend time on.
+<h3> Activities: </h3> Designing the interface in a way, that we have an optimised number of Activites such that all required information is displayed yet the App is not cluttered with un-necessary information was a task that required some brainstorming. Also linking each Activity to one another and creating intents in an effective way was something we needed to spend time on.
 
-**Database:** The major concern for us during 60% of the entire project was implementing an effective Database and extracting as well as manipulating transactions and Data to and from the Database.
+<h3> Database:</h3> The major concern for us during 60% of the entire project was implementing an effective Database and extracting as well as manipulating transactions and Data to and from the Database.
 
 The first approach for storing and updating data that we tried implementing was parsing all data into a JSON format and storing it into a JSON script. However, doing this took a lot of space as well as effort and was inefficient.
 
