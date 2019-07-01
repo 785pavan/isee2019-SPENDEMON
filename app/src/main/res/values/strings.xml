@@ -54,6 +54,7 @@
     <string-array name="PaymentMethods">
         <item>---</item>
         <item>Cash</item>
+        <item>Bank Transfer</item>
         <item>Card</item>
         <item>PayPal</item>
         <item>GooglePay</item>

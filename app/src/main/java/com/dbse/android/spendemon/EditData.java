@@ -33,6 +33,7 @@ public class EditData extends AppCompatActivity
     ArrayAdapter arrayAdapter;
     String cat = "";
     String pay = "";
+    int id = 0;
     private Spinner sCategory;
     private Spinner sPaymentMethod;
     private Spinner sType;
@@ -73,6 +74,9 @@ public class EditData extends AppCompatActivity
             int spinnerPay = arrayAdapterPay.getPosition(pay);
             sPaymentMethod.setSelection(spinnerPay);
         }*/
+        if (intent.hasExtra("id")) {
+            id = intent.getIntExtra("id", 0);
+        }
         if (intent.hasExtra("Notes")) {
             etDescription.setText(intent.getStringExtra("Notes"));
         }
@@ -200,6 +204,9 @@ public class EditData extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.save_table) {
+            if (id != 0) {
+                summaryViewModel.delete(summaryViewModel.getTableById(id));
+            }
             saveTable();
             return true;
         }
