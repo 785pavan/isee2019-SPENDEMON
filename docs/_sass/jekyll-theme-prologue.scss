@@ -66,6 +66,8 @@
 		font-weight: 300;
 		line-height: 1.75em;
 		color: #888;
+		text-align:justify;
+
 
 		&.is-loading * {
 			@include vendor('transition', 'none !important');
