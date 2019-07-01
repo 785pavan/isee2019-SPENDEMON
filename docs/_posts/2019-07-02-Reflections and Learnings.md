@@ -57,6 +57,10 @@ As a team totally new to Android it was difficult for us to come to a conclusion
 
 </p>
 As a team working in an Agile fashion following SCRUM practices, it was difficult to hold and follow the concepts of these principles. For instance, once we implemented the MVVM approach, we had to re visit each and every Activity and class once again in order to make sure each activity was linked to the database through the View approach.
+<p>
+
+</p>
+Following the conventions that were decided by the team 
 
 
 
