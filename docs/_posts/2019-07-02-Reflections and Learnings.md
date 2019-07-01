@@ -8,7 +8,7 @@ So let us dive into these pools of reflections and see what kind of a journey te
 
 
 ## **<span style="color:#008183 ">Team Formation:</span>**
-<span style="text-align:justify">The team formation process for SPENDEMON was quite spontaneous as all of us have been friends since the previous semester and had decide to take the course together. Although we were in need of another team member for our team, but it looked like Lady Luck also wanted the three Musketeers to be so and hence we were allowed to stick with the team of three. Hence, the team formation milestone was as smooth as a piece of cheesecake.</span>
+<p style="text-align:justify">The team formation process for SPENDEMON was quite spontaneous as all of us have been friends since the previous semester and had decide to take the course together. Although we were in need of another team member for our team, but it looked like Lady Luck also wanted the three Musketeers to be so and hence we were allowed to stick with the team of three. Hence, the team formation milestone was as smooth as a piece of cheesecake.</p>
 
 
 ## **<span style="color:#008183 ">About the App:</span>**
