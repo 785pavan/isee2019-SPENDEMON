@@ -12,4 +12,4 @@ The team formation process for SPENDEMON was quite spontaneous as all of us have
 
 
 ## **<span style="color:#008183 ">About the App:</span>**
-The App that we decided on was based on our own struggles and experiences with money management and taking control of our expenses from the beginning of the month. 
+The App that we decided on was based on our own struggles and experiences with money management and taking control of our expenses from the beginning of the month. The App came to us as an opportunity to
