@@ -136,7 +136,7 @@ public class PieChartActivity extends AppCompatActivity implements NavigationVie
                 }
                 String cat = xDataIn.get(posIn);
                 Toast.makeText(PieChartActivity.this, "Category: " + cat + "\n" +
-                        "spent: " + cost, Toast.LENGTH_LONG).show();
+                        "Earned: " + cost, Toast.LENGTH_LONG).show();
 
             }
 
