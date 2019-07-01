@@ -8,13 +8,16 @@ So let us dive into these pools of reflections and see what kind of a journey te
 
 
 ## **<span style="color:#008183 ">Team Formation:</span>**
-The team formation process for SPENDEMON was quite spontaneous as all of us have been friends since the previous semester and had decide to take the course together. Although we were in need of another team member for our team, but it looked like Lady Luck also wanted the three Musketeers to be so and hence we were allowed to stick with the team of three. Hence, the team formation milestone was as smooth as a piece of cheesecake.
+<div style = "text-align:justify">The team formation process for SPENDEMON was quite spontaneous as all of us have been friends since the previous semester and had decide to take the course together. Although we were in need of another team member for our team, but it looked like Lady Luck also wanted the three Musketeers to be so and hence we were allowed to stick with the team of three. Hence, the team formation milestone was as smooth as a piece of cheesecake.</div>
+<div>
 
-
+</div>
 
 ## **<span style="color:#008183 ">About the App:</span>**
 <div style = "text-align:justify">The App that we decided on was based on our own struggles and experiences with money management and taking control of our expenses from the beginning of the month. The App came to us as an opportunity to turn the lemons of our lives into lemonade and create something out of our struggles.</div>
+<div>
 
+</div>
 <div style = "text-align:justify">The name SPENDEMON was coined by the three of us as we were creating permutations and combinations with words related to *Spending*, *Expenses*, *Currencies* etc. But the amount of discussions we had to finalise the name of the App made us realise how much time and brainstorming a small task such as coming up with an appropriate name takes. It was however an extremely fun beginning to the entire project.</div>
 
 
@@ -41,4 +44,4 @@ However, as we progressed with the App, we realised that as a result of implemen
 
 <h3> Navigation and Visualisation:</h3> An App, however many features it might offer, can only be popular if the User finds it easy to use it and does not find it difficult to navigate through the various features. This was the final major difficulty that we had to resolve in order to make our App more..well..App-like. For this particular reason, two Navigation Drawers were added and various Fragments were added in a way that the User would find it easy to navigate through the entire App and all the categories are easily accessible.
 
-However, there was some problems that we encountered some difficulties while linking Fragments with both the Navigation Drawer as well as with the necessary Activities. 
+However, there was some problems that we encountered some difficulties while linking Fragments with both the Navigation Drawer as well as with the necessary Activities.
