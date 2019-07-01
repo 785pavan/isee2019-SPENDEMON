@@ -24,14 +24,18 @@ The name SPENDEMON was coined by the three of us as we were creating permutation
 ## **<span style="color:#008183 ">User Requirements:</span>**
 <div style = "text-align:justify">After the initial smooth transitions through the team formation and coining the App name, the real job started once we stared preparing the user requirements that the customer might require from the App. Predicting customer requirements, assigning priorities to them and mapping them into classes and interfaces in the App tested our skillsets of Android and Java to the most. Also, convincing the client with the requirement designs that we came up with was an altogether different experience for us.</div>
 
+<p>
 
+</p>
 ## **<span style="color:#008183 ">Technical Difficulties:</span>**
 
 
 <h3>Android Studio:</h3>
-If you have followed our Blog before, you probably are familiar with the fact that all three of us are from different backgrounds namely, Mechanical, Electrical and Electronics. This is why, we needed to get our hands dirty with the tool Android Studio itself before we could even think about designing the 1st stage of the App. Android App development courses and YouTube tutorials as well as Stack Overflow came to our rescue during this constant learning phase. Also, the weekly meetings with the Coach/Customer helped us a lot to keep track of our progress and clarify any technical issues that we might be facing.
+<div style = "text-align:justify">If you have followed our Blog before, you probably are familiar with the fact that all three of us are from different backgrounds namely, Mechanical, Electrical and Electronics. This is why, we needed to get our hands dirty with the tool Android Studio itself before we could even think about designing the 1st stage of the App. Android App development courses and YouTube tutorials as well as Stack Overflow came to our rescue during this constant learning phase. Also, the weekly meetings with the Coach/Customer helped us a lot to keep track of our progress and clarify any technical issues that we might be facing.</div>
+<p>
 
-<h3> Activities: </h3> Designing the interface in a way, that we have an optimised number of Activities such that all required information is displayed yet the App is not cluttered with un-necessary information was a task that required some brainstorming. Also linking each Activity to one another and creating intents in an effective way was something we needed to spend time on.
+</p>
+<h3> Activities: </h3> <div style = "text-align:justify">Designing the interface in a way, that we have an optimised number of Activities such that all required information is displayed yet the App is not cluttered with un-necessary information was a task that required some brainstorming. Also linking each Activity to one another and creating intents in an effective way was something we needed to spend time on.</div>
 
 <h3> Database:</h3> The major concern for us during 60% of the entire project was implementing an effective Database and extracting as well as manipulating transactions and Data to and from the Database.
 
