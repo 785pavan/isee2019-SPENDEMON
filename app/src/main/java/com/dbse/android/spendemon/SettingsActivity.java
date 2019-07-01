@@ -1,19 +1,18 @@
 package com.dbse.android.spendemon;
 
 //import com.dbse.android.spendemon.BalanceActivity;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.print.PrintAttributes;
-import android.print.pdf.PrintedPdfDocument;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,22 +22,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.documentfile.provider.DocumentFile;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.preference.PreferenceFragmentCompat;
-
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Locale;
+import androidx.preference.PreferenceManager;
 
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
@@ -47,9 +36,12 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import static com.dbse.android.spendemon.BalanceActivity.balanceSetting;
-import static com.dbse.android.spendemon.BalanceActivity.expenseSumSetting;
-import static com.dbse.android.spendemon.BalanceActivity.incomeSumSetting;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Locale;
+
 import static com.dbse.android.spendemon.Summary.entries;
 
 
@@ -57,17 +49,20 @@ public class SettingsActivity extends AppCompatActivity {
 
 //    public static final String IMG = "drawable-v24/team_logo_3.png";
 
+    private static final int STORAGE_CODE = 1000;
     ArrayList<Float> iData = new ArrayList<>();
     ArrayList<Float> eData = new ArrayList<>();
+    String currencySign;
+    String currency;
     float balance;
     float expenseSum;
     float incomeSum;
-
     Button bDeleteAll;
-    private SummaryViewModel summaryViewModel;
     Button bDownloadReport;
+    SharedPreferences sharedPreferences;
+    private SummaryViewModel summaryViewModel;
     private int testNumber = 0;
-    private static final int STORAGE_CODE = 1000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +71,8 @@ public class SettingsActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.settings, new SettingsFragment())
                 .commit();
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -132,7 +129,6 @@ public class SettingsActivity extends AppCompatActivity {
                                 //PrintedPdfDocument doncumentPdf = new PrintedPdfDocument(getApplicationContext(), (android.print.PrintAttributes) PrintAttributes);
 
 
-
                             }
                         });
                 AlertDialog dialog = builder.create();
@@ -144,26 +140,24 @@ public class SettingsActivity extends AppCompatActivity {
         bDownloadReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("clicked","inside onClick");
-                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
 
-                    if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
+                Log.i("clicked", "inside onClick");
+                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+
+                    if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
                         String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
                         requestPermissions(permissions, STORAGE_CODE);
-                        Log.i("clicked","permission denied");
+                        Log.i("clicked", "permission denied");
+                    } else {
+                        createPDF();
                     }
-                    else {
-                            createPDF();
-                    }
-                }
-                else{
+                } else {
                     createPDF();
 
                 }
 
             }
         });
-
 
 
     }
@@ -173,23 +167,14 @@ public class SettingsActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
-    public static class SettingsFragment extends PreferenceFragmentCompat {
-        @Override
-        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-            setPreferencesFromResource(R.xml.root_preferences, rootKey);
-        }
-    }
-
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 //        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode){
-            case STORAGE_CODE:{
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+        switch (requestCode) {
+            case STORAGE_CODE: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 //                permission granted
-                }
-                else {
+                } else {
 //                    permission denied
                     Toast.makeText(this, "permission denied...!", Toast.LENGTH_SHORT).show();
 
@@ -200,6 +185,19 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void createPDF() {
         // DocumentFile doc = new DocumentFile();
+        currency = sharedPreferences.getString("currency", "Euro");
+        assert currency != null;
+        switch (currency) {
+            case "Euro":
+                currencySign = "€";
+                break;
+            case "Dollars":
+                currencySign = "$";
+                break;
+            case "Rupees":
+                currencySign = "₹";
+                break;
+        }
         Document mDoc = new Document();
         String mFileName = new SimpleDateFormat("yyyyMMdd_HHmmss",
                 Locale.getDefault()).format(System.currentTimeMillis());
@@ -253,7 +251,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             String mText = "Summary Report";
             mDoc.add(new Paragraph(mText));
-            mText ="        ";
+            mText = "        ";
             mDoc.add(new Paragraph(mText));
             mText = "Balance:";
             mDoc.add(new Paragraph(mText));
@@ -294,7 +292,7 @@ public class SettingsActivity extends AppCompatActivity {
             table.addCell("Payment Method");
             table.setHeaderRows(1);
             PdfPCell[] cells = table.getRow(0).getCells();
-            for (int j=0;j<cells.length;j++){
+            for (int j = 0; j < cells.length; j++) {
                 cells[j].setBackgroundColor(BaseColor.GRAY);
             }
             iteration = 0;
@@ -307,27 +305,27 @@ public class SettingsActivity extends AppCompatActivity {
 
                     @SuppressLint("DefaultLocale") String iterationString = String.format("T_%04d", iteration);
                     nextCell = new PdfPCell(new Phrase(iterationString));
-                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
+                    nextCell.setBackgroundColor(new BaseColor(208, 240, 192));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getDate()));
-                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
+                    nextCell.setBackgroundColor(new BaseColor(208, 240, 192));
                     table.addCell(nextCell);
 
-                    nextCell = new PdfPCell(new Phrase(String.valueOf(entry.getAmount())));
-                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
+                    nextCell = new PdfPCell(new Phrase(String.format("%s%s", currencySign, entry.getAmount())));
+                    nextCell.setBackgroundColor(new BaseColor(208, 240, 192));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getType()));
-                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
+                    nextCell.setBackgroundColor(new BaseColor(208, 240, 192));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getCategory()));
-                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
+                    nextCell.setBackgroundColor(new BaseColor(208, 240, 192));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getPayMethod()));
-                    nextCell.setBackgroundColor(new BaseColor(208,240,192));
+                    nextCell.setBackgroundColor(new BaseColor(208, 240, 192));
                     table.addCell(nextCell);
 
 
@@ -336,27 +334,27 @@ public class SettingsActivity extends AppCompatActivity {
 ////
                     @SuppressLint("DefaultLocale") String iterationString = String.format("T_%04d", iteration);
                     nextCell = new PdfPCell(new Phrase(iterationString));
-                    nextCell.setBackgroundColor(new BaseColor(255,227,235));
+                    nextCell.setBackgroundColor(new BaseColor(255, 227, 235));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getDate()));
-                    nextCell.setBackgroundColor(new BaseColor(255,227,235));
+                    nextCell.setBackgroundColor(new BaseColor(255, 227, 235));
                     table.addCell(nextCell);
 
-                    nextCell = new PdfPCell(new Phrase(String.valueOf(entry.getAmount())));
-                    nextCell.setBackgroundColor(new BaseColor(255,227,235));
+                    nextCell = new PdfPCell(new Phrase(currencySign + String.valueOf(entry.getAmount())));
+                    nextCell.setBackgroundColor(new BaseColor(255, 227, 235));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getType()));
-                    nextCell.setBackgroundColor(new BaseColor(255,227,235));
+                    nextCell.setBackgroundColor(new BaseColor(255, 227, 235));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getCategory()));
-                    nextCell.setBackgroundColor(new BaseColor(255,227,235));
+                    nextCell.setBackgroundColor(new BaseColor(255, 227, 235));
                     table.addCell(nextCell);
 
                     nextCell = new PdfPCell(new Phrase(entry.getPayMethod()));
-                    nextCell.setBackgroundColor(new BaseColor(255,227,235));
+                    nextCell.setBackgroundColor(new BaseColor(255, 227, 235));
                     table.addCell(nextCell);
 //
                 }
@@ -367,12 +365,18 @@ public class SettingsActivity extends AppCompatActivity {
             mDoc.add(table);
             mDoc.close();
             Log.i("path:", mFilePath);
-            Toast.makeText(this,mFileName + ".pdf\nis saved to\n" + mFilePath, Toast.LENGTH_SHORT).show();
-        }
-        catch (Exception e){
+            Toast.makeText(this, mFileName + ".pdf\nis saved to\n" + mFilePath, Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
 
+    }
+
+    public static class SettingsFragment extends PreferenceFragmentCompat {
+        @Override
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+            setPreferencesFromResource(R.xml.root_preferences, rootKey);
+        }
     }
 }
