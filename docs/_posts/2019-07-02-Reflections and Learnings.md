@@ -22,6 +22,8 @@ After the initial smooth transitions through the team formation and coining the 
 
 
 ## **<span style="color:#008183 ">Technical Difficulties:</span>**
+
+
 <h3>Android Studio:</h3>
 If you have followed our Blog before, you probably are familiar with the fact that all three of us are from different backgrounds namely, Mechanical, Electrical and Electronics. This is why, we needed to get our hands dirty with the tool Android Studio itself before we could even think about designing the 1st stage of the App. Android App development courses and Youtube tutorials as well as StackOverflow came to our rescue during this constant learning phase. Also, the weekly meetings with the Coach/Customer helped us a lot to keep track of our progress and clarify any technical issues that we might be facing.
 
@@ -34,3 +36,6 @@ The first approach for storing and updating data that we tried implementing was 
 The second approach that we tried implementing was the MVVM approach i.e. the View Model approach. This approach was rather versatile and not only sorted issues we were facing with Database but also help us with things like *Data Binding,* *App Configuration Changes,* *Easy updating of data in the Database* etc. Although it took a bit longer to implement and was a bit more complicated than say, the View Control approach, but it helped solve a lot of problems at one go.
 
 However, as we progressed with the App, we realised that as a result of implementing the View Model approach later and certain features added earlier, we had to re-wire certain design features and implement/remove certain changes made to some of the activities and their functionalities. In this way, even though we worked in an Agile method, we would have saved ourselves a lot time and effort, had we thought through the entire approach of the App earlier.
+
+
+<h3> Navigation:</h3> An App, however many features it might offer, can only be popular if the User finds it easy to use it and does not find it difficult to navigate 
