@@ -11,7 +11,6 @@ So let us dive into these pools of reflections and see what kind of a journey te
 <div style = "text-align:justify">The team formation process for SPENDEMON was quite spontaneous as all of us have been friends since the previous semester and had decide to take the course together. Although we were in need of another team member for our team, but it looked like Lady Luck also wanted the three Musketeers to be so and hence we were allowed to stick with the team of three. Hence, the team formation milestone was as smooth as a piece of cheesecake.
 <p>
 
-</div>
 
 ## **<span style="color:#008183 ">About the App:</span>**
 The App that we decided on was based on our own struggles and experiences with money management and taking control of our expenses from the beginning of the month. The App came to us as an opportunity to turn the lemons of our lives into lemonade and create something out of our struggles.
@@ -23,9 +22,10 @@ The name SPENDEMON was coined by the three of us as we were creating permutation
 
 ## **<span style="color:#008183 ">User Requirements:</span>**
 After the initial smooth transitions through the team formation and coining the App name, the real job started once we stared preparing the user requirements that the customer might require from the App. Predicting customer requirements, assigning priorities to them and mapping them into classes and interfaces in the App tested our skillsets of Android and Java to the most. Also, convincing the client with the requirement designs that we came up with was an altogether different experience for us.
-<P>
+<p>
 
-</p></div>
+</p>
+
 ## **<span style="color:#008183 ">Technical Difficulties:</span>**
 
 
