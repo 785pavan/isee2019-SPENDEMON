@@ -1,7 +1,5 @@
 package com.dbse.android.spendemon;
 
-//import com.dbse.android.spendemon.BalanceActivity;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
