@@ -178,10 +178,10 @@ public class PieChartDailyActivity extends AppCompatActivity implements Navigati
 //                right drawer
                 break;
             case R.id.nav_currency:
-                Toast.makeText(this, "Currency", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Feature Not Available in the free version", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_Calculator:
-                Toast.makeText(this, "Calculator", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Feature Not Available in the free version", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_settings:
                 Intent intent_set = new Intent(getApplicationContext(),SettingsActivity.class);
