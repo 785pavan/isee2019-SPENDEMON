@@ -24,11 +24,9 @@ The name SPENDEMON was coined by the three of us as we were creating permutation
 
 <h2> <b><span style="color:#008183 ">User Requirements:</span></b></h2>
 After the initial smooth transitions through the team formation and coining the App name, the real job started once we stared preparing the user requirements that the customer might require from the App. Predicting customer requirements, assigning priorities to them and mapping them into classes and interfaces in the App tested our skillsets of Android and Java to the most. Also, convincing the client with the requirement designs that we came up with was an altogether different experience for us.
-<p>
 
-</p>
 
-<h2> <b><span style="color:#008183 ">Technical Difficulties:</span></b></h2> 
+<h2> <b><span style="color:#008183 ">Technical Difficulties:</span></b></h2>
 
 
 <h3>Android Studio:</h3>
@@ -48,3 +46,32 @@ However, as we progressed with the App, we realised that as a result of implemen
 <h3> Navigation and Visualisation:</h3> An App, however many features it might offer, can only be popular if the User finds it easy to use it and does not find it difficult to navigate through the various features. This was the final major difficulty that we had to resolve in order to make our App more..well..App-like. For this particular reason, two Navigation Drawers were added and various Fragments were added in a way that the User would find it easy to navigate through the entire App and all the categories are easily accessible.
 
 However, there was some problems that we encountered some difficulties while linking Fragments with both the Navigation Drawer as well as with the necessary Activities. But this also was resolved by using classes instead of fragments and navigating through the classes instead of the fragments.
+
+
+## **<span style="color:#008183 ">Difficulties Encountered by Team:</span>**
+As a team totally new to Android it was difficult for us to come to a conclusion on how to design and create classes and what should be the content of each class. Also, the flow of each activity into the next and the exact structure of the App took some time to come to a common form.
+<p>
+
+</p>
+As a team working in an Agile fashion following SCRUM practices, it was difficult to hold and follow the concepts of these principles. For instance, once we implemented the MVVM approach, we had to re visit each and every Activity and class once again in order to make sure each activity was linked to the database through the View approach.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Working in a real life App development project such as this, helped us understand how real life Software Projects
