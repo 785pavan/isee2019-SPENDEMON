@@ -12,9 +12,9 @@ So let us dive into these pools of reflections and see what kind of a journey te
 
 
 ## **<span style="color:#008183 ">About the App:</span>**
-<div style = "text-align:justify">The App that we decided on was based on our own struggles and experiences with money management and taking control of our expenses from the beginning of the month. The App came to us as an opportunity to turn the lemons of our lives into lemonade and create something out of our struggles.
+<div style = "text-align:justify">The App that we decided on was based on our own struggles and experiences with money management and taking control of our expenses from the beginning of the month. The App came to us as an opportunity to turn the lemons of our lives into lemonade and create something out of our struggles.</div>
 
-The name SPENDEMON was coined by the three of us as we were creating permutations and combinations with words related to *Spending*, *Expenses*, *Currencies* etc. But the amount of discussions we had to finalise the name of the App made us realise how much time and brainstorming a small task such as coming up with an appropriate name takes. It was however an extremely fun beginning to the entire project.</div>
+<div style = "text-align:justify">The name SPENDEMON was coined by the three of us as we were creating permutations and combinations with words related to *Spending*, *Expenses*, *Currencies* etc. But the amount of discussions we had to finalise the name of the App made us realise how much time and brainstorming a small task such as coming up with an appropriate name takes. It was however an extremely fun beginning to the entire project.</div>
 
 
 ## **<span style="color:#008183 ">User Requirements:</span>**
