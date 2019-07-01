@@ -168,15 +168,13 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 //        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case STORAGE_CODE: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (requestCode == STORAGE_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 //                permission granted
-                } else {
+            } else {
 //                    permission denied
-                    Toast.makeText(this, "permission denied...!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "permission denied...!", Toast.LENGTH_SHORT).show();
 
-                }
             }
         }
     }
@@ -224,16 +222,16 @@ public class SettingsActivity extends AppCompatActivity {
 //        string should only have two numbers after the float
         String stringBalance = String.valueOf((float) ((int) (balance * 100)) / 100);
         if (balance > 0) {
-            stringBalance = "+  " + stringBalance;
+            stringBalance = "+  " + currencySign + stringBalance;
         } else if (balance < 0) {
-            stringBalance = "- " + stringBalance.substring(1);
+            stringBalance = "- " + currencySign + stringBalance.substring(1);
         }
 
         String stringIncomeSum = String.valueOf((float) ((int) (incomeSum * 100)) / 100);
-        stringIncomeSum = "+ " + stringIncomeSum;
+        stringIncomeSum = "+ " + currencySign + stringIncomeSum;
 
         String stringExpenseSum = String.valueOf((float) ((int) (expenseSum * 100)) / 100);
-        stringExpenseSum = "- " + stringExpenseSum;
+        stringExpenseSum = "- " + currencySign + stringExpenseSum;
 
         try {
             PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));

@@ -82,7 +82,7 @@ public class entryAdaptor extends
         ivCat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Category: " +  entry.getCategory(), Toast.LENGTH_LONG).show();
+                Toast.makeText(v.getContext(), "Category: " + entry.getCategory(), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -113,7 +113,7 @@ public class entryAdaptor extends
         ivPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),"Payment Method: " + entry.getPayMethod(), Toast.LENGTH_LONG).show();
+                Toast.makeText(v.getContext(), "Payment Method: " + entry.getPayMethod(), Toast.LENGTH_LONG).show();
             }
         });
         //ivPayment.setImageDrawable(Drawable.createFromPath(paymentImage[entry.getPaymentResource()]));
@@ -133,7 +133,7 @@ public class entryAdaptor extends
         ivType.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(),"Type: " + entry.getType(),Toast.LENGTH_LONG).show();
+                Toast.makeText(v.getContext(), "Type: " + entry.getType(), Toast.LENGTH_LONG).show();
             }
         });
         //ivType.setImageDrawable(Drawable.createFromPath(typeImages[entry.getTypeResource()]));
@@ -151,13 +151,14 @@ public class entryAdaptor extends
         rvItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),DetailsActivity.class);
-                intent.putExtra("Category",entry.getCategory());
-                intent.putExtra("Amount",entry.getAmount());
-                intent.putExtra("Type",entry.getType());
-                intent.putExtra("Notes",entry.getNote());
-                intent.putExtra("PaymentMethod",entry.getPayMethod());
-                intent.putExtra("Date",entry.getDate());
+                Intent intent = new Intent(v.getContext(), DetailsActivity.class);
+                intent.putExtra("Category", entry.getCategory());
+                intent.putExtra("Amount", entry.getAmount());
+                intent.putExtra("Type", entry.getType());
+                intent.putExtra("Notes", entry.getNote());
+                intent.putExtra("PaymentMethod", entry.getPayMethod());
+                intent.putExtra("Date", entry.getDate());
+                intent.putExtra("id", entry.getId());
                 v.getContext().startActivity(intent);
             }
         });
@@ -169,7 +170,7 @@ public class entryAdaptor extends
         return entries.size();
     }
 
-    Entry getEntryAt(int position){
+    Entry getEntryAt(int position) {
         return entries.get(position);
     }
 

@@ -249,15 +249,12 @@ public class Summary extends AppCompatActivity implements NavigationView.OnNavig
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.filter:
-                final Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-
+        if (item.getItemId() == R.id.filter) {
+            final Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
+            startActivity(intent);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
 
     }
 

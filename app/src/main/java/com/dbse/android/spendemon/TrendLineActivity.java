@@ -92,7 +92,6 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
         toggle1.syncState();
 
 
-
     }
 
     private void getData() {
@@ -114,7 +113,7 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
 //                yAxes.add(Alldata);
 //                xCategoryI.add(entry.getCategory());
             } else if (entry.getType().equals("Expenses")) {
-                Alldata = (float) - entry.getAmount();
+                Alldata = (float) -entry.getAmount();
 //                yAxes.add(Alldata);
 //                xCategoryE.add(entry.getCategory());
             }
@@ -125,9 +124,9 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
         float sumNext;
         Log.i(TAG, String.format("getData: %s", yAxes));
         yAxesNew.add((float) 0);
-        for (int counter = 0; counter < yAxes.size(); counter++){
+        for (int counter = 0; counter < yAxes.size(); counter++) {
             sumNext = 0;
-            for (int counterIn = 0; counterIn < counter + 1; counterIn++){
+            for (int counterIn = 0; counterIn < counter + 1; counterIn++) {
                 sumNext += yAxes.get(counterIn);
             }
             yAxesNew.add(sumNext);
@@ -146,7 +145,7 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
         ArrayList<Entry> yAxesIn = new ArrayList<>();
 
         int counter = 0;
-        for (float data: yAxesNew){
+        for (float data : yAxesNew) {
             yAxesLine.add(new Entry(counter++, data));
             xAxesLine.add(counter);
             Log.i("counter: ", String.valueOf(counter));
@@ -209,7 +208,8 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
             Log.i(TAG, "X axis: " + X);
             String Y = String.valueOf(lineChart.getXAxis());
             Log.i(TAG, "Y axis: " + Y);
-        }LineDataSet lineDataSet3;
+        }
+        LineDataSet lineDataSet3;
 //        if (lineChart.getData() != null &&
 //                lineChart.getData().getDataSetCount() > 0) {
 //            lineDataSet3 = (LineDataSet) lineChart.getData().getDataSetByIndex(0);
@@ -311,17 +311,16 @@ public class TrendLineActivity extends AppCompatActivity implements NavigationVi
                         "atrayee.neog@st.ovgu.de", "seyedbehnam.beladi@st.ovgu.de"});
                 startActivity(Intent.createChooser(intent_contactUs, "Share this by"));
                 break;
-//                pavan.kandapagari@st.ovgu.de,atrayee.neog@st.ovgu.de,seyedbehnam.beladi@st.ovgu.de
             case R.id.nav_summary:
                 Intent intent = new Intent(getApplicationContext(), Summary.class);
                 startActivity(intent);
                 break;
-                //                right drawer
+            //                right drawer
             case R.id.nav_currency:
-                Toast.makeText(this, "Currency", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Feature Not Available in the free version", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_Calculator:
-                Toast.makeText(this, "Calculator", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Feature Not Available in the free version", Toast.LENGTH_LONG).show();
                 break;
             case R.id.nav_settings:
                 Intent intent_set = new Intent(getApplicationContext(), SettingsActivity.class);
