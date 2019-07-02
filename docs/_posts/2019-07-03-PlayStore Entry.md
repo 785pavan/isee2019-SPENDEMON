@@ -54,7 +54,7 @@ Apart from the functional requirements mentioned above, we also have some non-fu
 <p>
 </p>
 <h2> <b><span style="color:#008183 ">Sneak Peek of the App:</span></b></h2>
-We already had put up screenshots of the App in the previous Blogs, so here e would like to show some screenshots of certain features and the Visualisations from the App which the reader might find useful to decide whether the App shall be useful to the reader or not:
+In this segment we would like to show some screenshots of certain features and the Visualisations from the App which the reader might find useful to decide whether the App shall be useful to the reader or not:
 <p>
 </p>
 
