@@ -13,5 +13,9 @@
         <item>Euro</item>
         <item>Rupees</item>
         <item>Dollars</item>
+        <item>Yen</item>
+        <item>Pound</item>
+        <item>Franc</item>
+        <item>Canadian Dollar</item>
     </string-array>
 </resources>
