@@ -12,7 +12,7 @@ So let us dive into these pools of reflections and see what kind of a journey te
 <p>
 
 </p>
-<h2> <b><span style="color:#008183 ">About the App:</span></b></h2>
+<h2> <b><span style="color:#008183 ">Topic and Name:</span></b></h2>
 The App that we decided on was based on our own struggles and experiences with money management and taking control of our expenses from the beginning of the month. The App came to us as an opportunity to turn the lemons of our lives into lemonade and create something out of our struggles.
 <p>
 
