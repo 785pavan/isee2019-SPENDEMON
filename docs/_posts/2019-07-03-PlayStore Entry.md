@@ -75,7 +75,7 @@ In order to successfully complete a Play Store Entry, Android Developers suggest
 <ul type="square">
 <li> Configuring our application for release: Update the Manifest and Gradle build file to the latest versions.</li>
 <li> Building and signing a release version of our application: The Gradle build files can be used with the release build type to build and sign a release version of our application.</li>
-<li> Testing the release version of your application: Before distributing our application, we thoroughly tested the release version on one target handset device and one target tablet device. </li>
+<li> Testing the release version of our application: Before distributing our application, we thoroughly tested the release version on one target handset device and one target tablet device. </li>
 <li> Updating application resources for release: All application resources such as multimedia files and graphics are updated and included with our application or staged on the proper production servers.
 <p>
 </p>
