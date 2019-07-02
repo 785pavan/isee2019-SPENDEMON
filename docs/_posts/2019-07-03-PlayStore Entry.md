@@ -17,16 +17,16 @@ For one last time we are here delivering to you our final product. It has been d
 <h2> <b><span style="color:#008183 ">Features:</span></b></h2>
 
 <p>
-To convince you about the utility about our App, we need to highlight the features of the App as well. So let us have a look into what is in (play) store for us:
+To convince you about the utility of our App, we need to highlight the features of the App as well. So let us have a look into what is in (play) store for us:
 </p>
 <p>
-<h3>Iconified Summary:</h3> The Summary Page is not only a summary for what transactions you have made but also it is filled with icons which help to view the category, type, payment method etc. with simply one glance. Besides this, there is an option to edit your entries by clicking on them and adding on to the pop up that appears.
+<h3>Iconified Summary:</h3> The Summary Page is not only a summary for what transactions you have made but also it is filled with icons which help to view the category, type, payment method etc. with a simple glance. Beside this, there is an option to edit your entries by clicking on them and adding on to the pop up that appears.
 </p>
 <p>
-<h3>Filtering:</h3> Suppose you have a lot of transactions in your Summary and need to filter out the ones based on a particular month or category. Fear not, because we have the categorical filtering options for you as well. The App has the options to filter data from the database based on the various categories, types of transactions, payment methods as well as based on the any range of dates given by the user. Apart from that, there is no real pressure to fill in every single field for filtering, as the App automatically takes all the details into account once a filter is left unchecked.
+<h3>Filtering:</h3> Suppose you have a lot of transactions in your Summary and need to filter out the ones based on a particular month or category. Fear not, because we have the categorical filtering options for you as well. The App has the option to filter your transactions from the database based on the various categories, types of transactions, payment methods as well as based on the any range of dates given by the user. Apart from that, there is no real pressure to fill in every single field for filtering, as the App automatically takes all the details into account once a filter is left unchecked.
 <p>
 </p>
-<h3>Thresholds and Graphs:</h3> A money control App is of no use if it does not tell you where you need to control your expenses or how much you are spending on which category. For this we have Pie Charts and Trendlines which give a clear picture on how much one has spent for each and every category. Don't forget to play with the Pie Charts too as they can be spun around and can be a distraction when you are pondering over life and how expensive it is ;)
+<h3>Thresholds and Graphs:</h3> A money control App is of no use if it does not tell you where you need to control your expenses or how much you are spending on which category. For this we have Pie Charts and Trend Lines which give a clear picture on how much one has spent for each and every category. Don't forget to play with the Pie Charts too as they can be spun around and can be a distraction when you are pondering over life and how expensive it is ;).
 <p>
 </p>
 Apart from this, we also have a threshold feature for our users who need an extra push to save. Users have the option to save a particular threshold for their expenses and a bar will display how much of the threshold you have reached.
