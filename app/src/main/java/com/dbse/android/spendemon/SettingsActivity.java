@@ -40,8 +40,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import java.util.Currency;
-
 import static com.dbse.android.spendemon.Summary.entries;
 
 
@@ -193,11 +191,19 @@ public class SettingsActivity extends AppCompatActivity {
                 currencySign = "$";
                 break;
             case "Rupees":
-
-//                currencySign = getResources().getString(R.string.rs_item);
                 currencySign = "INR ";
-
-
+                break;
+            case "Yen":
+                currencySign = /*"￥" */"YEN ";
+                break;
+            case "Pound":
+                currencySign = "£";
+                break;
+            case "Franc":
+                currencySign = "CHf ";
+                break;
+            case "Canadian Dollar":
+                currencySign = "CAD ";
                 break;
         }
         Document mDoc = new Document();
