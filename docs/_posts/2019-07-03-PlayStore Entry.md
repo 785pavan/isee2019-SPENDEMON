@@ -38,6 +38,9 @@ Apart from this, we also have a threshold feature for our users who need an extr
 <h3>Easy User Interface:</h3> The main USP of our App is that it is extremely easy to use and we have made sure that our users can navigate through the App in an utmost fluidic manner. Hence, not only do we have Navigation Drawers on both sides of the Summary interface but we also have options like the Swipe Delete, Delete All, Double Tap Exits to name a few which makes using our App easy breezy.
 <p>
 </p>
+<h3>Well Tested App:</h3> For our users to have a good experience with the App, we have tested the App on various levels to avoid any bugs or crashes in unpredictable circumstances. So, we are confident enough to say that the user shall not find any inconvenience or any App crashes while working on the App.
+<p>
+</p>
 <h2> <b><span style="color:#008183 ">Non-Functional Requirements:</span></b></h2>
 Apart from the functional requirements mentioned above, we also have some non-functional features that might be interesting to see for the User:
 <ol type="1">
@@ -73,4 +76,4 @@ When we set out on this journey, our sole aim was to develop a simple App which 
 Lastly, a huge final Danke Schön to our readers for showing interest in our progress. Hopefully, we will meet you all in the future with something better and something much more exciting again.
 <p>
 </p>
-Till then, Tschüss!! 
+Till then, Tschüss!!
