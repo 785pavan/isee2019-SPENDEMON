@@ -40,6 +40,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import java.util.Currency;
+
 import static com.dbse.android.spendemon.Summary.entries;
 
 
@@ -192,8 +194,10 @@ public class SettingsActivity extends AppCompatActivity {
                 break;
             case "Rupees":
 
-                currencySign = getResources().getString(R.string.rs_item);
-//                currencySign = "₹";
+//                currencySign = getResources().getString(R.string.rs_item);
+                currencySign = "INR ";
+
+
                 break;
         }
         Document mDoc = new Document();
@@ -224,7 +228,7 @@ public class SettingsActivity extends AppCompatActivity {
 //        string should only have two numbers after the float
         String stringBalance = String.valueOf((float) ((int) (balance * 100)) / 100);
         if (balance > 0) {
-            stringBalance = "+  " + currencySign + stringBalance;
+            stringBalance = "+ " + currencySign + stringBalance;
         } else if (balance < 0) {
             stringBalance = "- " + currencySign + stringBalance.substring(1);
         }
