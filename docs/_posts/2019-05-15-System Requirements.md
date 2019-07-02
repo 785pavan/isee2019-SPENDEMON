@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "System Requirements"
+icon: fa-lightbulb
 date: 2019-05-15
 ---
 

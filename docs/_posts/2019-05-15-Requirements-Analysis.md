@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Requirements Analysis"
+icon: fa-lightbulb
 date: 2019-05-15
 ---
 

@@ -6,7 +6,7 @@ icon: fa-book
 order: 3
 ---
 
-Here are certain Blogs, Websites and Youtube videos that helped us in our journey and might be useful for you too:
+Here are certain Blogs, Websites and YouTube videos that helped us in our journey and might be useful for you too:
 
 
 ---

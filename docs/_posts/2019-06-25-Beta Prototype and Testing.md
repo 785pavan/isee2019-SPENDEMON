@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Beta Prototype & Testing"
+icon: fa-lightbulb
 date: 2019-06-25
 ---
 Welcome to Blog#5 for team SPENDEMON. In this particular Blog we shall talk about how we put our App to test in different circumstances and what was the outcome of the tests. In a real-world scenario, a user interacts with an App at various levels from pressing buttons to putting in data to changing something by mistake. As an App Developer, we need to predict every possible circumstance that might test our App in any condition and come up with solutions for each such case. This is where Software Testing plays an important role in developing a user friendly App iteratively. Even though Exhaustive Tests are not possible, we have tried our level best to make our App not only functional, but a well tested App.
