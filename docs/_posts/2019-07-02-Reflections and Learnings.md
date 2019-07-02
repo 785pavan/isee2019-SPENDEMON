@@ -24,10 +24,14 @@ The name SPENDEMON was coined by the three of us as we were creating permutation
 
 <h2> <b><span style="color:#008183 ">User Requirements:</span></b></h2>
 After the initial smooth transitions through the team formation and coining the App name, the real job started once we stared preparing the user requirements that the customer might require from the App. Predicting customer requirements, assigning priorities to them and mapping them into classes and interfaces in the App tested our skillsets of Android and Java to the most. Also, convincing the client with the requirement designs that we came up with was an altogether different experience for us.
+<p>
 
+</p>
 
 <h2> <b><span style="color:#008183 ">Technical Difficulties:</span></b></h2>
+<p>
 
+</p>
 
 <h3>Android Studio:</h3>
 If you have followed our Blog before, you probably are familiar with the fact that all three of us are from different backgrounds namely, Mechanical, Electrical and Electronics. This is why, we needed to get our hands dirty with the tool Android Studio itself before we could even think about designing the 1st stage of the App. Android App development courses and YouTube tutorials as well as Stack Overflow came to our rescue during this constant learning phase. Also, the weekly meetings with the Coach/Customer helped us a lot to keep track of our progress and clarify any technical issues that we might be facing.
@@ -35,11 +39,15 @@ If you have followed our Blog before, you probably are familiar with the fact th
 
 </p>
 
+</p>
 <h3> Activities: </h3> Designing the interface in a way, that we have an optimised number of Activities such that all required information is displayed yet the App is not cluttered with un-necessary information was a task that required some brainstorming. Also linking each Activity to one another and creating intents in an effective way was something we needed to spend time on.
 <p>
 
+
 </p>
 
+
+</p>
 <h3> Database:</h3> The major concern for us during 60% of the entire project was implementing an effective Database and extracting as well as manipulating transactions and Data to and from the Database.
 
 The first approach for storing and updating data that we tried implementing was parsing all data into a JSON format and storing it into a JSON script. However, doing this took a lot of space as well as effort and was inefficient.
@@ -50,6 +58,7 @@ However, as we progressed with the App, we realised that as a result of implemen
 <p>
 
 </p>
+
 <h3> Navigation and Visualisation:</h3> An App, however many features it might offer, can only be popular if the User finds it easy to use it and does not find it difficult to navigate through the various features. This was the final major difficulty that we had to resolve in order to make our App more..well..App-like. For this particular reason, two Navigation Drawers were added and various Fragments were added in a way that the User would find it easy to navigate through the entire App and all the categories are easily accessible.
 <p>
 
@@ -58,9 +67,14 @@ However, there was some problems that we encountered some difficulties while lin
 <p>
 
 </p>
+
 It was also important to visualise the transactions not only in the form of just numbers and texts but also in the form of <i>Pie Charts</i> and <i>Trendlines</i>.
 
 <h2> <b><span style="color:#008183 ">Difficulties Encountered by the Team:</span></b></h2>
+
+
+<h2> <b><span style="color:#008183 ">Difficulties Encountered by Team:</span></b></h2>
+
 As a team totally new to Android it was difficult for us to come to a conclusion on how to design and create classes and what should be the content of each class. Also, the flow of each activity into the next and the exact structure of the App took some time to come to a common form.
 <p>
 

@@ -33,6 +33,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
     ConstraintLayout constraintLayout;
     ImageView teamLogo;
     SharedPreferences sharedPreferences;
+    private SummaryViewModel summaryViewModel;
     private String usernameA1 = null;
     private Integer passwordA1;
 
@@ -84,6 +85,7 @@ public class SignUpLogIn extends AppCompatActivity implements View.OnClickListen
                                 passwordA1 = sharedPreferences.getInt("Password", 0);
                                 Toast.makeText(getApplicationContext(), "You are signed up as: "
                                         .concat(usernameA1), Toast.LENGTH_LONG).show();
+                                summaryViewModel.deleteAllData();
                             }
                         })
                         .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
