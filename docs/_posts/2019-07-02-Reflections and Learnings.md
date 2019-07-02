@@ -49,14 +49,14 @@ If you have followed our Blog before, you probably are familiar with the fact th
 
 The first approach for storing and updating data that we tried implementing was parsing all data into a .JSON format and storing it into a JSON script. However, doing this took a lot of space as well as effort and was inefficient.
 
-The second approach that we tried implementing was the MVVM approach i.e. the View Model approach. This approach was rather versatile and not only sorted issues we were facing with Database but also help us with things like <i>Data Binding, App Configuration Changes, Easy updating of data in the Database</i> etc. Although it took a bit longer to implement and was a bit more complicated than say, the View Control approach, but it helped solve a lot of problems at one go.
+The second approach that we tried implementing was the MVVM approach i.e. the View Model approach. This approach was rather versatile and not only sorted issues we were facing with Database but also helped us with things like <i>Data Binding, App Configuration Changes, Easy updating of data in the Database</i> etc. Although it took a bit longer to implement and it was a bit more complicated than other approaches such as the View Control approach, but it helped solve a lot of problems altogether.
 
-However, as we progressed with the App, we realised that as a result of implementing the View Model approach later and certain features added earlier, we had to re-wire certain design features and implement/remove certain changes made to some of the activities and their functionalities. In this way, even though we worked in an Agile method, we would have saved ourselves a lot time and effort, had we thought through the entire approach of the App earlier.
+However, as we progressed with the App, we realized that as a result of implementing the View Model approach later and certain features added earlier, we had to re-wire certain design features and implement/remove certain changes made to some of the activities and their functionalities. In this way, even though we worked in an Agile method, we would have saved ourselves a lot time and effort, had we thought through the entire approach of the App earlier.
 <p>
 
 </p>
 
-<h3> Navigation and Visualisation:</h3> An App, however many features it might offer, can only be popular if the User finds it easy to use it and does not find it difficult to navigate through the various features. This was the final major difficulty that we had to resolve in order to make our App more..well..App-like. For this particular reason, two Navigation Drawers were added and various Fragments were added in a way that the User would find it easy to navigate through the entire App and all the categories are easily accessible.
+<h3> Navigation and Visualization:</h3> An App, however many features it might offer, can only be popular if the User finds it easy to use it and does not find it difficult to navigate through the various features. This was the final major difficulty that we had to resolve in order to make our App more..well..App-like. For this particular reason, two Navigation Drawers were added and various Fragments were added in a way that the User would find it easy to navigate through the entire App and all the categories are easily accessible.
 <p>
 
 </p>
