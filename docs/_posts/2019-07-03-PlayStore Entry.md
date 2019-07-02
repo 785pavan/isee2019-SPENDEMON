@@ -91,3 +91,6 @@ Lastly, a huge final Danke Schön to our readers for showing interest in our pro
 <p>
 </p>
 Till then, Tschüss!!
+<p>
+</p>
+<center><img src="{{site.baseurl}}/images/Summary_swipe_1.png" alt="Summary" width="200" /></center>
