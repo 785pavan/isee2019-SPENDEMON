@@ -61,6 +61,9 @@ However, there was some problems that we encountered some difficulties while lin
 </p>
 
 <h2> <b><span style="color:#008183 ">Difficulties Encountered by Team:</span></b></h2> 
+<p>
+
+</p>
 As a team totally new to Android it was difficult for us to come to a conclusion on how to design and create classes and what should be the content of each class. Also, the flow of each activity into the next and the exact structure of the App took some time to come to a common form.
 <p>
 
