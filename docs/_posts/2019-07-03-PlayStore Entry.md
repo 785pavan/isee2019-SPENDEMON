@@ -46,7 +46,7 @@ Apart from the functional requirements mentioned above, we also have some non-fu
 <ol type="1">
 <li>Category of the App: Utility App which serves as a Money tracker or Budget Planner.</li>
 <li>Age Limit: None. Due to the easy usability of the App, there is no age limit. (Even toddlers can play with the Pie Charts and icons!)</li>
-<li>Android Version Compatibility: Built on SDK 24, compatible upto SDK 28.</li>
+<li>Android Version Compatibility: Built on API level 19 or version 4.4, the App is compatible upto API level 28 or version 9.0</li>
 <li>Security: The App has both Authentication as well as Authorisation options at the beginning and is hence extremely safe.</li>
 <li>Supported Devices: The App is supported in Smartphones as well as Tablets.</li>
 <li>Energy/Memory Consumption: The App is efficient in memory and energy consumption and consumes around 5MB storage space and around
@@ -54,7 +54,7 @@ Apart from the functional requirements mentioned above, we also have some non-fu
 <p>
 </p>
 <h2> <b><span style="color:#008183 ">Sneak Peek of the App:</span></b></h2>
-Here are some screenshots which the reader might find useful to decide whether the App shall be useful to the reader or not:
+We already had put up screenshots of the App in the previous Blogs, so here e would like to show some screenshots of certain features and the Visualisations from the App which the reader might find useful to decide whether the App shall be useful to the reader or not:
 <p>
 </p>
 
