@@ -4,7 +4,7 @@ title: "Reflections & Learnings"
 icon: fa-lightbulb
 date: 2019-07-02
 ---
-Welcome to the penultimate Blog of team SPENDEMON. We are so grateful to you for showing interest in our journey so far. After a lot of technical discussion on the various mechanisms that we have applied to the App, it is also very important to discuss on the learning curve that we have had so far and reflect upon what we have learned both as hard as well as soft skills.
+Welcome to the penultimate Blog of team SPENDEMON. We are so grateful to you for showing interest in our journey so far. After a lot of technical discussion on the various mechanisms that we have applied to the App, it is also very important to discuss on the learning curve that we have had so far. It is also worth noting what we have learned both as hard as well as soft skills.
 So let us dive into these pools of reflections and see what kind of a journey team SPENDEMON has completed in these three months time.
 
 
