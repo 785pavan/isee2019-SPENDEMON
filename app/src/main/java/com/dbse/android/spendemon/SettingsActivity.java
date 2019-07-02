@@ -203,7 +203,7 @@ public class SettingsActivity extends AppCompatActivity {
                 currencySign = "CHf ";
                 break;
             case "Canadian Dollar":
-                currencySign = "CAD";
+                currencySign = "CAD ";
                 break;
         }
         Document mDoc = new Document();
