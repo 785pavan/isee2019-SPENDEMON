@@ -45,9 +45,9 @@ If you have followed our Blog before, you probably are familiar with the fact th
 
 </p>
 
-<h3> Database:</h3> The major concern for us during 60% of the entire project was implementing an effective Database and extracting as well as manipulating transactions and Data to and from the Database.
+<h3> Database:</h3> The major concern for us during the entire project was implementing an effective Database. We put a lot of effort into storing and extracting transactions and Data in the database as well as manipulating the Database.
 
-The first approach for storing and updating data that we tried implementing was parsing all data into a JSON format and storing it into a JSON script. However, doing this took a lot of space as well as effort and was inefficient.
+The first approach for storing and updating data that we tried implementing was parsing all data into a .JSON format and storing it into a JSON script. However, doing this took a lot of space as well as effort and was inefficient.
 
 The second approach that we tried implementing was the MVVM approach i.e. the View Model approach. This approach was rather versatile and not only sorted issues we were facing with Database but also help us with things like <i>Data Binding, App Configuration Changes, Easy updating of data in the Database</i> etc. Although it took a bit longer to implement and was a bit more complicated than say, the View Control approach, but it helped solve a lot of problems at one go.
 
