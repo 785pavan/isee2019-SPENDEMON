@@ -191,7 +191,9 @@ public class SettingsActivity extends AppCompatActivity {
                 currencySign = "$";
                 break;
             case "Rupees":
-                currencySign = getResources().getString(R.string.rs);
+
+                currencySign = getResources().getString(R.string.rs_item);
+//                currencySign = "₹";
                 break;
         }
         Document mDoc = new Document();
