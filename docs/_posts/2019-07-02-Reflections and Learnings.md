@@ -24,7 +24,7 @@ The name SPENDEMON was coined by the three of us as we were creating permutation
 </p>
 
 <h2> <b><span style="color:#008183 ">User Requirements:</span></b></h2>
-After the initial smooth transitions through the team formation and coining the App name, the real job started once we stared preparing the user requirements that the customer might require from the App. Predicting customer requirements, assigning priorities to them and mapping them into classes and interfaces in the App tested our skillsets of Android and Java to the most. Also, convincing the client with the requirement designs that we came up with was an altogether different experience for us.
+After the initial smooth transitions through the team formation and coining the App name, the real job started once we stared coming up with user requirements which the customer might require from the App. Predicting customer requirements, assigning priorities to them and mapping them into classes and interfaces in the App tested our skillsets of Android and Java to the most. Also, convincing the client with the requirement designs that we came up with was an altogether different experience for us.
 <p>
 
 </p>
