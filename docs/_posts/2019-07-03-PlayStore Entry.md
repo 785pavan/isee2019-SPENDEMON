@@ -93,4 +93,4 @@ Lastly, a huge final Danke Schön to our readers for showing interest in our pro
 Till then, Tschüss!!
 <p>
 </p>
-<center><img src="{{site.baseurl}}/images/Summary_swipe_1.png" alt="Summary" width="200" /></center>
+<center><img src="{{site.baseurl}}/images/Namaste.png" alt="Namaste" width="200" /></center>
