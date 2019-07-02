@@ -17,7 +17,7 @@ The App that we decided on was based on our own struggles and experiences with m
 <p>
 
 </p>
-The name SPENDEMON was coined by the three of us as we were creating permutations and combinations with words related to *Spending*, *Expenses*, *Currencies* etc. But the amount of discussions we had to finalise the name of the App made us realise how much time and brainstorming a small task such as coming up with an appropriate name takes. It was however an extremely fun beginning to the entire project.
+The name SPENDEMON was coined by the three of us as we were creating permutations and combinations with words related to <i>Spending, Expenses, Currencies</i> etc. But the amount of discussions we had to finalise the name of the App made us realise how much time and brainstorming a small task such as coming up with an appropriate name takes. It was however an extremely fun beginning to the entire project.
 <p>
 
 </p>
@@ -48,7 +48,7 @@ If you have followed our Blog before, you probably are familiar with the fact th
 
 The first approach for storing and updating data that we tried implementing was parsing all data into a JSON format and storing it into a JSON script. However, doing this took a lot of space as well as effort and was inefficient.
 
-The second approach that we tried implementing was the MVVM approach i.e. the View Model approach. This approach was rather versatile and not only sorted issues we were facing with Database but also help us with things like *Data Binding,* *App Configuration Changes,* *Easy updating of data in the Database* etc. Although it took a bit longer to implement and was a bit more complicated than say, the View Control approach, but it helped solve a lot of problems at one go.
+The second approach that we tried implementing was the MVVM approach i.e. the View Model approach. This approach was rather versatile and not only sorted issues we were facing with Database but also help us with things like <i>Data Binding, App Configuration Changes, Easy updating of data in the Database</i> etc. Although it took a bit longer to implement and was a bit more complicated than say, the View Control approach, but it helped solve a lot of problems at one go.
 
 However, as we progressed with the App, we realised that as a result of implementing the View Model approach later and certain features added earlier, we had to re-wire certain design features and implement/remove certain changes made to some of the activities and their functionalities. In this way, even though we worked in an Agile method, we would have saved ourselves a lot time and effort, had we thought through the entire approach of the App earlier.
 <p>
