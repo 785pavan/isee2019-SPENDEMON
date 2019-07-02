@@ -9,16 +9,16 @@ So let us dive into these pools of reflections and see what kind of a journey te
 
 
 <h2> <b><span style="color:#008183 ">Team Formation:</span></b></h2>
-<div style = "text-align:justify">The team formation process for SPENDEMON was quite spontaneous as all of us have been friends since the previous semester and had decide to take the course together. Although we were in need of another team member for our team, but it looked like Lady Luck also wanted the three Musketeers to be so and hence we were allowed to stick with the team of three. Hence, the team formation milestone was as smooth as a piece of cheesecake.
+<div style = "text-align:justify">The team formation process for SPENDEMON was quite spontaneous as all of us have been friends since the previous semester and we have worked together on other projects. Therefore, we decided to take the course together. Although we were in need of another team member for our team, but it looked like Lady Luck also wanted the three Musketeers to be so and hence we were allowed to stick with the team of three. Hence, the team formation milestone was as smooth as a piece of a cheesecake.
 <p>
 
 </p>
 <h2> <b><span style="color:#008183 ">Topic and Name:</span></b></h2>
-The App that we decided on was based on our own struggles and experiences with money management and taking control of our expenses from the beginning of the month. The App came to us as an opportunity to turn the lemons of our lives into lemonade and create something out of our struggles.
+We decided on the App topic based on our own struggles and experiences with money management. We wanted to take control of our expenses from the beginning of the month. The App came to us as an opportunity to turn the lemons of our lives into lemonade and create something out of our struggles. We knew what features are generally available, what are the necessary ones and we saw an opportunity to try our innovative ideas.
 <p>
 
 </p>
-The name SPENDEMON was coined by the three of us as we were creating permutations and combinations with words related to <i>Spending, Expenses, Currencies</i> etc. But the amount of discussions we had to finalise the name of the App made us realise how much time and brainstorming a small task such as coming up with an appropriate name takes. It was however an extremely fun beginning to the entire project.
+The name SPENDEMON was coined by the three of us as we were creating permutations and combinations with words related to <i>Spending, Expenses, Currencies</i> etc. But the amount of discussions we had to finalize the name of the App made us realize how much time and brainstorming is needed for a small task such as coming up with an appropriate and catchy name. It was however an extremely fun beginning to the entire project.
 <p>
 
 </p>
