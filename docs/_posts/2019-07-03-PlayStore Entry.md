@@ -36,3 +36,10 @@ Apart from this, we also have a threshold feature for our users who need an extr
 <p>
 </p>
 <h3>Easy User Interface:</h3> The main USP of our App is that it is extremely easy to use and we have made sure that our users can navigate through the App in an utmost fluidic manner. Hence, not only do we have Navigation Drawers on both sides of the Summary interface but we also have options like the Swipe Delete, Delete All, Double Tap Exits to name a few which makes using our App easy breezy.
+<p>
+</p>
+<h2> <b><span style="color:#008183 ">Non-Functional Requirements:</span></b></h2>
+Apart from the functional requirements mentioned above, we also have some non-functional features that might be interesting to see for the User:
+1. Category of the App: Utility App which serves as a Money tracker or Budget Planner.
+2. Age Limit: None. Due to the easy usability of the App, there is no age limit. (Even toddlers can play with the Pie Charts and icons!)
+3. 
