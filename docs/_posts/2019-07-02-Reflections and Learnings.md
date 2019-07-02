@@ -64,8 +64,9 @@ However, there was some problems that we encountered some difficulties while lin
 
 </p>
 It was also important to visualise the transactions not only in the form of just numbers and texts but also in the form of <i>Pie Charts</i> and <i>Trendlines</i>.
+<p>
 
-
+</p>
 <h2> <b><span style="color:#008183 ">Difficulties Encountered by Team:</span></b></h2>
 
 As a team totally new to Android it was difficult for us to come to a conclusion on how to design and create classes and what should be the content of each class. Also, the flow of each activity into the next and the exact structure of the App took some time to come to a common form.
@@ -81,9 +82,9 @@ Following the coding conventions that were decided by the team were hard to keep
 
 </p>
 Finally, working in a team and especially in a collaborative environment demands a lot of communication protocols which was essential and once these were somehow missed, it created problems to resolve the conflicts. But then again, these conflicts actually taught us how to resolve commit issues in Git platforms in an effective manner.
+<p>
 
-
-
+</p>
 <h2> <b><span style="color:#008183 ">Benefits:</span></b></h2>
 
 <h3>Agile and SCRUM:</h3>
@@ -98,9 +99,9 @@ One of the main thing that our team learnt was that with the right conviction an
 <h3>Work Ethic and Discipline:</h3>
 When you do not have regular assignments or no one to check if you are doing something right, one often tends to take things for granted and get a bit lazy. So did we. However, we realised after two or three weeks that contributing some amount everyday or every alternate day really helps in the long run as one does not have to compromise with anything that one wanted to implement but could not because of the lack of time.
 Having a certain type of work ethic, being considerate and appreciating the  contributions of the team members and having a disciplined work schedule can lead one to achieve things and come up with ideas that would not have been possible otherwise.
+<p>
 
-
-
+</p>
 <h2> <b><span style="color:#008183 ">Review of the Course:</span></b></h2>
 The best thing about the course was the fact that it gave an opportunity not only to learn App development but the Apps which were given as options for development were something which shall be extremely useful and fun to use in real life.
 <p>
@@ -115,9 +116,9 @@ The course gave us the liberty to use our own imaginations and implement our ide
 
 </p>
 Also, keeping records of the progress as Blogs instead of a Final Report where everything is scrummed together at the end, is so much of a better idea, as it helps one note down everything that one faced during a particular milestone before everything disappears from the mind and one has to grease the brain and remember everything in the end. Also, it is such an interesting way to learn Blogging from the scratch.
+<p>
 
-
-
+</p>
 <h2> <b><span style="color:#008183 ">Final Thought:</span></b></h2>
 It is almost the end of this journey and as hopefully one can make out from the Blog, it was an enlightening journey for each of us. From complete beginners to now with a good amount of knowledge acquired regarding App making, each of us cannot but be grateful that each of us decided to take this course and had been given the opportunity and freedom to learn so much through one course.
 <p>
