@@ -56,13 +56,11 @@ Apart from the functional requirements mentioned above, we also have some non-fu
 <h2> <b><span style="color:#008183 ">Sneak Peek of the App:</span></b></h2>
 Here are some screenshots which the reader might find useful to decide whether to use the App or not:
 
+
 ---
 <img src="{{site.baseurl}}/images/Login.png" alt="Login" width="200" />
 <img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="200" />
 <img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="200" />
-
-
-
 ---
 <p>
 </p>
