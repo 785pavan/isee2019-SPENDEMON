@@ -48,3 +48,29 @@ Apart from the functional requirements mentioned above, we also have some non-fu
 <li>Supported Devices: The App is supported in Smartphones as well as Tablets.</li>
 <li>Energy/Memory Consumption: The App is efficient in memory and energy consumption and consumes a mere 4MB storage space.
 <li>Target Group: As we have maintained before, the App is not designed for a certain target group only but can be used by anyone who is in search of controlling the flow of their money.</li>
+<p>
+</p>
+<h2> <b><span style="color:#008183 ">Sneak Peek of the App:</span></b></h2>
+Here are some screenshots which the reader might find useful to decide whether to use the App or not:
+
+---
+<img src="{{site.baseurl}}/images/Login.png" alt="Login" width="200" />
+<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="200" />
+<img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="200" />
+
+
+
+---
+<p>
+</p>
+<h2> <b><span style="color:#008183 ">Final Thoughts:</span></b></h2>
+With these few images we have finally come to the end of a beautiful journey where there was everyday learning, creativity flowing, some intensive brainstorming but most of all a journey which was extremely fun to begin with. As three Engineers who for the first time embarked into the journey of App development, we are grateful for this course and the Professor for designing such a well structured course which helped us learn so much everyday.
+<p>
+</p>
+When we set out on this journey, our sole aim was to develop a simple App which people might find useful in their everyday lives. If you, our readers, find this effort of ours worth installing then click <a href = "https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.1.2/Spendemon.apk" target="_blank" > here. </a> and please do write to us about your experience so that we can grow this App into a popular one among the masses some day.
+<p>
+</p>
+Lastly, a huge final Danke Schön to our readers for showing interest in our progress. Hopefully, we will meet you all in the future with something better and something much more exciting again.
+<p>
+</p>
+Till then, Tschüss!! 
