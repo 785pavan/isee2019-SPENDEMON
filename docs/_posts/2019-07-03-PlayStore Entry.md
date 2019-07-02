@@ -9,8 +9,8 @@ Welcome to the last Blog for team SPENDEMON. We cannot express our gratitude eno
 </p>
 For one last time we are here to deliver to you the final finished product of the three months of our journey so far. Here we shall talk about the App, its features, and why we think that this is a good App for you to have in your life.
 
-<h2> <b><span style="color:#008183 ">:</span></b></h2>
-<div style = "text-align:justify">The team formation process for SPENDEMON was quite spontaneous as all of us have been friends since the previous semester and had decide to take the course together. Although we were in need of another team member for our team, but it looked like Lady Luck also wanted the three Musketeers to be so and hence we were allowed to stick with the team of three. Hence, the team formation milestone was as smooth as a piece of cheesecake.
+<h2> <b><span style="color:#008183 ">SPENDEMON:</span></b></h2>
+<div style = "text-align:justify">The App SPENDEMON is your personalised Pokemon which has the ability to track your expenses and give you a check every now and then regarding your indulges. There are thousands of Money managing Apps and budget control Apps in the market. So what makes this App standout? It's simplicity and ease of use we would say. In the development phase of this App, there wasn't only the three of us who were the developers, but there was a fourth developer and that was the customer himself. Hence, this App has been fine tuned to what customers generally need in such an App. It is hence, simple, efficient and to the point.
 <p>
 
 </p>
