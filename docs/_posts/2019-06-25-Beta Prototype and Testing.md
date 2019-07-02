@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Beta Prototype and Testing"
+title: "Beta Prototype & Testing"
 icon: fa-lightbulb
 date: 2019-06-25
 ---
