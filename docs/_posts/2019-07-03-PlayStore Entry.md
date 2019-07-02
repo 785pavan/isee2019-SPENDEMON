@@ -1,6 +1,7 @@
 ---
 layout: post
 title: " Google Play Store Entry"
+icon: fa-lightbulb
 date: 2019-07-03
 ---
 Welcome to the last Blog for team SPENDEMON. We cannot express our gratitude enough to ones who have stuck with us since the beginning. We hope we have been able to create something useful and simple for your daily use. We also hope that reading our Blogs inspires you too to start building an App of your own.
