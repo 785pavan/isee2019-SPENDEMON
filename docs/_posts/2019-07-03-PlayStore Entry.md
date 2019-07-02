@@ -68,6 +68,18 @@ In this segment we would like to show some screenshots of certain features and t
 
 <p>
 </p>
+<h2> <b><span style="color:#008183 ">Simulating a Play Store Entry:</span></b></h2>
+In order to successfully complete a Play Store Entry, Android Developers suggest certain steps that need to be implemented:
+<p>
+</p>
+<ul type="square">
+<li> Configuring our application for release: Update the Manifest and Gradle build file to the latest versions.</li>
+<li> Building and signing a release version of our application: The Gradle build files can be used with the release build type to build and sign a release version of our application.</li>
+<li> Testing the release version of your application: Before distributing our application, we thoroughly tested the release version on one target handset device and one target tablet device. </li>
+<li> Updating application resources for release: All application resources such as multimedia files and graphics are updated and included with our application or staged on the proper production servers.
+<p>
+</p>
+
 <h2> <b><span style="color:#008183 ">Final Thoughts:</span></b></h2>
 With these few images we have finally come to the end of a beautiful journey where there was everyday learning, creativity flowing, some intensive brainstorming but most of all a journey which was extremely fun to begin with. As three Engineers who for the first time embarked into the journey of App development, we are grateful for this course and the Professor for designing such a well structured course which helped us learn so much everyday.
 <p>
