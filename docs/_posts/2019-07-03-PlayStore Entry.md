@@ -29,10 +29,10 @@ To convince you about the utility of our App, we need to highlight the features 
 <h3>Thresholds and Graphs:</h3> A money control App is of no use if it does not tell you where you need to control your expenses or how much you are spending on which category. For this we have Pie Charts and Trend Lines which give a clear picture on how much one has spent for each and every category. Don't forget to play with the Pie Charts too as they can be spun around and can be a distraction when you are pondering over life and how expensive it is ;).
 <p>
 </p>
-Apart from this, we also have a threshold feature for our users who need an extra push to save. Users have the option to save a particular threshold for their expenses and a bar will display how much of the threshold you have reached.
+Apart from this, we also have a threshold feature for our users who need an extra push to save. Users have the option to set a particular threshold for their expenses and a bar will display how much of the threshold you have reached.
 <p>
 </p>
-<h3>Downloadable PDF Report:</h3> For the category of users who would love to keep records of their incomes and expenses as a hard copy, we have kept that option for you too. You can download a PDF now of your monthly transactions from the App for official or personal use.
+<h3>Downloadable PDF Report:</h3> If a user wants to keep a hard copy of their incomes and expenses, we have provided an option. You can save all of your transactions as a PDF on your memory and print or share it for official or personal use.
 <p>
 </p>
 <h3>Easy User Interface:</h3> The main USP of our App is that it is extremely easy to use and we have made sure that our users can navigate through the App in an utmost fluidic manner. Hence, not only do we have Navigation Drawers on both sides of the Summary interface but we also have options like the Swipe Delete, Delete All, Double Tap Exits to name a few which makes using our App easy breezy.
