@@ -14,7 +14,7 @@ Here are certain Blogs, Websites and YouTube videos that helped us in our journe
 2. Coding in Flow: <a
   href="https://www.youtube.com/watch?v=ARpn-1FPNE4" target="_blank"> *https://www.youtube.com/watch?v=ARpn-1FPNE4* </a>
 3. MP Android Charts: <a
-  href="https://github.com/PhilJay/MPAndroidChart.wiki.git" target="_blank"> *https://github.com/PhilJay/MPAndroidChart.wiki.git* </a>
+  href="https://github.com/PhilJay/MPAndroidChart/wiki" target="_blank"> *https://github.com/PhilJay/MPAndroidChart/wiki* </a>
 4. Jekyll Theme-Prologue: <a
   href="https://github.com/chrisbobbe/jekyll-theme-prologue" target="_blank"> *https://github.com/chrisbobbe/jekyll-theme-prologue* </a>
 5. Android Studio for Beginners: <a
