@@ -275,7 +275,7 @@ public class SettingsActivity extends AppCompatActivity {
             mDoc.add(new Paragraph(mText));
 
 
-            int iteration = 0;
+            int iteration = entries.size() + 1;
 //            for (com.dbse.android.spendemon.model.Entry entry : entries) {
 //                iteration ++;
 //                mText = "T_" + iteration + "   " + entry.getDate() + "   " + entry.getAmount() + " "
@@ -297,12 +297,12 @@ public class SettingsActivity extends AppCompatActivity {
             for (int j = 0; j < cells.length; j++) {
                 cells[j].setBackgroundColor(BaseColor.GRAY);
             }
-            iteration = 0;
+            iteration = entries.size() + 1;
             int columnNumber = cells.length;
             PdfPCell nextCell;
             for (com.dbse.android.spendemon.model.Entry entry : entries) {
                 Log.i("enter:", "entries");
-                iteration++;
+                iteration--;
                 if (entry.getType().equals("Incomes")) {
 
                     @SuppressLint("DefaultLocale") String iterationString = String.format("T_%04d", iteration);

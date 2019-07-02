@@ -38,7 +38,7 @@ Apart from this, we also have a threshold feature for our users who need an extr
 <h3>Easy User Interface:</h3> The main USP of our App is that it is particularly easy to use and we have made sure that our users can navigate through the App in an utmost fluidic manner. Hence, not only do we have Navigation Drawers on both sides of the Summary interface but we also have options like the Swipe Delete, Delete All, Double Tap Exits to name a few which makes using our App easy breezy.
 <p>
 </p>
-<h3>Well Tested App:</h3> For our users to have a good experience with the App, we have tested the App on various levels to avoid any bugs or crashes in unpredictable circumstances. The tests include everything from wrong passwords, to null cases, to checking whether the entries work correctly, to ensuring if the navigation is functional, we have tested every activity, every fragment of the App and so, we are confident enough to say that the user shall not find any inconvenience or any App crashes while working on the App as we have taken appropriate precautions for every such occasion where there was a chance of some unseen scenario.
+<h3>Well Tested App:</h3> For our users to have a good experience with the App, we have tested the App on various levels to avoid any bugs or crashes in unpredictable circumstances. The tests include everything from wrong passwords, to null cases, to checking whether the entries work correctly, to ensuring if the navigation is functional, we have tested every activity, every fragment of the App numerous times and so, we are confident enough to say that the user shall not find any inconvenience or any crashes while working on the App as we have taken appropriate precautions to ensure that we prevent any chances of these unseen scenario.
 <p>
 </p>
 <h2> <b><span style="color:#008183 ">Non-Functional Requirements:</span></b></h2>
@@ -47,14 +47,14 @@ Apart from the functional requirements mentioned above, we also have some non-fu
 <li>Category of the App: Utility App which serves as a Money tracker or Budget Planner.</li>
 <li>Age Limit: None. Due to the easy usability of the App, there is no age limit. (Even toddlers can play with the Pie Charts and icons!)</li>
 <li>Android Version Compatibility: Built on API level 19 or version 4.4, the App is compatible upto API level 28 or version 9.0</li>
-<li>Security: The App has both Authentication as well as Authorisation options at the beginning and is hence extremely safe.</li>
+<li>Security: The App has both Authentication as well as Authorization options at the beginning and is hence completely safe.</li>
 <li>Supported Devices: The App is supported in Smartphones as well as Tablets.</li>
 <li>Memory Consumption: The App is efficient in memory and energy consumption and consumes around 5MB storage space and refrains from running in the background, hence saving energy.
 <li>Target Group: As we have maintained before, the App is not designed for a certain target group only but can be used by anyone who is in search of controlling the flow of their money.</li>
 <p>
 </p>
 <h2> <b><span style="color:#008183 ">Sneak Peek of the App:</span></b></h2>
-In this segment we would like to show some screenshots of certain features and the Visualisations from the App which the reader might find useful to decide whether the App shall be useful to the reader or not:
+In this segment we would like to show some screenshots of certain features and the Visualizations from the App which the reader might find useful to decide whether the App shall be useful to the reader or not:
 <p>
 </p>
 
