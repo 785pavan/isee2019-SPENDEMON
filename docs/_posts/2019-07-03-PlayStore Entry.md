@@ -49,7 +49,7 @@ Apart from the functional requirements mentioned above, we also have some non-fu
 <li>Android Version Compatibility: Built on SDK 24, compatible upto SDK 28.</li>
 <li>Security: The App has both Authentication as well as Authorisation options at the beginning and is hence extremely safe.</li>
 <li>Supported Devices: The App is supported in Smartphones as well as Tablets.</li>
-<li>Energy/Memory Consumption: The App is efficient in memory and energy consumption and consumes around 5MB storage space and around 
+<li>Energy/Memory Consumption: The App is efficient in memory and energy consumption and consumes around 5MB storage space and around
 <li>Target Group: As we have maintained before, the App is not designed for a certain target group only but can be used by anyone who is in search of controlling the flow of their money.</li>
 <p>
 </p>
@@ -59,7 +59,6 @@ Here are some screenshots which the reader might find useful to decide whether t
 </p>
 
 ---
-<img src="{{site.baseurl}}/images/Login.png" alt="Login" width="200" />
 <img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="200" />
 <img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="200" />
 
