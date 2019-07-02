@@ -39,7 +39,7 @@ If you have followed our Blog before, you probably are familiar with the fact th
 
 </p>
 
-<h3> Activities: </h3> Designing the interface in a way, that we have an optimised number of Activities such that all required information is displayed yet the App is not cluttered with un-necessary information was a task that required some brainstorming. Also linking each Activity to one another and creating intents in an effective way was something we needed to spend time on.
+<h3> Activities: </h3> Designing the interface in a way, that we have an optimized number of Activities such that all required information is displayed yet the App is not cluttered with unnecessary information was a task that required some brainstorming. Also linking each Activity to one another and creating intents in an effective way was something we needed to spend time on.
 <p>
 
 
