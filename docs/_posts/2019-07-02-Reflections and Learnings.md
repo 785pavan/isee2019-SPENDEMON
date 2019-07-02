@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reflections and Learnings"
+title: "Reflections & Learnings"
 icon: fa-lightbulb
 date: 2019-07-02
 ---
