@@ -3,11 +3,11 @@ layout: post
 title: " Google Play Store Entry"
 date: 2019-07-03
 ---
-Welcome to the last Blog for team SPENDEMON. We cannot express our gratitude enough to the ones who have stuck with us since the beginning till now. We hope we were able to create something useful and easy for you and reading our Blogs inspired you too to start an App of your own.
+Welcome to the last Blog for team SPENDEMON. We cannot express our gratitude enough to ones who have stuck with us since the beginning. We hope we have been able to create something useful and simple for your daily use. We also hope that reading our Blogs inspires you too to start building an App of your own.
 <p>
 
 </p>
-For one last time we are here to deliver to you the final finished product of the three months of our journey so far. Here we shall talk about the App, its features, and why we think that this is a good App for you to have in your life.
+For one last time we are here delivering to you our final product. It has been developed over a course of three months and it felt like journey for us. Here we are going to talk about the features that our App brings and why you would need such a good App in your daily life.
 
 <h2> <b><span style="color:#008183 ">About the App:</span></b></h2>
 <div style = "text-align:justify">The App SPENDEMON is your personalised Pokemon which has the ability to track your expenses and give you a check every now and then regarding your indulges. There are thousands of Money managing Apps and budget control Apps in the market. So what makes this App standout? It's simplicity and ease of use we would say. In the development phase of this App, there wasn't only the three of us who were the developers, but there was a fourth developer and that was the customer himself. Hence, this App has been fine tuned to what customers generally need in such an App. It is hence, simple, efficient and to the point.
