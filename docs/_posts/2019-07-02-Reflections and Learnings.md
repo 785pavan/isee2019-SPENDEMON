@@ -27,7 +27,6 @@ After the initial smooth transitions through the team formation and coining the 
 <p>
 
 </p>
-
 <h2> <b><span style="color:#008183 ">Technical Difficulties:</span></b></h2>
 <p>
 
@@ -39,15 +38,12 @@ If you have followed our Blog before, you probably are familiar with the fact th
 
 </p>
 
-</p>
 <h3> Activities: </h3> Designing the interface in a way, that we have an optimised number of Activities such that all required information is displayed yet the App is not cluttered with un-necessary information was a task that required some brainstorming. Also linking each Activity to one another and creating intents in an effective way was something we needed to spend time on.
 <p>
 
 
 </p>
 
-
-</p>
 <h3> Database:</h3> The major concern for us during 60% of the entire project was implementing an effective Database and extracting as well as manipulating transactions and Data to and from the Database.
 
 The first approach for storing and updating data that we tried implementing was parsing all data into a JSON format and storing it into a JSON script. However, doing this took a lot of space as well as effort and was inefficient.
@@ -67,8 +63,8 @@ However, there was some problems that we encountered some difficulties while lin
 <p>
 
 </p>
-
 It was also important to visualise the transactions not only in the form of just numbers and texts but also in the form of <i>Pie Charts</i> and <i>Trendlines</i>.
+
 
 <h2> <b><span style="color:#008183 ">Difficulties Encountered by Team:</span></b></h2>
 
@@ -87,6 +83,7 @@ Following the coding conventions that were decided by the team were hard to keep
 Finally, working in a team and especially in a collaborative environment demands a lot of communication protocols which was essential and once these were somehow missed, it created problems to resolve the conflicts. But then again, these conflicts actually taught us how to resolve commit issues in Git platforms in an effective manner.
 
 
+
 <h2> <b><span style="color:#008183 ">Benefits:</span></b></h2>
 
 <h3>Agile and SCRUM:</h3>
@@ -103,6 +100,7 @@ When you do not have regular assignments or no one to check if you are doing som
 Having a certain type of work ethic, being considerate and appreciating the  contributions of the team members and having a disciplined work schedule can lead one to achieve things and come up with ideas that would not have been possible otherwise.
 
 
+
 <h2> <b><span style="color:#008183 ">Review of the Course:</span></b></h2>
 The best thing about the course was the fact that it gave an opportunity not only to learn App development but the Apps which were given as options for development were something which shall be extremely useful and fun to use in real life.
 <p>
@@ -117,6 +115,8 @@ The course gave us the liberty to use our own imaginations and implement our ide
 
 </p>
 Also, keeping records of the progress as Blogs instead of a Final Report where everything is scrummed together at the end, is so much of a better idea, as it helps one note down everything that one faced during a particular milestone before everything disappears from the mind and one has to grease the brain and remember everything in the end. Also, it is such an interesting way to learn Blogging from the scratch.
+
+
 
 <h2> <b><span style="color:#008183 ">Final Thought:</span></b></h2>
 It is almost the end of this journey and as hopefully one can make out from the Blog, it was an enlightening journey for each of us. From complete beginners to now with a good amount of knowledge acquired regarding App making, each of us cannot but be grateful that each of us decided to take this course and had been given the opportunity and freedom to learn so much through one course.
