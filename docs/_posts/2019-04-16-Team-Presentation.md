@@ -2,7 +2,7 @@
 layout: post
 title: "Team Presentation"
 date: 2019-04-16
-icon: fa-book
+icon: fa-lightbulb
 ---
 
 > *"Money, like emotions, is something you must control to keep your life on the right track"  - Natasha Munson*
