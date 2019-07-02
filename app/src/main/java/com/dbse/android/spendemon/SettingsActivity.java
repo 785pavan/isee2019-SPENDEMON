@@ -194,7 +194,7 @@ public class SettingsActivity extends AppCompatActivity {
                 currencySign = "INR ";
                 break;
             case "Yen":
-                currencySign = "￥" /*"YEN "*/;
+                currencySign = /*"￥" */"YEN ";
                 break;
             case "Pound":
                 currencySign = "£";
