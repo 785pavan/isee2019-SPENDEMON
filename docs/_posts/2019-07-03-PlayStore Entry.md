@@ -38,7 +38,7 @@ Apart from this, we also have a threshold feature for our users who need an extr
 <h3>Easy User Interface:</h3> The main USP of our App is that it is extremely easy to use and we have made sure that our users can navigate through the App in an utmost fluidic manner. Hence, not only do we have Navigation Drawers on both sides of the Summary interface but we also have options like the Swipe Delete, Delete All, Double Tap Exits to name a few which makes using our App easy breezy.
 <p>
 </p>
-<h3>Well Tested App:</h3> For our users to have a good experience with the App, we have tested the App on various levels to avoid any bugs or crashes in unpredictable circumstances. So, we are confident enough to say that the user shall not find any inconvenience or any App crashes while working on the App.
+<h3>Well Tested App:</h3> For our users to have a good experience with the App, we have tested the App on various levels to avoid any bugs or crashes in unpredictable circumstances. The tests include everything from wrong passwords, to null cases, to checking whether the entries work correctly, to ensuring if the navigation is functional, we have tested every activity, every fragment of the App and so, we are confident enough to say that the user shall not find any inconvenience or any App crashes while working on the App as we have taken appropriate precautions for every such occasion where there was a chance of some unseen scenario.
 <p>
 </p>
 <h2> <b><span style="color:#008183 ">Non-Functional Requirements:</span></b></h2>
