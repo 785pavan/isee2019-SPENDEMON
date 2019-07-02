@@ -59,9 +59,10 @@ We already had put up screenshots of the App in the previous Blogs, so here e wo
 </p>
 
 ---
-<img src="{{site.baseurl}}/images/Summary.png" alt="Summary" width="200" />
-<img src="{{site.baseurl}}/images/MainActivity.png" alt="Main Activity" width="200" />
-
+<img src="{{site.baseurl}}/images/Summary_swipe_1.png" alt="Summary" width="200" />
+<img src="{{site.baseurl}}/images/PieChart_3.png" alt="Pie Chart" width="200" />
+<img src="{{site.baseurl}}/images/TrendLine_2.png" alt="Trendline" width="200" />
+<img src="{{site.baseurl}}/images/report_1.png" alt="Report" width="200" />
 ---
 
 <p>
