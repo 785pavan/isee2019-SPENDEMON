@@ -71,7 +71,7 @@ In this segment we would like to show some screenshots of certain features and t
 With these few images we have finally come to the end of a beautiful journey where there was everyday learning, creativity flowing, some intensive brainstorming but most of all a journey which was extremely fun to begin with. As three Engineers who for the first time embarked into the journey of App development, we are grateful for this course and the Professor for designing such a well structured course which helped us learn so much everyday.
 <p>
 </p>
-When we set out on this journey, our sole aim was to develop a simple App which people might find useful in their everyday lives. If you, our readers, find this effort of ours worth installing then click <a href = "https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.1.2/Spendemon.apk" target="_blank" > here. </a> and please do write to us about your experience so that we can grow this App into a popular one among the masses some day.
+When we set out on this journey, our sole aim was to develop a simple App which people might find useful in their everyday lives. If you, our readers, find this effort of ours worth installing then click <a href = "https://github.com/DBSE-teaching/isee2019-SPENDEMON/releases/download/V0.1.2/Spendemon.apk" target="_blank" > here. </a> and please do write to us about your experiences. With your feedback we will be able to grow this App into a popular one among the masses some day.
 <p>
 </p>
 Lastly, a huge final Danke Schön to our readers for showing interest in our progress. Hopefully, we will meet you all in the future with something better and something much more exciting again.
