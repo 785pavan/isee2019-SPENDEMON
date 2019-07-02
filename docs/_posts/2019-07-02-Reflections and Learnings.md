@@ -86,16 +86,24 @@ Finally, working in a team and especially in a collaborative environment demands
 
 </p>
 <h2> <b><span style="color:#008183 ">Benefits:</span></b></h2>
+<p>
 
+</p>
 <h3>Agile and SCRUM:</h3>
 The first thing that doing this project taught us was how to apply SCRUM and Agile principles effectively. This not only gave us a real view towards how Software projects actually work but also gave us the flexibility to make mistakes and having a learning curve.
+<p>
 
+</p>
 <h3>Java, Android, Testing:</h3>
 This project, in order to be completed, required an amalgamation of the above three mentioned terms and hence was sort of like taking three courses at the same time.
+<p>
 
+</p>
 <h3>Team Spirit:</h3>
 One of the main thing that our team learnt was that with the right conviction and attitude, a three membered team can work as efficiently as a four membered team. Keeping the team's goal above any individual preferences is something we as a team also learnt while doing this project.
+<p>
 
+</p>
 <h3>Work Ethic and Discipline:</h3>
 When you do not have regular assignments or no one to check if you are doing something right, one often tends to take things for granted and get a bit lazy. So did we. However, we realised after two or three weeks that contributing some amount everyday or every alternate day really helps in the long run as one does not have to compromise with anything that one wanted to implement but could not because of the lack of time.
 Having a certain type of work ethic, being considerate and appreciating the  contributions of the team members and having a disciplined work schedule can lead one to achieve things and come up with ideas that would not have been possible otherwise.
