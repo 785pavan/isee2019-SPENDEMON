@@ -40,8 +40,15 @@ Apart from this, we also have a threshold feature for our users who need an extr
 </p>
 <h2> <b><span style="color:#008183 ">Non-Functional Requirements:</span></b></h2>
 Apart from the functional requirements mentioned above, we also have some non-functional features that might be interesting to see for the User:
-
-
+<p>
+</p>
 1. Category of the App: Utility App which serves as a Money tracker or Budget Planner.
+<p>
+</p>
 2. Age Limit: None. Due to the easy usability of the App, there is no age limit. (Even toddlers can play with the Pie Charts and icons!)
-3.
+<p>
+</p>
+3. Android Version Compatibility: Built on SDK 24, compatible upto SDK 28.
+<p>
+</p>
+4. 
